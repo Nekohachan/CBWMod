@@ -1,6 +1,6 @@
 add_rules("mode.debug", "mode.release")
 
-add_repositories("Nekoahchan https://github.com/Nekohachan/CustomItems.git")
+add_repositories("Nekohachan https://github.com/Nekohachan/CustomItems.git")
 add_repositories("liteldev-repo https://github.com/LiteLDev/xmake-repo.git")
 add_repositories("groupmountain-repo https://github.com/GroupMountain/xmake-repo.git")
 
