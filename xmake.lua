@@ -52,3 +52,13 @@ target("CustomItems")
     add_headerfiles("src/**.h")
     add_files("src/**.cpp")
     add_includedirs("src")
+    after_build(function (target)
+        local plugin_packer = import("scripts.after_build")
+
+        local plugin_define = {
+            pluginName = target:name(),
+            pluginFile = path.filename(target:targetfile()),
+        }
+        
+        plugin_packer.pack_plugin(target,plugin_define)
+    end)
