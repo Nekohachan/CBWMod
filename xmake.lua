@@ -7,20 +7,17 @@ add_repositories(
 )
 
 
-add_requires("levilamina", {configs = {target_type = "server"}})
-add_requires(
-    "levibuildscript",
-    "gmlib"
-)
+add_requires("levilamina 1.1.1", {configs = {target_type = "server"}})
+add_requires("levibuildscript 0.3.0")
+add_requires("gmlib 1.0.1")
 
 if not has_config("vs_runtime") then
     set_runtimes("MD")
 end
 
 add_requires(
-    "levilamina",
-    "levibuildscript",
-    "gmlib"
+    "liteldev-repo",
+    "groupmountain-repo"
 )
 
 target("CustomItems")
