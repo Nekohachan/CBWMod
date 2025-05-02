@@ -1,24 +1,30 @@
 add_rules("mode.debug", "mode.release")
 
 add_repositories(
-    "Nekohachan https://github.com/Nekohachan/CustomItems.git",
     "liteldev-repo https://github.com/LiteLDev/xmake-repo.git",
-    "groupmountain-repo https://github.com/GroupMountain/xmake-repo.git"
+    "groupmountain-repo https://github.com/GroupMountain/xmake-repo.git",
+    "miracleforest-repo https://github.com/MiracleForest/xmake-repo.git"
 )
 
+if is_config("target_type", "server") then
+    add_requires("levilamina", {configs = {target_type = "server"}})
+else
+    add_requires("levilamina", {configs = {target_type = "client"}})
+end
 
-add_requires("levilamina 1.1.1", {configs = {target_type = "server"}})
-add_requires("levibuildscript 0.3.0")
-add_requires("gmlib 1.0.1")
+add_requires("levibuildscript")
+add_requires("gmlib")
+add_requires("ilistenattentively")
 
 if not has_config("vs_runtime") then
     set_runtimes("MD")
 end
 
-add_requires(
-    "liteldev-repo",
-    "groupmountain-repo"
-)
+option("target_type")
+    set_default("server")
+    set_showmenu(true)
+    set_values("server", "client")
+option_end()
 
 target("CustomItems")
     add_rules("@levibuildscript/linkrule")
@@ -41,7 +47,8 @@ target("CustomItems")
     )
     add_packages(
         "levilamina",
-        "gmlib"
+        "gmlib",
+        "ilistenattentively"
     )
     set_exceptions("none")
     set_kind("shared")
