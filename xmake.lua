@@ -6,12 +6,7 @@ add_repositories(
     "miracleforest-repo https://github.com/MiracleForest/xmake-repo.git"
 )
 
-if is_config("target_type", "server") then
-    add_requires("levilamina", {configs = {target_type = "server"}})
-else
-    add_requires("levilamina", {configs = {target_type = "client"}})
-end
-
+add_requires("levilamina", {configs = {target_type = "server", proxy = true}})
 add_requires("levibuildscript")
 add_requires("gmlib")
 add_requires("ilistenattentively")
@@ -19,12 +14,6 @@ add_requires("ilistenattentively")
 if not has_config("vs_runtime") then
     set_runtimes("MD")
 end
-
-option("target_type")
-    set_default("server")
-    set_showmenu(true)
-    set_values("server", "client")
-option_end()
 
 target("CustomItems")
     add_rules("@levibuildscript/linkrule")
