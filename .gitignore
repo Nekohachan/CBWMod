@@ -28,6 +28,7 @@
 *.a
 *.lib
 
+
 # Executables
 *.exe
 *.out
@@ -559,3 +560,7 @@ fabric.properties
 /.idea/
 /.vscode/
 /bin/
+/include/
+/src/ll/
+/src/mc/
+/lib/
