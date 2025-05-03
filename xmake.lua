@@ -6,7 +6,7 @@ add_repositories(
     "miracleforest-repo https://github.com/MiracleForest/xmake-repo.git"
 )
 
-add_requires("levilamina", {configs = {target_type = "server", proxy = true}})
+add_requires("levilamina", {configs = {target_type = "server"}})
 add_requires("levibuildscript")
 add_requires("gmlib")
 add_requires("ilistenattentively")
