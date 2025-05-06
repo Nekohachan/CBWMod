@@ -6,10 +6,10 @@ add_repositories(
     "miracleforest-repo https://github.com/MiracleForest/xmake-repo.git"
 )
 
-add_requires("levilamina", {configs = {target_type = "server"}})
-add_requires("levibuildscript")
-add_requires("gmlib")
-add_requires("ilistenattentively")
+add_requires("levilamina 1.1.1", {configs = {target_type = "server"}})
+add_requires("levibuildscript 0.3.0")
+add_requires("gmlib 1.0.1")
+add_requires("ilistenattentively 0.4.2")
 
 if not has_config("vs_runtime") then
     set_runtimes("MD")
