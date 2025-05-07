@@ -3,11 +3,14 @@
     "entry": "${modFile}",
     "version": "${modVersion}",
     "type": "native",
-    "author": "author",
-    "description": "description",
+    "author": "Nekohachan",
+    "description": "方体世界专用自定义物品",
     "dependencies": [
         {
             "name": "GMLIB"
+        },
+        {
+            "name": "iListenAttentively"
         }
     ]
 }

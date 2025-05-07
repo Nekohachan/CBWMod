@@ -1,10 +1,9 @@
 add_rules("mode.debug", "mode.release")
 
-add_repositories(
-    "liteldev-repo https://github.com/LiteLDev/xmake-repo.git",
-    "groupmountain-repo https://github.com/GroupMountain/xmake-repo.git",
-    "miracleforest-repo https://github.com/MiracleForest/xmake-repo.git"
-)
+
+add_repositories("liteldev-repo https://github.com/LiteLDev/xmake-repo.git")
+add_repositories("groupmountain-repo https://github.com/GroupMountain/xmake-repo.git")
+add_repositories("miracleforest-repo https://github.com/MiracleForest/xmake-repo.git")
 
 add_requires("levilamina 1.1.1", {configs = {target_type = "server"}})
 add_requires("levibuildscript 0.3.0")
@@ -39,9 +38,11 @@ target("CustomItems")
         "gmlib",
         "ilistenattentively"
     )
+    set_optimize("aggressive")
     set_exceptions("none")
     set_kind("shared")
-    set_languages("cxx20")
+    set_languages("c++20")
+    set_symbols("debug")
     add_headerfiles("src/**.h")
     add_files("src/**.cpp")
     add_includedirs("src")

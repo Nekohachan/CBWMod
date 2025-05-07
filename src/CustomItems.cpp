@@ -1,4 +1,5 @@
-#include "Entry.h"
+#include "Gloabl.h"
+#include "CustomItems.h"
 #include "Config.h"
 // 导入自定义创造背包物品注册
 #include <gmlib/mod/item/CustomCreativeItemRegistry.h>
@@ -14,7 +15,7 @@
 namespace cb {
 
 CustomItems& CustomItems::getInstance() {
-    static Entry instance;
+    static CustomItems instance;
     return instance;
 }
 
@@ -58,9 +59,13 @@ bool CustomItems::enable() {
     return true;
 }
 
+
+CustomItems&          getInstance() { return CustomItems::getInstance(); }
+ll::mod::Mod&   getSelfMod() { return getInstance().getSelf(); }
+ll::io::Logger& getLogger() { return getSelfMod().getLogger(); }
 bool CustomItems::disable() { return true; }
 
 } // namespace cb
 
 // 注册插件
-LL_REGISTER_MOD(cb::Entry, cb::CustomItems::getInstance());
+LL_REGISTER_MOD(cb::CustomItems, cb::CustomItems::getInstance());
