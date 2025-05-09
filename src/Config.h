@@ -11,7 +11,6 @@ enum class CreativeCategory {
     items        = 4,
 };
 
-
 struct Config {
     // 配置文件版本号
     int version = 1;
@@ -33,28 +32,24 @@ struct Config {
             std::string                group;
             std::optional<std::string> nbt;
         };
-    }
+    };
 
-    std::vector<CreativeInventory>
-        creative_inventory = {
-            std::vector<CreativeInventory::ItemGroup> item_group = {ItemGroup{
-                .name     = "itemGroup.name.test",
-                .icon     = "minecraft:command_block",
-                .category = CreativeCategory::equipment
-            }} std::vector<CreativeCategory::Items> items = {ItemEntry{
-                .type     = "minecraft:netherite_sword",
-                .category = CreativeCategory::equipment,
-                .group    = "itemGroup.name.test",
-                .nbt      = "{\"Unbreakable\":1b,\"display\":{\"Lore\":[\"§r§9不可破坏§r\",\"§r§e测试§r\"],\"Name\":"
-                            "\"§r§d32K下界合金剑§r\"},\"ench\":"
-                            "[{\"id\":"
-                            "9s,"
-                            "\"lvl\":32767s},{\"id\":13s,\"lvl\":32767s},{\"id\":14s,\"lvl\":100s},{\"id\":17s,"
-                            "\"lvl\":32767s},"
-                            "{"
-                            "\"id\":12s,\"lvl\":32767s},{\"id\":26s,\"lvl\":32767s},{\"id\":10s,\"lvl\":32767s},{"
-                            "\"id\":11s,"
-                            "\"lvl\":32767s}],\"keep_on_death\":1b}"
-            }}
-    }
+    std::vector<CreativeInventory::ItemGroup> creative_inventory = {
+        {.name = "itemGroup.name.test", .icon = "minecraft:command_block", .category = CreativeCategory::equipment}
+    };
+    std::vector<CreativeInventory::Items> items = {
+        {.type     = "minecraft:netherite_sword",
+         .category = CreativeCategory::equipment,
+         .group    = "itemGroup.name.test",
+         .nbt      = "{\"Unbreakable\":1b,\"display\":{\"Lore\":[\"§r§9不可破坏§r\",\"§r§e测试§r\"],\"Name\":"
+                     "\"§r§d32K下界合金剑§r\"},\"ench\":"
+                     "[{\"id\":"
+                     "9s,"
+                     "\"lvl\":32767s},{\"id\":13s,\"lvl\":32767s},{\"id\":14s,\"lvl\":100s},{\"id\":17s,"
+                     "\"lvl\":32767s},"
+                     "{"
+                     "\"id\":12s,\"lvl\":32767s},{\"id\":26s,\"lvl\":32767s},{\"id\":10s,\"lvl\":32767s},{"
+                     "\"id\":11s,"
+                     "\"lvl\":32767s}],\"keep_on_death\":1b}"}
+    };
 };

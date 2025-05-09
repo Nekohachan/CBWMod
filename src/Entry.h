@@ -3,19 +3,19 @@
 
 namespace cb {
 
-class CustomItems {
+class Entry {
 
 public:
-    static CustomItems& getInstance();
+    static Entry& getInstance();
 
-    CustomItems() : mSelf(*ll::mod::NativeMod::current()) {}
+    Entry() : mSelf(*ll::mod::NativeMod::current()) {}
 
     [[nodiscard]] ll::mod::NativeMod& getSelf() const { return mSelf; }
 
     bool load();
     bool enable();
     bool disable();
-    // bool unload();
+    bool unload();
 
 private:
     ll::mod::NativeMod& mSelf;
