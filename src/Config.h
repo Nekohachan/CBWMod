@@ -3,6 +3,8 @@
 #include <string>
 #include <vector>
 
+namespace cb {
+
 // 这里用小写，保持和Addon一致
 enum class CreativeCategory {
     construction = 1,
@@ -34,7 +36,8 @@ struct Config {
         };
     };
 
-    std::vector<CreativeInventory::ItemGroup> creative_inventory = {
+    std::vector<CreativeInventory>            creative_inventory = {};
+    std::vector<CreativeInventory::ItemGroup> item_groups        = {
         {.name = "itemGroup.name.test", .icon = "minecraft:command_block", .category = CreativeCategory::equipment}
     };
     std::vector<CreativeInventory::Items> items = {
@@ -53,3 +56,5 @@ struct Config {
                      "\"lvl\":32767s}],\"keep_on_death\":1b}"}
     };
 };
+
+} // namespace cb

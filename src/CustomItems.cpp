@@ -10,4 +10,37 @@
 #include <ll/api/Config.h>
 #include <ll/api/mod/RegisterHelper.h>
 
-namespace cb {} // namespace cb
+namespace cb {
+// 读取配置文件
+auto   path = getSelf().getConfigDir() / u8"config.json";
+Config config;
+try {
+    ll::config::loadConfig(config, path);
+} catch (...) {}
+ll::config::saveConfig(config, path);
+
+/* auto& registry = gmlib::mod::CustomCreativeItemRegistry::getInstance();
+
+// 注册物品分组
+for (auto& group : config.creative_inventory.item_groups) {
+    registry
+        .registerCreativeGroup(group.name, ::ItemInstance(group.icon), ::CreativeItemCategory((int)group.category));
+}
+
+// 注册创造背包物品
+for (auto& item : config.creative_inventory.items) {
+    CompoundTag* nbt = nullptr;
+    if (item.nbt) {
+        if (auto userdata = ::CompoundTag::fromSnbt(*item.nbt)) {
+            nbt = new ::CompoundTag(*userdata);
+        }
+    }
+    registry.registerCreativeItem(
+        ::ItemInstance(item.type, 1, 0, std::move(nbt)),
+        ::CreativeItemCategory((int)item.category),
+        item.group
+    );
+} */
+
+
+} // namespace cb
