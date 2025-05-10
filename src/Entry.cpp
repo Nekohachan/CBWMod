@@ -9,7 +9,6 @@ Entry& Entry::getInstance() {
 }
 
 bool Entry::load() {
-    auto version = getSelf().getManifest().version.value_or(ll::data::Version{0, 0, 1});
     getSelf().getLogger().info("CustomItems 已加载!");
     getSelf().getLogger().info("作者: Nekohachan");
     return true;

@@ -11,26 +11,24 @@
 #include <ll/api/Config.h>
 
 namespace cb {
-
 void Entry::CreativeInventory() {
     // 读取配置文件
-    Config config;
-    // CreativeInventory
-    auto path = getSelf().getConfigDir() / u8"config.json";
+    struct CreativeInventory config;
+    auto                     path = getSelf().getConfigDir() / u8"creative_inventory.json";
     try {
         ll::config::loadConfig(config, path);
     } catch (...) {}
     ll::config::saveConfig(config, path);
-    /* auto& registry = gmlib::mod::CustomCreativeItemRegistry::getInstance();
 
+    auto& registry = gmlib::mod::CustomCreativeItemRegistry::getInstance();
     // 注册物品分组
-    for (auto& group : config.creative_inventory.item_groups) {
+    for (auto& group : config.item_groups) {
         registry
             .registerCreativeGroup(group.name, ::ItemInstance(group.icon), ::CreativeItemCategory((int)group.category));
     }
 
     // 注册创造背包物品
-    for (auto& item : config.creative_inventory.items) {
+    for (auto& item : config.items) {
         CompoundTag* nbt = nullptr;
         if (item.nbt) {
             if (auto userdata = ::CompoundTag::fromSnbt(*item.nbt)) {
@@ -42,7 +40,7 @@ void Entry::CreativeInventory() {
             ::CreativeItemCategory((int)item.category),
             item.group
         );
-    } */
+    }
 }
 
 
