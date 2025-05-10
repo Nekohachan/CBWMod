@@ -12,7 +12,7 @@
 
 namespace cb {
 
-bool Entry::enable() {
+void Entry::CreativeInventory() {
     // 读取配置文件
     Config config;
     // CreativeInventory
@@ -43,7 +43,6 @@ bool Entry::enable() {
             item.group
         );
     } */
-    return true;
 }
 
 
