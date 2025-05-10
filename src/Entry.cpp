@@ -1,13 +1,7 @@
 #include "Entry.h"
-#include <gmlib/gm/i18n/ResourceI18n.h>
 #include <ll/api/mod/RegisterHelper.h>
 
 namespace cb {
-
-Entry& Entry::getInstance() {
-    static Entry instance;
-    return instance;
-}
 
 bool Entry::load() {
     getSelf().getLogger().info("CustomItems 已加载!");

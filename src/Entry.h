@@ -1,6 +1,5 @@
 #pragma once
-#include "Config.h"
-#include "Gloabl.h"
+#include <ll/api/mod/NativeMod.h>
 
 namespace cb {
 
@@ -19,9 +18,7 @@ public:
     bool unload();
 
 private:
-    ll::mod::NativeMod&                  mSelf;
-    std::optional<Config>                mConfig;
-    std::optional<gmlib::i18n::LangI18n> mI18n;
+    ll::mod::NativeMod& mSelf;
 };
 
 } // namespace cb
