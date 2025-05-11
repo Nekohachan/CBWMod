@@ -1,5 +1,5 @@
 #include "Entry.h"
-#include "Config.h"
+#include "CustomItems.h"
 #include <ll/api/mod/RegisterHelper.h>
 
 namespace cb {
@@ -16,7 +16,7 @@ bool Entry::load() {
 }
 
 bool Entry::enable() {
-    cb::CreativeInventoryConfig::CreativeInventory();
+    cb::RegistryCI();
     return true;
 }
 
