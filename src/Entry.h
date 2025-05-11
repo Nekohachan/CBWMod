@@ -17,10 +17,8 @@ public:
     bool disable();
     bool unload();
 
-    void CreativeInventory();
-
-    private:
-        ll::mod::NativeMod& mSelf;
-    };
+private:
+    ll::mod::NativeMod& mSelf;
+};
 
 } // namespace cb

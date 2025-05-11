@@ -11,24 +11,36 @@
 #include <ll/api/Config.h>
 
 namespace cb {
-void Entry::CreativeInventory() {
+
+bool CreativeInventory() {
     // 读取配置文件
-    struct CreativeInventory config;
-    auto                     path = getSelf().getConfigDir() / u8"creative_inventory.json";
-    try {
-        ll::config::loadConfig(config, path);
-    } catch (...) {}
-    ll::config::saveConfig(config, path);
+    struct CreativeInventoryConfig CreativeInventoryConfig;
+    const auto&                    CreativeInventoryConfigPath =
+        cb::Entry::getInstance().getSelf().getConfigDir() / "creative_inventory.json";
+    if (!ll::config::loadConfig(CreativeInventoryConfig, CreativeInventoryConfigPath)) {
+        cb::Entry::getInstance().getSelf().getLogger().warn(
+            "Cannot load configurations from {}",
+            CreativeInventoryConfigPath
+        );
+        cb::Entry::getInstance().getSelf().getLogger().info("Saving default configurations");
+
+        if (!ll::config::saveConfig(CreativeInventoryConfig, CreativeInventoryConfigPath)) {
+            cb::Entry::getInstance().getSelf().getLogger().error(
+                "Cannot save default configurations to {}",
+                CreativeInventoryConfigPath
+            );
+        }
+    }
 
     auto& registry = gmlib::mod::CustomCreativeItemRegistry::getInstance();
     // 注册物品分组
-    for (auto& group : config.item_groups) {
+    for (auto& group : CreativeInventoryConfig.item_groups) {
         registry
             .registerCreativeGroup(group.name, ::ItemInstance(group.icon), ::CreativeItemCategory((int)group.category));
     }
 
     // 注册创造背包物品
-    for (auto& item : config.items) {
+    for (auto& item : CreativeInventoryConfig.items) {
         CompoundTag* nbt = nullptr;
         if (item.nbt) {
             if (auto userdata = ::CompoundTag::fromSnbt(*item.nbt)) {
@@ -41,6 +53,7 @@ void Entry::CreativeInventory() {
             item.group
         );
     }
+    return true;
 }
 
 

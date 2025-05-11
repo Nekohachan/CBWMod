@@ -13,7 +13,7 @@ enum class CreativeCategory {
     items        = 4,
 };
 
-struct CreativeInventory {
+struct CreativeInventoryConfig {
     // 配置文件版本号
     int version = 1;
     // 注册创造背包物品
@@ -52,6 +52,9 @@ struct CreativeInventory {
                      "\"id\":11s,"
                      "\"lvl\":32767s}],\"keep_on_death\":1b}"}
     };
+    static bool CreativeInventory();
 };
+
+
 
 } // namespace cb
