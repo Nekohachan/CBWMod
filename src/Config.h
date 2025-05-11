@@ -16,7 +16,7 @@ enum class CreativeCategory {
 // 创造背包注册配置
 struct CIConfig {
     // 配置文件版本号
-    int version = 1;
+    int version = 2;
     // 注册创造背包物品
     // 物品分组
     struct ItemGroup {
@@ -29,20 +29,24 @@ struct CIConfig {
     };
     // 物品条目
     struct Items {
-        std::string                type;
-        CreativeCategory           category;
-        std::string                group;
+        // 物品的键名
+        std::string type;
+        // 物品所属分类
+        CreativeCategory category;
+        // 物品所在的组
+        std::string group;
+        // 物品自带的NBT
         std::optional<std::string> nbt;
     };
 
-    std::vector<ItemGroup> item_groups = {
+    std::vector<ItemGroup> extra_groups = {
         ItemGroup{
                   .name     = "itemGroup.name.test",
                   .icon     = "minecraft:command_block",
                   .category = CreativeCategory::equipment
         }
     };
-    std::vector<Items> items = {
+    std::vector<Items> creative_items = {
         Items{
               .type     = "minecraft:netherite_sword",
               .category = CreativeCategory::equipment,
@@ -57,7 +61,13 @@ struct CIConfig {
                         "\"id\":12s,\"lvl\":32767s},{\"id\":26s,\"lvl\":32767s},{\"id\":10s,\"lvl\":32767s},{"
                         "\"id\":11s,"
                         "\"lvl\":32767s}],\"keep_on_death\":1b}"
-        }
+        },
+        Items{
+              .type     = "minecraft:command_block",
+              .category = CreativeCategory::equipment,
+              .group    = "itemGroup.name.test"
+        },
+        Items{.type = "minecraft:barrier", .category = CreativeCategory::equipment, .group = "itemGroup.name.test"}
     };
     static CIConfig config;
     static bool     TryLoad();

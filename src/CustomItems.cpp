@@ -15,16 +15,18 @@ namespace cb {
 // 创造背包注册
 void RegistryCI() {
     cb::CIConfig::TryLoad();
-    auto  config   = cb::CIConfig::config;
+    auto config = cb::CIConfig::config;
+
     auto& registry = gmlib::mod::CustomCreativeItemRegistry::getInstance();
+
     // 注册物品分组
-    for (auto& group : config.item_groups) {
+    for (auto& group : config.extra_groups) {
         registry
             .registerCreativeGroup(group.name, ::ItemInstance(group.icon), ::CreativeItemCategory((int)group.category));
     }
 
     // 注册创造背包物品
-    for (auto& item : config.items) {
+    for (auto& item : config.creative_items) {
         CompoundTag* nbt = nullptr;
         if (item.nbt) {
             if (auto userdata = ::CompoundTag::fromSnbt(*item.nbt)) {
@@ -32,7 +34,7 @@ void RegistryCI() {
             }
         }
         registry.registerCreativeItem(
-            ::ItemInstance(item.type, 1, 0, std::move(nbt)),
+            ::ItemInstance(item.type, 1, 0, nbt),
             ::CreativeItemCategory((int)item.category),
             item.group
         );
