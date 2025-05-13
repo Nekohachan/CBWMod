@@ -10,7 +10,23 @@
 #include <gmlib/mod/item/base/ICustomArmorItem.h>
 #include <ll/api/Config.h>
 
+
 namespace cb {
+
+// 注册自定义物品
+void RegistryItem() {
+    cb::ItemConfig::TryLoad();
+    auto config = cb::ItemConfig::config;
+
+    auto& registry = gmlib::mod::CustomItemRegistry::getInstance();
+
+    for (auto& items : config.items) {
+        class CustomItem : public gmlib::mod::ICustomItem {
+        public:
+            
+        };
+    }
+};
 
 // 创造背包注册
 void RegistryCI() {
