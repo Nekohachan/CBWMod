@@ -1,5 +1,6 @@
 #include "Entry.h"
 #include "CustomItems.h"
+#include <gmlib/gm/i18n/ResourceI18n.h>
 #include <ll/api/mod/RegisterHelper.h>
 
 namespace cb {
@@ -10,6 +11,16 @@ Entry& Entry::getInstance() {
 }
 
 bool Entry::load() {
+    auto version  = getSelf().getManifest().version.value_or(ll::data::Version{0, 0, 0});
+    auto resource = gmlib::i18n::ResourceI18n(
+        getSelf().getModDir(),
+        getSelf().getName(),
+        version.major,
+        version.minor,
+        version.patch
+    );
+    resource.addLanguagesFromDirectory(getSelf().getLangDir());
+    resource.loadAllLanguages();
     getSelf().getLogger().info("CustomItems 已加载!");
     getSelf().getLogger().info("作者: Nekohachan");
     return true;

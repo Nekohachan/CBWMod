@@ -9,7 +9,6 @@
 #include <mc/world/item/VanillaItemNames.h>
 
 
-
 namespace cb {
 
 // 创造背包注册
@@ -42,11 +41,16 @@ void RegistryCI() {
 }
 
 // 覆写原版物品
+using namespace gmlib::mod;
 
 // 木剑
-class WoodenSword : public gmlib::mod::ICustomItem {
+class WoodenSword : public ICustomItem {
 public:
     WoodenSword() : ICustomItem(VanillaItemNames::WoodenSword()) {};
+
+    ItemIcon getIcon() const override { return "wood_sword"; }
+
+    std::string getDisplayName() const override { return "item.wooden_sword.name"; }
 };
 
 GMLIB_REGISTER_ITEM(WoodenSword);
