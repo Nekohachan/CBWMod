@@ -1,32 +1,16 @@
 #include "CustomItems.h"
 #include "Config.h"
-// 导入自定义创造背包物品注册
+#include "mc/world/item/Item.h"
 #include <gmlib/mod/item/CustomCreativeItemRegistry.h>
-// 导入自定义物品注册
 #include <gmlib/mod/item/CustomItemRegistry.h>
-// 导入自定义物品
-#include <gmlib/mod/item/base/ICustomItem.h>
-// 导入自定义护甲
 #include <gmlib/mod/item/base/ICustomArmorItem.h>
-#include <ll/api/Config.h>
+#include <gmlib/mod/item/base/ICustomItem.h>
+#include <mc/deps/core/string/HashedString.h>
+#include <mc/world/item/VanillaItemNames.h>
+
 
 
 namespace cb {
-
-// 注册自定义物品
-void RegistryItem() {
-    cb::ItemConfig::TryLoad();
-    auto config = cb::ItemConfig::config;
-
-    auto& registry = gmlib::mod::CustomItemRegistry::getInstance();
-
-    for (auto& items : config.items) {
-        class CustomItem : public gmlib::mod::ICustomItem {
-        public:
-            
-        };
-    }
-};
 
 // 创造背包注册
 void RegistryCI() {
@@ -57,5 +41,14 @@ void RegistryCI() {
     }
 }
 
+// 覆写原版物品
+
+// 木剑
+class WoodenSword : public gmlib::mod::ICustomItem {
+public:
+    WoodenSword() : ICustomItem(VanillaItemNames::WoodenSword()) {};
+};
+
+GMLIB_REGISTER_ITEM(WoodenSword);
 
 } // namespace cb
