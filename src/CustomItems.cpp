@@ -46,11 +46,24 @@ using namespace gmlib::mod;
 // 木剑
 class WoodenSword : public ICustomItem {
 public:
+    // 键名
     WoodenSword() : ICustomItem(VanillaItemNames::WoodenSword()) {};
-
-    ItemIcon getIcon() const override { return "wood_sword"; }
-
+    // 贴图
+    ItemIcon getIcon() const override { return "wooden_sword"; }
+    // 名字
     std::string getDisplayName() const override { return "item.wooden_sword.name"; }
+    // 最大堆叠
+    uint8_t getItemMaxStackSize() const override { return 1; }
+    // 在创造模式是否能破坏方块
+    bool canDestroyInCreative() const override { return false; }
+    // 耐久
+    short getItemDurability() const override { return 59; }
+    // 物品标签
+    std::vector<std::string> getItemTags() const override {
+        return std::vector<std::string>{"minecraft:is_sword", "minecraft:is_tool", "minecraft:wooden_tier"};
+    }
+    // 挖掘速度1.5
+    float getMiningSpeed() const override { return 1.5; }
 };
 
 GMLIB_REGISTER_ITEM(WoodenSword);

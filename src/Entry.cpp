@@ -11,6 +11,7 @@ Entry& Entry::getInstance() {
 }
 
 bool Entry::load() {
+    //加载语言文件
     auto version  = getSelf().getManifest().version.value_or(ll::data::Version{0, 0, 0});
     auto resource = gmlib::i18n::ResourceI18n(
         getSelf().getModDir(),
@@ -21,12 +22,14 @@ bool Entry::load() {
     );
     resource.addLanguagesFromDirectory(getSelf().getLangDir());
     resource.loadAllLanguages();
+    //加载完成提示
     getSelf().getLogger().info("CustomItems 已加载!");
     getSelf().getLogger().info("作者: Nekohachan");
     return true;
 }
 
 bool Entry::enable() {
+    //加载自定义创造背包物品
     cb::RegistryCI();
     return true;
 }
