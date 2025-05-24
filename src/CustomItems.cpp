@@ -1,13 +1,15 @@
 #include "CustomItems.h"
 #include "Config.h"
-#include "mc/world/item/Item.h"
 #include <gmlib/mod/item/CustomCreativeItemRegistry.h>
 #include <gmlib/mod/item/CustomItemRegistry.h>
 #include <gmlib/mod/item/base/ICustomArmorItem.h>
 #include <gmlib/mod/item/base/ICustomItem.h>
 #include <mc/deps/core/string/HashedString.h>
+#include <mc/world/item/Item.h>
+#include <mc/world/item/ItemStackBase.h>
 #include <mc/world/item/VanillaItemNames.h>
-
+#include <mc/world/item/VanillaItemTags.h>
+#include <mc/world/level/block/Block.h>
 
 namespace cb {
 
@@ -45,6 +47,7 @@ using namespace gmlib::mod;
 
 // 木剑
 class WoodenSword : public ICustomItem {
+
 public:
     // 键名
     WoodenSword() : ICustomItem(VanillaItemNames::WoodenSword()) {};
@@ -62,10 +65,25 @@ public:
     std::vector<std::string> getItemTags() const override {
         return std::vector<std::string>{"minecraft:is_sword", "minecraft:is_tool", "minecraft:wooden_tier"};
     }
-    // 挖掘速度1.5
-    float getMiningSpeed() const override { return 1.5; }
+    // 是否为挖掘工具
+    bool isDiggerItem() const override { return true; }
+    // 挖掘速度
+    float getMiningSpeed() const override { return 15; }
+    // 可破坏方块列表
+    bool canDestroySpecial(Block const& block) const override {
+        auto config = cb::ToolDiggableBlock::config;
+        for (auto& block_name : config.sword) {}
+        return true;
+    }
+    //  手持动作
+    bool isHandEquipped() const override { return true; }
+    // 是否为燃料
+    bool isFuel() const override { return true; }
+    // 单个该物品可烧制多少物品
+    float getFurnaceBurnInterval() const override { return 1; }
 };
 
-GMLIB_REGISTER_ITEM(WoodenSword);
+// GMLIB_REGISTER_ITEM(WoodenSword);
+
 
 } // namespace cb

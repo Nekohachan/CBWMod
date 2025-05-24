@@ -9,7 +9,7 @@ CIConfig CIConfig::config;
 
 bool CIConfig::TryLoad() {
     auto&      mSelf = cb::Entry::getInstance().getSelf();
-    const auto path  = mSelf.getModDir() / "config/creative_inventory.json";
+    const auto path  = mSelf.getConfigDir() / "creative_inventory.json";
 
     bool ok = ll::config::loadConfig(config, path);
 
@@ -21,7 +21,7 @@ bool CIConfig::TryLoad() {
 
 bool CIConfig::TrySave() {
     auto&      mSelf = cb::Entry::getInstance().getSelf();
-    const auto path  = mSelf.getModDir() / "config/creative_inventory.json";
+    const auto path  = mSelf.getConfigDir() / "creative_inventory.json";
 
     return ll::config::saveConfig(config, path);
 }
