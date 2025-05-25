@@ -47,7 +47,6 @@ using namespace gmlib::mod;
 
 // 木剑
 class WoodenSword : public ICustomItem {
-
 public:
     // 键名
     WoodenSword() : ICustomItem(VanillaItemNames::WoodenSword()) {};
@@ -69,12 +68,15 @@ public:
     bool isDiggerItem() const override { return true; }
     // 挖掘速度
     float getMiningSpeed() const override { return 15; }
-    // 可破坏方块列表
-    bool canDestroySpecial(Block const& block) const override {
+    // 设置可破坏方块列表
+    bool canDestroySpecial(Block const&) const override { return true; }
+    void setCanDestroyList() const {
         auto config = cb::ToolDiggableBlock::config;
-        for (auto& block_name : config.sword) {}
-        return true;
-    }
+        for (std::string& block_name : config.sword) {
+            auto bl = Block::tryGetFromRegistry(block_name);
+            canDestroySpecial(bl);
+        }
+    };
     //  手持动作
     bool isHandEquipped() const override { return true; }
     // 是否为燃料
