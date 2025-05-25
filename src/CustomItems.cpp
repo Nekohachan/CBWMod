@@ -85,7 +85,7 @@ public:
     float getFurnaceBurnInterval() const override { return 1; }
 };
 
-// GMLIB_REGISTER_ITEM(WoodenSword);
+GMLIB_REGISTER_ITEM(WoodenSword);
 
 
 } // namespace cb
