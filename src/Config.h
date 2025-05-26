@@ -978,7 +978,7 @@ struct ToolDiggableBlock {
         "minecraft:obsidian",
         "minecraft:raw_gold_block",
         "minecraft:raw_iron_block",
-        "minecraft:redstone_ore"
+        "minecraft:redstone_ore",
     };
 
     static ToolDiggableBlock config;
