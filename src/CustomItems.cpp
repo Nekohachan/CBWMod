@@ -52,9 +52,6 @@ using namespace gmlib::mod;
 // 木剑
 class WoodenSword : public ICustomItem {
 public:
-    ToolDiggableBlock ToolDiggableBlock;
-
-public:
     // 键名
     WoodenSword() : ICustomItem(VanillaItemNames::WoodenSword()) {};
     // 贴图
@@ -74,16 +71,18 @@ public:
     // 是否为挖掘工具
     bool isDiggerItem() const override { return true; }
     // 挖掘速度
-    float getMiningSpeed() const override { return 15; }
-    // 设置可破坏方块列表
-    bool canDestroySpecial(Block const&) const override { return true; }
-    void setCanDestroyList() const {
-        auto config = ToolDiggableBlock;
-        for (auto& block_name : config.sword) {
-            auto bl = Block::tryGetFromRegistry(block_name);
-            canDestroySpecial(bl);
-        }
-    };
+    float getMiningSpeed() const override { return 2; }
+    // 判断是否为可破坏方块
+    bool canDestroySpecial(Block const& block) const override {
+        if (block.hasTag("minecraft:is_sword_item_destructible")) {
+            return true;
+        };
+        return false;
+    }
+    // 挖掘效果为工具
+    Interactions::Mining::MineBlockItemEffectType getMineBlockItemEffectType() const override {
+        return Interactions::Mining::MineBlockItemEffectType::DiggerItem;
+    }
     // 手持动作
     bool isHandEquipped() const override { return true; }
     // 是否为燃料
@@ -94,9 +93,6 @@ public:
 
 // 木斧
 class WoodenAxe : public ICustomItem {
-public:
-    ToolDiggableBlock ToolDiggableBlock;
-
 public:
     // 键名
     WoodenAxe() : ICustomItem(VanillaItemNames::WoodenAxe()) {};
@@ -116,15 +112,17 @@ public:
     bool isDiggerItem() const override { return true; }
     // 挖掘速度
     float getMiningSpeed() const override { return 2; }
-    // 设置可破坏方块列表
-    bool canDestroySpecial(Block const&) const override { return true; }
-    void setCanDestroyList() const {
-        auto config = ToolDiggableBlock;
-        for (auto& block_name : config.axe) {
-            auto bl = Block::tryGetFromRegistry(block_name);
-            canDestroySpecial(bl);
-        }
-    };
+    // 判断是否为可破坏方块
+    bool canDestroySpecial(Block const& block) const override {
+        if (block.hasTag("minecraft:is_axe_item_destructible")) {
+            return true;
+        };
+        return false;
+    }
+    // 挖掘效果为工具
+    Interactions::Mining::MineBlockItemEffectType getMineBlockItemEffectType() const override {
+        return Interactions::Mining::MineBlockItemEffectType::DiggerItem;
+    }
     // 手持动作
     bool isHandEquipped() const override { return true; }
     // 是否为燃料
@@ -135,9 +133,6 @@ public:
 
 // 木镐
 class WoodenPickaxe : public ICustomItem {
-public:
-    ToolDiggableBlock ToolDiggableBlock;
-
 public:
     // 键名
     WoodenPickaxe() : ICustomItem(VanillaItemNames::WoodenPickaxe()) {};
@@ -157,15 +152,17 @@ public:
     bool isDiggerItem() const override { return true; }
     // 挖掘速度
     float getMiningSpeed() const override { return 2; }
-    // 设置可破坏方块列表
-    bool canDestroySpecial(Block const&) const override { return true; }
-    void setCanDestroyList() const {
-        auto config = ToolDiggableBlock;
-        for (auto& block_name : config.pickaxe) {
-            auto bl = Block::tryGetFromRegistry(block_name);
-            canDestroySpecial(bl);
-        }
-    };
+    // 判断是否为可破坏方块
+    bool canDestroySpecial(Block const& block) const override {
+        if (block.hasTag("minecraft:is_pickaxe_item_destructible")) {
+            return true;
+        };
+        return false;
+    }
+    // 挖掘效果为工具
+    Interactions::Mining::MineBlockItemEffectType getMineBlockItemEffectType() const override {
+        return Interactions::Mining::MineBlockItemEffectType::DiggerItem;
+    }
     // 手持动作
     bool isHandEquipped() const override { return true; }
     // 是否为燃料
@@ -176,9 +173,6 @@ public:
 
 // 木楸
 class WoodenShovel : public ICustomItem {
-public:
-    ToolDiggableBlock ToolDiggableBlock;
-
 public:
     // 键名
     WoodenShovel() : ICustomItem(VanillaItemNames::WoodenShovel()) {};
@@ -198,15 +192,17 @@ public:
     bool isDiggerItem() const override { return true; }
     // 挖掘速度
     float getMiningSpeed() const override { return 2; }
-    // 设置可破坏方块列表
-    bool canDestroySpecial(Block const&) const override { return true; }
-    void setCanDestroyList() const {
-        auto config = ToolDiggableBlock;
-        for (auto& block_name : config.shovel) {
-            auto bl = Block::tryGetFromRegistry(block_name);
-            canDestroySpecial(bl);
-        }
-    };
+    // 判断是否为可破坏方块
+    bool canDestroySpecial(Block const& block) const override {
+        if (block.hasTag("minecraft:is_shovel_item_destructible")) {
+            return true;
+        };
+        return false;
+    }
+    // 挖掘效果为工具
+    Interactions::Mining::MineBlockItemEffectType getMineBlockItemEffectType() const override {
+        return Interactions::Mining::MineBlockItemEffectType::DiggerItem;
+    }
     // 手持动作
     bool isHandEquipped() const override { return true; }
     // 是否为燃料
@@ -217,9 +213,6 @@ public:
 
 // 木锄
 class WoodenHoe : public ICustomItem {
-public:
-    ToolDiggableBlock ToolDiggableBlock;
-
 public:
     // 键名
     WoodenHoe() : ICustomItem(VanillaItemNames::WoodenHoe()) {};
@@ -239,15 +232,17 @@ public:
     bool isDiggerItem() const override { return true; }
     // 挖掘速度
     float getMiningSpeed() const override { return 2; }
-    // 设置可破坏方块列表
-    bool canDestroySpecial(Block const&) const override { return true; }
-    void setCanDestroyList() const {
-        auto config = ToolDiggableBlock;
-        for (auto& block_name : config.hoe) {
-            auto bl = Block::tryGetFromRegistry(block_name);
-            canDestroySpecial(bl);
-        }
-    };
+    // 判断是否为可破坏方块
+    bool canDestroySpecial(Block const& block) const override {
+        if (block.hasTag("minecraft:is_hoe_item_destructible")) {
+            return true;
+        };
+        return false;
+    }
+    // 挖掘效果为工具
+    Interactions::Mining::MineBlockItemEffectType getMineBlockItemEffectType() const override {
+        return Interactions::Mining::MineBlockItemEffectType::DiggerItem;
+    }
     // 手持动作
     bool isHandEquipped() const override { return true; }
     // 是否为燃料
