@@ -5,7 +5,7 @@ add_repositories("liteldev-repo https://github.com/LiteLDev/xmake-repo.git")
 add_repositories("groupmountain-repo https://github.com/GroupMountain/xmake-repo.git")
 add_repositories("miracleforest-repo https://github.com/MiracleForest/xmake-repo.git")
 
-add_requires("levilamina 1.1.1", {configs = {target_type = "server"}})
+add_requires("levilamina 1.1.2", {configs = {target_type = "server"}})
 add_requires("levibuildscript 0.4.0")
 add_requires("gmlib 1.0.2")
 add_requires("ilistenattentively 0.4.2")

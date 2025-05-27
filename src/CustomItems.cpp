@@ -79,8 +79,8 @@ public:
     bool canDestroySpecial(Block const&) const override { return true; }
     void setCanDestroyList() const {
         auto config = ToolDiggableBlock;
-        for (std::string& block_name : config.sword) {
-            auto bl = Block::tryGetFromRegistry(block_name, -1);
+        for (auto& block_name : config.sword) {
+            auto bl = Block::tryGetFromRegistry(block_name);
             canDestroySpecial(bl);
         }
     };
@@ -120,8 +120,8 @@ public:
     bool canDestroySpecial(Block const&) const override { return true; }
     void setCanDestroyList() const {
         auto config = ToolDiggableBlock;
-        for (std::string& block_name : config.axe) {
-            auto bl = Block::tryGetFromRegistry(block_name, -1);
+        for (auto& block_name : config.axe) {
+            auto bl = Block::tryGetFromRegistry(block_name);
             canDestroySpecial(bl);
         }
     };
@@ -161,8 +161,8 @@ public:
     bool canDestroySpecial(Block const&) const override { return true; }
     void setCanDestroyList() const {
         auto config = ToolDiggableBlock;
-        for (std::string& block_name : config.pickaxe) {
-            auto bl = Block::tryGetFromRegistry(block_name, -1);
+        for (auto& block_name : config.pickaxe) {
+            auto bl = Block::tryGetFromRegistry(block_name);
             canDestroySpecial(bl);
         }
     };
@@ -202,8 +202,8 @@ public:
     bool canDestroySpecial(Block const&) const override { return true; }
     void setCanDestroyList() const {
         auto config = ToolDiggableBlock;
-        for (std::string& block_name : config.shovel) {
-            auto bl = Block::tryGetFromRegistry(block_name, -1);
+        for (auto& block_name : config.shovel) {
+            auto bl = Block::tryGetFromRegistry(block_name);
             canDestroySpecial(bl);
         }
     };
@@ -243,8 +243,8 @@ public:
     bool canDestroySpecial(Block const&) const override { return true; }
     void setCanDestroyList() const {
         auto config = ToolDiggableBlock;
-        for (std::string& block_name : config.hoe) {
-            auto bl = Block::tryGetFromRegistry(block_name, -1);
+        for (auto& block_name : config.hoe) {
+            auto bl = Block::tryGetFromRegistry(block_name);
             canDestroySpecial(bl);
         }
     };

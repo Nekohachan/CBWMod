@@ -79,7 +79,7 @@ struct ToolDiggableBlock {
     int version = 2;
 
     std::vector<std::string> sword = {
-        "minecraft:web",
+        "web",
     };
     std::vector<std::string> axe = {
         "minecraft:acacia_button",

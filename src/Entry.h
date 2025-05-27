@@ -12,13 +12,13 @@ public:
 
     [[nodiscard]] ll::mod::NativeMod& getSelf() const { return mSelf; }
     //加载插件
-    bool load();
+    bool load() const;
     //启用插件
-    bool enable();
+    bool enable() const;
     //禁用插件
-    bool disable();
+    bool disable() const;
     //卸载插件
-    bool unload();
+    bool unload() const;
 
 private:
     ll::mod::NativeMod& mSelf;

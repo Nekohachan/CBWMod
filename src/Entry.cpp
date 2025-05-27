@@ -13,7 +13,7 @@ Entry& Entry::getInstance() {
 
 #define logger cb::Entry::getInstance().getSelf().getLogger()
 
-bool Entry::load() {
+bool Entry::load() const {
     // 加载语言文件
     auto version  = getSelf().getManifest().version.value_or(ll::data::Version{0, 0, 0});
     auto resource = gmlib::i18n::ResourceI18n(
@@ -31,15 +31,16 @@ bool Entry::load() {
     return true;
 }
 
-bool Entry::enable() {
+bool Entry::enable() const {
+    cb::RegisterCommand();
     // 加载自定义创造背包物品
     cb::RegistryCI();
     return true;
 }
 
-bool Entry::disable() { return true; }
+bool Entry::disable() const { return true; }
 
-bool Entry::unload() { return true; }
+bool Entry::unload() const { return true; }
 
 } // namespace cb
 
