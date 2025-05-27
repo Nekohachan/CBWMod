@@ -32,7 +32,6 @@ bool Entry::load() const {
 }
 
 bool Entry::enable() const {
-    cb::RegisterCommand();
     // 加载自定义创造背包物品
     cb::RegistryCI();
     return true;
