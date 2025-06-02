@@ -4,7 +4,7 @@
     "version": "${modVersion}",
     "type": "native",
     "author": "Nekohachan",
-    "description": "方体世界专用自定义物品",
+    "description": "方体世界Mod",
     "dependencies": [
         {
             "name": "GMLIB"
