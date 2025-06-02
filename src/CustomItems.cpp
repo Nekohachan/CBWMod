@@ -4,7 +4,10 @@
 #include <gmlib/mod/item/CustomItemRegistry.h>
 #include <gmlib/mod/item/base/ICustomArmorItem.h>
 #include <gmlib/mod/item/base/ICustomItem.h>
+#include <gmlib/mod/item/base/ICustomToolItem.h>
 #include <mc/deps/core/string/HashedString.h>
+#include <mc/world/actor/Actor.h>
+#include <mc/world/actor/RenderParams.h>
 #include <mc/world/actor/player/Player.h>
 #include <mc/world/gamemode/InteractionResult.h>
 #include <mc/world/item/Item.h>
@@ -14,6 +17,7 @@
 #include <mc/world/level/BlockPos.h>
 #include <mc/world/level/BlockSource.h>
 #include <mc/world/level/block/Block.h>
+
 
 namespace cb {
 
@@ -50,10 +54,10 @@ void RegistryCI() {
 using namespace gmlib::mod;
 
 // 木剑
-class WoodenSword : public ICustomItem {
+class WoodenSword : public ICustomToolItem {
 public:
     // 键名
-    WoodenSword() : ICustomItem(VanillaItemNames::WoodenSword()) {};
+    WoodenSword() : ICustomToolItem(VanillaItemNames::WoodenSword()) {};
     // 贴图
     ItemIcon getIcon() const override { return "wooden_sword"; }
     // 名字
@@ -68,6 +72,8 @@ public:
     std::vector<std::string> getItemTags() const override {
         return std::vector<std::string>{"minecraft:is_sword", "minecraft:is_tool", "minecraft:wooden_tier"};
     }
+    // 是否为剑
+    bool isSword() const override { return true; }
     // 是否为挖掘工具
     bool isDiggerItem() const override { return true; }
     // 挖掘速度
@@ -92,10 +98,10 @@ public:
 };
 
 // 木斧
-class WoodenAxe : public ICustomItem {
+class WoodenAxe : public ICustomToolItem {
 public:
     // 键名
-    WoodenAxe() : ICustomItem(VanillaItemNames::WoodenAxe()) {};
+    WoodenAxe() : ICustomToolItem(VanillaItemNames::WoodenAxe()) {};
     // 贴图
     ItemIcon getIcon() const override { return "wooden_axe"; }
     // 名字
@@ -108,6 +114,8 @@ public:
     std::vector<std::string> getItemTags() const override {
         return std::vector<std::string>{"minecraft:is_axe", "minecraft:is_tool", "minecraft:wooden_tier"};
     }
+    // 是否为斧
+    bool isAxe() const override { return true; }
     // 是否为挖掘工具
     bool isDiggerItem() const override { return true; }
     // 挖掘速度
@@ -129,13 +137,18 @@ public:
     bool isFuel() const override { return true; }
     // 单个该物品可烧制多少物品
     float getFurnaceBurnInterval() const override { return 1; }
+    // 执行事件
+    void executeEvent(ItemStackBase& item, std::string const&, RenderParams& rp) const override {
+        auto ac = rp.getActorTarget(::SharedTypes::Legacy::FilterSubject::Holder);
+        item.hurtAndBreak(1, ac);
+    };
 };
 
 // 木镐
-class WoodenPickaxe : public ICustomItem {
+class WoodenPickaxe : public ICustomToolItem {
 public:
     // 键名
-    WoodenPickaxe() : ICustomItem(VanillaItemNames::WoodenPickaxe()) {};
+    WoodenPickaxe() : ICustomToolItem(VanillaItemNames::WoodenPickaxe()) {};
     // 贴图
     ItemIcon getIcon() const override { return "wooden_pickaxe"; }
     // 名字
@@ -148,6 +161,8 @@ public:
     std::vector<std::string> getItemTags() const override {
         return std::vector<std::string>{"minecraft:is_pickaxe", "minecraft:is_tool", "minecraft:wooden_tier"};
     }
+    // 是否为镐
+    bool isPickaxe() const override { return true; }
     // 是否为挖掘工具
     bool isDiggerItem() const override { return true; }
     // 挖掘速度
@@ -172,10 +187,10 @@ public:
 };
 
 // 木楸
-class WoodenShovel : public ICustomItem {
+class WoodenShovel : public ICustomToolItem {
 public:
     // 键名
-    WoodenShovel() : ICustomItem(VanillaItemNames::WoodenShovel()) {};
+    WoodenShovel() : ICustomToolItem(VanillaItemNames::WoodenShovel()) {};
     // 贴图
     ItemIcon getIcon() const override { return "wooden_shovel"; }
     // 名字
@@ -188,6 +203,8 @@ public:
     std::vector<std::string> getItemTags() const override {
         return std::vector<std::string>{"minecraft:is_shovel", "minecraft:is_tool", "minecraft:wooden_tier"};
     }
+    // 是否为锹
+    bool isShovel() const override { return true; }
     // 是否为挖掘工具
     bool isDiggerItem() const override { return true; }
     // 挖掘速度
@@ -209,13 +226,18 @@ public:
     bool isFuel() const override { return true; }
     // 单个该物品可烧制多少物品
     float getFurnaceBurnInterval() const override { return 1; }
+    // 执行事件
+    void executeEvent(ItemStackBase& item, std::string const&, RenderParams& rp) const override {
+        auto ac = rp.getActorTarget(::SharedTypes::Legacy::FilterSubject::Holder);
+        item.hurtAndBreak(1, ac);
+    };
 };
 
 // 木锄
-class WoodenHoe : public ICustomItem {
+class WoodenHoe : public ICustomToolItem {
 public:
     // 键名
-    WoodenHoe() : ICustomItem(VanillaItemNames::WoodenHoe()) {};
+    WoodenHoe() : ICustomToolItem(VanillaItemNames::WoodenHoe()) {};
     // 贴图
     ItemIcon getIcon() const override { return "wooden_hoe"; }
     // 名字
@@ -228,6 +250,8 @@ public:
     std::vector<std::string> getItemTags() const override {
         return std::vector<std::string>{"minecraft:is_hoe", "minecraft:is_tool", "minecraft:wooden_tier"};
     }
+    // 是否为锄
+    bool isHoe() const override { return true; }
     // 是否为挖掘工具
     bool isDiggerItem() const override { return true; }
     // 挖掘速度
@@ -249,6 +273,11 @@ public:
     bool isFuel() const override { return true; }
     // 单个该物品可烧制多少物品
     float getFurnaceBurnInterval() const override { return 1; }
+    // 执行事件
+    void executeEvent(ItemStackBase& item, std::string const&, RenderParams& rp) const override {
+        auto ac = rp.getActorTarget(::SharedTypes::Legacy::FilterSubject::Holder);
+        item.hurtAndBreak(1, ac);
+    };
 };
 
 GMLIB_REGISTER_ITEM(WoodenSword);
@@ -259,3 +288,4 @@ GMLIB_REGISTER_ITEM(WoodenHoe);
 
 
 } // namespace cb
+
