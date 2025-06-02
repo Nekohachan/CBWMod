@@ -1,54 +1,7 @@
-#include "CustomItems.h"
-#include "Config.h"
-#include <gmlib/mod/item/CustomCreativeItemRegistry.h>
-#include <gmlib/mod/item/CustomItemRegistry.h>
-#include <gmlib/mod/item/base/ICustomArmorItem.h>
-#include <gmlib/mod/item/base/ICustomItem.h>
-#include <gmlib/mod/item/base/ICustomToolItem.h>
-#include <mc/deps/core/string/HashedString.h>
-#include <mc/world/actor/Actor.h>
-#include <mc/world/actor/RenderParams.h>
-#include <mc/world/actor/player/Player.h>
-#include <mc/world/gamemode/InteractionResult.h>
-#include <mc/world/item/Item.h>
-#include <mc/world/item/ItemStackBase.h>
-#include <mc/world/item/VanillaItemNames.h>
-#include <mc/world/item/VanillaItemTags.h>
-#include <mc/world/level/BlockPos.h>
-#include <mc/world/level/BlockSource.h>
-#include <mc/world/level/block/Block.h>
-
+#include "include.h"
 
 namespace cb {
 
-// 创造背包注册
-void RegistryCI() {
-    cb::CIConfig::TryLoad();
-    auto config = cb::CIConfig::config;
-
-    auto& registry = gmlib::mod::CustomCreativeItemRegistry::getInstance();
-
-    // 注册物品分组
-    for (auto& group : config.extra_groups) {
-        registry
-            .registerCreativeGroup(group.name, ::ItemInstance(group.icon), ::CreativeItemCategory((int)group.category));
-    }
-
-    // 注册创造背包物品
-    for (auto& item : config.creative_items) {
-        CompoundTag* nbt = nullptr;
-        if (item.nbt) {
-            if (auto userdata = ::CompoundTag::fromSnbt(*item.nbt)) {
-                nbt = new ::CompoundTag(*userdata);
-            }
-        }
-        registry.registerCreativeItem(
-            ::ItemInstance(item.type, 1, 0, nbt),
-            ::CreativeItemCategory((int)item.category),
-            item.group
-        );
-    }
-}
 
 // 覆写原版物品
 using namespace gmlib::mod;

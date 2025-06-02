@@ -1,8 +1,6 @@
 #include "Entry.h"
-#include "CustomItems.h"
-#include <gmlib/gm/i18n/ResourceI18n.h>
-#include <gmlib/mod/addons/AddonsLoader.h>
-#include <ll/api/mod/RegisterHelper.h>
+#include "customitem/CustomCI.h"
+#include "include.h"
 
 namespace cb {
 
@@ -39,7 +37,11 @@ bool Entry::enable() const {
 
 bool Entry::disable() const { return true; }
 
-bool Entry::unload() const { return true; }
+bool Entry::unload() const {
+    // 卸载自定义创造背包物品
+    cb::UnregistryCI();
+    return true;
+}
 
 } // namespace cb
 
