@@ -24,7 +24,7 @@ bool Entry::load() const {
     resource.addLanguagesFromDirectory(getSelf().getLangDir());
     resource.loadAllLanguages();
     // 加载完成提示
-    logger.info("CustomItems 已加载!");
+    logger.info("CBWMod 已加载!");
     logger.info("作者: Nekohachan");
     return true;
 }

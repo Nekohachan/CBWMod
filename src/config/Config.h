@@ -1,4 +1,5 @@
 #pragma once
+#include "include.h"
 #include <optional>
 #include <string>
 #include <vector>
@@ -73,6 +74,38 @@ struct CIConfig {
     static CIConfig config;
     static bool     TryLoad();
     static bool     TrySave();
+};
+
+struct RepairItemsList {
+    std::vector<std::string> Wooden = {
+        "minecraft:oak_planks",
+        "minecraft:spruce_planks",
+        "minecraft:birch_planks",
+        "minecraft:jungle_planks",
+        "minecraft:acacia_planks",
+        "minecraft:dark_oak_planks",
+        "minecraft:mangrove_planks",
+        "minecraft:cherry_planks",
+        "minecraft:pale_oak_planks",
+        "minecraft:bamboo_planks",
+        "minecraft:crimson_planks",
+        "minecraft:warped_planks",
+    };
+
+    std::vector<std::string> Stone = {
+        "minecraft:cobblestone",
+        "minecraft:cobbled_deepslate",
+        "minecraft:blackstone",
+    };
+
+
+    std::vector<std::string> Iron = {
+        "minecraft:iron_ingot",
+    };
+
+    std::vector<std::string> Gold = {
+        "minecraft:gold_ingot",
+    };
 };
 
 } // namespace cb

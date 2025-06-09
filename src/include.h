@@ -18,3 +18,4 @@
 #include <mc/world/level/BlockPos.h>
 #include <mc/world/level/BlockSource.h>
 #include <mc/world/level/block/Block.h>
+#include <gmlib/mod/item/types/RepairItems.h>
