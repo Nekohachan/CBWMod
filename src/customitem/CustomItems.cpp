@@ -763,6 +763,761 @@ public:
     };
 };
 
+// 金质工具 -------------------------------------------------------------------------------------------------
+
+// 金剑
+class GoldenSword : public ICustomToolItem {
+public:
+    // 键名
+    GoldenSword() : ICustomToolItem(VanillaItemNames::GoldenSword()) {};
+    // 贴图
+    ItemIcon getIcon() const override { return "golden_sword"; }
+    // 名字
+    std::string getDisplayName() const override { return "item.golden_sword.name"; }
+    // 最大堆叠
+    uint8_t getItemMaxStackSize() const override { return 1; }
+    // 在创造模式是否能破坏方块
+    bool canDestroyInCreative() const override { return false; }
+    // 耐久
+    short getItemDurability() const override { return 32; }
+    // 修复所需物品
+    std::vector<RepairItems> getRepairItems() const override {
+        RepairItemsList          config;
+        auto                     RepairAmount = static_cast<float>(getItemDurability()) / 4;
+        std::vector<RepairItems> repairitems  = {RepairItems(config.Golden, RepairAmount)};
+        return repairitems;
+    }
+    //  物品标签
+    std::vector<std::string> getItemTags() const override {
+        return std::vector<std::string>{"minecraft:is_sword", "minecraft:is_tool", "minecraft:golden_tier"};
+    }
+    // 是否为剑
+    bool isSword() const override { return true; }
+    // 是否为挖掘工具
+    bool isDiggerItem() const override { return true; }
+    // 挖掘速度
+    float getMiningSpeed() const override { return 12; }
+    // 判断是否为可破坏方块
+    bool canDestroySpecial(Block const& block) const override {
+        if (block.hasTag("minecraft:is_sword_item_destructible")) {
+            return true;
+        };
+        return false;
+    }
+    // 挖掘效果为工具
+    Interactions::Mining::MineBlockItemEffectType getMineBlockItemEffectType() const override {
+        return Interactions::Mining::MineBlockItemEffectType::DiggerItem;
+    }
+    // 手持动作
+    bool isHandEquipped() const override { return true; }
+};
+
+// 金斧
+class GoldenAxe : public ICustomToolItem {
+public:
+    // 键名
+    GoldenAxe() : ICustomToolItem(VanillaItemNames::GoldenAxe()) {};
+    // 贴图
+    ItemIcon getIcon() const override { return "golden_axe"; }
+    // 名字
+    std::string getDisplayName() const override { return "item.golden_axe.name"; }
+    // 最大堆叠
+    uint8_t getItemMaxStackSize() const override { return 1; }
+    // 耐久
+    short getItemDurability() const override { return 32; }
+    // 修复所需物品
+    std::vector<RepairItems> getRepairItems() const override {
+        RepairItemsList          config;
+        auto                     RepairAmount = static_cast<float>(getItemDurability()) / 4;
+        std::vector<RepairItems> repairitems  = {RepairItems(config.Golden, RepairAmount)};
+        return repairitems;
+    }
+    // 物品标签
+    std::vector<std::string> getItemTags() const override {
+        return std::vector<std::string>{"minecraft:is_axe", "minecraft:is_tool", "minecraft:golden_tier"};
+    }
+    // 是否为斧
+    bool isAxe() const override { return true; }
+    // 是否为挖掘工具
+    bool isDiggerItem() const override { return true; }
+    // 挖掘速度
+    float getMiningSpeed() const override { return 12; }
+    // 判断是否为可破坏方块
+    bool canDestroySpecial(Block const& block) const override {
+        if (block.hasTag("minecraft:is_axe_item_destructible")) {
+            return true;
+        };
+        return false;
+    }
+    // 挖掘效果为工具
+    Interactions::Mining::MineBlockItemEffectType getMineBlockItemEffectType() const override {
+        return Interactions::Mining::MineBlockItemEffectType::DiggerItem;
+    }
+    // 手持动作
+    bool isHandEquipped() const override { return true; }
+    // 执行事件
+    void executeEvent(ItemStackBase& item, std::string const&, RenderParams& rp) const override {
+        auto ac = rp.getActorTarget(::SharedTypes::Legacy::FilterSubject::Holder);
+        item.hurtAndBreak(1, ac);
+    };
+};
+
+// 金镐
+class GoldenPickaxe : public ICustomToolItem {
+public:
+    // 键名
+    GoldenPickaxe() : ICustomToolItem(VanillaItemNames::GoldenPickaxe()) {};
+    // 贴图
+    ItemIcon getIcon() const override { return "golden_pickaxe"; }
+    // 名字
+    std::string getDisplayName() const override { return "item.golden_pickaxe.name"; }
+    // 最大堆叠
+    uint8_t getItemMaxStackSize() const override { return 1; }
+    // 耐久
+    short getItemDurability() const override { return 32; }
+    // 修复所需物品
+    std::vector<RepairItems> getRepairItems() const override {
+        RepairItemsList          config;
+        auto                     RepairAmount = static_cast<float>(getItemDurability()) / 4;
+        std::vector<RepairItems> repairitems  = {RepairItems(config.Golden, RepairAmount)};
+        return repairitems;
+    }
+    // 物品标签
+    std::vector<std::string> getItemTags() const override {
+        return std::vector<std::string>{"minecraft:is_pickaxe", "minecraft:is_tool", "minecraft:golden_tier"};
+    }
+    // 是否为镐
+    bool isPickaxe() const override { return true; }
+    // 是否为挖掘工具
+    bool isDiggerItem() const override { return true; }
+    // 挖掘速度
+    float getMiningSpeed() const override { return 12; }
+    // 判断是否为可破坏方块
+    bool canDestroySpecial(Block const& block) const override {
+        if (block.hasTag("minecraft:is_pickaxe_item_destructible")) {
+            return true;
+        };
+        return false;
+    }
+    // 挖掘效果为工具
+    Interactions::Mining::MineBlockItemEffectType getMineBlockItemEffectType() const override {
+        return Interactions::Mining::MineBlockItemEffectType::DiggerItem;
+    }
+    // 手持动作
+    bool isHandEquipped() const override { return true; }
+};
+
+// 金楸
+class GoldenShovel : public ICustomToolItem {
+public:
+    // 键名
+    GoldenShovel() : ICustomToolItem(VanillaItemNames::GoldenShovel()) {};
+    // 贴图
+    ItemIcon getIcon() const override { return "golden_shovel"; }
+    // 名字
+    std::string getDisplayName() const override { return "item.golden_shovel.name"; }
+    // 最大堆叠
+    uint8_t getItemMaxStackSize() const override { return 1; }
+    // 耐久
+    short getItemDurability() const override { return 32; }
+    // 修复所需物品
+    std::vector<RepairItems> getRepairItems() const override {
+        RepairItemsList          config;
+        auto                     RepairAmount = static_cast<float>(getItemDurability()) / 4;
+        std::vector<RepairItems> repairitems  = {RepairItems(config.Golden, RepairAmount)};
+        return repairitems;
+    }
+    // 物品标签
+    std::vector<std::string> getItemTags() const override {
+        return std::vector<std::string>{"minecraft:is_shovel", "minecraft:is_tool", "minecraft:golden_tier"};
+    }
+    // 是否为锹
+    bool isShovel() const override { return true; }
+    // 是否为挖掘工具
+    bool isDiggerItem() const override { return true; }
+    // 挖掘速度
+    float getMiningSpeed() const override { return 12; }
+    // 判断是否为可破坏方块
+    bool canDestroySpecial(Block const& block) const override {
+        if (block.hasTag("minecraft:is_shovel_item_destructible")) {
+            return true;
+        };
+        return false;
+    }
+    // 挖掘效果为工具
+    Interactions::Mining::MineBlockItemEffectType getMineBlockItemEffectType() const override {
+        return Interactions::Mining::MineBlockItemEffectType::DiggerItem;
+    }
+    // 手持动作
+    bool isHandEquipped() const override { return true; }
+    // 执行事件
+    void executeEvent(ItemStackBase& item, std::string const&, RenderParams& rp) const override {
+        auto ac = rp.getActorTarget(::SharedTypes::Legacy::FilterSubject::Holder);
+        item.hurtAndBreak(1, ac);
+    };
+};
+
+// 金锄
+class GoldenHoe : public ICustomToolItem {
+public:
+    // 键名
+    GoldenHoe() : ICustomToolItem(VanillaItemNames::GoldenHoe()) {};
+    // 贴图
+    ItemIcon getIcon() const override { return "golden_hoe"; }
+    // 名字
+    std::string getDisplayName() const override { return "item.golden_hoe.name"; }
+    // 最大堆叠
+    uint8_t getItemMaxStackSize() const override { return 1; }
+    // 耐久
+    short getItemDurability() const override { return 32; }
+    // 修复所需物品
+    std::vector<RepairItems> getRepairItems() const override {
+        RepairItemsList          config;
+        auto                     RepairAmount = static_cast<float>(getItemDurability()) / 4;
+        std::vector<RepairItems> repairitems  = {RepairItems(config.Golden, RepairAmount)};
+        return repairitems;
+    }
+    // 物品标签
+    std::vector<std::string> getItemTags() const override {
+        return std::vector<std::string>{"minecraft:is_hoe", "minecraft:is_tool", "minecraft:golden_tier"};
+    }
+    // 是否为锄
+    bool isHoe() const override { return true; }
+    // 是否为挖掘工具
+    bool isDiggerItem() const override { return true; }
+    // 挖掘速度
+    float getMiningSpeed() const override { return 12; }
+    // 判断是否为可破坏方块
+    bool canDestroySpecial(Block const& block) const override {
+        if (block.hasTag("minecraft:is_hoe_item_destructible")) {
+            return true;
+        };
+        return false;
+    }
+    // 挖掘效果为工具
+    Interactions::Mining::MineBlockItemEffectType getMineBlockItemEffectType() const override {
+        return Interactions::Mining::MineBlockItemEffectType::DiggerItem;
+    }
+    // 手持动作
+    bool isHandEquipped() const override { return true; }
+    // 执行事件
+    void executeEvent(ItemStackBase& item, std::string const&, RenderParams& rp) const override {
+        auto ac = rp.getActorTarget(::SharedTypes::Legacy::FilterSubject::Holder);
+        item.hurtAndBreak(1, ac);
+    };
+};
+
+// 钻石质工具 -------------------------------------------------------------------------------------------------
+
+// 钻石剑
+class DiamondSword : public ICustomToolItem {
+public:
+    // 键名
+    DiamondSword() : ICustomToolItem(VanillaItemNames::DiamondSword()) {};
+    // 贴图
+    ItemIcon getIcon() const override { return "diamond_sword"; }
+    // 名字
+    std::string getDisplayName() const override { return "item.diamond_sword.name"; }
+    // 最大堆叠
+    uint8_t getItemMaxStackSize() const override { return 1; }
+    // 在创造模式是否能破坏方块
+    bool canDestroyInCreative() const override { return false; }
+    // 耐久
+    short getItemDurability() const override { return 1561; }
+    // 修复所需物品
+    std::vector<RepairItems> getRepairItems() const override {
+        RepairItemsList          config;
+        auto                     RepairAmount = static_cast<float>(getItemDurability()) / 4;
+        std::vector<RepairItems> repairitems  = {RepairItems(config.Diamond, RepairAmount)};
+        return repairitems;
+    }
+    //  物品标签
+    std::vector<std::string> getItemTags() const override {
+        return std::vector<std::string>{"minecraft:is_sword", "minecraft:is_tool", "minecraft:diamond_tier"};
+    }
+    // 是否为剑
+    bool isSword() const override { return true; }
+    // 是否为挖掘工具
+    bool isDiggerItem() const override { return true; }
+    // 挖掘速度
+    float getMiningSpeed() const override { return 8; }
+    // 判断是否为可破坏方块
+    bool canDestroySpecial(Block const& block) const override {
+        if (block.hasTag("minecraft:is_sword_item_destructible")) {
+            return true;
+        };
+        return false;
+    }
+    // 挖掘效果为工具
+    Interactions::Mining::MineBlockItemEffectType getMineBlockItemEffectType() const override {
+        return Interactions::Mining::MineBlockItemEffectType::DiggerItem;
+    }
+    // 手持动作
+    bool isHandEquipped() const override { return true; }
+    // 可作为锻造台原件
+    bool isSmithingTransformable() const override { return true; }
+};
+
+// 钻石斧
+class DiamondAxe : public ICustomToolItem {
+public:
+    // 键名
+    DiamondAxe() : ICustomToolItem(VanillaItemNames::DiamondAxe()) {};
+    // 贴图
+    ItemIcon getIcon() const override { return "diamond_axe"; }
+    // 名字
+    std::string getDisplayName() const override { return "item.diamond_axe.name"; }
+    // 最大堆叠
+    uint8_t getItemMaxStackSize() const override { return 1; }
+    // 耐久
+    short getItemDurability() const override { return 1561; }
+    // 修复所需物品
+    std::vector<RepairItems> getRepairItems() const override {
+        RepairItemsList          config;
+        auto                     RepairAmount = static_cast<float>(getItemDurability()) / 4;
+        std::vector<RepairItems> repairitems  = {RepairItems(config.Diamond, RepairAmount)};
+        return repairitems;
+    }
+    // 物品标签
+    std::vector<std::string> getItemTags() const override {
+        return std::vector<std::string>{"minecraft:is_axe", "minecraft:is_tool", "minecraft:diamond_tier"};
+    }
+    // 是否为斧
+    bool isAxe() const override { return true; }
+    // 是否为挖掘工具
+    bool isDiggerItem() const override { return true; }
+    // 挖掘速度
+    float getMiningSpeed() const override { return 8; }
+    // 判断是否为可破坏方块
+    bool canDestroySpecial(Block const& block) const override {
+        if (block.hasTag("minecraft:is_axe_item_destructible")) {
+            return true;
+        };
+        return false;
+    }
+    // 挖掘效果为工具
+    Interactions::Mining::MineBlockItemEffectType getMineBlockItemEffectType() const override {
+        return Interactions::Mining::MineBlockItemEffectType::DiggerItem;
+    }
+    // 手持动作
+    bool isHandEquipped() const override { return true; }
+    // 执行事件
+    void executeEvent(ItemStackBase& item, std::string const&, RenderParams& rp) const override {
+        auto ac = rp.getActorTarget(::SharedTypes::Legacy::FilterSubject::Holder);
+        item.hurtAndBreak(1, ac);
+    };
+    // 可作为锻造台原件
+    bool isSmithingTransformable() const override { return true; }
+};
+
+// 钻石镐
+class DiamondPickaxe : public ICustomToolItem {
+public:
+    // 键名
+    DiamondPickaxe() : ICustomToolItem(VanillaItemNames::DiamondPickaxe()) {};
+    // 贴图
+    ItemIcon getIcon() const override { return "diamond_pickaxe"; }
+    // 名字
+    std::string getDisplayName() const override { return "item.diamond_pickaxe.name"; }
+    // 最大堆叠
+    uint8_t getItemMaxStackSize() const override { return 1; }
+    // 耐久
+    short getItemDurability() const override { return 1561; }
+    // 修复所需物品
+    std::vector<RepairItems> getRepairItems() const override {
+        RepairItemsList          config;
+        auto                     RepairAmount = static_cast<float>(getItemDurability()) / 4;
+        std::vector<RepairItems> repairitems  = {RepairItems(config.Diamond, RepairAmount)};
+        return repairitems;
+    }
+    // 物品标签
+    std::vector<std::string> getItemTags() const override {
+        return std::vector<std::string>{"minecraft:is_pickaxe", "minecraft:is_tool", "minecraft:diamond_tier"};
+    }
+    // 是否为镐
+    bool isPickaxe() const override { return true; }
+    // 是否为挖掘工具
+    bool isDiggerItem() const override { return true; }
+    // 挖掘速度
+    float getMiningSpeed() const override { return 8; }
+    // 判断是否为可破坏方块
+    bool canDestroySpecial(Block const& block) const override {
+        if (block.hasTag("minecraft:is_pickaxe_item_destructible") || block.hasTag("minecraft:stone_tier_destructible")
+            || block.hasTag("minecraft:iron_tier_destructible")
+            || block.hasTag("minecraft:diamond_tier_destructible")) {
+            return true;
+        };
+        return false;
+    }
+    // 挖掘效果为工具
+    Interactions::Mining::MineBlockItemEffectType getMineBlockItemEffectType() const override {
+        return Interactions::Mining::MineBlockItemEffectType::DiggerItem;
+    }
+    // 手持动作
+    bool isHandEquipped() const override { return true; }
+    // 可作为锻造台原件
+    bool isSmithingTransformable() const override { return true; }
+};
+
+// 钻石楸
+class DiamondShovel : public ICustomToolItem {
+public:
+    // 键名
+    DiamondShovel() : ICustomToolItem(VanillaItemNames::DiamondShovel()) {};
+    // 贴图
+    ItemIcon getIcon() const override { return "diamond_shovel"; }
+    // 名字
+    std::string getDisplayName() const override { return "item.diamond_shovel.name"; }
+    // 最大堆叠
+    uint8_t getItemMaxStackSize() const override { return 1; }
+    // 耐久
+    short getItemDurability() const override { return 1561; }
+    // 修复所需物品
+    std::vector<RepairItems> getRepairItems() const override {
+        RepairItemsList          config;
+        auto                     RepairAmount = static_cast<float>(getItemDurability()) / 4;
+        std::vector<RepairItems> repairitems  = {RepairItems(config.Diamond, RepairAmount)};
+        return repairitems;
+    }
+    // 物品标签
+    std::vector<std::string> getItemTags() const override {
+        return std::vector<std::string>{"minecraft:is_shovel", "minecraft:is_tool", "minecraft:diamond_tier"};
+    }
+    // 是否为锹
+    bool isShovel() const override { return true; }
+    // 是否为挖掘工具
+    bool isDiggerItem() const override { return true; }
+    // 挖掘速度
+    float getMiningSpeed() const override { return 8; }
+    // 判断是否为可破坏方块
+    bool canDestroySpecial(Block const& block) const override {
+        if (block.hasTag("minecraft:is_shovel_item_destructible")) {
+            return true;
+        };
+        return false;
+    }
+    // 挖掘效果为工具
+    Interactions::Mining::MineBlockItemEffectType getMineBlockItemEffectType() const override {
+        return Interactions::Mining::MineBlockItemEffectType::DiggerItem;
+    }
+    // 手持动作
+    bool isHandEquipped() const override { return true; }
+    // 执行事件
+    void executeEvent(ItemStackBase& item, std::string const&, RenderParams& rp) const override {
+        auto ac = rp.getActorTarget(::SharedTypes::Legacy::FilterSubject::Holder);
+        item.hurtAndBreak(1, ac);
+    };
+    // 可作为锻造台原件
+    bool isSmithingTransformable() const override { return true; }
+};
+
+// 钻石锄
+class DiamondHoe : public ICustomToolItem {
+public:
+    // 键名
+    DiamondHoe() : ICustomToolItem(VanillaItemNames::DiamondHoe()) {};
+    // 贴图
+    ItemIcon getIcon() const override { return "diamond_hoe"; }
+    // 名字
+    std::string getDisplayName() const override { return "item.diamond_hoe.name"; }
+    // 最大堆叠
+    uint8_t getItemMaxStackSize() const override { return 1; }
+    // 耐久
+    short getItemDurability() const override { return 1561; }
+    // 修复所需物品
+    std::vector<RepairItems> getRepairItems() const override {
+        RepairItemsList          config;
+        auto                     RepairAmount = static_cast<float>(getItemDurability()) / 4;
+        std::vector<RepairItems> repairitems  = {RepairItems(config.Diamond, RepairAmount)};
+        return repairitems;
+    }
+    // 物品标签
+    std::vector<std::string> getItemTags() const override {
+        return std::vector<std::string>{"minecraft:is_hoe", "minecraft:is_tool", "minecraft:diamond_tier"};
+    }
+    // 是否为锄
+    bool isHoe() const override { return true; }
+    // 是否为挖掘工具
+    bool isDiggerItem() const override { return true; }
+    // 挖掘速度
+    float getMiningSpeed() const override { return 8; }
+    // 判断是否为可破坏方块
+    bool canDestroySpecial(Block const& block) const override {
+        if (block.hasTag("minecraft:is_hoe_item_destructible")) {
+            return true;
+        };
+        return false;
+    }
+    // 挖掘效果为工具
+    Interactions::Mining::MineBlockItemEffectType getMineBlockItemEffectType() const override {
+        return Interactions::Mining::MineBlockItemEffectType::DiggerItem;
+    }
+    // 手持动作
+    bool isHandEquipped() const override { return true; }
+    // 执行事件
+    void executeEvent(ItemStackBase& item, std::string const&, RenderParams& rp) const override {
+        auto ac = rp.getActorTarget(::SharedTypes::Legacy::FilterSubject::Holder);
+        item.hurtAndBreak(1, ac);
+    };
+    // 可作为锻造台原件
+    bool isSmithingTransformable() const override { return true; }
+};
+
+// 下界合金质工具 -------------------------------------------------------------------------------------------------
+
+// 下界合金剑
+class NetheriteSword : public ICustomToolItem {
+public:
+    // 键名
+    NetheriteSword() : ICustomToolItem(VanillaItemNames::NetheriteSword()) {};
+    // 贴图
+    ItemIcon getIcon() const override { return "netherite_sword"; }
+    // 名字
+    std::string getDisplayName() const override { return "item.netherite_sword.name"; }
+    // 最大堆叠
+    uint8_t getItemMaxStackSize() const override { return 1; }
+    // 在创造模式是否能破坏方块
+    bool canDestroyInCreative() const override { return false; }
+    // 耐久
+    short getItemDurability() const override { return 1561; }
+    // 修复所需物品
+    std::vector<RepairItems> getRepairItems() const override {
+        RepairItemsList          config;
+        auto                     RepairAmount = static_cast<float>(getItemDurability()) / 4;
+        std::vector<RepairItems> repairitems  = {RepairItems(config.Netherite, RepairAmount)};
+        return repairitems;
+    }
+    //  物品标签
+    std::vector<std::string> getItemTags() const override {
+        return std::vector<std::string>{"minecraft:is_sword", "minecraft:is_tool", "minecraft:netherite_tier"};
+    }
+    // 是否为剑
+    bool isSword() const override { return true; }
+    // 是否为挖掘工具
+    bool isDiggerItem() const override { return true; }
+    // 挖掘速度
+    float getMiningSpeed() const override { return 8; }
+    // 判断是否为可破坏方块
+    bool canDestroySpecial(Block const& block) const override {
+        if (block.hasTag("minecraft:is_sword_item_destructible")) {
+            return true;
+        };
+        return false;
+    }
+    // 挖掘效果为工具
+    Interactions::Mining::MineBlockItemEffectType getMineBlockItemEffectType() const override {
+        return Interactions::Mining::MineBlockItemEffectType::DiggerItem;
+    }
+    // 手持动作
+    bool isHandEquipped() const override { return true; }
+    // 是否为不可被烧毁物品
+    bool isFireResistant() const override { return true; }
+};
+
+// 下界合金斧
+class NetheriteAxe : public ICustomToolItem {
+public:
+    // 键名
+    NetheriteAxe() : ICustomToolItem(VanillaItemNames::NetheriteAxe()) {};
+    // 贴图
+    ItemIcon getIcon() const override { return "netherite_axe"; }
+    // 名字
+    std::string getDisplayName() const override { return "item.netherite_axe.name"; }
+    // 最大堆叠
+    uint8_t getItemMaxStackSize() const override { return 1; }
+    // 耐久
+    short getItemDurability() const override { return 1561; }
+    // 修复所需物品
+    std::vector<RepairItems> getRepairItems() const override {
+        RepairItemsList          config;
+        auto                     RepairAmount = static_cast<float>(getItemDurability()) / 4;
+        std::vector<RepairItems> repairitems  = {RepairItems(config.Netherite, RepairAmount)};
+        return repairitems;
+    }
+    // 物品标签
+    std::vector<std::string> getItemTags() const override {
+        return std::vector<std::string>{"minecraft:is_axe", "minecraft:is_tool", "minecraft:netherite_tier"};
+    }
+    // 是否为斧
+    bool isAxe() const override { return true; }
+    // 是否为挖掘工具
+    bool isDiggerItem() const override { return true; }
+    // 挖掘速度
+    float getMiningSpeed() const override { return 8; }
+    // 判断是否为可破坏方块
+    bool canDestroySpecial(Block const& block) const override {
+        if (block.hasTag("minecraft:is_axe_item_destructible")) {
+            return true;
+        };
+        return false;
+    }
+    // 挖掘效果为工具
+    Interactions::Mining::MineBlockItemEffectType getMineBlockItemEffectType() const override {
+        return Interactions::Mining::MineBlockItemEffectType::DiggerItem;
+    }
+    // 手持动作
+    bool isHandEquipped() const override { return true; }
+    // 执行事件
+    void executeEvent(ItemStackBase& item, std::string const&, RenderParams& rp) const override {
+        auto ac = rp.getActorTarget(::SharedTypes::Legacy::FilterSubject::Holder);
+        item.hurtAndBreak(1, ac);
+    };
+    // 是否为不可被烧毁物品
+    bool isFireResistant() const override { return true; }
+};
+
+// 下界合金镐
+class NetheritePickaxe : public ICustomToolItem {
+public:
+    // 键名
+    NetheritePickaxe() : ICustomToolItem(VanillaItemNames::NetheritePickaxe()) {};
+    // 贴图
+    ItemIcon getIcon() const override { return "netherite_pickaxe"; }
+    // 名字
+    std::string getDisplayName() const override { return "item.netherite_pickaxe.name"; }
+    // 最大堆叠
+    uint8_t getItemMaxStackSize() const override { return 1; }
+    // 耐久
+    short getItemDurability() const override { return 1561; }
+    // 修复所需物品
+    std::vector<RepairItems> getRepairItems() const override {
+        RepairItemsList          config;
+        auto                     RepairAmount = static_cast<float>(getItemDurability()) / 4;
+        std::vector<RepairItems> repairitems  = {RepairItems(config.Netherite, RepairAmount)};
+        return repairitems;
+    }
+    // 物品标签
+    std::vector<std::string> getItemTags() const override {
+        return std::vector<std::string>{"minecraft:is_pickaxe", "minecraft:is_tool", "minecraft:netherite_tier"};
+    }
+    // 是否为镐
+    bool isPickaxe() const override { return true; }
+    // 是否为挖掘工具
+    bool isDiggerItem() const override { return true; }
+    // 挖掘速度
+    float getMiningSpeed() const override { return 8; }
+    // 判断是否为可破坏方块
+    bool canDestroySpecial(Block const& block) const override {
+        if (block.hasTag("minecraft:is_pickaxe_item_destructible") || block.hasTag("minecraft:stone_tier_destructible")
+            || block.hasTag("minecraft:iron_tier_destructible")
+            || block.hasTag("minecraft:diamond_tier_destructible")) {
+            return true;
+        };
+        return false;
+    }
+    // 挖掘效果为工具
+    Interactions::Mining::MineBlockItemEffectType getMineBlockItemEffectType() const override {
+        return Interactions::Mining::MineBlockItemEffectType::DiggerItem;
+    }
+    // 手持动作
+    bool isHandEquipped() const override { return true; }
+    // 是否为不可被烧毁物品
+    bool isFireResistant() const override { return true; }
+};
+
+// 下界合金楸
+class NetheriteShovel : public ICustomToolItem {
+public:
+    // 键名
+    NetheriteShovel() : ICustomToolItem(VanillaItemNames::NetheriteShovel()) {};
+    // 贴图
+    ItemIcon getIcon() const override { return "netherite_shovel"; }
+    // 名字
+    std::string getDisplayName() const override { return "item.netherite_shovel.name"; }
+    // 最大堆叠
+    uint8_t getItemMaxStackSize() const override { return 1; }
+    // 耐久
+    short getItemDurability() const override { return 1561; }
+    // 修复所需物品
+    std::vector<RepairItems> getRepairItems() const override {
+        RepairItemsList          config;
+        auto                     RepairAmount = static_cast<float>(getItemDurability()) / 4;
+        std::vector<RepairItems> repairitems  = {RepairItems(config.Netherite, RepairAmount)};
+        return repairitems;
+    }
+    // 物品标签
+    std::vector<std::string> getItemTags() const override {
+        return std::vector<std::string>{"minecraft:is_shovel", "minecraft:is_tool", "minecraft:netherite_tier"};
+    }
+    // 是否为锹
+    bool isShovel() const override { return true; }
+    // 是否为挖掘工具
+    bool isDiggerItem() const override { return true; }
+    // 挖掘速度
+    float getMiningSpeed() const override { return 8; }
+    // 判断是否为可破坏方块
+    bool canDestroySpecial(Block const& block) const override {
+        if (block.hasTag("minecraft:is_shovel_item_destructible")) {
+            return true;
+        };
+        return false;
+    }
+    // 挖掘效果为工具
+    Interactions::Mining::MineBlockItemEffectType getMineBlockItemEffectType() const override {
+        return Interactions::Mining::MineBlockItemEffectType::DiggerItem;
+    }
+    // 手持动作
+    bool isHandEquipped() const override { return true; }
+    // 执行事件
+    void executeEvent(ItemStackBase& item, std::string const&, RenderParams& rp) const override {
+        auto ac = rp.getActorTarget(::SharedTypes::Legacy::FilterSubject::Holder);
+        item.hurtAndBreak(1, ac);
+    };
+    // 是否为不可被烧毁物品
+    bool isFireResistant() const override { return true; }
+};
+
+// 下界合金锄
+class NetheriteHoe : public ICustomToolItem {
+public:
+    // 键名
+    NetheriteHoe() : ICustomToolItem(VanillaItemNames::NetheriteHoe()) {};
+    // 贴图
+    ItemIcon getIcon() const override { return "netherite_hoe"; }
+    // 名字
+    std::string getDisplayName() const override { return "item.netherite_hoe.name"; }
+    // 最大堆叠
+    uint8_t getItemMaxStackSize() const override { return 1; }
+    // 耐久
+    short getItemDurability() const override { return 1561; }
+    // 修复所需物品
+    std::vector<RepairItems> getRepairItems() const override {
+        RepairItemsList          config;
+        auto                     RepairAmount = static_cast<float>(getItemDurability()) / 4;
+        std::vector<RepairItems> repairitems  = {RepairItems(config.Netherite, RepairAmount)};
+        return repairitems;
+    }
+    // 物品标签
+    std::vector<std::string> getItemTags() const override {
+        return std::vector<std::string>{"minecraft:is_hoe", "minecraft:is_tool", "minecraft:netherite_tier"};
+    }
+    // 是否为锄
+    bool isHoe() const override { return true; }
+    // 是否为挖掘工具
+    bool isDiggerItem() const override { return true; }
+    // 挖掘速度
+    float getMiningSpeed() const override { return 8; }
+    // 判断是否为可破坏方块
+    bool canDestroySpecial(Block const& block) const override {
+        if (block.hasTag("minecraft:is_hoe_item_destructible")) {
+            return true;
+        };
+        return false;
+    }
+    // 挖掘效果为工具
+    Interactions::Mining::MineBlockItemEffectType getMineBlockItemEffectType() const override {
+        return Interactions::Mining::MineBlockItemEffectType::DiggerItem;
+    }
+    // 手持动作
+    bool isHandEquipped() const override { return true; }
+    // 执行事件
+    void executeEvent(ItemStackBase& item, std::string const&, RenderParams& rp) const override {
+        auto ac = rp.getActorTarget(::SharedTypes::Legacy::FilterSubject::Holder);
+        item.hurtAndBreak(1, ac);
+    };
+    // 是否为不可被烧毁物品
+    bool isFireResistant() const override { return true; }
+};
 
 GMLIB_REGISTER_ITEM(WoodenSword);
 GMLIB_REGISTER_ITEM(WoodenAxe);
@@ -782,5 +1537,22 @@ GMLIB_REGISTER_ITEM(IronPickaxe);
 GMLIB_REGISTER_ITEM(IronShovel);
 GMLIB_REGISTER_ITEM(IronHoe);
 
+GMLIB_REGISTER_ITEM(GoldenSword);
+GMLIB_REGISTER_ITEM(GoldenAxe);
+GMLIB_REGISTER_ITEM(GoldenPickaxe);
+GMLIB_REGISTER_ITEM(GoldenShovel);
+GMLIB_REGISTER_ITEM(GoldenHoe);
+
+GMLIB_REGISTER_ITEM(DiamondSword);
+GMLIB_REGISTER_ITEM(DiamondAxe);
+GMLIB_REGISTER_ITEM(DiamondPickaxe);
+GMLIB_REGISTER_ITEM(DiamondShovel);
+GMLIB_REGISTER_ITEM(DiamondHoe);
+
+GMLIB_REGISTER_ITEM(NetheriteSword);
+GMLIB_REGISTER_ITEM(NetheriteAxe);
+GMLIB_REGISTER_ITEM(NetheritePickaxe);
+GMLIB_REGISTER_ITEM(NetheriteShovel);
+GMLIB_REGISTER_ITEM(NetheriteHoe);
 
 } // namespace cb

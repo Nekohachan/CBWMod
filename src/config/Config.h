@@ -103,8 +103,16 @@ struct RepairItemsList {
         "minecraft:iron_ingot",
     };
 
-    std::vector<std::string> Gold = {
+    std::vector<std::string> Golden = {
         "minecraft:gold_ingot",
+    };
+
+    std::vector<std::string> Diamond = {
+        "minecraft:diamond",
+    };
+
+    std::vector<std::string> Netherite = {
+        "minecraft:netherite_ingot",
     };
 };
 
