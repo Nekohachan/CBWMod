@@ -98,7 +98,6 @@ struct RepairItemsList {
         "minecraft:blackstone",
     };
 
-
     std::vector<std::string> Iron = {
         "minecraft:iron_ingot",
     };
@@ -113,6 +112,10 @@ struct RepairItemsList {
 
     std::vector<std::string> Netherite = {
         "minecraft:netherite_ingot",
+    };
+
+    std::vector<std::string> Mace = {
+        "minecraft:breeze_rod",
     };
 };
 

@@ -1,7 +1,9 @@
 #include "config/Config.h"
 #include "gmlib/mod/item/types/RepairItems.h"
 #include "include.h"
+#include "mc/world/item/Item.h"
 #include "mc/world/item/VanillaItemNames.h"
+
 
 namespace cb {
 
@@ -148,7 +150,9 @@ public:
     float getMiningSpeed() const override { return 2; }
     // 判断是否为可破坏方块
     bool canDestroySpecial(Block const& block) const override {
-        if (block.hasTag("minecraft:is_pickaxe_item_destructible")) {
+        if ((block.hasTag("minecraft:is_pickaxe_item_destructible"))
+            && !block.hasTag("minecraft:stone_tier_destructible") && !block.hasTag("minecraft:iron_tier_destructible")
+            && !block.hasTag("minecraft:diamond_tier_destructible")) {
             return true;
         };
         return false;
@@ -404,8 +408,10 @@ public:
     float getMiningSpeed() const override { return 4; }
     // 判断是否为可破坏方块
     bool canDestroySpecial(Block const& block) const override {
-        if (block.hasTag("minecraft:is_pickaxe_item_destructible")
-            || block.hasTag("minecraft:stone_tier_destructible")) {
+        if ((block.hasTag("minecraft:is_pickaxe_item_destructible") || block.hasTag("minecraft:stone_tier_destructible")
+            )
+            && !block.hasTag("minecraft:iron_tier_destructible")
+            && !block.hasTag("minecraft:diamond_tier_destructible")) {
             return true;
         };
         return false;
@@ -649,8 +655,9 @@ public:
     float getMiningSpeed() const override { return 6; }
     // 判断是否为可破坏方块
     bool canDestroySpecial(Block const& block) const override {
-        if (block.hasTag("minecraft:is_pickaxe_item_destructible") || block.hasTag("minecraft:stone_tier_destructible")
-            || block.hasTag("minecraft:iron_tier_destructible")) {
+        if ((block.hasTag("minecraft:is_pickaxe_item_destructible") || block.hasTag("minecraft:stone_tier_destructible")
+             || block.hasTag("minecraft:iron_tier_destructible"))
+            && !block.hasTag("minecraft:diamond_tier_destructible")) {
             return true;
         };
         return false;
@@ -894,7 +901,9 @@ public:
     float getMiningSpeed() const override { return 12; }
     // 判断是否为可破坏方块
     bool canDestroySpecial(Block const& block) const override {
-        if (block.hasTag("minecraft:is_pickaxe_item_destructible")) {
+        if ((block.hasTag("minecraft:is_pickaxe_item_destructible"))
+            && !block.hasTag("minecraft:stone_tier_destructible") && !block.hasTag("minecraft:iron_tier_destructible")
+            && !block.hasTag("minecraft:diamond_tier_destructible")) {
             return true;
         };
         return false;
@@ -1142,9 +1151,9 @@ public:
     float getMiningSpeed() const override { return 8; }
     // 判断是否为可破坏方块
     bool canDestroySpecial(Block const& block) const override {
-        if (block.hasTag("minecraft:is_pickaxe_item_destructible") || block.hasTag("minecraft:stone_tier_destructible")
-            || block.hasTag("minecraft:iron_tier_destructible")
-            || block.hasTag("minecraft:diamond_tier_destructible")) {
+        if ((block.hasTag("minecraft:is_pickaxe_item_destructible") || block.hasTag("minecraft:stone_tier_destructible")
+             || block.hasTag("minecraft:iron_tier_destructible")
+             || block.hasTag("minecraft:diamond_tier_destructible"))) {
             return true;
         };
         return false;
@@ -1279,7 +1288,7 @@ public:
     // 在创造模式是否能破坏方块
     bool canDestroyInCreative() const override { return false; }
     // 耐久
-    short getItemDurability() const override { return 1561; }
+    short getItemDurability() const override { return 2031; }
     // 修复所需物品
     std::vector<RepairItems> getRepairItems() const override {
         RepairItemsList          config;
@@ -1296,7 +1305,7 @@ public:
     // 是否为挖掘工具
     bool isDiggerItem() const override { return true; }
     // 挖掘速度
-    float getMiningSpeed() const override { return 8; }
+    float getMiningSpeed() const override { return 9; }
     // 判断是否为可破坏方块
     bool canDestroySpecial(Block const& block) const override {
         if (block.hasTag("minecraft:is_sword_item_destructible")) {
@@ -1326,7 +1335,7 @@ public:
     // 最大堆叠
     uint8_t getItemMaxStackSize() const override { return 1; }
     // 耐久
-    short getItemDurability() const override { return 1561; }
+    short getItemDurability() const override { return 2031; }
     // 修复所需物品
     std::vector<RepairItems> getRepairItems() const override {
         RepairItemsList          config;
@@ -1343,7 +1352,7 @@ public:
     // 是否为挖掘工具
     bool isDiggerItem() const override { return true; }
     // 挖掘速度
-    float getMiningSpeed() const override { return 8; }
+    float getMiningSpeed() const override { return 9; }
     // 判断是否为可破坏方块
     bool canDestroySpecial(Block const& block) const override {
         if (block.hasTag("minecraft:is_axe_item_destructible")) {
@@ -1378,7 +1387,7 @@ public:
     // 最大堆叠
     uint8_t getItemMaxStackSize() const override { return 1; }
     // 耐久
-    short getItemDurability() const override { return 1561; }
+    short getItemDurability() const override { return 2031; }
     // 修复所需物品
     std::vector<RepairItems> getRepairItems() const override {
         RepairItemsList          config;
@@ -1395,12 +1404,12 @@ public:
     // 是否为挖掘工具
     bool isDiggerItem() const override { return true; }
     // 挖掘速度
-    float getMiningSpeed() const override { return 8; }
+    float getMiningSpeed() const override { return 9; }
     // 判断是否为可破坏方块
     bool canDestroySpecial(Block const& block) const override {
-        if (block.hasTag("minecraft:is_pickaxe_item_destructible") || block.hasTag("minecraft:stone_tier_destructible")
-            || block.hasTag("minecraft:iron_tier_destructible")
-            || block.hasTag("minecraft:diamond_tier_destructible")) {
+        if ((block.hasTag("minecraft:is_pickaxe_item_destructible") || block.hasTag("minecraft:stone_tier_destructible")
+             || block.hasTag("minecraft:iron_tier_destructible")
+             || block.hasTag("minecraft:diamond_tier_destructible"))) {
             return true;
         };
         return false;
@@ -1427,7 +1436,7 @@ public:
     // 最大堆叠
     uint8_t getItemMaxStackSize() const override { return 1; }
     // 耐久
-    short getItemDurability() const override { return 1561; }
+    short getItemDurability() const override { return 2031; }
     // 修复所需物品
     std::vector<RepairItems> getRepairItems() const override {
         RepairItemsList          config;
@@ -1444,7 +1453,7 @@ public:
     // 是否为挖掘工具
     bool isDiggerItem() const override { return true; }
     // 挖掘速度
-    float getMiningSpeed() const override { return 8; }
+    float getMiningSpeed() const override { return 9; }
     // 判断是否为可破坏方块
     bool canDestroySpecial(Block const& block) const override {
         if (block.hasTag("minecraft:is_shovel_item_destructible")) {
@@ -1479,7 +1488,7 @@ public:
     // 最大堆叠
     uint8_t getItemMaxStackSize() const override { return 1; }
     // 耐久
-    short getItemDurability() const override { return 1561; }
+    short getItemDurability() const override { return 2031; }
     // 修复所需物品
     std::vector<RepairItems> getRepairItems() const override {
         RepairItemsList          config;
@@ -1496,7 +1505,7 @@ public:
     // 是否为挖掘工具
     bool isDiggerItem() const override { return true; }
     // 挖掘速度
-    float getMiningSpeed() const override { return 8; }
+    float getMiningSpeed() const override { return 9; }
     // 判断是否为可破坏方块
     bool canDestroySpecial(Block const& block) const override {
         if (block.hasTag("minecraft:is_hoe_item_destructible")) {
@@ -1518,6 +1527,63 @@ public:
     // 是否为不可被烧毁物品
     bool isFireResistant() const override { return true; }
 };
+
+// 原版其他武器
+
+// 重锤
+class Mace : public ICustomToolItem {
+public:
+    // 键名
+    Mace() : ICustomToolItem(VanillaItemNames::Mace()) {};
+    // 贴图
+    ItemIcon getIcon() const override { return "mace"; }
+    // 名字
+    std::string getDisplayName() const override { return "item.mace.name"; }
+    // 最大堆叠
+    uint8_t getItemMaxStackSize() const override { return 1; }
+    // 在创造模式是否能破坏方块
+    bool canDestroyInCreative() const override { return false; }
+    // 耐久
+    short getItemDurability() const override { return 500; }
+    // 修复所需物品
+    std::vector<RepairItems> getRepairItems() const override {
+        RepairItemsList          config;
+        auto                     RepairAmount = static_cast<float>(getItemDurability()) / 4;
+        std::vector<RepairItems> repairitems  = {RepairItems(config.Mace, RepairAmount)};
+        return repairitems;
+    }
+    //  物品标签
+    std::vector<std::string> getItemTags() const override {
+        return std::vector<std::string>{"minecraft:is_sword", "minecraft:diamond_tier"};
+    }
+    // 是否为剑
+    bool isSword() const override { return true; }
+    // 手持动作
+    bool isHandEquipped() const override { return true; }
+};
+
+// 三叉戟
+class Trident : public ICustomToolItem {
+public:
+#include <string>
+    // 键名
+    Trident() : ICustomToolItem(VanillaItemNames::Trident()) {};
+    // 贴图
+    ItemIcon getIcon() const override { return "trident"; }
+    // 名字
+    std::string getDisplayName() const override { return "item.trident.name"; }
+    // 最大堆叠
+    uint8_t getItemMaxStackSize() const override { return 1; }
+    // 在创造模式是否能破坏方块
+    bool canDestroyInCreative() const override { return false; }
+    // 耐久
+    short getItemDurability() const override { return 250; }
+    //  物品标签
+    std::vector<std::string> getItemTags() const override { return std::vector<std::string>{"minecraft:is_trident"}; }
+    // 手持动作
+    bool isHandEquipped() const override { return true; }
+};
+
 
 GMLIB_REGISTER_ITEM(WoodenSword);
 GMLIB_REGISTER_ITEM(WoodenAxe);
@@ -1554,5 +1620,8 @@ GMLIB_REGISTER_ITEM(NetheriteAxe);
 GMLIB_REGISTER_ITEM(NetheritePickaxe);
 GMLIB_REGISTER_ITEM(NetheriteShovel);
 GMLIB_REGISTER_ITEM(NetheriteHoe);
+
+GMLIB_REGISTER_ITEM(Mace);
+GMLIB_REGISTER_ITEM(Trident);
 
 } // namespace cb
