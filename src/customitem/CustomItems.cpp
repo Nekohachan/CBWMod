@@ -1823,7 +1823,7 @@ public:
     // 最大堆叠
     uint8_t getItemMaxStackSize() const override { return 1; }
     // 耐久
-    short getItemDurability() const override { return 55; }
+    short getItemDurability() const override { return 77; }
     // 修复所需物品
     std::vector<RepairItems> getRepairItems() const override {
         RepairItemsList          config;
@@ -1852,7 +1852,7 @@ public:
     // 最大堆叠
     uint8_t getItemMaxStackSize() const override { return 1; }
     // 耐久
-    short getItemDurability() const override { return 80; }
+    short getItemDurability() const override { return 112; }
     // 修复所需物品
     std::vector<RepairItems> getRepairItems() const override {
         RepairItemsList          config;
@@ -1881,7 +1881,7 @@ public:
     // 最大堆叠
     uint8_t getItemMaxStackSize() const override { return 1; }
     // 耐久
-    short getItemDurability() const override { return 75; }
+    short getItemDurability() const override { return 105; }
     // 修复所需物品
     std::vector<RepairItems> getRepairItems() const override {
         RepairItemsList          config;
@@ -1910,7 +1910,7 @@ public:
     // 最大堆叠
     uint8_t getItemMaxStackSize() const override { return 1; }
     // 耐久
-    short getItemDurability() const override { return 65; }
+    short getItemDurability() const override { return 91; }
     // 修复所需物品
     std::vector<RepairItems> getRepairItems() const override {
         RepairItemsList          config;
@@ -1939,7 +1939,7 @@ public:
     // 最大堆叠
     uint8_t getItemMaxStackSize() const override { return 1; }
     // 耐久
-    short getItemDurability() const override { return 55; }
+    short getItemDurability() const override { return 165; }
     // 修复所需物品
     std::vector<RepairItems> getRepairItems() const override {
         RepairItemsList          config;
@@ -1960,7 +1960,8 @@ public:
 class ChainmailChestplate : public ICustomArmorItem {
 public:
     // 键名
-    ChainmailChestplate() : ICustomArmorItem(VanillaItemNames::ChainmailChestplate(), HumanoidArmorItem::Tier::Chain) {};
+    ChainmailChestplate()
+    : ICustomArmorItem(VanillaItemNames::ChainmailChestplate(), HumanoidArmorItem::Tier::Chain) {};
     // 贴图
     ItemIcon getIcon() const override { return "chainmail_helmet"; }
     // 名字
@@ -1968,7 +1969,7 @@ public:
     // 最大堆叠
     uint8_t getItemMaxStackSize() const override { return 1; }
     // 耐久
-    short getItemDurability() const override { return 80; }
+    short getItemDurability() const override { return 240; }
     // 修复所需物品
     std::vector<RepairItems> getRepairItems() const override {
         RepairItemsList          config;
@@ -1997,7 +1998,7 @@ public:
     // 最大堆叠
     uint8_t getItemMaxStackSize() const override { return 1; }
     // 耐久
-    short getItemDurability() const override { return 75; }
+    short getItemDurability() const override { return 225; }
     // 修复所需物品
     std::vector<RepairItems> getRepairItems() const override {
         RepairItemsList          config;
@@ -2026,7 +2027,7 @@ public:
     // 最大堆叠
     uint8_t getItemMaxStackSize() const override { return 1; }
     // 耐久
-    short getItemDurability() const override { return 65; }
+    short getItemDurability() const override { return 195; }
     // 修复所需物品
     std::vector<RepairItems> getRepairItems() const override {
         RepairItemsList          config;
@@ -2055,7 +2056,7 @@ public:
     // 最大堆叠
     uint8_t getItemMaxStackSize() const override { return 1; }
     // 耐久
-    short getItemDurability() const override { return 55; }
+    short getItemDurability() const override { return 165; }
     // 修复所需物品
     std::vector<RepairItems> getRepairItems() const override {
         RepairItemsList          config;
@@ -2084,7 +2085,7 @@ public:
     // 最大堆叠
     uint8_t getItemMaxStackSize() const override { return 1; }
     // 耐久
-    short getItemDurability() const override { return 80; }
+    short getItemDurability() const override { return 240; }
     // 修复所需物品
     std::vector<RepairItems> getRepairItems() const override {
         RepairItemsList          config;
@@ -2113,7 +2114,7 @@ public:
     // 最大堆叠
     uint8_t getItemMaxStackSize() const override { return 1; }
     // 耐久
-    short getItemDurability() const override { return 75; }
+    short getItemDurability() const override { return 225; }
     // 修复所需物品
     std::vector<RepairItems> getRepairItems() const override {
         RepairItemsList          config;
@@ -2142,7 +2143,7 @@ public:
     // 最大堆叠
     uint8_t getItemMaxStackSize() const override { return 1; }
     // 耐久
-    short getItemDurability() const override { return 65; }
+    short getItemDurability() const override { return 195; }
     // 修复所需物品
     std::vector<RepairItems> getRepairItems() const override {
         RepairItemsList          config;
@@ -2171,7 +2172,7 @@ public:
     // 最大堆叠
     uint8_t getItemMaxStackSize() const override { return 1; }
     // 耐久
-    short getItemDurability() const override { return 55; }
+    short getItemDurability() const override { return 363; }
     // 修复所需物品
     std::vector<RepairItems> getRepairItems() const override {
         RepairItemsList          config;
@@ -2187,6 +2188,8 @@ public:
     SharedTypes::Legacy::LevelSoundEvent getEquipSound() const override {
         return SharedTypes::Legacy::LevelSoundEvent::EquipDiamond;
     }
+    // 可作为锻造台原件
+    bool isSmithingTransformable() const override { return true; }
 };
 
 class DiamondChestplate : public ICustomArmorItem {
@@ -2200,7 +2203,7 @@ public:
     // 最大堆叠
     uint8_t getItemMaxStackSize() const override { return 1; }
     // 耐久
-    short getItemDurability() const override { return 80; }
+    short getItemDurability() const override { return 528; }
     // 修复所需物品
     std::vector<RepairItems> getRepairItems() const override {
         RepairItemsList          config;
@@ -2216,6 +2219,8 @@ public:
     SharedTypes::Legacy::LevelSoundEvent getEquipSound() const override {
         return SharedTypes::Legacy::LevelSoundEvent::EquipDiamond;
     }
+    // 可作为锻造台原件
+    bool isSmithingTransformable() const override { return true; }
 };
 
 class DiamondLeggings : public ICustomArmorItem {
@@ -2229,7 +2234,7 @@ public:
     // 最大堆叠
     uint8_t getItemMaxStackSize() const override { return 1; }
     // 耐久
-    short getItemDurability() const override { return 75; }
+    short getItemDurability() const override { return 495; }
     // 修复所需物品
     std::vector<RepairItems> getRepairItems() const override {
         RepairItemsList          config;
@@ -2245,6 +2250,8 @@ public:
     SharedTypes::Legacy::LevelSoundEvent getEquipSound() const override {
         return SharedTypes::Legacy::LevelSoundEvent::EquipDiamond;
     }
+    // 可作为锻造台原件
+    bool isSmithingTransformable() const override { return true; }
 };
 
 class DiamondBoots : public ICustomArmorItem {
@@ -2258,7 +2265,7 @@ public:
     // 最大堆叠
     uint8_t getItemMaxStackSize() const override { return 1; }
     // 耐久
-    short getItemDurability() const override { return 65; }
+    short getItemDurability() const override { return 429; }
     // 修复所需物品
     std::vector<RepairItems> getRepairItems() const override {
         RepairItemsList          config;
@@ -2274,6 +2281,8 @@ public:
     SharedTypes::Legacy::LevelSoundEvent getEquipSound() const override {
         return SharedTypes::Legacy::LevelSoundEvent::EquipDiamond;
     }
+    // 可作为锻造台原件
+    bool isSmithingTransformable() const override { return true; }
 };
 
 
@@ -2288,7 +2297,7 @@ public:
     // 最大堆叠
     uint8_t getItemMaxStackSize() const override { return 1; }
     // 耐久
-    short getItemDurability() const override { return 55; }
+    short getItemDurability() const override { return 407; }
     // 修复所需物品
     std::vector<RepairItems> getRepairItems() const override {
         RepairItemsList          config;
@@ -2304,12 +2313,15 @@ public:
     SharedTypes::Legacy::LevelSoundEvent getEquipSound() const override {
         return SharedTypes::Legacy::LevelSoundEvent::EquipNetherite;
     }
+    // 是否为不可被烧毁物品
+    bool isFireResistant() const override { return true; }
 };
 
 class NetheriteChestplate : public ICustomArmorItem {
 public:
     // 键名
-    NetheriteChestplate() : ICustomArmorItem(VanillaItemNames::NetheriteChestplate(), HumanoidArmorItem::Tier::Netherite) {};
+    NetheriteChestplate()
+    : ICustomArmorItem(VanillaItemNames::NetheriteChestplate(), HumanoidArmorItem::Tier::Netherite) {};
     // 贴图
     ItemIcon getIcon() const override { return "netherite_helmet"; }
     // 名字
@@ -2317,7 +2329,7 @@ public:
     // 最大堆叠
     uint8_t getItemMaxStackSize() const override { return 1; }
     // 耐久
-    short getItemDurability() const override { return 80; }
+    short getItemDurability() const override { return 592; }
     // 修复所需物品
     std::vector<RepairItems> getRepairItems() const override {
         RepairItemsList          config;
@@ -2333,12 +2345,15 @@ public:
     SharedTypes::Legacy::LevelSoundEvent getEquipSound() const override {
         return SharedTypes::Legacy::LevelSoundEvent::EquipNetherite;
     }
+    // 是否为不可被烧毁物品
+    bool isFireResistant() const override { return true; }
 };
 
 class NetheriteLeggings : public ICustomArmorItem {
 public:
     // 键名
-    NetheriteLeggings() : ICustomArmorItem(VanillaItemNames::NetheriteLeggings(), HumanoidArmorItem::Tier::Netherite) {};
+    NetheriteLeggings()
+    : ICustomArmorItem(VanillaItemNames::NetheriteLeggings(), HumanoidArmorItem::Tier::Netherite) {};
     // 贴图
     ItemIcon getIcon() const override { return "netherite_helmet"; }
     // 名字
@@ -2346,7 +2361,7 @@ public:
     // 最大堆叠
     uint8_t getItemMaxStackSize() const override { return 1; }
     // 耐久
-    short getItemDurability() const override { return 75; }
+    short getItemDurability() const override { return 555; }
     // 修复所需物品
     std::vector<RepairItems> getRepairItems() const override {
         RepairItemsList          config;
@@ -2362,6 +2377,8 @@ public:
     SharedTypes::Legacy::LevelSoundEvent getEquipSound() const override {
         return SharedTypes::Legacy::LevelSoundEvent::EquipNetherite;
     }
+    // 是否为不可被烧毁物品
+    bool isFireResistant() const override { return true; }
 };
 
 class NetheriteBoots : public ICustomArmorItem {
@@ -2375,7 +2392,7 @@ public:
     // 最大堆叠
     uint8_t getItemMaxStackSize() const override { return 1; }
     // 耐久
-    short getItemDurability() const override { return 65; }
+    short getItemDurability() const override { return 481; }
     // 修复所需物品
     std::vector<RepairItems> getRepairItems() const override {
         RepairItemsList          config;
@@ -2391,6 +2408,8 @@ public:
     SharedTypes::Legacy::LevelSoundEvent getEquipSound() const override {
         return SharedTypes::Legacy::LevelSoundEvent::EquipNetherite;
     }
+    // 是否为不可被烧毁物品
+    bool isFireResistant() const override { return true; }
 };
 
 GMLIB_REGISTER_ITEM(WoodenSword);
