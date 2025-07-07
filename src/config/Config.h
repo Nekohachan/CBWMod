@@ -117,6 +117,10 @@ struct RepairItemsList {
     std::vector<std::string> Mace = {
         "minecraft:breeze_rod",
     };
+
+    std::vector<std::string> Leather = {
+        "minecraft:leather",
+    };
 };
 
 } // namespace cb

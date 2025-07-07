@@ -34,8 +34,8 @@ item.diamond_shovel.name=钻石锹
 item.netherite_shovel.name=下界合金锹
 
 item.leather_helmet.name=皮革帽子
-item.chainmail_helmet.name=锁链头盔
 item.golden_helmet.name=金头盔
+item.chainmail_helmet.name=锁链头盔
 item.iron_helmet.name=铁头盔
 item.diamond_helmet.name=钻石头盔
 item.netherite_helmet.name=下界合金头盔
