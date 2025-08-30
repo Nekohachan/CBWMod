@@ -1,0 +1,23 @@
+{
+    "version": 2,
+    "minecraft:wooden_sword": {
+        "name": "木剑",
+        "icon": "wooden_sword",
+        "item_combat_attributes": {
+            "attack_damage": 4,
+            "attack_speed": 1.6,
+            "sweep_range": 1.0,
+            "sweep_damage": 0.5
+        }
+    },
+    "minecraft:stone_sword": {
+        "name": "石剑",
+        "icon": "stone_sword",
+        "item_combat_attributes": {
+            "attack_damage": 5,
+            "attack_speed": 1.6,
+            "sweep_range": 1.0,
+            "sweep_damage": 0.5
+        }
+    }
+}

@@ -25,9 +25,9 @@ bool CreativeInventory::Config() {
 }
 
 // 自定义物品配置
-ItemConfig ItemConfig::config;
+ItemCollection ItemCollection::config;
 
-bool ItemConfig::Config() {
+bool ItemCollection::Config() {
     auto& mSelf = cb::Entry::getInstance().getSelf();
     auto  path  = mSelf.getConfigDir() / "item.json";
     bool  ok    = ll::config::loadConfig(config, path);
