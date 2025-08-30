@@ -1730,9 +1730,9 @@ public:
     // 键名
     LeatherChestplate() : ICustomArmorItem(VanillaItemNames::LeatherChestplate(), HumanoidArmorItem::Tier::Leather) {};
     // 贴图
-    ItemIcon getIcon() const override { return "leather_helmet"; }
+    ItemIcon getIcon() const override { return "leather_chestplate"; }
     // 名字
-    std::string getDisplayName() const override { return "item.leather_helmet.name"; }
+    std::string getDisplayName() const override { return "item.leather_chestplate.name"; }
     // 最大堆叠
     uint8_t getItemMaxStackSize() const override { return 1; }
     // 耐久
@@ -1759,9 +1759,9 @@ public:
     // 键名
     LeatherLeggings() : ICustomArmorItem(VanillaItemNames::LeatherLeggings(), HumanoidArmorItem::Tier::Leather) {};
     // 贴图
-    ItemIcon getIcon() const override { return "leather_helmet"; }
+    ItemIcon getIcon() const override { return "leather_leggings"; }
     // 名字
-    std::string getDisplayName() const override { return "item.leather_helmet.name"; }
+    std::string getDisplayName() const override { return "item.leather_leggings.name"; }
     // 最大堆叠
     uint8_t getItemMaxStackSize() const override { return 1; }
     // 耐久
@@ -1788,9 +1788,9 @@ public:
     // 键名
     LeatherBoots() : ICustomArmorItem(VanillaItemNames::LeatherBoots(), HumanoidArmorItem::Tier::Leather) {};
     // 贴图
-    ItemIcon getIcon() const override { return "leather_helmet"; }
+    ItemIcon getIcon() const override { return "leather_boots"; }
     // 名字
-    std::string getDisplayName() const override { return "item.leather_helmet.name"; }
+    std::string getDisplayName() const override { return "item.leather_boots.name"; }
     // 最大堆叠
     uint8_t getItemMaxStackSize() const override { return 1; }
     // 耐久
@@ -1846,9 +1846,9 @@ public:
     // 键名
     GoldenChestplate() : ICustomArmorItem(VanillaItemNames::GoldenChestplate(), HumanoidArmorItem::Tier::Gold) {};
     // 贴图
-    ItemIcon getIcon() const override { return "golden_helmet"; }
+    ItemIcon getIcon() const override { return "golden_chestplate"; }
     // 名字
-    std::string getDisplayName() const override { return "item.golden_helmet.name"; }
+    std::string getDisplayName() const override { return "item.golden_chestplate.name"; }
     // 最大堆叠
     uint8_t getItemMaxStackSize() const override { return 1; }
     // 耐久
@@ -1875,9 +1875,9 @@ public:
     // 键名
     GoldenLeggings() : ICustomArmorItem(VanillaItemNames::GoldenLeggings(), HumanoidArmorItem::Tier::Gold) {};
     // 贴图
-    ItemIcon getIcon() const override { return "golden_helmet"; }
+    ItemIcon getIcon() const override { return "golden_leggings"; }
     // 名字
-    std::string getDisplayName() const override { return "item.golden_helmet.name"; }
+    std::string getDisplayName() const override { return "item.golden_leggings.name"; }
     // 最大堆叠
     uint8_t getItemMaxStackSize() const override { return 1; }
     // 耐久
@@ -1904,9 +1904,9 @@ public:
     // 键名
     GoldenBoots() : ICustomArmorItem(VanillaItemNames::GoldenBoots(), HumanoidArmorItem::Tier::Gold) {};
     // 贴图
-    ItemIcon getIcon() const override { return "golden_helmet"; }
+    ItemIcon getIcon() const override { return "golden_boots"; }
     // 名字
-    std::string getDisplayName() const override { return "item.golden_helmet.name"; }
+    std::string getDisplayName() const override { return "item.golden_boots.name"; }
     // 最大堆叠
     uint8_t getItemMaxStackSize() const override { return 1; }
     // 耐久
@@ -1963,9 +1963,9 @@ public:
     ChainmailChestplate()
     : ICustomArmorItem(VanillaItemNames::ChainmailChestplate(), HumanoidArmorItem::Tier::Chain) {};
     // 贴图
-    ItemIcon getIcon() const override { return "chainmail_helmet"; }
+    ItemIcon getIcon() const override { return "chainmail_chestplate"; }
     // 名字
-    std::string getDisplayName() const override { return "item.chainmail_helmet.name"; }
+    std::string getDisplayName() const override { return "item.chainmail_chestplate.name"; }
     // 最大堆叠
     uint8_t getItemMaxStackSize() const override { return 1; }
     // 耐久
@@ -1992,9 +1992,9 @@ public:
     // 键名
     ChainmailLeggings() : ICustomArmorItem(VanillaItemNames::ChainmailLeggings(), HumanoidArmorItem::Tier::Chain) {};
     // 贴图
-    ItemIcon getIcon() const override { return "chainmail_helmet"; }
+    ItemIcon getIcon() const override { return "chainmail_leggings"; }
     // 名字
-    std::string getDisplayName() const override { return "item.chainmail_helmet.name"; }
+    std::string getDisplayName() const override { return "item.chainmail_leggings.name"; }
     // 最大堆叠
     uint8_t getItemMaxStackSize() const override { return 1; }
     // 耐久
@@ -2021,9 +2021,9 @@ public:
     // 键名
     ChainmailBoots() : ICustomArmorItem(VanillaItemNames::ChainmailBoots(), HumanoidArmorItem::Tier::Chain) {};
     // 贴图
-    ItemIcon getIcon() const override { return "chainmail_helmet"; }
+    ItemIcon getIcon() const override { return "chainmail_boots"; }
     // 名字
-    std::string getDisplayName() const override { return "item.chainmail_helmet.name"; }
+    std::string getDisplayName() const override { return "item.chainmail_boots.name"; }
     // 最大堆叠
     uint8_t getItemMaxStackSize() const override { return 1; }
     // 耐久
@@ -2079,9 +2079,9 @@ public:
     // 键名
     IronChestplate() : ICustomArmorItem(VanillaItemNames::IronChestplate(), HumanoidArmorItem::Tier::Iron) {};
     // 贴图
-    ItemIcon getIcon() const override { return "iron_helmet"; }
+    ItemIcon getIcon() const override { return "iron_chestplate"; }
     // 名字
-    std::string getDisplayName() const override { return "item.iron_helmet.name"; }
+    std::string getDisplayName() const override { return "item.iron_chestplate.name"; }
     // 最大堆叠
     uint8_t getItemMaxStackSize() const override { return 1; }
     // 耐久
@@ -2108,9 +2108,9 @@ public:
     // 键名
     IronLeggings() : ICustomArmorItem(VanillaItemNames::IronLeggings(), HumanoidArmorItem::Tier::Iron) {};
     // 贴图
-    ItemIcon getIcon() const override { return "iron_helmet"; }
+    ItemIcon getIcon() const override { return "iron_leggings"; }
     // 名字
-    std::string getDisplayName() const override { return "item.iron_helmet.name"; }
+    std::string getDisplayName() const override { return "item.iron_leggings.name"; }
     // 最大堆叠
     uint8_t getItemMaxStackSize() const override { return 1; }
     // 耐久
@@ -2137,9 +2137,9 @@ public:
     // 键名
     IronBoots() : ICustomArmorItem(VanillaItemNames::IronBoots(), HumanoidArmorItem::Tier::Iron) {};
     // 贴图
-    ItemIcon getIcon() const override { return "iron_helmet"; }
+    ItemIcon getIcon() const override { return "iron_boots"; }
     // 名字
-    std::string getDisplayName() const override { return "item.iron_helmet.name"; }
+    std::string getDisplayName() const override { return "item.iron_boots.name"; }
     // 最大堆叠
     uint8_t getItemMaxStackSize() const override { return 1; }
     // 耐久
@@ -2197,9 +2197,9 @@ public:
     // 键名
     DiamondChestplate() : ICustomArmorItem(VanillaItemNames::DiamondChestplate(), HumanoidArmorItem::Tier::Diamond) {};
     // 贴图
-    ItemIcon getIcon() const override { return "diamond_helmet"; }
+    ItemIcon getIcon() const override { return "diamond_chestplate"; }
     // 名字
-    std::string getDisplayName() const override { return "item.diamond_helmet.name"; }
+    std::string getDisplayName() const override { return "item.diamond_chestplate.name"; }
     // 最大堆叠
     uint8_t getItemMaxStackSize() const override { return 1; }
     // 耐久
@@ -2228,9 +2228,9 @@ public:
     // 键名
     DiamondLeggings() : ICustomArmorItem(VanillaItemNames::DiamondLeggings(), HumanoidArmorItem::Tier::Diamond) {};
     // 贴图
-    ItemIcon getIcon() const override { return "diamond_helmet"; }
+    ItemIcon getIcon() const override { return "diamond_leggings"; }
     // 名字
-    std::string getDisplayName() const override { return "item.diamond_helmet.name"; }
+    std::string getDisplayName() const override { return "item.diamond_leggings.name"; }
     // 最大堆叠
     uint8_t getItemMaxStackSize() const override { return 1; }
     // 耐久
@@ -2259,9 +2259,9 @@ public:
     // 键名
     DiamondBoots() : ICustomArmorItem(VanillaItemNames::DiamondBoots(), HumanoidArmorItem::Tier::Diamond) {};
     // 贴图
-    ItemIcon getIcon() const override { return "diamond_helmet"; }
+    ItemIcon getIcon() const override { return "diamond_boots"; }
     // 名字
-    std::string getDisplayName() const override { return "item.diamond_helmet.name"; }
+    std::string getDisplayName() const override { return "item.diamond_boots.name"; }
     // 最大堆叠
     uint8_t getItemMaxStackSize() const override { return 1; }
     // 耐久
@@ -2323,9 +2323,9 @@ public:
     NetheriteChestplate()
     : ICustomArmorItem(VanillaItemNames::NetheriteChestplate(), HumanoidArmorItem::Tier::Netherite) {};
     // 贴图
-    ItemIcon getIcon() const override { return "netherite_helmet"; }
+    ItemIcon getIcon() const override { return "netherite_chestplate"; }
     // 名字
-    std::string getDisplayName() const override { return "item.netherite_helmet.name"; }
+    std::string getDisplayName() const override { return "item.netherite_chestplate.name"; }
     // 最大堆叠
     uint8_t getItemMaxStackSize() const override { return 1; }
     // 耐久
@@ -2355,9 +2355,9 @@ public:
     NetheriteLeggings()
     : ICustomArmorItem(VanillaItemNames::NetheriteLeggings(), HumanoidArmorItem::Tier::Netherite) {};
     // 贴图
-    ItemIcon getIcon() const override { return "netherite_helmet"; }
+    ItemIcon getIcon() const override { return "netherite_leggings"; }
     // 名字
-    std::string getDisplayName() const override { return "item.netherite_helmet.name"; }
+    std::string getDisplayName() const override { return "item.netherite_leggings.name"; }
     // 最大堆叠
     uint8_t getItemMaxStackSize() const override { return 1; }
     // 耐久
@@ -2386,9 +2386,9 @@ public:
     // 键名
     NetheriteBoots() : ICustomArmorItem(VanillaItemNames::NetheriteBoots(), HumanoidArmorItem::Tier::Netherite) {};
     // 贴图
-    ItemIcon getIcon() const override { return "netherite_helmet"; }
+    ItemIcon getIcon() const override { return "netherite_boots"; }
     // 名字
-    std::string getDisplayName() const override { return "item.netherite_helmet.name"; }
+    std::string getDisplayName() const override { return "item.netherite_boots.name"; }
     // 最大堆叠
     uint8_t getItemMaxStackSize() const override { return 1; }
     // 耐久

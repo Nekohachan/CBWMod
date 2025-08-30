@@ -4,26 +4,35 @@
 
 namespace cb {
 
-// 自定义创造背包配置相关
-CIConfig CIConfig::config;
+// 模组配置
+ModConfig ModConfig::config;
 
-bool CIConfig::TryLoad() {
-    auto&      mSelf = cb::Entry::getInstance().getSelf();
-    const auto path  = mSelf.getConfigDir() / "creative_inventory.json";
-
-    bool ok = ll::config::loadConfig(config, path);
-
-    if (!ok) {
-        CIConfig::TrySave();
-    }
+bool ModConfig::Config() {
+    auto& mSelf = cb::Entry::getInstance().getSelf();
+    auto  path  = mSelf.getConfigDir() / "config.json";
+    bool  ok    = ll::config::loadConfig(config, path);
     return ok;
 }
 
-bool CIConfig::TrySave() {
-    auto&      mSelf = cb::Entry::getInstance().getSelf();
-    const auto path  = mSelf.getConfigDir() / "creative_inventory.json";
+// 自定义创造背包配置
+CreativeInventory CreativeInventory::config;
 
-    return ll::config::saveConfig(config, path);
+bool CreativeInventory::Config() {
+    auto& mSelf = cb::Entry::getInstance().getSelf();
+    auto  path  = mSelf.getConfigDir() / "creative_inventory.json";
+    bool  ok    = ll::config::loadConfig(config, path);
+    return ok;
 }
+
+// 自定义物品配置
+ItemConfig ItemConfig::config;
+
+bool ItemConfig::Config() {
+    auto& mSelf = cb::Entry::getInstance().getSelf();
+    auto  path  = mSelf.getConfigDir() / "item.json";
+    bool  ok    = ll::config::loadConfig(config, path);
+    return ok;
+}
+
 
 } // namespace cb

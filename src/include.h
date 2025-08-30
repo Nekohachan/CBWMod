@@ -7,8 +7,11 @@
 #include <gmlib/mod/item/base/ICustomToolItem.h>
 #include <gmlib/mod/item/types/RepairItems.h>
 #include <gmlib/mod/item/types/mc/HumanoidArmorItem.h>
+#include <json.hpp>
+#include <ll/api/Config.h>
 #include <ll/api/mod/RegisterHelper.h>
 #include <mc/deps/core/math/Vec3.h>
+#include <mc/deps/core/resource/PackType.h>
 #include <mc/deps/core/string/HashedString.h>
 #include <mc/deps/shared_types/legacy/item/UseAnimation.h>
 #include <mc/legacy/ActorUniqueID.h>

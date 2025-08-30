@@ -1,4 +1,5 @@
 #include "Entry.h"
+#include "config/Config.h"
 #include "customitem/CustomCI.h"
 #include "include.h"
 
@@ -12,6 +13,8 @@ Entry& Entry::getInstance() {
 #define logger cb::Entry::getInstance().getSelf().getLogger()
 
 bool Entry::load() const {
+    cb::ModConfig::Config();
+    auto config = cb::ModConfig::config;
     // 加载语言文件
     auto version  = getSelf().getManifest().version.value_or(ll::data::Version{0, 0, 0});
     auto resource = gmlib::i18n::ResourceI18n(
@@ -20,8 +23,9 @@ bool Entry::load() const {
         version.major,
         version.minor,
         version.patch
+            
     );
-    resource.addLanguagesFromDirectory(getSelf().getLangDir());
+    resource.addLanguagesFromDirectory(getSelf().getModDir() / config.lang_path);
     resource.loadAllLanguages();
     // 加载完成提示
     logger.info("CBWMod 已加载!");

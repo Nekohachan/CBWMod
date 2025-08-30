@@ -6,8 +6,8 @@ namespace cb {
 
 // 创造背包注册
 void RegistryCI() {
-    cb::CIConfig::TryLoad();
-    auto config = cb::CIConfig::config;
+    cb::CreativeInventory::Config();
+    auto config = cb::CreativeInventory::config;
 
     auto& registry = gmlib::mod::CustomCreativeItemRegistry::getInstance();
 
@@ -35,8 +35,8 @@ void RegistryCI() {
 
 // 创造背包注销
 void UnregistryCI() {
-    cb::CIConfig::TryLoad();
-    auto config = cb::CIConfig::config;
+    cb::CreativeInventory::Config();
+    auto config = cb::CreativeInventory::config;
 
     auto& registry = gmlib::mod::CustomCreativeItemRegistry::getInstance();
     // 注销创造背包物品

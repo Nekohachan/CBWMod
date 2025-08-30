@@ -7,7 +7,6 @@
 
 namespace cb {
 
-// 这里用小写，保持和Addon一致
 enum class CreativeCategory {
     construction = 1,
     nature       = 2,
@@ -15,67 +14,78 @@ enum class CreativeCategory {
     items        = 4,
 };
 
-// 创造背包注册配置
-struct CIConfig {
-    // 配置文件版本号
+// 物品配置文件
+struct ItemConfig {
     int version = 2;
-    // 注册创造背包物品
-    // 物品分组
-    struct ItemGroup {
-        // 分组名称
+    struct item {
+        // 物品名称[键名]
         std::string name;
-        // 分组使用的贴图
+        // 物品使用的贴图
         std::string icon;
         // 分组所属类型
-        CreativeCategory category;
-    };
-    // 物品条目
-    struct Items {
-        // 物品的键名
-        std::string type;
-        // 物品所属分类
-        CreativeCategory category;
-        // 物品所在的组
-        std::string group;
-        // 物品自带的NBT
-        std::optional<std::string> nbt;
+        CreativeItemCategory item_category;
+        struct ItemAttackAttributes {
+            // 攻击伤害
+            float attack_damage;
+            // 攻击速度
+            float attack_speed;
+            // 横扫范围
+            float sweep_range;
+            // 横扫伤害
+            float sweep_damage;
+        };
+        struct ItemOtherAttributes {
+            // 攻击力
+            int attack;
+            // 暴击率
+            float crit_rate;
+            // 暴击伤害
+            float critical_damage;
+            // 命中率
+            float hit_rate;
+            // 血量上限
+            int health;
+            // 物理防御力
+            int defense;
+            // 魔法防御力
+            int magic_defense;
+            // 百分比减伤
+            float percentage_damage_reduction;
+            // 固定减伤
+            float flat_damage_reduction;
+            // 闪避率
+            float avoid_rate;
+            // 格挡率
+            float blocking_rate;
+            // 击退抗性
+            float knockback_resistance;
+            // 移速
+            float movement;
+            // 水下移速
+            float water_movement;
+            // 熔岩移速
+            float lava_movement;
+        };
     };
 
-    std::vector<ItemGroup> extra_groups = {
-        ItemGroup{
-                  .name     = "itemGroup.name.test",
-                  .icon     = "minecraft:command_block",
-                  .category = CreativeCategory::equipment
-        }
-    };
-    std::vector<Items> creative_items = {
-        Items{
-              .type     = "minecraft:netherite_sword",
-              .category = CreativeCategory::equipment,
-              .group    = "itemGroup.name.test",
-              .nbt      = "{\"Unbreakable\":1b,\"display\":{\"Lore\":[\"§r§9不可破坏§r\",\"§r§e测试§r\"],\"Name\":"
-                        "\"§r§d32K下界合金剑§r\"},\"ench\":"
-                        "[{\"id\":"
-                        "9s,"
-                        "\"lvl\":32767s},{\"id\":13s,\"lvl\":32767s},{\"id\":14s,\"lvl\":100s},{\"id\":17s,"
-                        "\"lvl\":32767s},"
-                        "{"
-                        "\"id\":12s,\"lvl\":32767s},{\"id\":26s,\"lvl\":32767s},{\"id\":10s,\"lvl\":32767s},{"
-                        "\"id\":11s,"
-                        "\"lvl\":32767s}],\"keep_on_death\":1b}"
-        },
-        Items{
-              .type     = "minecraft:command_block",
-              .category = CreativeCategory::equipment,
-              .group    = "itemGroup.name.test"
-        },
-        Items{.type = "minecraft:barrier", .category = CreativeCategory::equipment, .group = "itemGroup.name.test"}
-    };
-    static CIConfig config;
-    static bool     TryLoad();
-    static bool     TrySave();
+    static ItemConfig config;
+    static bool       Config();
 };
 
+
+// 插件配置文件
+
+struct ModConfig {
+    int version = 2;
+    //  语言文件路径
+    std::string lang_path;
+
+    static ModConfig config;
+    static bool      Config();
+};
+
+
+// 修复所需物品
 struct RepairItemsList {
     std::vector<std::string> Wooden = {
         "minecraft:oak_planks",
@@ -121,6 +131,73 @@ struct RepairItemsList {
     std::vector<std::string> Leather = {
         "minecraft:leather",
     };
+};
+
+// 玩家属性
+struct PlayerAttributes {
+    // 攻击力
+    int attack;
+    // 暴击率
+    float crit_rate;
+    // 暴击伤害
+    float critical_damage;
+    // 命中率
+    float hit_rate;
+    // 血量上限
+    int health;
+    // 物理防御力
+    int defense;
+    // 魔法防御力
+    int magic_defense;
+    // 百分比减伤
+    float percentage_damage_reduction;
+    // 固定减伤
+    float flat_damage_reduction;
+    // 闪避率
+    float avoid_rate;
+    // 格挡率
+    float blocking_rate;
+    // 击退抗性
+    float knockback_resistance;
+    // 移速
+    float movement;
+    // 水下移速
+    float water_movement;
+    // 熔岩移速
+    float lava_movement;
+};
+
+// 创造背包 -------------------------------------------------------------------------------------------------
+
+
+// 创造背包注册配置
+struct CreativeInventory {
+    int version = 2;
+    // 物品分组
+    struct ItemGroup {
+        // 分组名称
+        std::string name;
+        // 分组使用的贴图
+        std::string icon;
+        // 分组所属类型
+        CreativeCategory category;
+    };
+    // 物品条目
+    struct Items {
+        // 物品的键名
+        std::string type;
+        // 物品所属分类
+        CreativeCategory category;
+        // 物品所在的组
+        std::string group;
+        // 物品自带的NBT
+        std::optional<std::string> nbt;
+    };
+
+    std::vector<ItemGroup>   extra_groups   = {};
+    std::vector<Items>       creative_items = {};
+    static CreativeInventory config;
+    static bool              Config();
 };
 
 } // namespace cb
