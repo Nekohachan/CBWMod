@@ -1,15 +1,13 @@
 #pragma once
-#include "include.h"
 #include <map>
 #include <nlohmann/json.hpp>
 #include <optional>
 #include <string>
 #include <vector>
 
-namespace cb {
-
-
 using json = nlohmann::json;
+
+namespace cb {
 
 // 修复材料品质列表
 struct RepairMaterials {
@@ -373,7 +371,7 @@ struct Item {
 // 顶层结构体
 struct ItemCollection {
     int                         version = 1;
-    std::map<std::string, Item> items;            // 使用map存储物品，键名为物品ID
+    std::map<std::string, Item> items; // 使用map存储物品，键名为物品ID
 
     // 添加 to_json 函数
     friend void to_json(json& j, const ItemCollection& collection) {

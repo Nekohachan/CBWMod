@@ -1,3 +1,6 @@
+#pragma once
+#include <ConfigManager.h>
+#include <ExpressionParser.h>
 #include <gmlib/gm/i18n/ResourceI18n.h>
 #include <gmlib/mod/addons/AddonsLoader.h>
 #include <gmlib/mod/item/CustomCreativeItemRegistry.h>
@@ -31,4 +34,3 @@
 #include <mc/world/level/BlockSource.h>
 #include <mc/world/level/Level.h>
 #include <mc/world/level/block/Block.h>
-#include <ExpressionParser.h>
