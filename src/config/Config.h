@@ -186,13 +186,16 @@ struct ItemOther {
     bool is_hand_equipped = false;
     // 创造下是否能破坏方块
     bool can_destroy_in_creative = true;
+    // 标签数组
+    std::vector<std::string> tags;
 
     // 添加 to_json 函数
     friend void to_json(json& j, const ItemOther& item_other) {
         j = json{
             {"furnace_burn_interval",   item_other.furnace_burn_interval  },
             {"is_hand_equipped",        item_other.is_hand_equipped       },
-            {"can_destroy_in_creative", item_other.can_destroy_in_creative}
+            {"can_destroy_in_creative", item_other.can_destroy_in_creative},
+            {"tags",                    item_other.tags                   }
         };
     }
 
@@ -202,6 +205,13 @@ struct ItemOther {
         item_other.furnace_burn_interval   = j.value("furnace_burn_interval", 0.0f);
         item_other.is_hand_equipped        = j.value("is_hand_equipped", false);
         item_other.can_destroy_in_creative = j.value("can_destroy_in_creative", true);
+
+        // 解析标签数组
+        if (j.contains("tags")) {
+            j.at("tags").get_to(item_other.tags);
+        } else {
+            item_other.tags.clear();
+        }
     }
 };
 
@@ -313,6 +323,9 @@ struct Item {
     }
     // 便捷访问函数 - 类似于 JavaScript 的对象属性访问
 
+    // 获取标签数组
+    std::vector<std::string> getTags() const { return item_other.tags; }
+
     // 获取战斗属性（返回引用，允许修改）
     ItemCombatAttributes&       combat() { return item_combat_attributes; }
     const ItemCombatAttributes& combat() const { return item_combat_attributes; }
@@ -361,7 +374,6 @@ struct Item {
 struct ItemCollection {
     int                         version = 1;
     std::map<std::string, Item> items;            // 使用map存储物品，键名为物品ID
-    static RepairMaterials      repair_materials; // 修复材料列表
 
     // 添加 to_json 函数
     friend void to_json(json& j, const ItemCollection& collection) {

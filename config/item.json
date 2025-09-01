@@ -16,7 +16,7 @@
             "furnace_burn_interval": 1,
             "is_hand_equipped": true,
             "can_destroy_in_creative": false,
-            "tag": [
+            "tags": [
                 "minecraft:is_sword",
                 "minecraft:is_tool",
                 "minecraft:wooden_tier"
