@@ -37,7 +37,7 @@ struct RepairMaterials {
     };
 
     std::vector<std::string> Golden = {
-        "minecraft:gold_ingout",
+        "minecraft:gold_ingot",
     };
 
     std::vector<std::string> Diamond = {
@@ -58,14 +58,14 @@ struct RepairMaterials {
 
     // 获取对应材料的修复物品列表
     std::vector<std::string> getRepairMaterials(const std::string& materialType) const {
-        if (materialType == "Wooden") return Wooden;
-        if (materialType == "Stone") return Stone;
-        if (materialType == "Iron") return Iron;
-        if (materialType == "Golden") return Golden;
-        if (materialType == "Diamond") return Diamond;
-        if (materialType == "Netherite") return Netherite;
-        if (materialType == "Mace") return Mace;
-        if (materialType == "Leather") return Leather;
+        if (materialType == "wooden") return Wooden;
+        if (materialType == "stone") return Stone;
+        if (materialType == "iron") return Iron;
+        if (materialType == "golden") return Golden;
+        if (materialType == "diamond") return Diamond;
+        if (materialType == "netherite") return Netherite;
+        if (materialType == "mace") return Mace;
+        if (materialType == "leather") return Leather;
         return {};
     }
 };

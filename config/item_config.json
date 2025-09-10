@@ -5,7 +5,7 @@
             "icon": "wooden_sword",
             "max_stack_size": 1,
             "durability": 59,
-            "repair_material": "Wooden",
+            "repair_material": "wooden",
             "item_combat_attributes": {
                 "attack_damage": 4.0,
                 "attack_speed": 1.6,
@@ -27,11 +27,88 @@
                 "can_destroy_tag": "minecraft:is_sword_item_destructible"
             }
         },
+        "minecraft:wooden_axe": {
+            "name": "Wooden Axe",
+            "icon": "wooden_axe",
+            "max_stack_size": 1,
+            "durability": 59,
+            "repair_material": "wooden",
+            "item_other": {
+                "is_hand_equipped": true,
+                "can_destroy_in_creative": false,
+                "tag": [
+                    "minecraft:is_axe",
+                    "minecraft:is_tool",
+                    "minecraft:wooden_tier"
+                ]
+            },
+            "item_miner": {
+                "mining_speed": 2
+            }
+        },
+        "minecraft:wooden_pickaxe": {
+            "name": "Wooden Pickaxe",
+            "icon": "wooden_pickaxe",
+            "max_stack_size": 1,
+            "durability": 59,
+            "repair_material": "wooden",
+            "item_other": {
+                "is_hand_equipped": true,
+                "can_destroy_in_creative": false,
+                "tag": [
+                    "minecraft:is_pickaxe",
+                    "minecraft:is_tool",
+                    "minecraft:wooden_tier"
+                ]
+            },
+            "item_miner": {
+                "mining_speed": 2
+            }
+        },
+        "minecraft:wooden_shovel": {
+            "name": "Wooden Shovel",
+            "icon": "wooden_shovel",
+            "max_stack_size": 1,
+            "durability": 59,
+            "repair_material": "wooden",
+            "item_other": {
+                "is_hand_equipped": true,
+                "can_destroy_in_creative": false,
+                "tag": [
+                    "minecraft:is_shovel",
+                    "minecraft:is_tool",
+                    "minecraft:wooden_tier"
+                ]
+            },
+            "item_miner": {
+                "mining_speed": 2
+            }
+        },
+        "minecraft:wooden_hoe": {
+            "name": "Wooden Hoe",
+            "icon": "wooden_hoe",
+            "max_stack_size": 1,
+            "durability": 59,
+            "repair_material": "wooden",
+            "item_other": {
+                "is_hand_equipped": true,
+                "can_destroy_in_creative": false,
+                "tag": [
+                    "minecraft:is_hoe",
+                    "minecraft:is_tool",
+                    "minecraft:wooden_tier"
+                ]
+            },
+            "item_miner": {
+                "mining_speed": 2
+            }
+        },
         "minecraft:stone_sword": {
             "name": "石剑",
             "icon": "stone_sword",
+            "max_stack_size": 1,
             "durability": 131,
-            "repair_material": "Stone",
+            "repair_material": "stone",
             "item_combat_attributes": {
                 "attack_damage": 5.0,
                 "attack_speed": 1.6,
@@ -52,11 +129,88 @@
                 "can_destroy_tag": "minecraft:is_sword_item_destructible"
             }
         },
+        "minecraft:stone_axe": {
+            "name": "Stone Axe",
+            "icon": "stone_axe",
+            "max_stack_size": 1,
+            "durability": 131,
+            "repair_material": "stone",
+            "item_other": {
+                "is_hand_equipped": true,
+                "can_destroy_in_creative": false,
+                "tag": [
+                    "minecraft:is_axe",
+                    "minecraft:is_tool",
+                    "minecraft:stone_tier"
+                ]
+            },
+            "item_miner": {
+                "mining_speed": 4
+            }
+        },
+        "minecraft:stone_pickaxe": {
+            "name": "Stone Pickaxe",
+            "icon": "stone_pickaxe",
+            "max_stack_size": 1,
+            "durability": 131,
+            "repair_material": "stone",
+            "item_other": {
+                "is_hand_equipped": true,
+                "can_destroy_in_creative": false,
+                "tag": [
+                    "minecraft:is_pickaxe",
+                    "minecraft:is_tool",
+                    "minecraft:stone_tier"
+                ]
+            },
+            "item_miner": {
+                "mining_speed": 4
+            }
+        },
+        "minecraft:stone_shovel": {
+            "name": "Stone Shovel",
+            "icon": "stone_shovel",
+            "max_stack_size": 1,
+            "durability": 131,
+            "repair_material": "stone",
+            "item_other": {
+                "is_hand_equipped": true,
+                "can_destroy_in_creative": false,
+                "tag": [
+                    "minecraft:is_shovel",
+                    "minecraft:is_tool",
+                    "minecraft:stone_tier"
+                ]
+            },
+            "item_miner": {
+                "mining_speed": 4
+            }
+        },
+        "minecraft:stone_hoe": {
+            "name": "Stone Hoe",
+            "icon": "stone_hoe",
+            "max_stack_size": 1,
+            "durability": 131,
+            "repair_material": "stone",
+            "item_other": {
+                "is_hand_equipped": true,
+                "can_destroy_in_creative": false,
+                "tag": [
+                    "minecraft:is_hoe",
+                    "minecraft:is_tool",
+                    "minecraft:stone_tier"
+                ]
+            },
+            "item_miner": {
+                "mining_speed": 4
+            }
+        },
         "minecraft:iron_sword": {
             "name": "铁剑",
-            "icon": "stone_sword",
-            "durability": 2,
-            "repair_material": "Iron",
+            "icon": "iron_sword",
+            "max_stack_size": 1,
+            "durability": 250,
+            "repair_material": "iron",
             "item_combat_attributes": {
                 "attack_damage": 6.0,
                 "attack_speed": 1.6,
@@ -76,17 +230,604 @@
                 "mining_speed": 6,
                 "can_destroy_tag": "minecraft:is_sword_item_destructible"
             }
+        },
+        "minecraft:iron_axe": {
+            "name": "Iron Axe",
+            "icon": "iron_axe",
+            "max_stack_size": 1,
+            "durability": 250,
+            "repair_material": "iron",
+            "item_other": {
+                "is_hand_equipped": true,
+                "can_destroy_in_creative": false,
+                "tag": [
+                    "minecraft:is_axe",
+                    "minecraft:is_tool",
+                    "minecraft:iron_tier"
+                ]
+            },
+            "item_miner": {
+                "mining_speed": 6
+            }
+        },
+        "minecraft:iron_pickaxe": {
+            "name": "Iron Pickaxe",
+            "icon": "iron_pickaxe",
+            "max_stack_size": 1,
+            "durability": 250,
+            "repair_material": "iron",
+            "item_other": {
+                "is_hand_equipped": true,
+                "can_destroy_in_creative": false,
+                "tag": [
+                    "minecraft:is_pickaxe",
+                    "minecraft:is_tool",
+                    "minecraft:iron_tier"
+                ]
+            },
+            "item_miner": {
+                "mining_speed": 6
+            }
+        },
+        "minecraft:iron_shovel": {
+            "name": "Iron Shovel",
+            "icon": "iron_shovel",
+            "max_stack_size": 1,
+            "durability": 250,
+            "repair_material": "iron",
+            "item_other": {
+                "is_hand_equipped": true,
+                "can_destroy_in_creative": false,
+                "tag": [
+                    "minecraft:is_shovel",
+                    "minecraft:is_tool",
+                    "minecraft:iron_tier"
+                ]
+            },
+            "item_miner": {
+                "mining_speed": 6
+            }
+        },
+        "minecraft:iron_hoe": {
+            "name": "Iron Hoe",
+            "icon": "iron_hoe",
+            "max_stack_size": 1,
+            "durability": 250,
+            "repair_material": "iron",
+            "item_other": {
+                "is_hand_equipped": true,
+                "can_destroy_in_creative": false,
+                "tag": [
+                    "minecraft:is_hoe",
+                    "minecraft:is_tool",
+                    "minecraft:iron_tier"
+                ]
+            },
+            "item_miner": {
+                "mining_speed": 6
+            }
+        },
+        "minecraft:golden_sword": {
+            "name": "Golden Sword",
+            "icon": "golden_sword",
+            "max_stack_size": 1,
+            "durability": 32,
+            "repair_material": "golden",
+            "item_combat_attributes": {
+                "attack_damage": 4.0,
+                "attack_speed": 1.6,
+                "sweep_range": 1.0,
+                "sweep_damage": 0.5
+            },
+            "item_other": {
+                "is_hand_equipped": true,
+                "can_destroy_in_creative": false,
+                "tag": [
+                    "minecraft:is_sword",
+                    "minecraft:is_tool",
+                    "minecraft:golden_tier"
+                ]
+            },
+            "item_miner": {
+                "mining_speed": 12
+            }
+        },
+        "minecraft:golden_axe": {
+            "name": "Golden Axe",
+            "icon": "golden_axe",
+            "max_stack_size": 1,
+            "durability": 32,
+            "repair_material": "golden",
+            "item_other": {
+                "is_hand_equipped": true,
+                "can_destroy_in_creative": false,
+                "tag": [
+                    "minecraft:is_axe",
+                    "minecraft:is_tool",
+                    "minecraft:golden_tier"
+                ]
+            },
+            "item_miner": {
+                "mining_speed": 12
+            }
+        },
+        "minecraft:golden_pickaxe": {
+            "name": "Golden Pickaxe",
+            "icon": "golden_pickaxe",
+            "max_stack_size": 1,
+            "durability": 32,
+            "repair_material": "golden",
+            "item_other": {
+                "is_hand_equipped": true,
+                "can_destroy_in_creative": false,
+                "tag": [
+                    "minecraft:is_pickaxe",
+                    "minecraft:is_tool",
+                    "minecraft:golden_tier"
+                ]
+            },
+            "item_miner": {
+                "mining_speed": 12
+            }
+        },
+        "minecraft:golden_shovel": {
+            "name": "Golden Shovel",
+            "icon": "golden_shovel",
+            "max_stack_size": 1,
+            "durability": 32,
+            "repair_material": "golden",
+            "item_other": {
+                "is_hand_equipped": true,
+                "can_destroy_in_creative": false,
+                "tag": [
+                    "minecraft:is_shovel",
+                    "minecraft:is_tool",
+                    "minecraft:golden_tier"
+                ]
+            },
+            "item_miner": {
+                "mining_speed": 12
+            }
+        },
+        "minecraft:golden_hoe": {
+            "name": "Golden Hoe",
+            "icon": "golden_hoe",
+            "max_stack_size": 1,
+            "durability": 32,
+            "repair_material": "golden",
+            "item_other": {
+                "is_hand_equipped": true,
+                "can_destroy_in_creative": false,
+                "tag": [
+                    "minecraft:is_hoe",
+                    "minecraft:is_tool",
+                    "minecraft:golden_tier"
+                ]
+            },
+            "item_miner": {
+                "mining_speed": 12
+            }
+        },
+        "minecraft:diamond_sword": {
+            "name": "Diamond Sword",
+            "icon": "diamond_sword",
+            "max_stack_size": 1,
+            "durability": 1561,
+            "repair_material": "diamond",
+            "item_combat_attributes": {
+                "attack_damage": 7.0,
+                "attack_speed": 1.6,
+                "sweep_range": 1.0,
+                "sweep_damage": 0.5
+            },
+            "item_other": {
+                "is_hand_equipped": true,
+                "can_destroy_in_creative": false,
+                "tag": [
+                    "minecraft:is_sword",
+                    "minecraft:is_tool",
+                    "minecraft:diamond_tier"
+                ]
+            },
+            "item_miner": {
+                "mining_speed": 8
+            }
+        },
+        "minecraft:diamond_axe": {
+            "name": "Diamond Axe",
+            "icon": "diamond_axe",
+            "max_stack_size": 1,
+            "durability": 1561,
+            "repair_material": "diamond",
+            "item_other": {
+                "is_hand_equipped": true,
+                "can_destroy_in_creative": false,
+                "tag": [
+                    "minecraft:is_axe",
+                    "minecraft:is_tool",
+                    "minecraft:diamond_tier"
+                ]
+            },
+            "item_miner": {
+                "mining_speed": 8
+            }
+        },
+        "minecraft:diamond_pickaxe": {
+            "name": "Diamond Pickaxe",
+            "icon": "diamond_pickaxe",
+            "max_stack_size": 1,
+            "durability": 1561,
+            "repair_material": "diamond",
+            "item_other": {
+                "is_hand_equipped": true,
+                "can_destroy_in_creative": false,
+                "tag": [
+                    "minecraft:is_pickaxe",
+                    "minecraft:is_tool",
+                    "minecraft:diamond_tier"
+                ]
+            },
+            "item_miner": {
+                "mining_speed": 8
+            }
+        },
+        "minecraft:diamond_shovel": {
+            "name": "Diamond Shovel",
+            "icon": "diamond_shovel",
+            "max_stack_size": 1,
+            "durability": 1561,
+            "repair_material": "diamond",
+            "item_other": {
+                "is_hand_equipped": true,
+                "can_destroy_in_creative": false,
+                "tag": [
+                    "minecraft:is_shovel",
+                    "minecraft:is_tool",
+                    "minecraft:diamond_tier"
+                ]
+            },
+            "item_miner": {
+                "mining_speed": 8
+            }
+        },
+        "minecraft:diamond_hoe": {
+            "name": "Diamond Hoe",
+            "icon": "diamond_hoe",
+            "max_stack_size": 1,
+            "durability": 1561,
+            "repair_material": "diamond",
+            "item_other": {
+                "is_hand_equipped": true,
+                "can_destroy_in_creative": false,
+                "tag": [
+                    "minecraft:is_hoe",
+                    "minecraft:is_tool",
+                    "minecraft:diamond_tier"
+                ]
+            },
+            "item_miner": {
+                "mining_speed": 8
+            }
+        },
+        "minecraft:netherite_sword": {
+            "name": "Netherite Sword",
+            "icon": "netherite_sword",
+            "max_stack_size": 1,
+            "durability": 2031,
+            "repair_material": "netherite",
+            "item_combat_attributes": {
+                "attack_damage": 8.0,
+                "attack_speed": 1.6,
+                "sweep_range": 1.0,
+                "sweep_damage": 0.5
+            },
+            "item_other": {
+                "is_hand_equipped": true,
+                "can_destroy_in_creative": false,
+                "tag": [
+                    "minecraft:is_sword",
+                    "minecraft:is_tool",
+                    "minecraft:netherite_tier"
+                ]
+            },
+            "item_miner": {
+                "mining_speed": 9
+            }
+        },
+        "minecraft:netherite_axe": {
+            "name": "Netherite Axe",
+            "icon": "netherite_axe",
+            "max_stack_size": 1,
+            "durability": 2031,
+            "repair_material": "netherite",
+            "item_other": {
+                "is_hand_equipped": true,
+                "can_destroy_in_creative": false,
+                "tag": [
+                    "minecraft:is_axe",
+                    "minecraft:is_tool",
+                    "minecraft:netherite_tier"
+                ]
+            },
+            "item_miner": {
+                "mining_speed": 9
+            }
+        },
+        "minecraft:netherite_pickaxe": {
+            "name": "Netherite Pickaxe",
+            "icon": "netherite_pickaxe",
+            "max_stack_size": 1,
+            "durability": 2031,
+            "repair_material": "netherite",
+            "item_other": {
+                "is_hand_equipped": true,
+                "can_destroy_in_creative": false,
+                "tag": [
+                    "minecraft:is_pickaxe",
+                    "minecraft:is_tool",
+                    "minecraft:netherite_tier"
+                ]
+            },
+            "item_miner": {
+                "mining_speed": 9
+            }
+        },
+        "minecraft:netherite_shovel": {
+            "name": "Netherite Shovel",
+            "icon": "netherite_shovel",
+            "max_stack_size": 1,
+            "durability": 2031,
+            "repair_material": "netherite",
+            "item_other": {
+                "is_hand_equipped": true,
+                "can_destroy_in_creative": false,
+                "tag": [
+                    "minecraft:is_shovel",
+                    "minecraft:is_tool",
+                    "minecraft:netherite_tier"
+                ]
+            },
+            "item_miner": {
+                "mining_speed": 9
+            }
+        },
+        "minecraft:netherite_hoe": {
+            "name": "Netherite Hoe",
+            "icon": "netherite_hoe",
+            "max_stack_size": 1,
+            "durability": 2031,
+            "repair_material": "netherite",
+            "item_other": {
+                "is_hand_equipped": true,
+                "can_destroy_in_creative": false,
+                "tag": [
+                    "minecraft:is_hoe",
+                    "minecraft:is_tool",
+                    "minecraft:netherite_tier"
+                ]
+            },
+            "item_miner": {
+                "mining_speed": 9
+            }
         }
-        // 其他工具的配置...
     },
     "armors": {
-        "leather_helmet": {
+        "minecraft:leather_helmet": {
+            "name": "Leather Helmet",
+            "icon": "leather_helmet",
+            "max_stack_size": 1,
             "durability": 55,
             "repair_material": "leather",
             "armor_slot": "head",
             "equip_sound": "equip_leather"
+        },
+        "minecraft:leather_chestplate": {
+            "name": "Leather Chestplate",
+            "icon": "leather_chestplate",
+            "max_stack_size": 1,
+            "durability": 80,
+            "repair_material": "leather",
+            "armor_slot": "torso",
+            "equip_sound": "equip_leather"
+        },
+        "minecraft:leather_leggings": {
+            "name": "Leather Leggings",
+            "icon": "leather_leggings",
+            "max_stack_size": 1,
+            "durability": 75,
+            "repair_material": "leather",
+            "armor_slot": "legs",
+            "equip_sound": "equip_leather"
+        },
+        "minecraft:leather_boots": {
+            "name": "Leather Boots",
+            "icon": "leather_boots",
+            "max_stack_size": 1,
+            "durability": 65,
+            "repair_material": "leather",
+            "armor_slot": "feet",
+            "equip_sound": "equip_leather"
+        },
+        "minecraft:golden_helmet": {
+            "name": "Golden Helmet",
+            "icon": "golden_helmet",
+            "max_stack_size": 1,
+            "durability": 77,
+            "repair_material": "golden",
+            "armor_slot": "head",
+            "equip_sound": "equip_gold"
+        },
+        "minecraft:golden_chestplate": {
+            "name": "Golden Chestplate",
+            "icon": "golden_chestplate",
+            "max_stack_size": 1,
+            "durability": 112,
+            "repair_material": "golden",
+            "armor_slot": "torso",
+            "equip_sound": "equip_gold"
+        },
+        "minecraft:golden_leggings": {
+            "name": "Golden Leggings",
+            "icon": "golden_leggings",
+            "max_stack_size": 1,
+            "durability": 105,
+            "repair_material": "golden",
+            "armor_slot": "legs",
+            "equip_sound": "equip_gold"
+        },
+        "minecraft:golden_boots": {
+            "name": "Golden Boots",
+            "icon": "golden_boots",
+            "max_stack_size": 1,
+            "durability": 91,
+            "repair_material": "golden",
+            "armor_slot": "feet",
+            "equip_sound": "equip_gold"
+        },
+        "minecraft:chainmail_helmet": {
+            "name": "Chainmail Helmet",
+            "icon": "chainmail_helmet",
+            "max_stack_size": 1,
+            "durability": 165,
+            "repair_material": "iron",
+            "armor_slot": "head",
+            "equip_sound": "equip_chain"
+        },
+        "minecraft:chainmail_chestplate": {
+            "name": "Chainmail Chestplate",
+            "icon": "chainmail_chestplate",
+            "max_stack_size": 1,
+            "durability": 240,
+            "repair_material": "iron",
+            "armor_slot": "torso",
+            "equip_sound": "equip_chain"
+        },
+        "minecraft:chainmail_leggings": {
+            "name": "Chainmail Leggings",
+            "icon": "chainmail_leggings",
+            "max_stack_size": 1,
+            "durability": 225,
+            "repair_material": "iron",
+            "armor_slot": "legs",
+            "equip_sound": "equip_chain"
+        },
+        "minecraft:chainmail_boots": {
+            "name": "Chainmail Boots",
+            "icon": "chainmail_boots",
+            "max_stack_size": 1,
+            "durability": 195,
+            "repair_material": "iron",
+            "armor_slot": "feet",
+            "equip_sound": "equip_chain"
+        },
+        "minecraft:iron_helmet": {
+            "name": "Iron Helmet",
+            "icon": "iron_helmet",
+            "max_stack_size": 1,
+            "durability": 165,
+            "repair_material": "iron",
+            "armor_slot": "head",
+            "equip_sound": "equip_iron"
+        },
+        "minecraft:iron_chestplate": {
+            "name": "Iron Chestplate",
+            "icon": "iron_chestplate",
+            "max_stack_size": 1,
+            "durability": 240,
+            "repair_material": "iron",
+            "armor_slot": "torso",
+            "equip_sound": "equip_iron"
+        },
+        "minecraft:iron_leggings": {
+            "name": "Iron Leggings",
+            "icon": "iron_leggings",
+            "max_stack_size": 1,
+            "durability": 225,
+            "repair_material": "iron",
+            "armor_slot": "legs",
+            "equip_sound": "equip_iron"
+        },
+        "minecraft:iron_boots": {
+            "name": "Iron Boots",
+            "icon": "iron_boots",
+            "max_stack_size": 1,
+            "durability": 195,
+            "repair_material": "iron",
+            "armor_slot": "feet",
+            "equip_sound": "equip_iron"
+        },
+        "minecraft:diamond_helmet": {
+            "name": "Diamond Helmet",
+            "icon": "diamond_helmet",
+            "max_stack_size": 1,
+            "durability": 363,
+            "repair_material": "diamond",
+            "armor_slot": "head",
+            "equip_sound": "equip_diamond"
+        },
+        "minecraft:diamond_chestplate": {
+            "name": "Diamond Chestplate",
+            "icon": "diamond_chestplate",
+            "max_stack_size": 1,
+            "durability": 528,
+            "repair_material": "diamond",
+            "armor_slot": "torso",
+            "equip_sound": "equip_diamond"
+        },
+        "minecraft:diamond_leggings": {
+            "name": "Diamond Leggings",
+            "icon": "diamond_leggings",
+            "max_stack_size": 1,
+            "durability": 495,
+            "repair_material": "diamond",
+            "armor_slot": "legs",
+            "equip_sound": "equip_diamond"
+        },
+        "minecraft:diamond_boots": {
+            "name": "Diamond Boots",
+            "icon": "diamond_boots",
+            "max_stack_size": 1,
+            "durability": 429,
+            "repair_material": "diamond",
+            "armor_slot": "feet",
+            "equip_sound": "equip_diamond"
+        },
+        "minecraft:netherite_helmet": {
+            "name": "Netherite Helmet",
+            "icon": "netherite_helmet",
+            "max_stack_size": 1,
+            "durability": 407,
+            "repair_material": "netherite",
+            "armor_slot": "head",
+            "equip_sound": "equip_netherite"
+        },
+        "minecraft:netherite_chestplate": {
+            "name": "Netherite Chestplate",
+            "icon": "netherite_chestplate",
+            "max_stack_size": 1,
+            "durability": 592,
+            "repair_material": "netherite",
+            "armor_slot": "torso",
+            "equip_sound": "equip_netherite"
+        },
+        "minecraft:netherite_leggings": {
+            "name": "Netherite Leggings",
+            "icon": "netherite_leggings",
+            "max_stack_size": 1,
+            "durability": 555,
+            "repair_material": "netherite",
+            "armor_slot": "legs",
+            "equip_sound": "equip_netherite"
+        },
+        "minecraft:netherite_boots": {
+            "name": "Netherite Boots",
+            "icon": "netherite_boots",
+            "max_stack_size": 1,
+            "durability": 481,
+            "repair_material": "netherite",
+            "armor_slot": "feet",
+            "equip_sound": "equip_netherite"
         }
-        // 其他盔甲的配置...
     },
     "repair_materials": {
         "wooden": "minecraft:planks",

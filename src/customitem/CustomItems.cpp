@@ -1,20 +1,17 @@
+// CustomItems.cpp
 #pragma once
-// 首先包含系统头文件
-#include <memory>
-#include <string>
-#include <vector>
-
-// 然后包含第三方库
-#include <nlohmann/json.hpp>
-
-// 最后包含项目头文件
-#include "ConfigManager.h"
 #include "config/Config.h"
+#include "config/ConfigManager.h"
 #include "gmlib/mod/item/base/ICustomToolItem.h"
-#include "mc/world/item/VanillaItemNames.h"
+#include <nlohmann/json.hpp>
+#include <string>
+
 
 using namespace gmlib::mod;
 using json = nlohmann::json;
+
+namespace cb { // 添加命名空间
+
 
 // 修改 ICustomToolItem 基类或创建适配器
 class ConfigurableToolItem : public ICustomToolItem {
@@ -43,8 +40,9 @@ public:
       configKey(configKey) {}
 };
 
-
 // 具体工具类
+class WoodenSword : public ConfigurableToolItem {
+    // 实现...
+};
 
-
-class WoodenSword : public ConfigurableToolItem {};
+} // namespace cb

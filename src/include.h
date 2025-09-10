@@ -1,5 +1,4 @@
 #pragma once
-#include <ConfigManager.h>
 #include <ExpressionParser.h>
 #include <gmlib/gm/i18n/ResourceI18n.h>
 #include <gmlib/mod/addons/AddonsLoader.h>
