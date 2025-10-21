@@ -11,13 +11,13 @@ public:
     Entry() : mSelf(*ll::mod::NativeMod::current()) {}
 
     [[nodiscard]] ll::mod::NativeMod& getSelf() const { return mSelf; }
-    //加载插件
+    // 加载插件
     bool load() const;
-    //启用插件
+    // 启用插件
     bool enable() const;
-    //禁用插件
+    // 禁用插件
     bool disable() const;
-    //卸载插件
+    // 卸载插件
     bool unload() const;
 
 private:

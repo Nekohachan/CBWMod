@@ -1,7 +1,8 @@
 #include "Entry.h"
 #include "config/Config.h"
 #include "customitem/CustomCI.h"
-#include "include.h"
+#include <gmlib/gm/i18n/ResourceI18n.h>
+#include <ll/api/mod/RegisterHelper.h>
 
 namespace cb {
 
@@ -13,6 +14,7 @@ Entry& Entry::getInstance() {
 #define logger cb::Entry::getInstance().getSelf().getLogger()
 
 bool Entry::load() const {
+    /* // 加载语言文件
     cb::ModConfig::Config();
     auto config = cb::ModConfig::config;
     // 加载语言文件
@@ -23,10 +25,9 @@ bool Entry::load() const {
         version.major,
         version.minor,
         version.patch
-            
     );
     resource.addLanguagesFromDirectory(getSelf().getModDir() / config.lang_path);
-    resource.loadAllLanguages();
+    resource.loadAllLanguages(); */
     // 加载完成提示
     logger.info("CBWMod 已加载!");
     logger.info("作者: Nekohachan");

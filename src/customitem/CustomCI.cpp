@@ -1,6 +1,7 @@
 #include "customitem/CustomCI.h"
 #include "config/Config.h"
-#include "include.h"
+#include "mc/nbt/CompoundTag.h"
+#include <modapi/item/CustomCreativeItemRegistry.h>
 
 namespace cb {
 
@@ -9,7 +10,7 @@ void RegistryCI() {
     cb::CreativeInventory::Config();
     auto config = cb::CreativeInventory::config;
 
-    auto& registry = gmlib::mod::CustomCreativeItemRegistry::getInstance();
+    auto& registry = modapi::CustomCreativeItemRegistry::getInstance();
 
     // 注册物品分组
     for (auto& group : config.extra_groups) {
@@ -38,7 +39,7 @@ void UnregistryCI() {
     cb::CreativeInventory::Config();
     auto config = cb::CreativeInventory::config;
 
-    auto& registry = gmlib::mod::CustomCreativeItemRegistry::getInstance();
+    auto& registry = modapi::CustomCreativeItemRegistry::getInstance();
     // 注销创造背包物品
     for (auto& item : config.creative_items) {
         CompoundTag* nbt = nullptr;
@@ -51,7 +52,7 @@ void UnregistryCI() {
 
         auto category = ::CreativeItemCategory((int)item.category);
 
-        gmlib::mod::CustomCreativeItemRegistry::CreativeItem creative_item =
+        modapi::CustomCreativeItemRegistry::CreativeItem creative_item =
             {.mItem = itemstack, .mCategory = category, .mGroup = item.group};
         registry.unregisterCreativeItem(creative_item);
     }
