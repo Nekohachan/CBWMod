@@ -29,7 +29,7 @@ using namespace modapi;
 
 
 class Trident : public ICustomToolItem {
-    TridentItem mOriginItem;
+    TItem mOriginItem;
 
 public:
     // 键名
@@ -62,11 +62,34 @@ public:
         return mOriginItem.use(instance, player);
     };
 
-    bool isThrowable() const override { return true; };
+    bool isThrowable() const override { return mOriginItem.isThrowable(); };
 
     void hurtActor(::ItemStack& item, ::Actor& actor, ::Mob& attacker) const override {
         return mOriginItem.hurtActor(item, actor, attacker);
     };
+
+    // vIndex: 52
+    void appendFormattedHovertext(
+        ::ItemStackBase const&               stack,
+        ::Level&                             level,
+        ::Bedrock::Safety::RedactableString& hovertext,
+        bool const                           showCategory
+    ) const override {
+        return mOriginItem.appendFormattedHovertext(stack, level, hovertext, showCategory);
+    };
+
+    // vIndex: 54
+    int getEnchantSlot() const override { return mOriginItem.getEnchantSlot(); };
+
+    // vIndex: 55
+    int getEnchantValue() const override { return mOriginItem.getEnchantValue(); };
+
+
+    // vIndex: 35
+    short getMaxDamage() const override { return mOriginItem.getMaxDamage(); };
+
+    // vIndex: 36
+    int getAttackDamage() const override { return mOriginItem.getAttackDamage(); };
 };
 
 GMLIB_REGISTER_ITEM(Trident);
