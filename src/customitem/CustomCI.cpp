@@ -5,7 +5,7 @@
 
 namespace cb {
 
-// 创造背包注册
+// 开服时创造背包注册
 void RegistryCI() {
     cb::CreativeInventory::Config();
     auto config = cb::CreativeInventory::config;
@@ -34,7 +34,7 @@ void RegistryCI() {
     }
 }
 
-// 创造背包注销
+// 关服时创造背包注销
 void UnregistryCI() {
     cb::CreativeInventory::Config();
     auto config = cb::CreativeInventory::config;

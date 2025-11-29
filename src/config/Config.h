@@ -8,18 +8,6 @@ using json = nlohmann::json;
 
 namespace cb {
 
-// 模组配置文件 -------------------------------------------------------------------------------------------------
-
-struct ModConfig {
-    int version = 2;
-    //  语言文件路径
-    std::string lang_path;
-
-    static ModConfig config;
-    static bool      Config();
-};
-
-
 // 创造背包 -------------------------------------------------------------------------------------------------
 
 enum class CreativeCategory {
@@ -93,6 +81,10 @@ struct RepairItemsList {
         "minecraft:gold_ingot",
     };
 
+    std::vector<std::string> Copper = {
+        "minecraft:copper_ingot",
+    };
+
     std::vector<std::string> Diamond = {
         "minecraft:diamond",
     };
@@ -108,15 +100,20 @@ struct RepairItemsList {
     std::vector<std::string> Leather = {
         "minecraft:leather",
     };
+
+    std::vector<std::string> Turtle = {
+        "minecraft:turtle_scute",
+    };
 };
 
 
 // 属性 -------------------------------------------------------------------------------------------------
 
-// 玩家属性
-struct PlayerAttributes {
+// 属性
+struct Attributes {
+    int version = 2;
     // 攻击力
-    int attack = 0;
+    float attack = 0.0f;
     // 暴击率
     float crit_rate = 0.0f;
     // 暴击伤害
@@ -126,9 +123,9 @@ struct PlayerAttributes {
     // 血量上限
     int health = 0;
     // 物理防御力
-    int defense = 0;
+    float defense = 0.0f;
     // 魔法防御力
-    int magic_defense = 0;
+    float magic_defense = 0.0f;
     // 百分比减伤
     float percentage_damage_reduction = 0.0f;
     // 固定减伤
@@ -145,10 +142,6 @@ struct PlayerAttributes {
     float water_movement = 0.0f;
     // 熔岩移速
     float lava_movement = 0.0f;
-};
-
-// 战斗属性结构体
-struct ItemCombatAttributes {
     // 攻击伤害
     float attack_damage = 0.0f;
     // 攻击速度
@@ -157,6 +150,13 @@ struct ItemCombatAttributes {
     float sweep_range = 0.0f;
     // 横扫倍率
     float sweep_damage = 0.0f;
+    // 所属槽位
+    std::string slot;
+    // 物品描述
+    std::string lore;
+
+    static Attributes        config;
+    static bool              Config();
 };
 
 } // namespace cb

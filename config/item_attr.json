@@ -1,0 +1,336 @@
+{
+    "minecraft:wooden_sword": {
+        "slot": "mainhand",
+        "attack_damage": 4.0,
+        "attack_speed": 1.6,
+        "sweep_range": 1.0,
+        "sweep_damage": 0.5
+    },
+    "minecraft:wooden_axe": {
+        "slot": "mainhand",
+        "attack_damage": 6.0,
+        "attack_speed": 0.8
+    },
+    "minecraft:wooden_pickaxe": {
+        "slot": "mainhand",
+        "attack_damage": 2.0,
+        "attack_speed": 1.2
+    },
+    "minecraft:wooden_shovel": {
+        "slot": "mainhand",
+        "attack_damage": 3.0,
+        "attack_speed": 1.0
+    },
+    "minecraft:wooden_hoe": {
+        "slot": "mainhand",
+        "attack_damage": 2.0,
+        "attack_speed": 2.0
+    },
+    "minecraft:stone_sword": {
+        "slot": "mainhand",
+        "attack_damage": 5.0,
+        "attack_speed": 1.6,
+        "sweep_range": 1.0,
+        "sweep_damage": 0.5
+    },
+    "minecraft:stone_axe": {
+        "slot": "mainhand",
+        "attack_damage": 7.0,
+        "attack_speed": 0.8
+    },
+    "minecraft:stone_pickaxe": {
+        "slot": "mainhand",
+        "attack_damage": 3.0,
+        "attack_speed": 1.2
+    },
+    "minecraft:stone_shovel": {
+        "slot": "mainhand",
+        "attack_damage": 4.0,
+        "attack_speed": 1.0
+    },
+    "minecraft:stone_hoe": {
+        "slot": "mainhand",
+        "attack_damage": 3.0,
+        "attack_speed": 2.0
+    },
+    "minecraft:copper_sword": {
+        "slot": "mainhand",
+        "attack_damage": 5.5,
+        "attack_speed": 1.6,
+        "sweep_range": 1.0,
+        "sweep_damage": 0.5
+    },
+    "minecraft:copper_axe": {
+        "slot": "mainhand",
+        "attack_damage": 7.5,
+        "attack_speed": 0.8
+    },
+    "minecraft:copper_pickaxe": {
+        "slot": "mainhand",
+        "attack_damage": 3.5,
+        "attack_speed": 1.2
+    },
+    "minecraft:copper_shovel": {
+        "slot": "mainhand",
+        "attack_damage": 4.5,
+        "attack_speed": 1.0
+    },
+    "minecraft:copper_hoe": {
+        "slot": "mainhand",
+        "attack_damage": 3.5,
+        "attack_speed": 2.0
+    },
+    "minecraft:iron_sword": {
+        "slot": "mainhand",
+        "attack_damage": 6.0,
+        "attack_speed": 1.6,
+        "sweep_range": 1.0,
+        "sweep_damage": 0.5
+    },
+    "minecraft:iron_axe": {
+        "slot": "mainhand",
+        "attack_damage": 8.0,
+        "attack_speed": 0.8
+    },
+    "minecraft:iron_pickaxe": {
+        "slot": "mainhand",
+        "attack_damage": 4.0,
+        "attack_speed": 1.2
+    },
+    "minecraft:iron_shovel": {
+        "slot": "mainhand",
+        "attack_damage": 5.0,
+        "attack_speed": 1.0
+    },
+    "minecraft:iron_hoe": {
+        "slot": "mainhand",
+        "attack_damage": 4.0,
+        "attack_speed": 2.0
+    },
+    "minecraft:golden_sword": {
+        "slot": "mainhand",
+        "attack_damage": 4.0,
+        "attack_speed": 1.6,
+        "sweep_range": 1.0,
+        "sweep_damage": 0.5
+    },
+    "minecraft:golden_axe": {
+        "slot": "mainhand",
+        "attack_damage": 6.0,
+        "attack_speed": 0.8
+    },
+    "minecraft:golden_pickaxe": {
+        "slot": "mainhand",
+        "attack_damage": 2.0,
+        "attack_speed": 1.2
+    },
+    "minecraft:golden_shovel": {
+        "slot": "mainhand",
+        "attack_damage": 3.0,
+        "attack_speed": 1.0
+    },
+    "minecraft:golden_hoe": {
+        "slot": "mainhand",
+        "attack_damage": 2.0,
+        "attack_speed": 2.0
+    },
+    "minecraft:diamond_sword": {
+        "slot": "mainhand",
+        "attack_damage": 7.0,
+        "attack_speed": 1.6,
+        "sweep_range": 1.0,
+        "sweep_damage": 0.5
+    },
+    "minecraft:diamond_axe": {
+        "slot": "mainhand",
+        "attack_damage": 9.0,
+        "attack_speed": 0.8
+    },
+    "minecraft:diamond_pickaxe": {
+        "slot": "mainhand",
+        "attack_damage": 5.0,
+        "attack_speed": 1.2
+    },
+    "minecraft:diamond_shovel": {
+        "slot": "mainhand",
+        "attack_damage": 6.0,
+        "attack_speed": 1.0
+    },
+    "minecraft:diamond_hoe": {
+        "slot": "mainhand",
+        "attack_damage": 5.0,
+        "attack_speed": 2.0
+    },
+    "minecraft:netherite_sword": {
+        "slot": "mainhand",
+        "attack_damage": 8.0,
+        "attack_speed": 1.6,
+        "sweep_range": 1.0,
+        "sweep_damage": 0.5
+    },
+    "minecraft:netherite_axe": {
+        "slot": "mainhand",
+        "attack_damage": 10.0,
+        "attack_speed": 0.8
+    },
+    "minecraft:netherite_pickaxe": {
+        "slot": "mainhand",
+        "attack_damage": 6.0,
+        "attack_speed": 1.2
+    },
+    "minecraft:netherite_shovel": {
+        "slot": "mainhand",
+        "attack_damage": 7.0,
+        "attack_speed": 1.0
+    },
+    "minecraft:netherite_hoe": {
+        "slot": "mainhand",
+        "attack_damage": 6.0,
+        "attack_speed": 2.0
+    },
+    "minecraft:leather_helmet": {
+        "slot": "head",
+        "defense": 1.0
+    },
+    "minecraft:leather_chestplate": {
+        "slot": "chest",
+        "defense": 3.0
+    },
+    "minecraft:leather_leggings": {
+        "slot": "legs",
+        "defense": 2.0
+    },
+    "minecraft:leather_boots": {
+        "slot": "feet",
+        "defense": 1.0
+    },
+    "minecraft:copper_helmet": {
+        "slot": "head",
+        "defense": 2.0,
+        "movement": -0.01
+    },
+    "minecraft:copper_chestplate": {
+        "slot": "chest",
+        "defense": 4.0,
+        "movement": -0.05
+    },
+    "minecraft:copper_leggings": {
+        "slot": "legs",
+        "defense": 3.0,
+        "movement": -0.04
+    },
+    "minecraft:copper_boots": {
+        "slot": "feet",
+        "defense": 1.0,
+        "movement": -0.03
+    },
+    "minecraft:golden_helmet": {
+        "slot": "head",
+        "defense": 2.0,
+        "movement": -0.04
+    },
+    "minecraft:golden_chestplate": {
+        "slot": "chest",
+        "defense": 5.0,
+        "movement": -0.1
+    },
+    "minecraft:golden_leggings": {
+        "slot": "legs",
+        "defense": 3.0,
+        "movement": -0.06
+    },
+    "minecraft:golden_boots": {
+        "slot": "feet",
+        "defense": 1.0,
+        "movement": -0.05
+    },
+    "minecraft:chainmail_helmet": {
+        "slot": "head",
+        "defense": 2.0,
+        "movement": -0.01
+    },
+    "minecraft:chainmail_chestplate": {
+        "slot": "chest",
+        "defense": 5.0,
+        "movement": -0.04
+    },
+    "minecraft:chainmail_leggings": {
+        "slot": "legs",
+        "defense": 4.0,
+        "movement": -0.03
+    },
+    "minecraft:chainmail_boots": {
+        "slot": "feet",
+        "defense": 1.0,
+        "movement": -0.02
+    },
+    "minecraft:iron_helmet": {
+        "slot": "head",
+        "defense": 2.0,
+        "movement": -0.03
+    },
+    "minecraft:iron_chestplate": {
+        "slot": "chest",
+        "defense": 6.0,
+        "movement": -0.07
+    },
+    "minecraft:iron_leggings": {
+        "slot": "legs",
+        "defense": 5.0,
+        "movement": -0.06
+    },
+    "minecraft:iron_boots": {
+        "slot": "feet",
+        "defense": 2.0,
+        "movement": -0.04
+    },
+    "minecraft:diamond_helmet": {
+        "slot": "head",
+        "defense": 3.0,
+        "movement": -0.02
+    },
+    "minecraft:diamond_chestplate": {
+        "slot": "chest",
+        "defense": 8.0,
+        "movement": -0.05
+    },
+    "minecraft:diamond_leggings": {
+        "slot": "legs",
+        "defense": 6.0,
+        "movement": -0.05
+    },
+    "minecraft:diamond_boots": {
+        "slot": "feet",
+        "defense": 3.0,
+        "movement": -0.03
+    },
+    "minecraft:netherite_helmet": {
+        "slot": "head",
+        "defense": 3.0,
+        "movement": -0.03,
+        "knockback_resistance": 0.1
+    },
+    "minecraft:netherite_chestplate": {
+        "slot": "chest",
+        "defense": 8.0,
+        "movement": -0.06,
+        "knockback_resistance": 0.1
+    },
+    "minecraft:netherite_leggings": {
+        "slot": "legs",
+        "defense": 6.0,
+        "movement": -0.06,
+        "knockback_resistance": 0.1
+    },
+    "minecraft:netherite_boots": {
+        "slot": "feet",
+        "defense": 3.0,
+        "movement": -0.04,
+        "knockback_resistance": 0.1
+    },
+    "minecraft:turtle_helmet": {
+        "slot": "head",
+        "defense": 2.0,
+        "movement": -0.01
+    }
+}

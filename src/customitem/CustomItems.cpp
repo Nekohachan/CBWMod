@@ -1,13 +1,13 @@
 /**
  * 自动生成的物品类文件
- * 生成时间: 2025-10-14 20:18:34
+ * 生成时间: 2025-11-29 17:34:39
  * 源配置: item.json
  * 请勿手动修改此文件，所有更改应在配置文件中进行
  */
 
 #include "config/Config.h"
-#include "mc/world/actor/RenderParams.h"
 #include <mc/deps/shared_types/legacy/item/UseAnimation.h>
+#include <mc/world/actor/RenderParams.h>
 #include <mc/world/item/Item.h>
 #include <mc/world/item/ItemStackBase.h>
 #include <mc/world/item/VanillaItemNames.h>
@@ -35,6 +35,11 @@ class StoneAxe;
 class StonePickaxe;
 class StoneShovel;
 class StoneHoe;
+class CopperSword;
+class CopperAxe;
+class CopperPickaxe;
+class CopperShovel;
+class CopperHoe;
 class IronSword;
 class IronAxe;
 class IronPickaxe;
@@ -59,6 +64,10 @@ class LeatherHelmet;
 class LeatherChestplate;
 class LeatherLeggings;
 class LeatherBoots;
+class CopperHelmet;
+class CopperChestplate;
+class CopperLeggings;
+class CopperBoots;
 class GoldenHelmet;
 class GoldenChestplate;
 class GoldenLeggings;
@@ -79,6 +88,7 @@ class NetheriteHelmet;
 class NetheriteChestplate;
 class NetheriteLeggings;
 class NetheriteBoots;
+class TurtleHelmet;
 
 
 // 生成的物品类定义
@@ -104,20 +114,23 @@ public:
 
     // 修复材料
     std::vector<RepairItems> getRepairItems() const override {
-        RepairItemsList          config;
-        auto                     RepairAmount = static_cast<float>(getItemDurability()) / 4;
-        std::vector<RepairItems> repairitems  = {RepairItems(config.Wooden, RepairAmount)};
+        RepairItemsList config;
+        auto RepairAmount = static_cast<float>(getItemDurability()) / 4;
+        std::vector<RepairItems> repairitems = {
+            RepairItems(config.Wooden, RepairAmount)
+        };
         return repairitems;
     }
 
     // 物品标签
     std::vector<std::string> getItemTags() const override {
-        std::vector<std::string> tags = {"minecraft:is_sword", "minecraft:is_tool", "minecraft:wooden_tier"};
+        std::vector<std::string> tags = {
+            "minecraft:is_sword",            "minecraft:is_tool",            "minecraft:wooden_tier"        };
         return tags;
     }
 
     // 工具类型判断
-    bool isSword() const override { return true; }
+bool isSword() const override { return true; }
 
     // 是否为挖掘工具
     bool isDiggerItem() const override { return true; }
@@ -140,11 +153,16 @@ public:
     }
 
     // 手持动作
-    bool isHandEquipped() const override { return true; }
+    bool isHandEquipped() const override { 
+        return true;
+    }
 
     // 燃料相关
-    bool  isFuel() const override { return true; }
+    bool isFuel() const override { return true; }
     float getFurnaceBurnInterval() const override { return 1; }
+
+
+
 };
 class WoodenAxe : public ICustomToolItem {
 public:
@@ -166,20 +184,23 @@ public:
 
     // 修复材料
     std::vector<RepairItems> getRepairItems() const override {
-        RepairItemsList          config;
-        auto                     RepairAmount = static_cast<float>(getItemDurability()) / 4;
-        std::vector<RepairItems> repairitems  = {RepairItems(config.Wooden, RepairAmount)};
+        RepairItemsList config;
+        auto RepairAmount = static_cast<float>(getItemDurability()) / 4;
+        std::vector<RepairItems> repairitems = {
+            RepairItems(config.Wooden, RepairAmount)
+        };
         return repairitems;
     }
 
     // 物品标签
     std::vector<std::string> getItemTags() const override {
-        std::vector<std::string> tags = {"minecraft:is_axe", "minecraft:is_tool", "minecraft:wooden_tier"};
+        std::vector<std::string> tags = {
+            "minecraft:is_axe",            "minecraft:is_tool",            "minecraft:wooden_tier"        };
         return tags;
     }
 
     // 工具类型判断
-    bool isAxe() const override { return true; }
+bool isAxe() const override { return true; }
 
     // 是否为挖掘工具
     bool isDiggerItem() const override { return true; }
@@ -202,7 +223,9 @@ public:
     }
 
     // 手持动作
-    bool isHandEquipped() const override { return true; }
+    bool isHandEquipped() const override { 
+        return true;
+    }
 
 
     // 使用事件 (耐久消耗)
@@ -210,6 +233,8 @@ public:
         auto ac = rp.getActorTarget(::SharedTypes::Legacy::FilterSubject::Holder);
         item.hurtAndBreak(1, ac);
     };
+
+
 };
 class WoodenPickaxe : public ICustomToolItem {
 public:
@@ -231,20 +256,23 @@ public:
 
     // 修复材料
     std::vector<RepairItems> getRepairItems() const override {
-        RepairItemsList          config;
-        auto                     RepairAmount = static_cast<float>(getItemDurability()) / 4;
-        std::vector<RepairItems> repairitems  = {RepairItems(config.Wooden, RepairAmount)};
+        RepairItemsList config;
+        auto RepairAmount = static_cast<float>(getItemDurability()) / 4;
+        std::vector<RepairItems> repairitems = {
+            RepairItems(config.Wooden, RepairAmount)
+        };
         return repairitems;
     }
 
     // 物品标签
     std::vector<std::string> getItemTags() const override {
-        std::vector<std::string> tags = {"minecraft:is_pickaxe", "minecraft:is_tool", "minecraft:wooden_tier"};
+        std::vector<std::string> tags = {
+            "minecraft:is_pickaxe",            "minecraft:is_tool",            "minecraft:wooden_tier"        };
         return tags;
     }
 
     // 工具类型判断
-    bool isPickaxe() const override { return true; }
+bool isPickaxe() const override { return true; }
 
     // 是否为挖掘工具
     bool isDiggerItem() const override { return true; }
@@ -255,9 +283,7 @@ public:
     // 可破坏的方块判断
     bool canDestroySpecial(Block const& block) const override {
         // AND 条件
-        if (block.hasTag("minecraft:is_pickaxe_item_destructible") && block.hasTag("!minecraft:stone_tier_destructible")
-            && block.hasTag("!minecraft:iron_tier_destructible")
-            && block.hasTag("!minecraft:diamond_tier_destructible")) {
+        if (block.hasTag("minecraft:is_pickaxe_item_destructible") && block.hasTag("!minecraft:stone_tier_destructible") && block.hasTag("!minecraft:iron_tier_destructible") && block.hasTag("!minecraft:diamond_tier_destructible")) {
             return true;
         }
         return false;
@@ -269,7 +295,9 @@ public:
     }
 
     // 手持动作
-    bool isHandEquipped() const override { return true; }
+    bool isHandEquipped() const override { 
+        return true;
+    }
 
 
     // 使用事件 (耐久消耗)
@@ -277,6 +305,8 @@ public:
         auto ac = rp.getActorTarget(::SharedTypes::Legacy::FilterSubject::Holder);
         item.hurtAndBreak(1, ac);
     };
+
+
 };
 class WoodenShovel : public ICustomToolItem {
 public:
@@ -298,20 +328,23 @@ public:
 
     // 修复材料
     std::vector<RepairItems> getRepairItems() const override {
-        RepairItemsList          config;
-        auto                     RepairAmount = static_cast<float>(getItemDurability()) / 4;
-        std::vector<RepairItems> repairitems  = {RepairItems(config.Wooden, RepairAmount)};
+        RepairItemsList config;
+        auto RepairAmount = static_cast<float>(getItemDurability()) / 4;
+        std::vector<RepairItems> repairitems = {
+            RepairItems(config.Wooden, RepairAmount)
+        };
         return repairitems;
     }
 
     // 物品标签
     std::vector<std::string> getItemTags() const override {
-        std::vector<std::string> tags = {"minecraft:is_shovel", "minecraft:is_tool", "minecraft:wooden_tier"};
+        std::vector<std::string> tags = {
+            "minecraft:is_shovel",            "minecraft:is_tool",            "minecraft:wooden_tier"        };
         return tags;
     }
 
     // 工具类型判断
-    bool isShovel() const override { return true; }
+bool isShovel() const override { return true; }
 
     // 是否为挖掘工具
     bool isDiggerItem() const override { return true; }
@@ -334,7 +367,9 @@ public:
     }
 
     // 手持动作
-    bool isHandEquipped() const override { return true; }
+    bool isHandEquipped() const override { 
+        return true;
+    }
 
 
     // 使用事件 (耐久消耗)
@@ -342,6 +377,8 @@ public:
         auto ac = rp.getActorTarget(::SharedTypes::Legacy::FilterSubject::Holder);
         item.hurtAndBreak(1, ac);
     };
+
+
 };
 class WoodenHoe : public ICustomToolItem {
 public:
@@ -363,20 +400,23 @@ public:
 
     // 修复材料
     std::vector<RepairItems> getRepairItems() const override {
-        RepairItemsList          config;
-        auto                     RepairAmount = static_cast<float>(getItemDurability()) / 4;
-        std::vector<RepairItems> repairitems  = {RepairItems(config.Wooden, RepairAmount)};
+        RepairItemsList config;
+        auto RepairAmount = static_cast<float>(getItemDurability()) / 4;
+        std::vector<RepairItems> repairitems = {
+            RepairItems(config.Wooden, RepairAmount)
+        };
         return repairitems;
     }
 
     // 物品标签
     std::vector<std::string> getItemTags() const override {
-        std::vector<std::string> tags = {"minecraft:is_hoe", "minecraft:is_tool", "minecraft:wooden_tier"};
+        std::vector<std::string> tags = {
+            "minecraft:is_hoe",            "minecraft:is_tool",            "minecraft:wooden_tier"        };
         return tags;
     }
 
     // 工具类型判断
-    bool isHoe() const override { return true; }
+bool isHoe() const override { return true; }
 
     // 是否为挖掘工具
     bool isDiggerItem() const override { return true; }
@@ -399,7 +439,9 @@ public:
     }
 
     // 手持动作
-    bool isHandEquipped() const override { return true; }
+    bool isHandEquipped() const override { 
+        return true;
+    }
 
 
     // 使用事件 (耐久消耗)
@@ -407,6 +449,8 @@ public:
         auto ac = rp.getActorTarget(::SharedTypes::Legacy::FilterSubject::Holder);
         item.hurtAndBreak(1, ac);
     };
+
+
 };
 class StoneSword : public ICustomToolItem {
 public:
@@ -430,20 +474,23 @@ public:
 
     // 修复材料
     std::vector<RepairItems> getRepairItems() const override {
-        RepairItemsList          config;
-        auto                     RepairAmount = static_cast<float>(getItemDurability()) / 4;
-        std::vector<RepairItems> repairitems  = {RepairItems(config.Stone, RepairAmount)};
+        RepairItemsList config;
+        auto RepairAmount = static_cast<float>(getItemDurability()) / 4;
+        std::vector<RepairItems> repairitems = {
+            RepairItems(config.Stone, RepairAmount)
+        };
         return repairitems;
     }
 
     // 物品标签
     std::vector<std::string> getItemTags() const override {
-        std::vector<std::string> tags = {"minecraft:is_sword", "minecraft:is_tool", "minecraft:stone_tier"};
+        std::vector<std::string> tags = {
+            "minecraft:is_sword",            "minecraft:is_tool",            "minecraft:stone_tier"        };
         return tags;
     }
 
     // 工具类型判断
-    bool isSword() const override { return true; }
+bool isSword() const override { return true; }
 
     // 是否为挖掘工具
     bool isDiggerItem() const override { return true; }
@@ -466,7 +513,13 @@ public:
     }
 
     // 手持动作
-    bool isHandEquipped() const override { return true; }
+    bool isHandEquipped() const override { 
+        return true;
+    }
+
+
+
+
 };
 class StoneAxe : public ICustomToolItem {
 public:
@@ -488,20 +541,23 @@ public:
 
     // 修复材料
     std::vector<RepairItems> getRepairItems() const override {
-        RepairItemsList          config;
-        auto                     RepairAmount = static_cast<float>(getItemDurability()) / 4;
-        std::vector<RepairItems> repairitems  = {RepairItems(config.Stone, RepairAmount)};
+        RepairItemsList config;
+        auto RepairAmount = static_cast<float>(getItemDurability()) / 4;
+        std::vector<RepairItems> repairitems = {
+            RepairItems(config.Stone, RepairAmount)
+        };
         return repairitems;
     }
 
     // 物品标签
     std::vector<std::string> getItemTags() const override {
-        std::vector<std::string> tags = {"minecraft:is_axe", "minecraft:is_tool", "minecraft:stone_tier"};
+        std::vector<std::string> tags = {
+            "minecraft:is_axe",            "minecraft:is_tool",            "minecraft:stone_tier"        };
         return tags;
     }
 
     // 工具类型判断
-    bool isAxe() const override { return true; }
+bool isAxe() const override { return true; }
 
     // 是否为挖掘工具
     bool isDiggerItem() const override { return true; }
@@ -524,7 +580,9 @@ public:
     }
 
     // 手持动作
-    bool isHandEquipped() const override { return true; }
+    bool isHandEquipped() const override { 
+        return true;
+    }
 
 
     // 使用事件 (耐久消耗)
@@ -532,6 +590,8 @@ public:
         auto ac = rp.getActorTarget(::SharedTypes::Legacy::FilterSubject::Holder);
         item.hurtAndBreak(1, ac);
     };
+
+
 };
 class StonePickaxe : public ICustomToolItem {
 public:
@@ -553,20 +613,23 @@ public:
 
     // 修复材料
     std::vector<RepairItems> getRepairItems() const override {
-        RepairItemsList          config;
-        auto                     RepairAmount = static_cast<float>(getItemDurability()) / 4;
-        std::vector<RepairItems> repairitems  = {RepairItems(config.Stone, RepairAmount)};
+        RepairItemsList config;
+        auto RepairAmount = static_cast<float>(getItemDurability()) / 4;
+        std::vector<RepairItems> repairitems = {
+            RepairItems(config.Stone, RepairAmount)
+        };
         return repairitems;
     }
 
     // 物品标签
     std::vector<std::string> getItemTags() const override {
-        std::vector<std::string> tags = {"minecraft:is_pickaxe", "minecraft:is_tool", "minecraft:stone_tier"};
+        std::vector<std::string> tags = {
+            "minecraft:is_pickaxe",            "minecraft:is_tool",            "minecraft:stone_tier"        };
         return tags;
     }
 
     // 工具类型判断
-    bool isPickaxe() const override { return true; }
+bool isPickaxe() const override { return true; }
 
     // 是否为挖掘工具
     bool isDiggerItem() const override { return true; }
@@ -577,9 +640,7 @@ public:
     // 可破坏的方块判断
     bool canDestroySpecial(Block const& block) const override {
         // AND 条件
-        if (block.hasTag("minecraft:is_pickaxe_item_destructible || minecraft:stone_tier_destructible")
-            && block.hasTag("!minecraft:iron_tier_destructible")
-            && block.hasTag("!minecraft:diamond_tier_destructible")) {
+        if (block.hasTag("minecraft:is_pickaxe_item_destructible || minecraft:stone_tier_destructible") && block.hasTag("!minecraft:iron_tier_destructible") && block.hasTag("!minecraft:diamond_tier_destructible")) {
             return true;
         }
         return false;
@@ -591,7 +652,9 @@ public:
     }
 
     // 手持动作
-    bool isHandEquipped() const override { return true; }
+    bool isHandEquipped() const override { 
+        return true;
+    }
 
 
     // 使用事件 (耐久消耗)
@@ -599,6 +662,8 @@ public:
         auto ac = rp.getActorTarget(::SharedTypes::Legacy::FilterSubject::Holder);
         item.hurtAndBreak(1, ac);
     };
+
+
 };
 class StoneShovel : public ICustomToolItem {
 public:
@@ -620,20 +685,23 @@ public:
 
     // 修复材料
     std::vector<RepairItems> getRepairItems() const override {
-        RepairItemsList          config;
-        auto                     RepairAmount = static_cast<float>(getItemDurability()) / 4;
-        std::vector<RepairItems> repairitems  = {RepairItems(config.Stone, RepairAmount)};
+        RepairItemsList config;
+        auto RepairAmount = static_cast<float>(getItemDurability()) / 4;
+        std::vector<RepairItems> repairitems = {
+            RepairItems(config.Stone, RepairAmount)
+        };
         return repairitems;
     }
 
     // 物品标签
     std::vector<std::string> getItemTags() const override {
-        std::vector<std::string> tags = {"minecraft:is_shovel", "minecraft:is_tool", "minecraft:stone_tier"};
+        std::vector<std::string> tags = {
+            "minecraft:is_shovel",            "minecraft:is_tool",            "minecraft:stone_tier"        };
         return tags;
     }
 
     // 工具类型判断
-    bool isShovel() const override { return true; }
+bool isShovel() const override { return true; }
 
     // 是否为挖掘工具
     bool isDiggerItem() const override { return true; }
@@ -656,7 +724,9 @@ public:
     }
 
     // 手持动作
-    bool isHandEquipped() const override { return true; }
+    bool isHandEquipped() const override { 
+        return true;
+    }
 
 
     // 使用事件 (耐久消耗)
@@ -664,6 +734,8 @@ public:
         auto ac = rp.getActorTarget(::SharedTypes::Legacy::FilterSubject::Holder);
         item.hurtAndBreak(1, ac);
     };
+
+
 };
 class StoneHoe : public ICustomToolItem {
 public:
@@ -685,20 +757,23 @@ public:
 
     // 修复材料
     std::vector<RepairItems> getRepairItems() const override {
-        RepairItemsList          config;
-        auto                     RepairAmount = static_cast<float>(getItemDurability()) / 4;
-        std::vector<RepairItems> repairitems  = {RepairItems(config.Stone, RepairAmount)};
+        RepairItemsList config;
+        auto RepairAmount = static_cast<float>(getItemDurability()) / 4;
+        std::vector<RepairItems> repairitems = {
+            RepairItems(config.Stone, RepairAmount)
+        };
         return repairitems;
     }
 
     // 物品标签
     std::vector<std::string> getItemTags() const override {
-        std::vector<std::string> tags = {"minecraft:is_hoe", "minecraft:is_tool", "minecraft:stone_tier"};
+        std::vector<std::string> tags = {
+            "minecraft:is_hoe",            "minecraft:is_tool",            "minecraft:stone_tier"        };
         return tags;
     }
 
     // 工具类型判断
-    bool isHoe() const override { return true; }
+bool isHoe() const override { return true; }
 
     // 是否为挖掘工具
     bool isDiggerItem() const override { return true; }
@@ -721,7 +796,9 @@ public:
     }
 
     // 手持动作
-    bool isHandEquipped() const override { return true; }
+    bool isHandEquipped() const override { 
+        return true;
+    }
 
 
     // 使用事件 (耐久消耗)
@@ -729,6 +806,365 @@ public:
         auto ac = rp.getActorTarget(::SharedTypes::Legacy::FilterSubject::Holder);
         item.hurtAndBreak(1, ac);
     };
+
+
+};
+class CopperSword : public ICustomToolItem {
+public:
+    // 构造函数 - 使用原版物品名称
+    CopperSword() : ICustomToolItem(VanillaItemNames::CopperSword()) {};
+
+    // 贴图图标 - 使用显式构造函数
+    ItemIcon getIcon() const override { return ItemIcon("copper_sword"); }
+
+    // 显示名称 (本地化键)
+    std::string getDisplayName() const override { return "item.copper_sword.name"; }
+
+    // 最大堆叠数量
+    uint8_t getItemMaxStackSize() const override { return 1; }
+
+    // 创造模式是否能破坏方块
+    bool canDestroyInCreative() const override { return false; }
+
+    // 耐久度
+    short getItemDurability() const override { return 190; }
+
+    // 修复材料
+    std::vector<RepairItems> getRepairItems() const override {
+        RepairItemsList config;
+        auto RepairAmount = static_cast<float>(getItemDurability()) / 4;
+        std::vector<RepairItems> repairitems = {
+            RepairItems(config.Copper, RepairAmount)
+        };
+        return repairitems;
+    }
+
+    // 物品标签
+    std::vector<std::string> getItemTags() const override {
+        std::vector<std::string> tags = {
+            "minecraft:is_sword",            "minecraft:is_tool",            "minecraft:copper_tier"        };
+        return tags;
+    }
+
+    // 工具类型判断
+bool isSword() const override { return true; }
+
+    // 是否为挖掘工具
+    bool isDiggerItem() const override { return true; }
+
+    // 挖掘速度
+    float getMiningSpeed() const override { return 5; }
+
+    // 可破坏的方块判断
+    bool canDestroySpecial(Block const& block) const override {
+        // 简单条件判断
+        if (block.hasTag("minecraft:is_sword_item_destructible")) {
+            return true;
+        }
+        return false;
+    }
+
+    // 挖掘效果类型
+    Interactions::Mining::MineBlockItemEffectType getMineBlockItemEffectType() const override {
+        return Interactions::Mining::MineBlockItemEffectType::DiggerItem;
+    }
+
+    // 手持动作
+    bool isHandEquipped() const override { 
+        return true;
+    }
+
+
+
+
+};
+class CopperAxe : public ICustomToolItem {
+public:
+    // 构造函数 - 使用原版物品名称
+    CopperAxe() : ICustomToolItem(VanillaItemNames::CopperAxe()) {};
+
+    // 贴图图标 - 使用显式构造函数
+    ItemIcon getIcon() const override { return ItemIcon("copper_axe"); }
+
+    // 显示名称 (本地化键)
+    std::string getDisplayName() const override { return "item.copper_axe.name"; }
+
+    // 最大堆叠数量
+    uint8_t getItemMaxStackSize() const override { return 1; }
+
+
+    // 耐久度
+    short getItemDurability() const override { return 190; }
+
+    // 修复材料
+    std::vector<RepairItems> getRepairItems() const override {
+        RepairItemsList config;
+        auto RepairAmount = static_cast<float>(getItemDurability()) / 4;
+        std::vector<RepairItems> repairitems = {
+            RepairItems(config.Copper, RepairAmount)
+        };
+        return repairitems;
+    }
+
+    // 物品标签
+    std::vector<std::string> getItemTags() const override {
+        std::vector<std::string> tags = {
+            "minecraft:is_axe",            "minecraft:is_tool",            "minecraft:copper_tier"        };
+        return tags;
+    }
+
+    // 工具类型判断
+bool isAxe() const override { return true; }
+
+    // 是否为挖掘工具
+    bool isDiggerItem() const override { return true; }
+
+    // 挖掘速度
+    float getMiningSpeed() const override { return 5; }
+
+    // 可破坏的方块判断
+    bool canDestroySpecial(Block const& block) const override {
+        // 简单条件判断
+        if (block.hasTag("minecraft:is_axe_item_destructible")) {
+            return true;
+        }
+        return false;
+    }
+
+    // 挖掘效果类型
+    Interactions::Mining::MineBlockItemEffectType getMineBlockItemEffectType() const override {
+        return Interactions::Mining::MineBlockItemEffectType::DiggerItem;
+    }
+
+    // 手持动作
+    bool isHandEquipped() const override { 
+        return true;
+    }
+
+
+    // 使用事件 (耐久消耗)
+    void executeEvent(ItemStackBase& item, std::string const&, RenderParams& rp) const override {
+        auto ac = rp.getActorTarget(::SharedTypes::Legacy::FilterSubject::Holder);
+        item.hurtAndBreak(1, ac);
+    };
+
+
+};
+class CopperPickaxe : public ICustomToolItem {
+public:
+    // 构造函数 - 使用原版物品名称
+    CopperPickaxe() : ICustomToolItem(VanillaItemNames::CopperPickaxe()) {};
+
+    // 贴图图标 - 使用显式构造函数
+    ItemIcon getIcon() const override { return ItemIcon("stone_pickaxe"); }
+
+    // 显示名称 (本地化键)
+    std::string getDisplayName() const override { return "item.stone_pickaxe.name"; }
+
+    // 最大堆叠数量
+    uint8_t getItemMaxStackSize() const override { return 1; }
+
+
+    // 耐久度
+    short getItemDurability() const override { return 190; }
+
+    // 修复材料
+    std::vector<RepairItems> getRepairItems() const override {
+        RepairItemsList config;
+        auto RepairAmount = static_cast<float>(getItemDurability()) / 4;
+        std::vector<RepairItems> repairitems = {
+            RepairItems(config.Copper, RepairAmount)
+        };
+        return repairitems;
+    }
+
+    // 物品标签
+    std::vector<std::string> getItemTags() const override {
+        std::vector<std::string> tags = {
+            "minecraft:is_pickaxe",            "minecraft:is_tool",            "minecraft:stone_tier"        };
+        return tags;
+    }
+
+    // 工具类型判断
+bool isPickaxe() const override { return true; }
+
+    // 是否为挖掘工具
+    bool isDiggerItem() const override { return true; }
+
+    // 挖掘速度
+    float getMiningSpeed() const override { return 5; }
+
+    // 可破坏的方块判断
+    bool canDestroySpecial(Block const& block) const override {
+        // AND 条件
+        if (block.hasTag("minecraft:is_pickaxe_item_destructible || minecraft:stone_tier_destructible") && block.hasTag("!minecraft:iron_tier_destructible") && block.hasTag("!minecraft:diamond_tier_destructible")) {
+            return true;
+        }
+        return false;
+    }
+
+    // 挖掘效果类型
+    Interactions::Mining::MineBlockItemEffectType getMineBlockItemEffectType() const override {
+        return Interactions::Mining::MineBlockItemEffectType::DiggerItem;
+    }
+
+    // 手持动作
+    bool isHandEquipped() const override { 
+        return true;
+    }
+
+
+    // 使用事件 (耐久消耗)
+    void executeEvent(ItemStackBase& item, std::string const&, RenderParams& rp) const override {
+        auto ac = rp.getActorTarget(::SharedTypes::Legacy::FilterSubject::Holder);
+        item.hurtAndBreak(1, ac);
+    };
+
+
+};
+class CopperShovel : public ICustomToolItem {
+public:
+    // 构造函数 - 使用原版物品名称
+    CopperShovel() : ICustomToolItem(VanillaItemNames::CopperShovel()) {};
+
+    // 贴图图标 - 使用显式构造函数
+    ItemIcon getIcon() const override { return ItemIcon("copper_shovel"); }
+
+    // 显示名称 (本地化键)
+    std::string getDisplayName() const override { return "item.copper_shovel.name"; }
+
+    // 最大堆叠数量
+    uint8_t getItemMaxStackSize() const override { return 1; }
+
+
+    // 耐久度
+    short getItemDurability() const override { return 190; }
+
+    // 修复材料
+    std::vector<RepairItems> getRepairItems() const override {
+        RepairItemsList config;
+        auto RepairAmount = static_cast<float>(getItemDurability()) / 4;
+        std::vector<RepairItems> repairitems = {
+            RepairItems(config.Copper, RepairAmount)
+        };
+        return repairitems;
+    }
+
+    // 物品标签
+    std::vector<std::string> getItemTags() const override {
+        std::vector<std::string> tags = {
+            "minecraft:is_shovel",            "minecraft:is_tool",            "minecraft:copper_tier"        };
+        return tags;
+    }
+
+    // 工具类型判断
+bool isShovel() const override { return true; }
+
+    // 是否为挖掘工具
+    bool isDiggerItem() const override { return true; }
+
+    // 挖掘速度
+    float getMiningSpeed() const override { return 5; }
+
+    // 可破坏的方块判断
+    bool canDestroySpecial(Block const& block) const override {
+        // 简单条件判断
+        if (block.hasTag("minecraft:is_shovel_item_destructible")) {
+            return true;
+        }
+        return false;
+    }
+
+    // 挖掘效果类型
+    Interactions::Mining::MineBlockItemEffectType getMineBlockItemEffectType() const override {
+        return Interactions::Mining::MineBlockItemEffectType::DiggerItem;
+    }
+
+    // 手持动作
+    bool isHandEquipped() const override { 
+        return true;
+    }
+
+
+    // 使用事件 (耐久消耗)
+    void executeEvent(ItemStackBase& item, std::string const&, RenderParams& rp) const override {
+        auto ac = rp.getActorTarget(::SharedTypes::Legacy::FilterSubject::Holder);
+        item.hurtAndBreak(1, ac);
+    };
+
+
+};
+class CopperHoe : public ICustomToolItem {
+public:
+    // 构造函数 - 使用原版物品名称
+    CopperHoe() : ICustomToolItem(VanillaItemNames::CopperHoe()) {};
+
+    // 贴图图标 - 使用显式构造函数
+    ItemIcon getIcon() const override { return ItemIcon("copper_hoe"); }
+
+    // 显示名称 (本地化键)
+    std::string getDisplayName() const override { return "item.copper_hoe.name"; }
+
+    // 最大堆叠数量
+    uint8_t getItemMaxStackSize() const override { return 1; }
+
+
+    // 耐久度
+    short getItemDurability() const override { return 190; }
+
+    // 修复材料
+    std::vector<RepairItems> getRepairItems() const override {
+        RepairItemsList config;
+        auto RepairAmount = static_cast<float>(getItemDurability()) / 4;
+        std::vector<RepairItems> repairitems = {
+            RepairItems(config.Copper, RepairAmount)
+        };
+        return repairitems;
+    }
+
+    // 物品标签
+    std::vector<std::string> getItemTags() const override {
+        std::vector<std::string> tags = {
+            "minecraft:is_hoe",            "minecraft:is_tool",            "minecraft:copper_tier"        };
+        return tags;
+    }
+
+    // 工具类型判断
+bool isHoe() const override { return true; }
+
+    // 是否为挖掘工具
+    bool isDiggerItem() const override { return true; }
+
+    // 挖掘速度
+    float getMiningSpeed() const override { return 5; }
+
+    // 可破坏的方块判断
+    bool canDestroySpecial(Block const& block) const override {
+        // 简单条件判断
+        if (block.hasTag("minecraft:is_hoe_item_destructible")) {
+            return true;
+        }
+        return false;
+    }
+
+    // 挖掘效果类型
+    Interactions::Mining::MineBlockItemEffectType getMineBlockItemEffectType() const override {
+        return Interactions::Mining::MineBlockItemEffectType::DiggerItem;
+    }
+
+    // 手持动作
+    bool isHandEquipped() const override { 
+        return true;
+    }
+
+
+    // 使用事件 (耐久消耗)
+    void executeEvent(ItemStackBase& item, std::string const&, RenderParams& rp) const override {
+        auto ac = rp.getActorTarget(::SharedTypes::Legacy::FilterSubject::Holder);
+        item.hurtAndBreak(1, ac);
+    };
+
+
 };
 class IronSword : public ICustomToolItem {
 public:
@@ -752,20 +1188,23 @@ public:
 
     // 修复材料
     std::vector<RepairItems> getRepairItems() const override {
-        RepairItemsList          config;
-        auto                     RepairAmount = static_cast<float>(getItemDurability()) / 4;
-        std::vector<RepairItems> repairitems  = {RepairItems(config.Iron, RepairAmount)};
+        RepairItemsList config;
+        auto RepairAmount = static_cast<float>(getItemDurability()) / 4;
+        std::vector<RepairItems> repairitems = {
+            RepairItems(config.Iron, RepairAmount)
+        };
         return repairitems;
     }
 
     // 物品标签
     std::vector<std::string> getItemTags() const override {
-        std::vector<std::string> tags = {"minecraft:is_sword", "minecraft:is_tool", "minecraft:iron_tier"};
+        std::vector<std::string> tags = {
+            "minecraft:is_sword",            "minecraft:is_tool",            "minecraft:iron_tier"        };
         return tags;
     }
 
     // 工具类型判断
-    bool isSword() const override { return true; }
+bool isSword() const override { return true; }
 
     // 是否为挖掘工具
     bool isDiggerItem() const override { return true; }
@@ -788,7 +1227,13 @@ public:
     }
 
     // 手持动作
-    bool isHandEquipped() const override { return true; }
+    bool isHandEquipped() const override { 
+        return true;
+    }
+
+
+
+
 };
 class IronAxe : public ICustomToolItem {
 public:
@@ -810,20 +1255,23 @@ public:
 
     // 修复材料
     std::vector<RepairItems> getRepairItems() const override {
-        RepairItemsList          config;
-        auto                     RepairAmount = static_cast<float>(getItemDurability()) / 4;
-        std::vector<RepairItems> repairitems  = {RepairItems(config.Iron, RepairAmount)};
+        RepairItemsList config;
+        auto RepairAmount = static_cast<float>(getItemDurability()) / 4;
+        std::vector<RepairItems> repairitems = {
+            RepairItems(config.Iron, RepairAmount)
+        };
         return repairitems;
     }
 
     // 物品标签
     std::vector<std::string> getItemTags() const override {
-        std::vector<std::string> tags = {"minecraft:is_axe", "minecraft:is_tool", "minecraft:iron_tier"};
+        std::vector<std::string> tags = {
+            "minecraft:is_axe",            "minecraft:is_tool",            "minecraft:iron_tier"        };
         return tags;
     }
 
     // 工具类型判断
-    bool isAxe() const override { return true; }
+bool isAxe() const override { return true; }
 
     // 是否为挖掘工具
     bool isDiggerItem() const override { return true; }
@@ -846,7 +1294,9 @@ public:
     }
 
     // 手持动作
-    bool isHandEquipped() const override { return true; }
+    bool isHandEquipped() const override { 
+        return true;
+    }
 
 
     // 使用事件 (耐久消耗)
@@ -854,6 +1304,8 @@ public:
         auto ac = rp.getActorTarget(::SharedTypes::Legacy::FilterSubject::Holder);
         item.hurtAndBreak(1, ac);
     };
+
+
 };
 class IronPickaxe : public ICustomToolItem {
 public:
@@ -875,20 +1327,23 @@ public:
 
     // 修复材料
     std::vector<RepairItems> getRepairItems() const override {
-        RepairItemsList          config;
-        auto                     RepairAmount = static_cast<float>(getItemDurability()) / 4;
-        std::vector<RepairItems> repairitems  = {RepairItems(config.Iron, RepairAmount)};
+        RepairItemsList config;
+        auto RepairAmount = static_cast<float>(getItemDurability()) / 4;
+        std::vector<RepairItems> repairitems = {
+            RepairItems(config.Iron, RepairAmount)
+        };
         return repairitems;
     }
 
     // 物品标签
     std::vector<std::string> getItemTags() const override {
-        std::vector<std::string> tags = {"minecraft:is_pickaxe", "minecraft:is_tool", "minecraft:iron_tier"};
+        std::vector<std::string> tags = {
+            "minecraft:is_pickaxe",            "minecraft:is_tool",            "minecraft:iron_tier"        };
         return tags;
     }
 
     // 工具类型判断
-    bool isPickaxe() const override { return true; }
+bool isPickaxe() const override { return true; }
 
     // 是否为挖掘工具
     bool isDiggerItem() const override { return true; }
@@ -899,9 +1354,7 @@ public:
     // 可破坏的方块判断
     bool canDestroySpecial(Block const& block) const override {
         // AND 条件
-        if (block.hasTag("minecraft:is_pickaxe_item_destructible || minecraft:stone_tier_destructible || "
-                         "minecraft:iron_tier_destructible")
-            && block.hasTag("!minecraft:diamond_tier_destructible")) {
+        if (block.hasTag("minecraft:is_pickaxe_item_destructible || minecraft:stone_tier_destructible || minecraft:iron_tier_destructible") && block.hasTag("!minecraft:diamond_tier_destructible")) {
             return true;
         }
         return false;
@@ -913,7 +1366,9 @@ public:
     }
 
     // 手持动作
-    bool isHandEquipped() const override { return true; }
+    bool isHandEquipped() const override { 
+        return true;
+    }
 
 
     // 使用事件 (耐久消耗)
@@ -921,6 +1376,8 @@ public:
         auto ac = rp.getActorTarget(::SharedTypes::Legacy::FilterSubject::Holder);
         item.hurtAndBreak(1, ac);
     };
+
+
 };
 class IronShovel : public ICustomToolItem {
 public:
@@ -942,20 +1399,23 @@ public:
 
     // 修复材料
     std::vector<RepairItems> getRepairItems() const override {
-        RepairItemsList          config;
-        auto                     RepairAmount = static_cast<float>(getItemDurability()) / 4;
-        std::vector<RepairItems> repairitems  = {RepairItems(config.Iron, RepairAmount)};
+        RepairItemsList config;
+        auto RepairAmount = static_cast<float>(getItemDurability()) / 4;
+        std::vector<RepairItems> repairitems = {
+            RepairItems(config.Iron, RepairAmount)
+        };
         return repairitems;
     }
 
     // 物品标签
     std::vector<std::string> getItemTags() const override {
-        std::vector<std::string> tags = {"minecraft:is_shovel", "minecraft:is_tool", "minecraft:iron_tier"};
+        std::vector<std::string> tags = {
+            "minecraft:is_shovel",            "minecraft:is_tool",            "minecraft:iron_tier"        };
         return tags;
     }
 
     // 工具类型判断
-    bool isShovel() const override { return true; }
+bool isShovel() const override { return true; }
 
     // 是否为挖掘工具
     bool isDiggerItem() const override { return true; }
@@ -978,7 +1438,9 @@ public:
     }
 
     // 手持动作
-    bool isHandEquipped() const override { return true; }
+    bool isHandEquipped() const override { 
+        return true;
+    }
 
 
     // 使用事件 (耐久消耗)
@@ -986,6 +1448,8 @@ public:
         auto ac = rp.getActorTarget(::SharedTypes::Legacy::FilterSubject::Holder);
         item.hurtAndBreak(1, ac);
     };
+
+
 };
 class IronHoe : public ICustomToolItem {
 public:
@@ -1007,20 +1471,23 @@ public:
 
     // 修复材料
     std::vector<RepairItems> getRepairItems() const override {
-        RepairItemsList          config;
-        auto                     RepairAmount = static_cast<float>(getItemDurability()) / 4;
-        std::vector<RepairItems> repairitems  = {RepairItems(config.Iron, RepairAmount)};
+        RepairItemsList config;
+        auto RepairAmount = static_cast<float>(getItemDurability()) / 4;
+        std::vector<RepairItems> repairitems = {
+            RepairItems(config.Iron, RepairAmount)
+        };
         return repairitems;
     }
 
     // 物品标签
     std::vector<std::string> getItemTags() const override {
-        std::vector<std::string> tags = {"minecraft:is_hoe", "minecraft:is_tool", "minecraft:iron_tier"};
+        std::vector<std::string> tags = {
+            "minecraft:is_hoe",            "minecraft:is_tool",            "minecraft:iron_tier"        };
         return tags;
     }
 
     // 工具类型判断
-    bool isHoe() const override { return true; }
+bool isHoe() const override { return true; }
 
     // 是否为挖掘工具
     bool isDiggerItem() const override { return true; }
@@ -1043,7 +1510,9 @@ public:
     }
 
     // 手持动作
-    bool isHandEquipped() const override { return true; }
+    bool isHandEquipped() const override { 
+        return true;
+    }
 
 
     // 使用事件 (耐久消耗)
@@ -1051,6 +1520,8 @@ public:
         auto ac = rp.getActorTarget(::SharedTypes::Legacy::FilterSubject::Holder);
         item.hurtAndBreak(1, ac);
     };
+
+
 };
 class GoldenSword : public ICustomToolItem {
 public:
@@ -1074,20 +1545,23 @@ public:
 
     // 修复材料
     std::vector<RepairItems> getRepairItems() const override {
-        RepairItemsList          config;
-        auto                     RepairAmount = static_cast<float>(getItemDurability()) / 4;
-        std::vector<RepairItems> repairitems  = {RepairItems(config.Golden, RepairAmount)};
+        RepairItemsList config;
+        auto RepairAmount = static_cast<float>(getItemDurability()) / 4;
+        std::vector<RepairItems> repairitems = {
+            RepairItems(config.Golden, RepairAmount)
+        };
         return repairitems;
     }
 
     // 物品标签
     std::vector<std::string> getItemTags() const override {
-        std::vector<std::string> tags = {"minecraft:is_sword", "minecraft:is_tool", "minecraft:golden_tier"};
+        std::vector<std::string> tags = {
+            "minecraft:is_sword",            "minecraft:is_tool",            "minecraft:golden_tier"        };
         return tags;
     }
 
     // 工具类型判断
-    bool isSword() const override { return true; }
+bool isSword() const override { return true; }
 
     // 是否为挖掘工具
     bool isDiggerItem() const override { return true; }
@@ -1110,7 +1584,13 @@ public:
     }
 
     // 手持动作
-    bool isHandEquipped() const override { return true; }
+    bool isHandEquipped() const override { 
+        return true;
+    }
+
+
+
+
 };
 class GoldenAxe : public ICustomToolItem {
 public:
@@ -1132,20 +1612,23 @@ public:
 
     // 修复材料
     std::vector<RepairItems> getRepairItems() const override {
-        RepairItemsList          config;
-        auto                     RepairAmount = static_cast<float>(getItemDurability()) / 4;
-        std::vector<RepairItems> repairitems  = {RepairItems(config.Golden, RepairAmount)};
+        RepairItemsList config;
+        auto RepairAmount = static_cast<float>(getItemDurability()) / 4;
+        std::vector<RepairItems> repairitems = {
+            RepairItems(config.Golden, RepairAmount)
+        };
         return repairitems;
     }
 
     // 物品标签
     std::vector<std::string> getItemTags() const override {
-        std::vector<std::string> tags = {"minecraft:is_axe", "minecraft:is_tool", "minecraft:golden_tier"};
+        std::vector<std::string> tags = {
+            "minecraft:is_axe",            "minecraft:is_tool",            "minecraft:golden_tier"        };
         return tags;
     }
 
     // 工具类型判断
-    bool isAxe() const override { return true; }
+bool isAxe() const override { return true; }
 
     // 是否为挖掘工具
     bool isDiggerItem() const override { return true; }
@@ -1168,7 +1651,9 @@ public:
     }
 
     // 手持动作
-    bool isHandEquipped() const override { return true; }
+    bool isHandEquipped() const override { 
+        return true;
+    }
 
 
     // 使用事件 (耐久消耗)
@@ -1176,6 +1661,8 @@ public:
         auto ac = rp.getActorTarget(::SharedTypes::Legacy::FilterSubject::Holder);
         item.hurtAndBreak(1, ac);
     };
+
+
 };
 class GoldenPickaxe : public ICustomToolItem {
 public:
@@ -1197,20 +1684,23 @@ public:
 
     // 修复材料
     std::vector<RepairItems> getRepairItems() const override {
-        RepairItemsList          config;
-        auto                     RepairAmount = static_cast<float>(getItemDurability()) / 4;
-        std::vector<RepairItems> repairitems  = {RepairItems(config.Golden, RepairAmount)};
+        RepairItemsList config;
+        auto RepairAmount = static_cast<float>(getItemDurability()) / 4;
+        std::vector<RepairItems> repairitems = {
+            RepairItems(config.Golden, RepairAmount)
+        };
         return repairitems;
     }
 
     // 物品标签
     std::vector<std::string> getItemTags() const override {
-        std::vector<std::string> tags = {"minecraft:is_pickaxe", "minecraft:is_tool", "minecraft:golden_tier"};
+        std::vector<std::string> tags = {
+            "minecraft:is_pickaxe",            "minecraft:is_tool",            "minecraft:golden_tier"        };
         return tags;
     }
 
     // 工具类型判断
-    bool isPickaxe() const override { return true; }
+bool isPickaxe() const override { return true; }
 
     // 是否为挖掘工具
     bool isDiggerItem() const override { return true; }
@@ -1221,9 +1711,7 @@ public:
     // 可破坏的方块判断
     bool canDestroySpecial(Block const& block) const override {
         // AND 条件
-        if (block.hasTag("minecraft:is_pickaxe_item_destructible") && block.hasTag("!minecraft:stone_tier_destructible")
-            && block.hasTag("!minecraft:iron_tier_destructible")
-            && block.hasTag("!minecraft:diamond_tier_destructible")) {
+        if (block.hasTag("minecraft:is_pickaxe_item_destructible") && block.hasTag("!minecraft:stone_tier_destructible") && block.hasTag("!minecraft:iron_tier_destructible") && block.hasTag("!minecraft:diamond_tier_destructible")) {
             return true;
         }
         return false;
@@ -1235,7 +1723,9 @@ public:
     }
 
     // 手持动作
-    bool isHandEquipped() const override { return true; }
+    bool isHandEquipped() const override { 
+        return true;
+    }
 
 
     // 使用事件 (耐久消耗)
@@ -1243,6 +1733,8 @@ public:
         auto ac = rp.getActorTarget(::SharedTypes::Legacy::FilterSubject::Holder);
         item.hurtAndBreak(1, ac);
     };
+
+
 };
 class GoldenShovel : public ICustomToolItem {
 public:
@@ -1264,20 +1756,23 @@ public:
 
     // 修复材料
     std::vector<RepairItems> getRepairItems() const override {
-        RepairItemsList          config;
-        auto                     RepairAmount = static_cast<float>(getItemDurability()) / 4;
-        std::vector<RepairItems> repairitems  = {RepairItems(config.Golden, RepairAmount)};
+        RepairItemsList config;
+        auto RepairAmount = static_cast<float>(getItemDurability()) / 4;
+        std::vector<RepairItems> repairitems = {
+            RepairItems(config.Golden, RepairAmount)
+        };
         return repairitems;
     }
 
     // 物品标签
     std::vector<std::string> getItemTags() const override {
-        std::vector<std::string> tags = {"minecraft:is_shovel", "minecraft:is_tool", "minecraft:golden_tier"};
+        std::vector<std::string> tags = {
+            "minecraft:is_shovel",            "minecraft:is_tool",            "minecraft:golden_tier"        };
         return tags;
     }
 
     // 工具类型判断
-    bool isShovel() const override { return true; }
+bool isShovel() const override { return true; }
 
     // 是否为挖掘工具
     bool isDiggerItem() const override { return true; }
@@ -1300,7 +1795,9 @@ public:
     }
 
     // 手持动作
-    bool isHandEquipped() const override { return true; }
+    bool isHandEquipped() const override { 
+        return true;
+    }
 
 
     // 使用事件 (耐久消耗)
@@ -1308,6 +1805,8 @@ public:
         auto ac = rp.getActorTarget(::SharedTypes::Legacy::FilterSubject::Holder);
         item.hurtAndBreak(1, ac);
     };
+
+
 };
 class GoldenHoe : public ICustomToolItem {
 public:
@@ -1329,20 +1828,23 @@ public:
 
     // 修复材料
     std::vector<RepairItems> getRepairItems() const override {
-        RepairItemsList          config;
-        auto                     RepairAmount = static_cast<float>(getItemDurability()) / 4;
-        std::vector<RepairItems> repairitems  = {RepairItems(config.Golden, RepairAmount)};
+        RepairItemsList config;
+        auto RepairAmount = static_cast<float>(getItemDurability()) / 4;
+        std::vector<RepairItems> repairitems = {
+            RepairItems(config.Golden, RepairAmount)
+        };
         return repairitems;
     }
 
     // 物品标签
     std::vector<std::string> getItemTags() const override {
-        std::vector<std::string> tags = {"minecraft:is_hoe", "minecraft:is_tool", "minecraft:golden_tier"};
+        std::vector<std::string> tags = {
+            "minecraft:is_hoe",            "minecraft:is_tool",            "minecraft:golden_tier"        };
         return tags;
     }
 
     // 工具类型判断
-    bool isHoe() const override { return true; }
+bool isHoe() const override { return true; }
 
     // 是否为挖掘工具
     bool isDiggerItem() const override { return true; }
@@ -1365,7 +1867,9 @@ public:
     }
 
     // 手持动作
-    bool isHandEquipped() const override { return true; }
+    bool isHandEquipped() const override { 
+        return true;
+    }
 
 
     // 使用事件 (耐久消耗)
@@ -1373,6 +1877,8 @@ public:
         auto ac = rp.getActorTarget(::SharedTypes::Legacy::FilterSubject::Holder);
         item.hurtAndBreak(1, ac);
     };
+
+
 };
 class DiamondSword : public ICustomToolItem {
 public:
@@ -1396,20 +1902,23 @@ public:
 
     // 修复材料
     std::vector<RepairItems> getRepairItems() const override {
-        RepairItemsList          config;
-        auto                     RepairAmount = static_cast<float>(getItemDurability()) / 4;
-        std::vector<RepairItems> repairitems  = {RepairItems(config.Diamond, RepairAmount)};
+        RepairItemsList config;
+        auto RepairAmount = static_cast<float>(getItemDurability()) / 4;
+        std::vector<RepairItems> repairitems = {
+            RepairItems(config.Diamond, RepairAmount)
+        };
         return repairitems;
     }
 
     // 物品标签
     std::vector<std::string> getItemTags() const override {
-        std::vector<std::string> tags = {"minecraft:is_sword", "minecraft:is_tool", "minecraft:diamond_tier"};
+        std::vector<std::string> tags = {
+            "minecraft:is_sword",            "minecraft:is_tool",            "minecraft:diamond_tier"        };
         return tags;
     }
 
     // 工具类型判断
-    bool isSword() const override { return true; }
+bool isSword() const override { return true; }
 
     // 是否为挖掘工具
     bool isDiggerItem() const override { return true; }
@@ -1432,7 +1941,11 @@ public:
     }
 
     // 手持动作
-    bool isHandEquipped() const override { return true; }
+    bool isHandEquipped() const override { 
+        return true;
+    }
+
+
 
 
     // 锻造台合成支持
@@ -1458,20 +1971,23 @@ public:
 
     // 修复材料
     std::vector<RepairItems> getRepairItems() const override {
-        RepairItemsList          config;
-        auto                     RepairAmount = static_cast<float>(getItemDurability()) / 4;
-        std::vector<RepairItems> repairitems  = {RepairItems(config.Diamond, RepairAmount)};
+        RepairItemsList config;
+        auto RepairAmount = static_cast<float>(getItemDurability()) / 4;
+        std::vector<RepairItems> repairitems = {
+            RepairItems(config.Diamond, RepairAmount)
+        };
         return repairitems;
     }
 
     // 物品标签
     std::vector<std::string> getItemTags() const override {
-        std::vector<std::string> tags = {"minecraft:is_axe", "minecraft:is_tool", "minecraft:diamond_tier"};
+        std::vector<std::string> tags = {
+            "minecraft:is_axe",            "minecraft:is_tool",            "minecraft:diamond_tier"        };
         return tags;
     }
 
     // 工具类型判断
-    bool isAxe() const override { return true; }
+bool isAxe() const override { return true; }
 
     // 是否为挖掘工具
     bool isDiggerItem() const override { return true; }
@@ -1494,7 +2010,9 @@ public:
     }
 
     // 手持动作
-    bool isHandEquipped() const override { return true; }
+    bool isHandEquipped() const override { 
+        return true;
+    }
 
 
     // 使用事件 (耐久消耗)
@@ -1527,20 +2045,23 @@ public:
 
     // 修复材料
     std::vector<RepairItems> getRepairItems() const override {
-        RepairItemsList          config;
-        auto                     RepairAmount = static_cast<float>(getItemDurability()) / 4;
-        std::vector<RepairItems> repairitems  = {RepairItems(config.Diamond, RepairAmount)};
+        RepairItemsList config;
+        auto RepairAmount = static_cast<float>(getItemDurability()) / 4;
+        std::vector<RepairItems> repairitems = {
+            RepairItems(config.Diamond, RepairAmount)
+        };
         return repairitems;
     }
 
     // 物品标签
     std::vector<std::string> getItemTags() const override {
-        std::vector<std::string> tags = {"minecraft:is_pickaxe", "minecraft:is_tool", "minecraft:diamond_tier"};
+        std::vector<std::string> tags = {
+            "minecraft:is_pickaxe",            "minecraft:is_tool",            "minecraft:diamond_tier"        };
         return tags;
     }
 
     // 工具类型判断
-    bool isPickaxe() const override { return true; }
+bool isPickaxe() const override { return true; }
 
     // 是否为挖掘工具
     bool isDiggerItem() const override { return true; }
@@ -1551,9 +2072,7 @@ public:
     // 可破坏的方块判断
     bool canDestroySpecial(Block const& block) const override {
         // OR 条件
-        if (block.hasTag("minecraft:is_pickaxe_item_destructible") || block.hasTag("minecraft:stone_tier_destructible")
-            || block.hasTag("minecraft:iron_tier_destructible")
-            || block.hasTag("minecraft:diamond_tier_destructible")) {
+        if (block.hasTag("minecraft:is_pickaxe_item_destructible") || block.hasTag("minecraft:stone_tier_destructible") || block.hasTag("minecraft:iron_tier_destructible") || block.hasTag("minecraft:diamond_tier_destructible")) {
             return true;
         }
         return false;
@@ -1565,7 +2084,9 @@ public:
     }
 
     // 手持动作
-    bool isHandEquipped() const override { return true; }
+    bool isHandEquipped() const override { 
+        return true;
+    }
 
 
     // 使用事件 (耐久消耗)
@@ -1598,20 +2119,23 @@ public:
 
     // 修复材料
     std::vector<RepairItems> getRepairItems() const override {
-        RepairItemsList          config;
-        auto                     RepairAmount = static_cast<float>(getItemDurability()) / 4;
-        std::vector<RepairItems> repairitems  = {RepairItems(config.Diamond, RepairAmount)};
+        RepairItemsList config;
+        auto RepairAmount = static_cast<float>(getItemDurability()) / 4;
+        std::vector<RepairItems> repairitems = {
+            RepairItems(config.Diamond, RepairAmount)
+        };
         return repairitems;
     }
 
     // 物品标签
     std::vector<std::string> getItemTags() const override {
-        std::vector<std::string> tags = {"minecraft:is_shovel", "minecraft:is_tool", "minecraft:diamond_tier"};
+        std::vector<std::string> tags = {
+            "minecraft:is_shovel",            "minecraft:is_tool",            "minecraft:diamond_tier"        };
         return tags;
     }
 
     // 工具类型判断
-    bool isShovel() const override { return true; }
+bool isShovel() const override { return true; }
 
     // 是否为挖掘工具
     bool isDiggerItem() const override { return true; }
@@ -1634,7 +2158,9 @@ public:
     }
 
     // 手持动作
-    bool isHandEquipped() const override { return true; }
+    bool isHandEquipped() const override { 
+        return true;
+    }
 
 
     // 使用事件 (耐久消耗)
@@ -1667,20 +2193,23 @@ public:
 
     // 修复材料
     std::vector<RepairItems> getRepairItems() const override {
-        RepairItemsList          config;
-        auto                     RepairAmount = static_cast<float>(getItemDurability()) / 4;
-        std::vector<RepairItems> repairitems  = {RepairItems(config.Diamond, RepairAmount)};
+        RepairItemsList config;
+        auto RepairAmount = static_cast<float>(getItemDurability()) / 4;
+        std::vector<RepairItems> repairitems = {
+            RepairItems(config.Diamond, RepairAmount)
+        };
         return repairitems;
     }
 
     // 物品标签
     std::vector<std::string> getItemTags() const override {
-        std::vector<std::string> tags = {"minecraft:is_hoe", "minecraft:is_tool", "minecraft:diamond_tier"};
+        std::vector<std::string> tags = {
+            "minecraft:is_hoe",            "minecraft:is_tool",            "minecraft:diamond_tier"        };
         return tags;
     }
 
     // 工具类型判断
-    bool isHoe() const override { return true; }
+bool isHoe() const override { return true; }
 
     // 是否为挖掘工具
     bool isDiggerItem() const override { return true; }
@@ -1703,7 +2232,9 @@ public:
     }
 
     // 手持动作
-    bool isHandEquipped() const override { return true; }
+    bool isHandEquipped() const override { 
+        return true;
+    }
 
 
     // 使用事件 (耐久消耗)
@@ -1738,20 +2269,23 @@ public:
 
     // 修复材料
     std::vector<RepairItems> getRepairItems() const override {
-        RepairItemsList          config;
-        auto                     RepairAmount = static_cast<float>(getItemDurability()) / 4;
-        std::vector<RepairItems> repairitems  = {RepairItems(config.Netherite, RepairAmount)};
+        RepairItemsList config;
+        auto RepairAmount = static_cast<float>(getItemDurability()) / 4;
+        std::vector<RepairItems> repairitems = {
+            RepairItems(config.Netherite, RepairAmount)
+        };
         return repairitems;
     }
 
     // 物品标签
     std::vector<std::string> getItemTags() const override {
-        std::vector<std::string> tags = {"minecraft:is_sword", "minecraft:is_tool", "minecraft:netherite_tier"};
+        std::vector<std::string> tags = {
+            "minecraft:is_sword",            "minecraft:is_tool",            "minecraft:netherite_tier"        };
         return tags;
     }
 
     // 工具类型判断
-    bool isSword() const override { return true; }
+bool isSword() const override { return true; }
 
     // 是否为挖掘工具
     bool isDiggerItem() const override { return true; }
@@ -1774,11 +2308,15 @@ public:
     }
 
     // 手持动作
-    bool isHandEquipped() const override { return true; }
+    bool isHandEquipped() const override { 
+        return true;
+    }
+
 
 
     // 防火属性
     bool isFireResistant() const override { return true; }
+
 };
 class NetheriteAxe : public ICustomToolItem {
 public:
@@ -1800,20 +2338,23 @@ public:
 
     // 修复材料
     std::vector<RepairItems> getRepairItems() const override {
-        RepairItemsList          config;
-        auto                     RepairAmount = static_cast<float>(getItemDurability()) / 4;
-        std::vector<RepairItems> repairitems  = {RepairItems(config.Netherite, RepairAmount)};
+        RepairItemsList config;
+        auto RepairAmount = static_cast<float>(getItemDurability()) / 4;
+        std::vector<RepairItems> repairitems = {
+            RepairItems(config.Netherite, RepairAmount)
+        };
         return repairitems;
     }
 
     // 物品标签
     std::vector<std::string> getItemTags() const override {
-        std::vector<std::string> tags = {"minecraft:is_axe", "minecraft:is_tool", "minecraft:netherite_tier"};
+        std::vector<std::string> tags = {
+            "minecraft:is_axe",            "minecraft:is_tool",            "minecraft:netherite_tier"        };
         return tags;
     }
 
     // 工具类型判断
-    bool isAxe() const override { return true; }
+bool isAxe() const override { return true; }
 
     // 是否为挖掘工具
     bool isDiggerItem() const override { return true; }
@@ -1836,7 +2377,9 @@ public:
     }
 
     // 手持动作
-    bool isHandEquipped() const override { return true; }
+    bool isHandEquipped() const override { 
+        return true;
+    }
 
 
     // 使用事件 (耐久消耗)
@@ -1847,6 +2390,7 @@ public:
 
     // 防火属性
     bool isFireResistant() const override { return true; }
+
 };
 class NetheritePickaxe : public ICustomToolItem {
 public:
@@ -1868,20 +2412,23 @@ public:
 
     // 修复材料
     std::vector<RepairItems> getRepairItems() const override {
-        RepairItemsList          config;
-        auto                     RepairAmount = static_cast<float>(getItemDurability()) / 4;
-        std::vector<RepairItems> repairitems  = {RepairItems(config.Netherite, RepairAmount)};
+        RepairItemsList config;
+        auto RepairAmount = static_cast<float>(getItemDurability()) / 4;
+        std::vector<RepairItems> repairitems = {
+            RepairItems(config.Netherite, RepairAmount)
+        };
         return repairitems;
     }
 
     // 物品标签
     std::vector<std::string> getItemTags() const override {
-        std::vector<std::string> tags = {"minecraft:is_pickaxe", "minecraft:is_tool", "minecraft:netherite_tier"};
+        std::vector<std::string> tags = {
+            "minecraft:is_pickaxe",            "minecraft:is_tool",            "minecraft:netherite_tier"        };
         return tags;
     }
 
     // 工具类型判断
-    bool isPickaxe() const override { return true; }
+bool isPickaxe() const override { return true; }
 
     // 是否为挖掘工具
     bool isDiggerItem() const override { return true; }
@@ -1892,9 +2439,7 @@ public:
     // 可破坏的方块判断
     bool canDestroySpecial(Block const& block) const override {
         // OR 条件
-        if (block.hasTag("minecraft:is_pickaxe_item_destructible") || block.hasTag("minecraft:stone_tier_destructible")
-            || block.hasTag("minecraft:iron_tier_destructible")
-            || block.hasTag("minecraft:diamond_tier_destructible")) {
+        if (block.hasTag("minecraft:is_pickaxe_item_destructible") || block.hasTag("minecraft:stone_tier_destructible") || block.hasTag("minecraft:iron_tier_destructible") || block.hasTag("minecraft:diamond_tier_destructible")) {
             return true;
         }
         return false;
@@ -1906,7 +2451,9 @@ public:
     }
 
     // 手持动作
-    bool isHandEquipped() const override { return true; }
+    bool isHandEquipped() const override { 
+        return true;
+    }
 
 
     // 使用事件 (耐久消耗)
@@ -1917,6 +2464,7 @@ public:
 
     // 防火属性
     bool isFireResistant() const override { return true; }
+
 };
 class NetheriteShovel : public ICustomToolItem {
 public:
@@ -1938,20 +2486,23 @@ public:
 
     // 修复材料
     std::vector<RepairItems> getRepairItems() const override {
-        RepairItemsList          config;
-        auto                     RepairAmount = static_cast<float>(getItemDurability()) / 4;
-        std::vector<RepairItems> repairitems  = {RepairItems(config.Netherite, RepairAmount)};
+        RepairItemsList config;
+        auto RepairAmount = static_cast<float>(getItemDurability()) / 4;
+        std::vector<RepairItems> repairitems = {
+            RepairItems(config.Netherite, RepairAmount)
+        };
         return repairitems;
     }
 
     // 物品标签
     std::vector<std::string> getItemTags() const override {
-        std::vector<std::string> tags = {"minecraft:is_shovel", "minecraft:is_tool", "minecraft:netherite_tier"};
+        std::vector<std::string> tags = {
+            "minecraft:is_shovel",            "minecraft:is_tool",            "minecraft:netherite_tier"        };
         return tags;
     }
 
     // 工具类型判断
-    bool isShovel() const override { return true; }
+bool isShovel() const override { return true; }
 
     // 是否为挖掘工具
     bool isDiggerItem() const override { return true; }
@@ -1974,7 +2525,9 @@ public:
     }
 
     // 手持动作
-    bool isHandEquipped() const override { return true; }
+    bool isHandEquipped() const override { 
+        return true;
+    }
 
 
     // 使用事件 (耐久消耗)
@@ -1985,6 +2538,7 @@ public:
 
     // 防火属性
     bool isFireResistant() const override { return true; }
+
 };
 class NetheriteHoe : public ICustomToolItem {
 public:
@@ -2006,20 +2560,23 @@ public:
 
     // 修复材料
     std::vector<RepairItems> getRepairItems() const override {
-        RepairItemsList          config;
-        auto                     RepairAmount = static_cast<float>(getItemDurability()) / 4;
-        std::vector<RepairItems> repairitems  = {RepairItems(config.Netherite, RepairAmount)};
+        RepairItemsList config;
+        auto RepairAmount = static_cast<float>(getItemDurability()) / 4;
+        std::vector<RepairItems> repairitems = {
+            RepairItems(config.Netherite, RepairAmount)
+        };
         return repairitems;
     }
 
     // 物品标签
     std::vector<std::string> getItemTags() const override {
-        std::vector<std::string> tags = {"minecraft:is_hoe", "minecraft:is_tool", "minecraft:netherite_tier"};
+        std::vector<std::string> tags = {
+            "minecraft:is_hoe",            "minecraft:is_tool",            "minecraft:netherite_tier"        };
         return tags;
     }
 
     // 工具类型判断
-    bool isHoe() const override { return true; }
+bool isHoe() const override { return true; }
 
     // 是否为挖掘工具
     bool isDiggerItem() const override { return true; }
@@ -2042,7 +2599,9 @@ public:
     }
 
     // 手持动作
-    bool isHandEquipped() const override { return true; }
+    bool isHandEquipped() const override { 
+        return true;
+    }
 
 
     // 使用事件 (耐久消耗)
@@ -2053,6 +2612,7 @@ public:
 
     // 防火属性
     bool isFireResistant() const override { return true; }
+
 };
 class LeatherHelmet : public ICustomArmorItem {
 public:
@@ -2073,9 +2633,11 @@ public:
 
     // 修复材料
     std::vector<RepairItems> getRepairItems() const override {
-        RepairItemsList          config;
-        auto                     RepairAmount = static_cast<float>(getItemDurability()) / 4;
-        std::vector<RepairItems> repairitems  = {RepairItems(config.Leather, RepairAmount)};
+        RepairItemsList config;
+        auto RepairAmount = static_cast<float>(getItemDurability()) / 4;
+        std::vector<RepairItems> repairitems = {
+            RepairItems(config.Leather, RepairAmount)
+        };
         return repairitems;
     }
 
@@ -2083,12 +2645,16 @@ public:
     bool isHumanoidArmor() const override { return true; };
 
     // 装备槽位
-    SharedTypes::Legacy::ArmorSlot getArmorSlot() const override { return SharedTypes::Legacy::ArmorSlot::Head; }
+    SharedTypes::Legacy::ArmorSlot getArmorSlot() const override { 
+        return SharedTypes::Legacy::ArmorSlot::Head;
+    }
 
     // 装备音效
     SharedTypes::Legacy::LevelSoundEvent getEquipSound() const override {
         return SharedTypes::Legacy::LevelSoundEvent::EquipLeather;
     }
+
+
 };
 class LeatherChestplate : public ICustomArmorItem {
 public:
@@ -2109,9 +2675,11 @@ public:
 
     // 修复材料
     std::vector<RepairItems> getRepairItems() const override {
-        RepairItemsList          config;
-        auto                     RepairAmount = static_cast<float>(getItemDurability()) / 4;
-        std::vector<RepairItems> repairitems  = {RepairItems(config.Leather, RepairAmount)};
+        RepairItemsList config;
+        auto RepairAmount = static_cast<float>(getItemDurability()) / 4;
+        std::vector<RepairItems> repairitems = {
+            RepairItems(config.Leather, RepairAmount)
+        };
         return repairitems;
     }
 
@@ -2119,12 +2687,16 @@ public:
     bool isHumanoidArmor() const override { return true; };
 
     // 装备槽位
-    SharedTypes::Legacy::ArmorSlot getArmorSlot() const override { return SharedTypes::Legacy::ArmorSlot::Torso; }
+    SharedTypes::Legacy::ArmorSlot getArmorSlot() const override { 
+        return SharedTypes::Legacy::ArmorSlot::Torso;
+    }
 
     // 装备音效
     SharedTypes::Legacy::LevelSoundEvent getEquipSound() const override {
         return SharedTypes::Legacy::LevelSoundEvent::EquipLeather;
     }
+
+
 };
 class LeatherLeggings : public ICustomArmorItem {
 public:
@@ -2145,9 +2717,11 @@ public:
 
     // 修复材料
     std::vector<RepairItems> getRepairItems() const override {
-        RepairItemsList          config;
-        auto                     RepairAmount = static_cast<float>(getItemDurability()) / 4;
-        std::vector<RepairItems> repairitems  = {RepairItems(config.Leather, RepairAmount)};
+        RepairItemsList config;
+        auto RepairAmount = static_cast<float>(getItemDurability()) / 4;
+        std::vector<RepairItems> repairitems = {
+            RepairItems(config.Leather, RepairAmount)
+        };
         return repairitems;
     }
 
@@ -2155,12 +2729,16 @@ public:
     bool isHumanoidArmor() const override { return true; };
 
     // 装备槽位
-    SharedTypes::Legacy::ArmorSlot getArmorSlot() const override { return SharedTypes::Legacy::ArmorSlot::Legs; }
+    SharedTypes::Legacy::ArmorSlot getArmorSlot() const override { 
+        return SharedTypes::Legacy::ArmorSlot::Legs;
+    }
 
     // 装备音效
     SharedTypes::Legacy::LevelSoundEvent getEquipSound() const override {
         return SharedTypes::Legacy::LevelSoundEvent::EquipLeather;
     }
+
+
 };
 class LeatherBoots : public ICustomArmorItem {
 public:
@@ -2181,9 +2759,11 @@ public:
 
     // 修复材料
     std::vector<RepairItems> getRepairItems() const override {
-        RepairItemsList          config;
-        auto                     RepairAmount = static_cast<float>(getItemDurability()) / 4;
-        std::vector<RepairItems> repairitems  = {RepairItems(config.Leather, RepairAmount)};
+        RepairItemsList config;
+        auto RepairAmount = static_cast<float>(getItemDurability()) / 4;
+        std::vector<RepairItems> repairitems = {
+            RepairItems(config.Leather, RepairAmount)
+        };
         return repairitems;
     }
 
@@ -2191,12 +2771,184 @@ public:
     bool isHumanoidArmor() const override { return true; };
 
     // 装备槽位
-    SharedTypes::Legacy::ArmorSlot getArmorSlot() const override { return SharedTypes::Legacy::ArmorSlot::Feet; }
+    SharedTypes::Legacy::ArmorSlot getArmorSlot() const override { 
+        return SharedTypes::Legacy::ArmorSlot::Feet;
+    }
 
     // 装备音效
     SharedTypes::Legacy::LevelSoundEvent getEquipSound() const override {
         return SharedTypes::Legacy::LevelSoundEvent::EquipLeather;
     }
+
+
+};
+class CopperHelmet : public ICustomArmorItem {
+public:
+    // 构造函数
+    CopperHelmet() : ICustomArmorItem(VanillaItemNames::CopperHelmet(), HumanoidArmorItem::Tier::Copper) {};
+
+    // 贴图图标 - 使用显式构造函数
+    ItemIcon getIcon() const override { return ItemIcon("copper_helmet"); }
+
+    // 显示名称
+    std::string getDisplayName() const override { return "item.copper_helmet.name"; }
+
+    // 最大堆叠数量
+    uint8_t getItemMaxStackSize() const override { return 1; }
+
+    // 耐久度
+    short getItemDurability() const override { return 121; }
+
+    // 修复材料
+    std::vector<RepairItems> getRepairItems() const override {
+        RepairItemsList config;
+        auto RepairAmount = static_cast<float>(getItemDurability()) / 4;
+        std::vector<RepairItems> repairitems = {
+            RepairItems(config.Copper, RepairAmount)
+        };
+        return repairitems;
+    }
+
+    // 是否为人型实体的盔甲
+    bool isHumanoidArmor() const override { return true; };
+
+    // 装备槽位
+    SharedTypes::Legacy::ArmorSlot getArmorSlot() const override { 
+        return SharedTypes::Legacy::ArmorSlot::Head;
+    }
+
+    // 装备音效
+    SharedTypes::Legacy::LevelSoundEvent getEquipSound() const override {
+        return SharedTypes::Legacy::LevelSoundEvent::EquipCopper;
+    }
+
+
+};
+class CopperChestplate : public ICustomArmorItem {
+public:
+    // 构造函数
+    CopperChestplate() : ICustomArmorItem(VanillaItemNames::CopperChestplate(), HumanoidArmorItem::Tier::Copper) {};
+
+    // 贴图图标 - 使用显式构造函数
+    ItemIcon getIcon() const override { return ItemIcon("copper_chestplate"); }
+
+    // 显示名称
+    std::string getDisplayName() const override { return "item.copper_chestplate.name"; }
+
+    // 最大堆叠数量
+    uint8_t getItemMaxStackSize() const override { return 1; }
+
+    // 耐久度
+    short getItemDurability() const override { return 176; }
+
+    // 修复材料
+    std::vector<RepairItems> getRepairItems() const override {
+        RepairItemsList config;
+        auto RepairAmount = static_cast<float>(getItemDurability()) / 4;
+        std::vector<RepairItems> repairitems = {
+            RepairItems(config.Copper, RepairAmount)
+        };
+        return repairitems;
+    }
+
+    // 是否为人型实体的盔甲
+    bool isHumanoidArmor() const override { return true; };
+
+    // 装备槽位
+    SharedTypes::Legacy::ArmorSlot getArmorSlot() const override { 
+        return SharedTypes::Legacy::ArmorSlot::Torso;
+    }
+
+    // 装备音效
+    SharedTypes::Legacy::LevelSoundEvent getEquipSound() const override {
+        return SharedTypes::Legacy::LevelSoundEvent::EquipCopper;
+    }
+
+
+};
+class CopperLeggings : public ICustomArmorItem {
+public:
+    // 构造函数
+    CopperLeggings() : ICustomArmorItem(VanillaItemNames::CopperLeggings(), HumanoidArmorItem::Tier::Copper) {};
+
+    // 贴图图标 - 使用显式构造函数
+    ItemIcon getIcon() const override { return ItemIcon("copper_leggings"); }
+
+    // 显示名称
+    std::string getDisplayName() const override { return "item.copper_leggings.name"; }
+
+    // 最大堆叠数量
+    uint8_t getItemMaxStackSize() const override { return 1; }
+
+    // 耐久度
+    short getItemDurability() const override { return 165; }
+
+    // 修复材料
+    std::vector<RepairItems> getRepairItems() const override {
+        RepairItemsList config;
+        auto RepairAmount = static_cast<float>(getItemDurability()) / 4;
+        std::vector<RepairItems> repairitems = {
+            RepairItems(config.Copper, RepairAmount)
+        };
+        return repairitems;
+    }
+
+    // 是否为人型实体的盔甲
+    bool isHumanoidArmor() const override { return true; };
+
+    // 装备槽位
+    SharedTypes::Legacy::ArmorSlot getArmorSlot() const override { 
+        return SharedTypes::Legacy::ArmorSlot::Legs;
+    }
+
+    // 装备音效
+    SharedTypes::Legacy::LevelSoundEvent getEquipSound() const override {
+        return SharedTypes::Legacy::LevelSoundEvent::EquipCopper;
+    }
+
+
+};
+class CopperBoots : public ICustomArmorItem {
+public:
+    // 构造函数
+    CopperBoots() : ICustomArmorItem(VanillaItemNames::CopperBoots(), HumanoidArmorItem::Tier::Copper) {};
+
+    // 贴图图标 - 使用显式构造函数
+    ItemIcon getIcon() const override { return ItemIcon("copper_boots"); }
+
+    // 显示名称
+    std::string getDisplayName() const override { return "item.copper_boots.name"; }
+
+    // 最大堆叠数量
+    uint8_t getItemMaxStackSize() const override { return 1; }
+
+    // 耐久度
+    short getItemDurability() const override { return 143; }
+
+    // 修复材料
+    std::vector<RepairItems> getRepairItems() const override {
+        RepairItemsList config;
+        auto RepairAmount = static_cast<float>(getItemDurability()) / 4;
+        std::vector<RepairItems> repairitems = {
+            RepairItems(config.Copper, RepairAmount)
+        };
+        return repairitems;
+    }
+
+    // 是否为人型实体的盔甲
+    bool isHumanoidArmor() const override { return true; };
+
+    // 装备槽位
+    SharedTypes::Legacy::ArmorSlot getArmorSlot() const override { 
+        return SharedTypes::Legacy::ArmorSlot::Feet;
+    }
+
+    // 装备音效
+    SharedTypes::Legacy::LevelSoundEvent getEquipSound() const override {
+        return SharedTypes::Legacy::LevelSoundEvent::EquipCopper;
+    }
+
+
 };
 class GoldenHelmet : public ICustomArmorItem {
 public:
@@ -2217,9 +2969,11 @@ public:
 
     // 修复材料
     std::vector<RepairItems> getRepairItems() const override {
-        RepairItemsList          config;
-        auto                     RepairAmount = static_cast<float>(getItemDurability()) / 4;
-        std::vector<RepairItems> repairitems  = {RepairItems(config.Golden, RepairAmount)};
+        RepairItemsList config;
+        auto RepairAmount = static_cast<float>(getItemDurability()) / 4;
+        std::vector<RepairItems> repairitems = {
+            RepairItems(config.Golden, RepairAmount)
+        };
         return repairitems;
     }
 
@@ -2227,12 +2981,16 @@ public:
     bool isHumanoidArmor() const override { return true; };
 
     // 装备槽位
-    SharedTypes::Legacy::ArmorSlot getArmorSlot() const override { return SharedTypes::Legacy::ArmorSlot::Head; }
+    SharedTypes::Legacy::ArmorSlot getArmorSlot() const override { 
+        return SharedTypes::Legacy::ArmorSlot::Head;
+    }
 
     // 装备音效
     SharedTypes::Legacy::LevelSoundEvent getEquipSound() const override {
         return SharedTypes::Legacy::LevelSoundEvent::EquipGold;
     }
+
+
 };
 class GoldenChestplate : public ICustomArmorItem {
 public:
@@ -2253,9 +3011,11 @@ public:
 
     // 修复材料
     std::vector<RepairItems> getRepairItems() const override {
-        RepairItemsList          config;
-        auto                     RepairAmount = static_cast<float>(getItemDurability()) / 4;
-        std::vector<RepairItems> repairitems  = {RepairItems(config.Golden, RepairAmount)};
+        RepairItemsList config;
+        auto RepairAmount = static_cast<float>(getItemDurability()) / 4;
+        std::vector<RepairItems> repairitems = {
+            RepairItems(config.Golden, RepairAmount)
+        };
         return repairitems;
     }
 
@@ -2263,12 +3023,16 @@ public:
     bool isHumanoidArmor() const override { return true; };
 
     // 装备槽位
-    SharedTypes::Legacy::ArmorSlot getArmorSlot() const override { return SharedTypes::Legacy::ArmorSlot::Torso; }
+    SharedTypes::Legacy::ArmorSlot getArmorSlot() const override { 
+        return SharedTypes::Legacy::ArmorSlot::Torso;
+    }
 
     // 装备音效
     SharedTypes::Legacy::LevelSoundEvent getEquipSound() const override {
         return SharedTypes::Legacy::LevelSoundEvent::EquipGold;
     }
+
+
 };
 class GoldenLeggings : public ICustomArmorItem {
 public:
@@ -2289,9 +3053,11 @@ public:
 
     // 修复材料
     std::vector<RepairItems> getRepairItems() const override {
-        RepairItemsList          config;
-        auto                     RepairAmount = static_cast<float>(getItemDurability()) / 4;
-        std::vector<RepairItems> repairitems  = {RepairItems(config.Golden, RepairAmount)};
+        RepairItemsList config;
+        auto RepairAmount = static_cast<float>(getItemDurability()) / 4;
+        std::vector<RepairItems> repairitems = {
+            RepairItems(config.Golden, RepairAmount)
+        };
         return repairitems;
     }
 
@@ -2299,12 +3065,16 @@ public:
     bool isHumanoidArmor() const override { return true; };
 
     // 装备槽位
-    SharedTypes::Legacy::ArmorSlot getArmorSlot() const override { return SharedTypes::Legacy::ArmorSlot::Legs; }
+    SharedTypes::Legacy::ArmorSlot getArmorSlot() const override { 
+        return SharedTypes::Legacy::ArmorSlot::Legs;
+    }
 
     // 装备音效
     SharedTypes::Legacy::LevelSoundEvent getEquipSound() const override {
         return SharedTypes::Legacy::LevelSoundEvent::EquipGold;
     }
+
+
 };
 class GoldenBoots : public ICustomArmorItem {
 public:
@@ -2325,9 +3095,11 @@ public:
 
     // 修复材料
     std::vector<RepairItems> getRepairItems() const override {
-        RepairItemsList          config;
-        auto                     RepairAmount = static_cast<float>(getItemDurability()) / 4;
-        std::vector<RepairItems> repairitems  = {RepairItems(config.Golden, RepairAmount)};
+        RepairItemsList config;
+        auto RepairAmount = static_cast<float>(getItemDurability()) / 4;
+        std::vector<RepairItems> repairitems = {
+            RepairItems(config.Golden, RepairAmount)
+        };
         return repairitems;
     }
 
@@ -2335,12 +3107,16 @@ public:
     bool isHumanoidArmor() const override { return true; };
 
     // 装备槽位
-    SharedTypes::Legacy::ArmorSlot getArmorSlot() const override { return SharedTypes::Legacy::ArmorSlot::Feet; }
+    SharedTypes::Legacy::ArmorSlot getArmorSlot() const override { 
+        return SharedTypes::Legacy::ArmorSlot::Feet;
+    }
 
     // 装备音效
     SharedTypes::Legacy::LevelSoundEvent getEquipSound() const override {
         return SharedTypes::Legacy::LevelSoundEvent::EquipGold;
     }
+
+
 };
 class ChainmailHelmet : public ICustomArmorItem {
 public:
@@ -2361,9 +3137,11 @@ public:
 
     // 修复材料
     std::vector<RepairItems> getRepairItems() const override {
-        RepairItemsList          config;
-        auto                     RepairAmount = static_cast<float>(getItemDurability()) / 4;
-        std::vector<RepairItems> repairitems  = {RepairItems(config.Iron, RepairAmount)};
+        RepairItemsList config;
+        auto RepairAmount = static_cast<float>(getItemDurability()) / 4;
+        std::vector<RepairItems> repairitems = {
+            RepairItems(config.Iron, RepairAmount)
+        };
         return repairitems;
     }
 
@@ -2371,12 +3149,16 @@ public:
     bool isHumanoidArmor() const override { return true; };
 
     // 装备槽位
-    SharedTypes::Legacy::ArmorSlot getArmorSlot() const override { return SharedTypes::Legacy::ArmorSlot::Head; }
+    SharedTypes::Legacy::ArmorSlot getArmorSlot() const override { 
+        return SharedTypes::Legacy::ArmorSlot::Head;
+    }
 
     // 装备音效
     SharedTypes::Legacy::LevelSoundEvent getEquipSound() const override {
         return SharedTypes::Legacy::LevelSoundEvent::EquipChain;
     }
+
+
 };
 class ChainmailChestplate : public ICustomArmorItem {
 public:
@@ -2397,9 +3179,11 @@ public:
 
     // 修复材料
     std::vector<RepairItems> getRepairItems() const override {
-        RepairItemsList          config;
-        auto                     RepairAmount = static_cast<float>(getItemDurability()) / 4;
-        std::vector<RepairItems> repairitems  = {RepairItems(config.Iron, RepairAmount)};
+        RepairItemsList config;
+        auto RepairAmount = static_cast<float>(getItemDurability()) / 4;
+        std::vector<RepairItems> repairitems = {
+            RepairItems(config.Iron, RepairAmount)
+        };
         return repairitems;
     }
 
@@ -2407,12 +3191,16 @@ public:
     bool isHumanoidArmor() const override { return true; };
 
     // 装备槽位
-    SharedTypes::Legacy::ArmorSlot getArmorSlot() const override { return SharedTypes::Legacy::ArmorSlot::Torso; }
+    SharedTypes::Legacy::ArmorSlot getArmorSlot() const override { 
+        return SharedTypes::Legacy::ArmorSlot::Torso;
+    }
 
     // 装备音效
     SharedTypes::Legacy::LevelSoundEvent getEquipSound() const override {
         return SharedTypes::Legacy::LevelSoundEvent::EquipChain;
     }
+
+
 };
 class ChainmailLeggings : public ICustomArmorItem {
 public:
@@ -2433,9 +3221,11 @@ public:
 
     // 修复材料
     std::vector<RepairItems> getRepairItems() const override {
-        RepairItemsList          config;
-        auto                     RepairAmount = static_cast<float>(getItemDurability()) / 4;
-        std::vector<RepairItems> repairitems  = {RepairItems(config.Iron, RepairAmount)};
+        RepairItemsList config;
+        auto RepairAmount = static_cast<float>(getItemDurability()) / 4;
+        std::vector<RepairItems> repairitems = {
+            RepairItems(config.Iron, RepairAmount)
+        };
         return repairitems;
     }
 
@@ -2443,12 +3233,16 @@ public:
     bool isHumanoidArmor() const override { return true; };
 
     // 装备槽位
-    SharedTypes::Legacy::ArmorSlot getArmorSlot() const override { return SharedTypes::Legacy::ArmorSlot::Legs; }
+    SharedTypes::Legacy::ArmorSlot getArmorSlot() const override { 
+        return SharedTypes::Legacy::ArmorSlot::Legs;
+    }
 
     // 装备音效
     SharedTypes::Legacy::LevelSoundEvent getEquipSound() const override {
         return SharedTypes::Legacy::LevelSoundEvent::EquipChain;
     }
+
+
 };
 class ChainmailBoots : public ICustomArmorItem {
 public:
@@ -2469,9 +3263,11 @@ public:
 
     // 修复材料
     std::vector<RepairItems> getRepairItems() const override {
-        RepairItemsList          config;
-        auto                     RepairAmount = static_cast<float>(getItemDurability()) / 4;
-        std::vector<RepairItems> repairitems  = {RepairItems(config.Iron, RepairAmount)};
+        RepairItemsList config;
+        auto RepairAmount = static_cast<float>(getItemDurability()) / 4;
+        std::vector<RepairItems> repairitems = {
+            RepairItems(config.Iron, RepairAmount)
+        };
         return repairitems;
     }
 
@@ -2479,12 +3275,16 @@ public:
     bool isHumanoidArmor() const override { return true; };
 
     // 装备槽位
-    SharedTypes::Legacy::ArmorSlot getArmorSlot() const override { return SharedTypes::Legacy::ArmorSlot::Feet; }
+    SharedTypes::Legacy::ArmorSlot getArmorSlot() const override { 
+        return SharedTypes::Legacy::ArmorSlot::Feet;
+    }
 
     // 装备音效
     SharedTypes::Legacy::LevelSoundEvent getEquipSound() const override {
         return SharedTypes::Legacy::LevelSoundEvent::EquipChain;
     }
+
+
 };
 class IronHelmet : public ICustomArmorItem {
 public:
@@ -2505,9 +3305,11 @@ public:
 
     // 修复材料
     std::vector<RepairItems> getRepairItems() const override {
-        RepairItemsList          config;
-        auto                     RepairAmount = static_cast<float>(getItemDurability()) / 4;
-        std::vector<RepairItems> repairitems  = {RepairItems(config.Iron, RepairAmount)};
+        RepairItemsList config;
+        auto RepairAmount = static_cast<float>(getItemDurability()) / 4;
+        std::vector<RepairItems> repairitems = {
+            RepairItems(config.Iron, RepairAmount)
+        };
         return repairitems;
     }
 
@@ -2515,12 +3317,16 @@ public:
     bool isHumanoidArmor() const override { return true; };
 
     // 装备槽位
-    SharedTypes::Legacy::ArmorSlot getArmorSlot() const override { return SharedTypes::Legacy::ArmorSlot::Head; }
+    SharedTypes::Legacy::ArmorSlot getArmorSlot() const override { 
+        return SharedTypes::Legacy::ArmorSlot::Head;
+    }
 
     // 装备音效
     SharedTypes::Legacy::LevelSoundEvent getEquipSound() const override {
         return SharedTypes::Legacy::LevelSoundEvent::EquipIron;
     }
+
+
 };
 class IronChestplate : public ICustomArmorItem {
 public:
@@ -2541,9 +3347,11 @@ public:
 
     // 修复材料
     std::vector<RepairItems> getRepairItems() const override {
-        RepairItemsList          config;
-        auto                     RepairAmount = static_cast<float>(getItemDurability()) / 4;
-        std::vector<RepairItems> repairitems  = {RepairItems(config.Iron, RepairAmount)};
+        RepairItemsList config;
+        auto RepairAmount = static_cast<float>(getItemDurability()) / 4;
+        std::vector<RepairItems> repairitems = {
+            RepairItems(config.Iron, RepairAmount)
+        };
         return repairitems;
     }
 
@@ -2551,12 +3359,16 @@ public:
     bool isHumanoidArmor() const override { return true; };
 
     // 装备槽位
-    SharedTypes::Legacy::ArmorSlot getArmorSlot() const override { return SharedTypes::Legacy::ArmorSlot::Torso; }
+    SharedTypes::Legacy::ArmorSlot getArmorSlot() const override { 
+        return SharedTypes::Legacy::ArmorSlot::Torso;
+    }
 
     // 装备音效
     SharedTypes::Legacy::LevelSoundEvent getEquipSound() const override {
         return SharedTypes::Legacy::LevelSoundEvent::EquipIron;
     }
+
+
 };
 class IronLeggings : public ICustomArmorItem {
 public:
@@ -2577,9 +3389,11 @@ public:
 
     // 修复材料
     std::vector<RepairItems> getRepairItems() const override {
-        RepairItemsList          config;
-        auto                     RepairAmount = static_cast<float>(getItemDurability()) / 4;
-        std::vector<RepairItems> repairitems  = {RepairItems(config.Iron, RepairAmount)};
+        RepairItemsList config;
+        auto RepairAmount = static_cast<float>(getItemDurability()) / 4;
+        std::vector<RepairItems> repairitems = {
+            RepairItems(config.Iron, RepairAmount)
+        };
         return repairitems;
     }
 
@@ -2587,12 +3401,16 @@ public:
     bool isHumanoidArmor() const override { return true; };
 
     // 装备槽位
-    SharedTypes::Legacy::ArmorSlot getArmorSlot() const override { return SharedTypes::Legacy::ArmorSlot::Legs; }
+    SharedTypes::Legacy::ArmorSlot getArmorSlot() const override { 
+        return SharedTypes::Legacy::ArmorSlot::Legs;
+    }
 
     // 装备音效
     SharedTypes::Legacy::LevelSoundEvent getEquipSound() const override {
         return SharedTypes::Legacy::LevelSoundEvent::EquipIron;
     }
+
+
 };
 class IronBoots : public ICustomArmorItem {
 public:
@@ -2613,9 +3431,11 @@ public:
 
     // 修复材料
     std::vector<RepairItems> getRepairItems() const override {
-        RepairItemsList          config;
-        auto                     RepairAmount = static_cast<float>(getItemDurability()) / 4;
-        std::vector<RepairItems> repairitems  = {RepairItems(config.Iron, RepairAmount)};
+        RepairItemsList config;
+        auto RepairAmount = static_cast<float>(getItemDurability()) / 4;
+        std::vector<RepairItems> repairitems = {
+            RepairItems(config.Iron, RepairAmount)
+        };
         return repairitems;
     }
 
@@ -2623,12 +3443,16 @@ public:
     bool isHumanoidArmor() const override { return true; };
 
     // 装备槽位
-    SharedTypes::Legacy::ArmorSlot getArmorSlot() const override { return SharedTypes::Legacy::ArmorSlot::Feet; }
+    SharedTypes::Legacy::ArmorSlot getArmorSlot() const override { 
+        return SharedTypes::Legacy::ArmorSlot::Feet;
+    }
 
     // 装备音效
     SharedTypes::Legacy::LevelSoundEvent getEquipSound() const override {
         return SharedTypes::Legacy::LevelSoundEvent::EquipIron;
     }
+
+
 };
 class DiamondHelmet : public ICustomArmorItem {
 public:
@@ -2649,9 +3473,11 @@ public:
 
     // 修复材料
     std::vector<RepairItems> getRepairItems() const override {
-        RepairItemsList          config;
-        auto                     RepairAmount = static_cast<float>(getItemDurability()) / 4;
-        std::vector<RepairItems> repairitems  = {RepairItems(config.Diamond, RepairAmount)};
+        RepairItemsList config;
+        auto RepairAmount = static_cast<float>(getItemDurability()) / 4;
+        std::vector<RepairItems> repairitems = {
+            RepairItems(config.Diamond, RepairAmount)
+        };
         return repairitems;
     }
 
@@ -2659,7 +3485,9 @@ public:
     bool isHumanoidArmor() const override { return true; };
 
     // 装备槽位
-    SharedTypes::Legacy::ArmorSlot getArmorSlot() const override { return SharedTypes::Legacy::ArmorSlot::Head; }
+    SharedTypes::Legacy::ArmorSlot getArmorSlot() const override { 
+        return SharedTypes::Legacy::ArmorSlot::Head;
+    }
 
     // 装备音效
     SharedTypes::Legacy::LevelSoundEvent getEquipSound() const override {
@@ -2668,6 +3496,7 @@ public:
 
     // 锻造台合成支持
     bool isSmithingTransformable() const override { return true; }
+
 };
 class DiamondChestplate : public ICustomArmorItem {
 public:
@@ -2688,9 +3517,11 @@ public:
 
     // 修复材料
     std::vector<RepairItems> getRepairItems() const override {
-        RepairItemsList          config;
-        auto                     RepairAmount = static_cast<float>(getItemDurability()) / 4;
-        std::vector<RepairItems> repairitems  = {RepairItems(config.Diamond, RepairAmount)};
+        RepairItemsList config;
+        auto RepairAmount = static_cast<float>(getItemDurability()) / 4;
+        std::vector<RepairItems> repairitems = {
+            RepairItems(config.Diamond, RepairAmount)
+        };
         return repairitems;
     }
 
@@ -2698,7 +3529,9 @@ public:
     bool isHumanoidArmor() const override { return true; };
 
     // 装备槽位
-    SharedTypes::Legacy::ArmorSlot getArmorSlot() const override { return SharedTypes::Legacy::ArmorSlot::Torso; }
+    SharedTypes::Legacy::ArmorSlot getArmorSlot() const override { 
+        return SharedTypes::Legacy::ArmorSlot::Torso;
+    }
 
     // 装备音效
     SharedTypes::Legacy::LevelSoundEvent getEquipSound() const override {
@@ -2707,6 +3540,7 @@ public:
 
     // 锻造台合成支持
     bool isSmithingTransformable() const override { return true; }
+
 };
 class DiamondLeggings : public ICustomArmorItem {
 public:
@@ -2727,9 +3561,11 @@ public:
 
     // 修复材料
     std::vector<RepairItems> getRepairItems() const override {
-        RepairItemsList          config;
-        auto                     RepairAmount = static_cast<float>(getItemDurability()) / 4;
-        std::vector<RepairItems> repairitems  = {RepairItems(config.Diamond, RepairAmount)};
+        RepairItemsList config;
+        auto RepairAmount = static_cast<float>(getItemDurability()) / 4;
+        std::vector<RepairItems> repairitems = {
+            RepairItems(config.Diamond, RepairAmount)
+        };
         return repairitems;
     }
 
@@ -2737,7 +3573,9 @@ public:
     bool isHumanoidArmor() const override { return true; };
 
     // 装备槽位
-    SharedTypes::Legacy::ArmorSlot getArmorSlot() const override { return SharedTypes::Legacy::ArmorSlot::Legs; }
+    SharedTypes::Legacy::ArmorSlot getArmorSlot() const override { 
+        return SharedTypes::Legacy::ArmorSlot::Legs;
+    }
 
     // 装备音效
     SharedTypes::Legacy::LevelSoundEvent getEquipSound() const override {
@@ -2746,6 +3584,7 @@ public:
 
     // 锻造台合成支持
     bool isSmithingTransformable() const override { return true; }
+
 };
 class DiamondBoots : public ICustomArmorItem {
 public:
@@ -2766,9 +3605,11 @@ public:
 
     // 修复材料
     std::vector<RepairItems> getRepairItems() const override {
-        RepairItemsList          config;
-        auto                     RepairAmount = static_cast<float>(getItemDurability()) / 4;
-        std::vector<RepairItems> repairitems  = {RepairItems(config.Diamond, RepairAmount)};
+        RepairItemsList config;
+        auto RepairAmount = static_cast<float>(getItemDurability()) / 4;
+        std::vector<RepairItems> repairitems = {
+            RepairItems(config.Diamond, RepairAmount)
+        };
         return repairitems;
     }
 
@@ -2776,7 +3617,9 @@ public:
     bool isHumanoidArmor() const override { return true; };
 
     // 装备槽位
-    SharedTypes::Legacy::ArmorSlot getArmorSlot() const override { return SharedTypes::Legacy::ArmorSlot::Feet; }
+    SharedTypes::Legacy::ArmorSlot getArmorSlot() const override { 
+        return SharedTypes::Legacy::ArmorSlot::Feet;
+    }
 
     // 装备音效
     SharedTypes::Legacy::LevelSoundEvent getEquipSound() const override {
@@ -2785,6 +3628,7 @@ public:
 
     // 锻造台合成支持
     bool isSmithingTransformable() const override { return true; }
+
 };
 class NetheriteHelmet : public ICustomArmorItem {
 public:
@@ -2805,9 +3649,11 @@ public:
 
     // 修复材料
     std::vector<RepairItems> getRepairItems() const override {
-        RepairItemsList          config;
-        auto                     RepairAmount = static_cast<float>(getItemDurability()) / 4;
-        std::vector<RepairItems> repairitems  = {RepairItems(config.Netherite, RepairAmount)};
+        RepairItemsList config;
+        auto RepairAmount = static_cast<float>(getItemDurability()) / 4;
+        std::vector<RepairItems> repairitems = {
+            RepairItems(config.Netherite, RepairAmount)
+        };
         return repairitems;
     }
 
@@ -2815,18 +3661,21 @@ public:
     bool isHumanoidArmor() const override { return true; };
 
     // 装备槽位
-    SharedTypes::Legacy::ArmorSlot getArmorSlot() const override { return SharedTypes::Legacy::ArmorSlot::Head; }
+    SharedTypes::Legacy::ArmorSlot getArmorSlot() const override { 
+        return SharedTypes::Legacy::ArmorSlot::Head;
+    }
 
     // 装备音效
     SharedTypes::Legacy::LevelSoundEvent getEquipSound() const override {
         return SharedTypes::Legacy::LevelSoundEvent::EquipNetherite;
     }
+
+
 };
 class NetheriteChestplate : public ICustomArmorItem {
 public:
     // 构造函数
-    NetheriteChestplate()
-    : ICustomArmorItem(VanillaItemNames::NetheriteChestplate(), HumanoidArmorItem::Tier::Netherite) {};
+    NetheriteChestplate() : ICustomArmorItem(VanillaItemNames::NetheriteChestplate(), HumanoidArmorItem::Tier::Netherite) {};
 
     // 贴图图标 - 使用显式构造函数
     ItemIcon getIcon() const override { return ItemIcon("netherite_chestplate"); }
@@ -2842,9 +3691,11 @@ public:
 
     // 修复材料
     std::vector<RepairItems> getRepairItems() const override {
-        RepairItemsList          config;
-        auto                     RepairAmount = static_cast<float>(getItemDurability()) / 4;
-        std::vector<RepairItems> repairitems  = {RepairItems(config.Netherite, RepairAmount)};
+        RepairItemsList config;
+        auto RepairAmount = static_cast<float>(getItemDurability()) / 4;
+        std::vector<RepairItems> repairitems = {
+            RepairItems(config.Netherite, RepairAmount)
+        };
         return repairitems;
     }
 
@@ -2852,18 +3703,21 @@ public:
     bool isHumanoidArmor() const override { return true; };
 
     // 装备槽位
-    SharedTypes::Legacy::ArmorSlot getArmorSlot() const override { return SharedTypes::Legacy::ArmorSlot::Torso; }
+    SharedTypes::Legacy::ArmorSlot getArmorSlot() const override { 
+        return SharedTypes::Legacy::ArmorSlot::Torso;
+    }
 
     // 装备音效
     SharedTypes::Legacy::LevelSoundEvent getEquipSound() const override {
         return SharedTypes::Legacy::LevelSoundEvent::EquipNetherite;
     }
+
+
 };
 class NetheriteLeggings : public ICustomArmorItem {
 public:
     // 构造函数
-    NetheriteLeggings()
-    : ICustomArmorItem(VanillaItemNames::NetheriteLeggings(), HumanoidArmorItem::Tier::Netherite) {};
+    NetheriteLeggings() : ICustomArmorItem(VanillaItemNames::NetheriteLeggings(), HumanoidArmorItem::Tier::Netherite) {};
 
     // 贴图图标 - 使用显式构造函数
     ItemIcon getIcon() const override { return ItemIcon("netherite_leggings"); }
@@ -2879,9 +3733,11 @@ public:
 
     // 修复材料
     std::vector<RepairItems> getRepairItems() const override {
-        RepairItemsList          config;
-        auto                     RepairAmount = static_cast<float>(getItemDurability()) / 4;
-        std::vector<RepairItems> repairitems  = {RepairItems(config.Netherite, RepairAmount)};
+        RepairItemsList config;
+        auto RepairAmount = static_cast<float>(getItemDurability()) / 4;
+        std::vector<RepairItems> repairitems = {
+            RepairItems(config.Netherite, RepairAmount)
+        };
         return repairitems;
     }
 
@@ -2889,12 +3745,16 @@ public:
     bool isHumanoidArmor() const override { return true; };
 
     // 装备槽位
-    SharedTypes::Legacy::ArmorSlot getArmorSlot() const override { return SharedTypes::Legacy::ArmorSlot::Legs; }
+    SharedTypes::Legacy::ArmorSlot getArmorSlot() const override { 
+        return SharedTypes::Legacy::ArmorSlot::Legs;
+    }
 
     // 装备音效
     SharedTypes::Legacy::LevelSoundEvent getEquipSound() const override {
         return SharedTypes::Legacy::LevelSoundEvent::EquipNetherite;
     }
+
+
 };
 class NetheriteBoots : public ICustomArmorItem {
 public:
@@ -2915,9 +3775,11 @@ public:
 
     // 修复材料
     std::vector<RepairItems> getRepairItems() const override {
-        RepairItemsList          config;
-        auto                     RepairAmount = static_cast<float>(getItemDurability()) / 4;
-        std::vector<RepairItems> repairitems  = {RepairItems(config.Netherite, RepairAmount)};
+        RepairItemsList config;
+        auto RepairAmount = static_cast<float>(getItemDurability()) / 4;
+        std::vector<RepairItems> repairitems = {
+            RepairItems(config.Netherite, RepairAmount)
+        };
         return repairitems;
     }
 
@@ -2925,66 +3787,122 @@ public:
     bool isHumanoidArmor() const override { return true; };
 
     // 装备槽位
-    SharedTypes::Legacy::ArmorSlot getArmorSlot() const override { return SharedTypes::Legacy::ArmorSlot::Feet; }
+    SharedTypes::Legacy::ArmorSlot getArmorSlot() const override { 
+        return SharedTypes::Legacy::ArmorSlot::Feet;
+    }
 
     // 装备音效
     SharedTypes::Legacy::LevelSoundEvent getEquipSound() const override {
         return SharedTypes::Legacy::LevelSoundEvent::EquipNetherite;
     }
+
+
+};
+class TurtleHelmet : public ICustomArmorItem {
+public:
+    // 构造函数
+    TurtleHelmet() : ICustomArmorItem(VanillaItemNames::TurtleHelmet(), HumanoidArmorItem::Tier::Turtle) {};
+
+    // 贴图图标 - 使用显式构造函数
+    ItemIcon getIcon() const override { return ItemIcon("turtle_helmet"); }
+
+    // 显示名称
+    std::string getDisplayName() const override { return "item.turtle_helmet.name"; }
+
+    // 最大堆叠数量
+    uint8_t getItemMaxStackSize() const override { return 1; }
+
+    // 耐久度
+    short getItemDurability() const override { return 275; }
+
+    // 修复材料
+    std::vector<RepairItems> getRepairItems() const override {
+        RepairItemsList config;
+        auto RepairAmount = static_cast<float>(getItemDurability()) / 4;
+        std::vector<RepairItems> repairitems = {
+            RepairItems(config.Turtle, RepairAmount)
+        };
+        return repairitems;
+    }
+
+    // 是否为人型实体的盔甲
+    bool isHumanoidArmor() const override { return true; };
+
+    // 装备槽位
+    SharedTypes::Legacy::ArmorSlot getArmorSlot() const override { 
+        return SharedTypes::Legacy::ArmorSlot::Head;
+    }
+
+    // 装备音效
+    SharedTypes::Legacy::LevelSoundEvent getEquipSound() const override {
+        return SharedTypes::Legacy::LevelSoundEvent::EquipGeneric;
+    }
+
+
 };
 
 // 物品注册
-GMLIB_REGISTER_ITEM(WoodenSword);
-GMLIB_REGISTER_ITEM(WoodenAxe);
-GMLIB_REGISTER_ITEM(WoodenPickaxe);
-GMLIB_REGISTER_ITEM(WoodenShovel);
-GMLIB_REGISTER_ITEM(WoodenHoe);
-GMLIB_REGISTER_ITEM(StoneSword);
-GMLIB_REGISTER_ITEM(StoneAxe);
-GMLIB_REGISTER_ITEM(StonePickaxe);
-GMLIB_REGISTER_ITEM(StoneShovel);
-GMLIB_REGISTER_ITEM(StoneHoe);
-GMLIB_REGISTER_ITEM(IronSword);
-GMLIB_REGISTER_ITEM(IronAxe);
-GMLIB_REGISTER_ITEM(IronPickaxe);
-GMLIB_REGISTER_ITEM(IronShovel);
-GMLIB_REGISTER_ITEM(IronHoe);
-GMLIB_REGISTER_ITEM(GoldenSword);
-GMLIB_REGISTER_ITEM(GoldenAxe);
-GMLIB_REGISTER_ITEM(GoldenPickaxe);
-GMLIB_REGISTER_ITEM(GoldenShovel);
-GMLIB_REGISTER_ITEM(GoldenHoe);
-GMLIB_REGISTER_ITEM(DiamondSword);
-GMLIB_REGISTER_ITEM(DiamondAxe);
-GMLIB_REGISTER_ITEM(DiamondPickaxe);
-GMLIB_REGISTER_ITEM(DiamondShovel);
-GMLIB_REGISTER_ITEM(DiamondHoe);
-GMLIB_REGISTER_ITEM(NetheriteSword);
-GMLIB_REGISTER_ITEM(NetheriteAxe);
-GMLIB_REGISTER_ITEM(NetheritePickaxe);
-GMLIB_REGISTER_ITEM(NetheriteShovel);
-GMLIB_REGISTER_ITEM(NetheriteHoe);
-GMLIB_REGISTER_ITEM(LeatherHelmet);
-GMLIB_REGISTER_ITEM(LeatherChestplate);
-GMLIB_REGISTER_ITEM(LeatherLeggings);
-GMLIB_REGISTER_ITEM(LeatherBoots);
-GMLIB_REGISTER_ITEM(GoldenHelmet);
-GMLIB_REGISTER_ITEM(GoldenChestplate);
-GMLIB_REGISTER_ITEM(GoldenLeggings);
-GMLIB_REGISTER_ITEM(GoldenBoots);
-GMLIB_REGISTER_ITEM(ChainmailHelmet);
-GMLIB_REGISTER_ITEM(ChainmailChestplate);
-GMLIB_REGISTER_ITEM(ChainmailLeggings);
-GMLIB_REGISTER_ITEM(ChainmailBoots);
-GMLIB_REGISTER_ITEM(IronHelmet);
-GMLIB_REGISTER_ITEM(IronChestplate);
-GMLIB_REGISTER_ITEM(IronLeggings);
-GMLIB_REGISTER_ITEM(IronBoots);
-GMLIB_REGISTER_ITEM(DiamondHelmet);
-GMLIB_REGISTER_ITEM(DiamondChestplate);
-GMLIB_REGISTER_ITEM(DiamondLeggings);
-GMLIB_REGISTER_ITEM(DiamondBoots);
-GMLIB_REGISTER_ITEM(NetheriteHelmet);
-GMLIB_REGISTER_ITEM(NetheriteChestplate);
-GMLIB_REGISTER_ITEM(NetheriteLeggings);
-GMLIB_REGISTER_ITEM(NetheriteBoots);
+MODAPI_REGISTER_ITEM(WoodenSword);
+MODAPI_REGISTER_ITEM(WoodenAxe);
+MODAPI_REGISTER_ITEM(WoodenPickaxe);
+MODAPI_REGISTER_ITEM(WoodenShovel);
+MODAPI_REGISTER_ITEM(WoodenHoe);
+MODAPI_REGISTER_ITEM(StoneSword);
+MODAPI_REGISTER_ITEM(StoneAxe);
+MODAPI_REGISTER_ITEM(StonePickaxe);
+MODAPI_REGISTER_ITEM(StoneShovel);
+MODAPI_REGISTER_ITEM(StoneHoe);
+MODAPI_REGISTER_ITEM(CopperSword);
+MODAPI_REGISTER_ITEM(CopperAxe);
+MODAPI_REGISTER_ITEM(CopperPickaxe);
+MODAPI_REGISTER_ITEM(CopperShovel);
+MODAPI_REGISTER_ITEM(CopperHoe);
+MODAPI_REGISTER_ITEM(IronSword);
+MODAPI_REGISTER_ITEM(IronAxe);
+MODAPI_REGISTER_ITEM(IronPickaxe);
+MODAPI_REGISTER_ITEM(IronShovel);
+MODAPI_REGISTER_ITEM(IronHoe);
+MODAPI_REGISTER_ITEM(GoldenSword);
+MODAPI_REGISTER_ITEM(GoldenAxe);
+MODAPI_REGISTER_ITEM(GoldenPickaxe);
+MODAPI_REGISTER_ITEM(GoldenShovel);
+MODAPI_REGISTER_ITEM(GoldenHoe);
+MODAPI_REGISTER_ITEM(DiamondSword);
+MODAPI_REGISTER_ITEM(DiamondAxe);
+MODAPI_REGISTER_ITEM(DiamondPickaxe);
+MODAPI_REGISTER_ITEM(DiamondShovel);
+MODAPI_REGISTER_ITEM(DiamondHoe);
+MODAPI_REGISTER_ITEM(NetheriteSword);
+MODAPI_REGISTER_ITEM(NetheriteAxe);
+MODAPI_REGISTER_ITEM(NetheritePickaxe);
+MODAPI_REGISTER_ITEM(NetheriteShovel);
+MODAPI_REGISTER_ITEM(NetheriteHoe);
+MODAPI_REGISTER_ITEM(LeatherHelmet);
+MODAPI_REGISTER_ITEM(LeatherChestplate);
+MODAPI_REGISTER_ITEM(LeatherLeggings);
+MODAPI_REGISTER_ITEM(LeatherBoots);
+MODAPI_REGISTER_ITEM(CopperHelmet);
+MODAPI_REGISTER_ITEM(CopperChestplate);
+MODAPI_REGISTER_ITEM(CopperLeggings);
+MODAPI_REGISTER_ITEM(CopperBoots);
+MODAPI_REGISTER_ITEM(GoldenHelmet);
+MODAPI_REGISTER_ITEM(GoldenChestplate);
+MODAPI_REGISTER_ITEM(GoldenLeggings);
+MODAPI_REGISTER_ITEM(GoldenBoots);
+MODAPI_REGISTER_ITEM(ChainmailHelmet);
+MODAPI_REGISTER_ITEM(ChainmailChestplate);
+MODAPI_REGISTER_ITEM(ChainmailLeggings);
+MODAPI_REGISTER_ITEM(ChainmailBoots);
+MODAPI_REGISTER_ITEM(IronHelmet);
+MODAPI_REGISTER_ITEM(IronChestplate);
+MODAPI_REGISTER_ITEM(IronLeggings);
+MODAPI_REGISTER_ITEM(IronBoots);
+MODAPI_REGISTER_ITEM(DiamondHelmet);
+MODAPI_REGISTER_ITEM(DiamondChestplate);
+MODAPI_REGISTER_ITEM(DiamondLeggings);
+MODAPI_REGISTER_ITEM(DiamondBoots);
+MODAPI_REGISTER_ITEM(NetheriteHelmet);
+MODAPI_REGISTER_ITEM(NetheriteChestplate);
+MODAPI_REGISTER_ITEM(NetheriteLeggings);
+MODAPI_REGISTER_ITEM(NetheriteBoots);
+MODAPI_REGISTER_ITEM(TurtleHelmet);
