@@ -1,89 +1,62 @@
-#include "config/Config.h"
-#include <iomanip>
-#include <iostream>
-#include <sstream>
-
 // 事件监听
-// #include "ila/event/minecraft/world/actor/player/PlayerChangeSlotEvent.h"
 #include "ll/api/event/EventBus.h"
 #include "ll/api/event/entity/ActorHurtEvent.h"
-#include "ll/api/event/player/PlayerPickUpItemEvent.h"
 #include "ll/api/service/Bedrock.h"
+#include "mc/deps/shared_types/legacy/actor/ArmorSlot.h"
 #include "mc/world/actor/Actor.h"
 #include "mc/world/actor/ActorDamageSource.h"
 #include "mc/world/actor/ActorType.h"
+#include "mc/world/actor/Mob.h"
 #include "mc/world/actor/item/ItemActor.h"
+#include "mc/world/actor/player/Player.h"
+#include "mc/world/effect/MobEffect.h"
+#include "mc/world/effect/MobEffectInstance.h"
+#include "mc/world/events/PlayerEventListener.h"
+#include "mc/world/item/Item.h"
+#include "mc/world/item/ItemStack.h"
 #include "mc/world/level/Level.h"
-#include <string>
 
 
 namespace cb {
 
-// 初始化描述
-ItemStack initialize_lore(ItemStack& item) {
-    cb::Attributes::Config();
-    auto config = cb::Attributes::config;
-    auto lore   = item.getCustomLore();
-    if (lore.empty()) {
-        if (config.slot == "mainhand") {
-            lore.emplace_back("\n§r§7在主手时 ：");
-        }
-        if (config.slot == "offhand") {
-            lore.emplace_back("\n§r§7在副手时 ：");
-        }
-        if (config.slot == "head") {
-            lore.emplace_back("\n§r§7戴在头上时 ：");
-        }
-        if (config.slot == "chest") {
-            lore.emplace_back("\n§r§7穿在身上时 ：");
-        }
-        if (config.slot == "legs") {
-            lore.emplace_back("\n§r§7穿在腿上时 ：");
-        }
-        if (config.slot == "feet") {
-            lore.emplace_back("\n§r§7穿在脚上时 ：");
-        }
-        if (config.attack_damage != 0) {
-            std::stringstream str;
-            str << "\n§r§2" << config.attack_damage << " 攻击伤害" << std::endl;
-            lore.emplace_back(str.str());
-        }
-        if (config.attack_speed != 0) {
-            std::stringstream str;
-            str << "\n§r§2" << config.attack_speed << " 攻击速度" << std::endl;
-            lore.emplace_back(str.str());
-        }
-        if (config.sweep_range != 0) {
-            std::stringstream str;
-            str << "\n§r§2" << config.sweep_range << " 横扫范围" << std::endl;
-            lore.emplace_back(str.str());
-        }
-        if (config.sweep_damage != 0) {
-            std::stringstream str;
-            str << "\n§r§2" << config.sweep_damage * 100 << "% 横扫倍率" << std::endl;
-            lore.emplace_back(str.str());
-        }
-    }
-    item.setCustomLore(lore);
-    return item;
-}
-
-// 刷新描述
-ItemStack refresh_lore(ItemStack& item) {
-    item      = initialize_lore(item);
-    auto lore = item.getCustomLore();
-    item.setCustomLore(lore);
-    return item;
-}
-
-auto player_pickup_item = ll::event::EventBus::getInstance().emplaceListener<ll::event::player::PlayerPickUpItemEvent>(
-    [](ll::event::player::PlayerPickUpItemEvent& event) {
-        auto item                = event.itemActor().item();
-        event.itemActor().item() = initialize_lore(item);
-    },
-    ll::event::EventPriority::Normal // 优先级
-);
-
+struct attribute {
+    // 攻击力
+    std::optional<float> attack = 0.0f;
+    // 暴击率
+    std::optional<float> crit_rate = 0.0f;
+    // 暴击伤害
+    std::optional<float> critical_damage = 0.0f;
+    // 命中率
+    std::optional<float> hit_rate = 0.0f;
+    // 物理防御力
+    std::optional<float> defense = 0.0f;
+    // 魔法防御力
+    std::optional<float> magic_defense = 0.0f;
+    // 百分比减伤
+    std::optional<float> percentage_damage_reduction = 0.0f;
+    // 固定减伤
+    std::optional<float> flat_damage_reduction = 0.0f;
+    // 闪避率
+    std::optional<float> avoid_rate = 0.0f;
+    // 格挡率
+    std::optional<float> blocking_rate = 0.0f;
+    // 击退抗性
+    std::optional<float> knockback_resistance = 0.0f;
+    // 移速
+    std::optional<float> movement = 0.0f;
+    // 水下移速
+    std::optional<float> water_movement = 0.0f;
+    // 熔岩移速
+    std::optional<float> lava_movement = 0.0f;
+    // 攻击伤害
+    std::optional<float> attack_damage = 0.0f;
+    // 攻击速度
+    std::optional<float> attack_speed = 0.0f;
+    // 横扫范围
+    std::optional<float> sweep_range = 0.0f;
+    // 横扫倍率
+    std::optional<float> sweep_damage = 0.0f;
+};
 
 auto mob_onhurt = ll::event::EventBus::getInstance().emplaceListener<ll::event::entity::ActorHurtEvent>(
     [](ll::event::entity::ActorHurtEvent& event) {
@@ -101,9 +74,41 @@ auto mob_onhurt = ll::event::EventBus::getInstance().emplaceListener<ll::event::
             // 获取造成伤害的实体
             auto attacker_uniqueID = damage_source.getDamagingEntityUniqueID();
             // 如果造成伤害的为玩家
-            float damage;
+            double damage = 6.6;
+
             if (damage_source.getDamagingEntityType() == ActorType::Player) {
                 auto attacker = level->getPlayer(attacker_uniqueID);
+
+                auto helmet = attacker->getArmor(SharedTypes::Legacy::ArmorSlot::Head);
+                attacker->sendMessage(std::string_view(helmet.getName()));
+                auto chestplate = attacker->getArmor(SharedTypes::Legacy::ArmorSlot::Torso);
+                attacker->sendMessage(std::string_view(chestplate.getName()));
+                auto leggings = attacker->getArmor(SharedTypes::Legacy::ArmorSlot::Legs);
+                attacker->sendMessage(std::string_view(leggings.getName()));
+                auto boots = attacker->getArmor(SharedTypes::Legacy::ArmorSlot::Feet);
+                attacker->sendMessage(std::string_view(boots.getName()));
+                auto handeq     = attacker->getAllHandEquipment();
+
+                /* for (auto& item : equipment) {
+                    auto name = item->getName();
+                    attacker->sendMessage(std::string_view(name));
+                } */
+                // 检测力量buff
+                if (attacker->hasEffect(*MobEffect::getByName("strength"))) {
+                    auto effectLevel = attacker->getEffect(*MobEffect::getByName("strength"))->mAmplifier + 1;
+
+                    double power = pow(1.3, effectLevel);
+                    damage       = power * damage + (power - 1.0) / 0.3;
+                }
+
+                // 检测虚弱buff
+                if (attacker->hasEffect(*MobEffect::getByName("weakness"))) {
+                    auto effectLevel = attacker->getEffect(*MobEffect::getByName("weakness"))->mAmplifier + 1;
+
+                    double power = pow(0.8, effectLevel);
+                    damage       = power * damage + (power - 1.0) / 0.4;
+                }
+
             } else {
                 auto attacker = level->getMob(attacker_uniqueID);
             }
@@ -117,10 +122,10 @@ auto mob_onhurt = ll::event::EventBus::getInstance().emplaceListener<ll::event::
             } else {
                 auto target = level->getMob(target_uniqueID);
             }
+            event.damage() = damage;
         }
     },
-    ll::event::EventPriority::High // 优先级
+    ll::event::EventPriority::Normal // 优先级
 );
-
 
 } // namespace cb

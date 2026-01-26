@@ -24,4 +24,10 @@ private:
     ll::mod::NativeMod& mSelf;
 };
 
+void RegistryCI();
+
+void UnregistryCI();
+
+void UnRegistryRecipe();
+
 } // namespace cb

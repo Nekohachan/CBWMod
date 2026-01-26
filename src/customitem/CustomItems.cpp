@@ -1,6 +1,6 @@
 /**
  * 自动生成的物品类文件
- * 生成时间: 2025-11-29 17:34:39
+ * 生成时间: 2025-11-30 19:42:37
  * 源配置: item.json
  * 请勿手动修改此文件，所有更改应在配置文件中进行
  */
@@ -2641,6 +2641,13 @@ public:
         return repairitems;
     }
 
+    // 物品标签
+    std::vector<std::string> getItemTags() const override {
+        std::vector<std::string> tags = {
+            "minecraft:is_armor",            "minecraft:leather_tier"        };
+        return tags;
+    }
+
     // 是否为人型实体的盔甲
     bool isHumanoidArmor() const override { return true; };
 
@@ -2681,6 +2688,13 @@ public:
             RepairItems(config.Leather, RepairAmount)
         };
         return repairitems;
+    }
+
+    // 物品标签
+    std::vector<std::string> getItemTags() const override {
+        std::vector<std::string> tags = {
+            "minecraft:is_armor",            "minecraft:leather_tier"        };
+        return tags;
     }
 
     // 是否为人型实体的盔甲
@@ -2725,6 +2739,13 @@ public:
         return repairitems;
     }
 
+    // 物品标签
+    std::vector<std::string> getItemTags() const override {
+        std::vector<std::string> tags = {
+            "minecraft:is_armor",            "minecraft:leather_tier"        };
+        return tags;
+    }
+
     // 是否为人型实体的盔甲
     bool isHumanoidArmor() const override { return true; };
 
@@ -2765,6 +2786,13 @@ public:
             RepairItems(config.Leather, RepairAmount)
         };
         return repairitems;
+    }
+
+    // 物品标签
+    std::vector<std::string> getItemTags() const override {
+        std::vector<std::string> tags = {
+            "minecraft:is_armor",            "minecraft:leather_tier"        };
+        return tags;
     }
 
     // 是否为人型实体的盔甲
@@ -2809,6 +2837,13 @@ public:
         return repairitems;
     }
 
+    // 物品标签
+    std::vector<std::string> getItemTags() const override {
+        std::vector<std::string> tags = {
+            "minecraft:is_armor",            "minecraft:copper_tier"        };
+        return tags;
+    }
+
     // 是否为人型实体的盔甲
     bool isHumanoidArmor() const override { return true; };
 
@@ -2849,6 +2884,13 @@ public:
             RepairItems(config.Copper, RepairAmount)
         };
         return repairitems;
+    }
+
+    // 物品标签
+    std::vector<std::string> getItemTags() const override {
+        std::vector<std::string> tags = {
+            "minecraft:is_armor",            "minecraft:copper_tier"        };
+        return tags;
     }
 
     // 是否为人型实体的盔甲
@@ -2893,6 +2935,13 @@ public:
         return repairitems;
     }
 
+    // 物品标签
+    std::vector<std::string> getItemTags() const override {
+        std::vector<std::string> tags = {
+            "minecraft:is_armor",            "minecraft:copper_tier"        };
+        return tags;
+    }
+
     // 是否为人型实体的盔甲
     bool isHumanoidArmor() const override { return true; };
 
@@ -2933,6 +2982,13 @@ public:
             RepairItems(config.Copper, RepairAmount)
         };
         return repairitems;
+    }
+
+    // 物品标签
+    std::vector<std::string> getItemTags() const override {
+        std::vector<std::string> tags = {
+            "minecraft:is_armor",            "minecraft:copper_tier"        };
+        return tags;
     }
 
     // 是否为人型实体的盔甲
@@ -2977,6 +3033,13 @@ public:
         return repairitems;
     }
 
+    // 物品标签
+    std::vector<std::string> getItemTags() const override {
+        std::vector<std::string> tags = {
+            "minecraft:is_armor",            "minecraft:golden_tier"        };
+        return tags;
+    }
+
     // 是否为人型实体的盔甲
     bool isHumanoidArmor() const override { return true; };
 
@@ -3017,6 +3080,13 @@ public:
             RepairItems(config.Golden, RepairAmount)
         };
         return repairitems;
+    }
+
+    // 物品标签
+    std::vector<std::string> getItemTags() const override {
+        std::vector<std::string> tags = {
+            "minecraft:is_armor",            "minecraft:golden_tier"        };
+        return tags;
     }
 
     // 是否为人型实体的盔甲
@@ -3061,6 +3131,13 @@ public:
         return repairitems;
     }
 
+    // 物品标签
+    std::vector<std::string> getItemTags() const override {
+        std::vector<std::string> tags = {
+            "minecraft:is_armor",            "minecraft:golden_tier"        };
+        return tags;
+    }
+
     // 是否为人型实体的盔甲
     bool isHumanoidArmor() const override { return true; };
 
@@ -3101,6 +3178,13 @@ public:
             RepairItems(config.Golden, RepairAmount)
         };
         return repairitems;
+    }
+
+    // 物品标签
+    std::vector<std::string> getItemTags() const override {
+        std::vector<std::string> tags = {
+            "minecraft:is_armor",            "minecraft:golden_tier"        };
+        return tags;
     }
 
     // 是否为人型实体的盔甲
@@ -3145,6 +3229,13 @@ public:
         return repairitems;
     }
 
+    // 物品标签
+    std::vector<std::string> getItemTags() const override {
+        std::vector<std::string> tags = {
+            "minecraft:is_armor",            "minecraft:chainmail_tier"        };
+        return tags;
+    }
+
     // 是否为人型实体的盔甲
     bool isHumanoidArmor() const override { return true; };
 
@@ -3185,6 +3276,13 @@ public:
             RepairItems(config.Iron, RepairAmount)
         };
         return repairitems;
+    }
+
+    // 物品标签
+    std::vector<std::string> getItemTags() const override {
+        std::vector<std::string> tags = {
+            "minecraft:is_armor",            "minecraft:chainmail_tier"        };
+        return tags;
     }
 
     // 是否为人型实体的盔甲
@@ -3229,6 +3327,13 @@ public:
         return repairitems;
     }
 
+    // 物品标签
+    std::vector<std::string> getItemTags() const override {
+        std::vector<std::string> tags = {
+            "minecraft:is_armor",            "minecraft:chainmail_tier"        };
+        return tags;
+    }
+
     // 是否为人型实体的盔甲
     bool isHumanoidArmor() const override { return true; };
 
@@ -3269,6 +3374,13 @@ public:
             RepairItems(config.Iron, RepairAmount)
         };
         return repairitems;
+    }
+
+    // 物品标签
+    std::vector<std::string> getItemTags() const override {
+        std::vector<std::string> tags = {
+            "minecraft:is_armor",            "minecraft:chainmail_tier"        };
+        return tags;
     }
 
     // 是否为人型实体的盔甲
@@ -3313,6 +3425,13 @@ public:
         return repairitems;
     }
 
+    // 物品标签
+    std::vector<std::string> getItemTags() const override {
+        std::vector<std::string> tags = {
+            "minecraft:is_armor",            "minecraft:iron_tier"        };
+        return tags;
+    }
+
     // 是否为人型实体的盔甲
     bool isHumanoidArmor() const override { return true; };
 
@@ -3353,6 +3472,13 @@ public:
             RepairItems(config.Iron, RepairAmount)
         };
         return repairitems;
+    }
+
+    // 物品标签
+    std::vector<std::string> getItemTags() const override {
+        std::vector<std::string> tags = {
+            "minecraft:is_armor",            "minecraft:iron_tier"        };
+        return tags;
     }
 
     // 是否为人型实体的盔甲
@@ -3397,6 +3523,13 @@ public:
         return repairitems;
     }
 
+    // 物品标签
+    std::vector<std::string> getItemTags() const override {
+        std::vector<std::string> tags = {
+            "minecraft:is_armor",            "minecraft:iron_tier"        };
+        return tags;
+    }
+
     // 是否为人型实体的盔甲
     bool isHumanoidArmor() const override { return true; };
 
@@ -3439,6 +3572,13 @@ public:
         return repairitems;
     }
 
+    // 物品标签
+    std::vector<std::string> getItemTags() const override {
+        std::vector<std::string> tags = {
+            "minecraft:is_armor",            "minecraft:iron_tier"        };
+        return tags;
+    }
+
     // 是否为人型实体的盔甲
     bool isHumanoidArmor() const override { return true; };
 
@@ -3479,6 +3619,13 @@ public:
             RepairItems(config.Diamond, RepairAmount)
         };
         return repairitems;
+    }
+
+    // 物品标签
+    std::vector<std::string> getItemTags() const override {
+        std::vector<std::string> tags = {
+            "minecraft:is_armor",            "minecraft:diamond_tier"        };
+        return tags;
     }
 
     // 是否为人型实体的盔甲
@@ -3525,6 +3672,13 @@ public:
         return repairitems;
     }
 
+    // 物品标签
+    std::vector<std::string> getItemTags() const override {
+        std::vector<std::string> tags = {
+            "minecraft:is_armor",            "minecraft:diamond_tier"        };
+        return tags;
+    }
+
     // 是否为人型实体的盔甲
     bool isHumanoidArmor() const override { return true; };
 
@@ -3567,6 +3721,13 @@ public:
             RepairItems(config.Diamond, RepairAmount)
         };
         return repairitems;
+    }
+
+    // 物品标签
+    std::vector<std::string> getItemTags() const override {
+        std::vector<std::string> tags = {
+            "minecraft:is_armor",            "minecraft:diamond_tier"        };
+        return tags;
     }
 
     // 是否为人型实体的盔甲
@@ -3613,6 +3774,13 @@ public:
         return repairitems;
     }
 
+    // 物品标签
+    std::vector<std::string> getItemTags() const override {
+        std::vector<std::string> tags = {
+            "minecraft:is_armor",            "minecraft:diamond_tier"        };
+        return tags;
+    }
+
     // 是否为人型实体的盔甲
     bool isHumanoidArmor() const override { return true; };
 
@@ -3657,6 +3825,13 @@ public:
         return repairitems;
     }
 
+    // 物品标签
+    std::vector<std::string> getItemTags() const override {
+        std::vector<std::string> tags = {
+            "minecraft:is_armor",            "minecraft:netherite_tier"        };
+        return tags;
+    }
+
     // 是否为人型实体的盔甲
     bool isHumanoidArmor() const override { return true; };
 
@@ -3671,6 +3846,8 @@ public:
     }
 
 
+    // 防火属性
+    bool isFireResistant() const override { return true; }
 };
 class NetheriteChestplate : public ICustomArmorItem {
 public:
@@ -3699,6 +3876,13 @@ public:
         return repairitems;
     }
 
+    // 物品标签
+    std::vector<std::string> getItemTags() const override {
+        std::vector<std::string> tags = {
+            "minecraft:is_armor",            "minecraft:netherite_tier"        };
+        return tags;
+    }
+
     // 是否为人型实体的盔甲
     bool isHumanoidArmor() const override { return true; };
 
@@ -3713,6 +3897,8 @@ public:
     }
 
 
+    // 防火属性
+    bool isFireResistant() const override { return true; }
 };
 class NetheriteLeggings : public ICustomArmorItem {
 public:
@@ -3741,6 +3927,13 @@ public:
         return repairitems;
     }
 
+    // 物品标签
+    std::vector<std::string> getItemTags() const override {
+        std::vector<std::string> tags = {
+            "minecraft:is_armor",            "minecraft:netherite_tier"        };
+        return tags;
+    }
+
     // 是否为人型实体的盔甲
     bool isHumanoidArmor() const override { return true; };
 
@@ -3755,6 +3948,8 @@ public:
     }
 
 
+    // 防火属性
+    bool isFireResistant() const override { return true; }
 };
 class NetheriteBoots : public ICustomArmorItem {
 public:
@@ -3783,6 +3978,13 @@ public:
         return repairitems;
     }
 
+    // 物品标签
+    std::vector<std::string> getItemTags() const override {
+        std::vector<std::string> tags = {
+            "minecraft:is_armor",            "minecraft:netherite_tier"        };
+        return tags;
+    }
+
     // 是否为人型实体的盔甲
     bool isHumanoidArmor() const override { return true; };
 
@@ -3797,6 +3999,8 @@ public:
     }
 
 
+    // 防火属性
+    bool isFireResistant() const override { return true; }
 };
 class TurtleHelmet : public ICustomArmorItem {
 public:
@@ -3823,6 +4027,13 @@ public:
             RepairItems(config.Turtle, RepairAmount)
         };
         return repairitems;
+    }
+
+    // 物品标签
+    std::vector<std::string> getItemTags() const override {
+        std::vector<std::string> tags = {
+            "minecraft:is_armor"        };
+        return tags;
     }
 
     // 是否为人型实体的盔甲

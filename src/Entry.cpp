@@ -1,5 +1,4 @@
 #include "Entry.h"
-#include "customitem/CustomCI.h"
 #include <ll/api/mod/RegisterHelper.h>
 
 namespace cb {
@@ -11,6 +10,7 @@ Entry& Entry::getInstance() {
 
 #define logger cb::Entry::getInstance().getSelf().getLogger()
 
+
 bool Entry::load() const {
     // 加载完成提示
     logger.info("CBWMod 已加载!");
@@ -21,6 +21,8 @@ bool Entry::load() const {
 bool Entry::enable() const {
     // 加载自定义创造背包物品
     cb::RegistryCI();
+    // 卸载部分配方
+    cb::UnRegistryRecipe();
     return true;
 }
 

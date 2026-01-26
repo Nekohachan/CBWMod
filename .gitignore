@@ -565,3 +565,4 @@ fabric.properties
 /src/mc/
 /lib/
 /buildTool/
+/.mcattributes

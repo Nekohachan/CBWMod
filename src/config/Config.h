@@ -2,8 +2,8 @@
 #include <nlohmann/json.hpp>
 #include <optional>
 #include <string>
+#include <unordered_map>
 #include <vector>
-
 using json = nlohmann::json;
 
 namespace cb {
@@ -104,59 +104,6 @@ struct RepairItemsList {
     std::vector<std::string> Turtle = {
         "minecraft:turtle_scute",
     };
-};
-
-
-// 属性 -------------------------------------------------------------------------------------------------
-
-// 属性
-struct Attributes {
-    int version = 2;
-    // 攻击力
-    float attack = 0.0f;
-    // 暴击率
-    float crit_rate = 0.0f;
-    // 暴击伤害
-    float critical_damage = 0.0f;
-    // 命中率
-    float hit_rate = 0.0f;
-    // 血量上限
-    int health = 0;
-    // 物理防御力
-    float defense = 0.0f;
-    // 魔法防御力
-    float magic_defense = 0.0f;
-    // 百分比减伤
-    float percentage_damage_reduction = 0.0f;
-    // 固定减伤
-    float flat_damage_reduction = 0.0f;
-    // 闪避率
-    float avoid_rate = 0.0f;
-    // 格挡率
-    float blocking_rate = 0.0f;
-    // 击退抗性
-    float knockback_resistance = 0.0f;
-    // 移速
-    float movement = 0.0f;
-    // 水下移速
-    float water_movement = 0.0f;
-    // 熔岩移速
-    float lava_movement = 0.0f;
-    // 攻击伤害
-    float attack_damage = 0.0f;
-    // 攻击速度
-    float attack_speed = 0.0f;
-    // 横扫范围
-    float sweep_range = 0.0f;
-    // 横扫倍率
-    float sweep_damage = 0.0f;
-    // 所属槽位
-    std::string slot;
-    // 物品描述
-    std::string lore;
-
-    static Attributes        config;
-    static bool              Config();
 };
 
 } // namespace cb

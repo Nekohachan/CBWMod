@@ -6,11 +6,11 @@ add_repositories("liteldev-repo https://github.com/LiteLDev/xmake-repo.git")
 add_repositories("groupmountain-repo https://github.com/GroupMountain/xmake-repo.git")
 add_repositories("miracleforest-repo https://github.com/MiracleForest/xmake-repo.git")
 
-add_requires("levilamina 1.7.6", {configs = {target_type = "server"}})
+add_requires("levilamina 1.7.7", {configs = {target_type = "server"}})
 add_requires("levibuildscript 0.5.2")
 add_requires("gmlib 1.7.0")
 add_requires("ilistenattentively 0.10.0")
-add_requires("modapi 0.3.0")
+add_requires("modapi 0.3.1")
 add_requires("nlohmann_json")
 
 if not has_config("vs_runtime") then
@@ -39,6 +39,7 @@ target("CBWMod")
     add_packages(
         "levilamina",
         "gmlib",
+        "ilistenattentively",
         "modapi",
         "nlohmann_json"
     )
