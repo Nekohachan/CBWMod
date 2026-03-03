@@ -1,11 +1,17 @@
 {
-    "version": 1,
+    "version": 3,
     "minecraft:wooden_sword": {
         "slot": "mainhand",
         "attack_damage": 4.0,
         "attack_speed": 1.6,
         "sweep_range": 1.0,
         "sweep_damage": 0.5
+    },
+    "minecraft:wooden_spear": {
+        "slot": "mainhand",
+        "attack_damage": 1.0,
+        "attack_speed": 1.1,
+        "charge_level": 0.6
     },
     "minecraft:wooden_axe": {
         "slot": "mainhand",
@@ -34,6 +40,12 @@
         "sweep_range": 1.0,
         "sweep_damage": 0.5
     },
+    "minecraft:stone_spear": {
+        "slot": "mainhand",
+        "attack_damage": 2.0,
+        "attack_speed": 1.1,
+        "charge_level": 0.6
+    },
     "minecraft:stone_axe": {
         "slot": "mainhand",
         "attack_damage": 7.0,
@@ -60,6 +72,12 @@
         "attack_speed": 1.6,
         "sweep_range": 1.0,
         "sweep_damage": 0.5
+    },
+    "minecraft:copper_spear": {
+        "slot": "mainhand",
+        "attack_damage": 2.0,
+        "attack_speed": 1.1,
+        "charge_level": 0.7
     },
     "minecraft:copper_axe": {
         "slot": "mainhand",
@@ -88,6 +106,12 @@
         "sweep_range": 1.0,
         "sweep_damage": 0.5
     },
+    "minecraft:iron_spear": {
+        "slot": "mainhand",
+        "attack_damage": 3.0,
+        "attack_speed": 1.1,
+        "charge_level": 8.6
+    },
     "minecraft:iron_axe": {
         "slot": "mainhand",
         "attack_damage": 8.0,
@@ -114,6 +138,12 @@
         "attack_speed": 1.6,
         "sweep_range": 1.0,
         "sweep_damage": 0.5
+    },
+    "minecraft:golden_spear": {
+        "slot": "mainhand",
+        "attack_damage": 3.0,
+        "attack_speed": 1.1,
+        "charge_level": 0.7
     },
     "minecraft:golden_axe": {
         "slot": "mainhand",
@@ -142,6 +172,12 @@
         "sweep_range": 1.0,
         "sweep_damage": 0.5
     },
+    "minecraft:diamond_spear": {
+        "slot": "mainhand",
+        "attack_damage": 4.0,
+        "attack_speed": 1.1,
+        "charge_level": 0.9
+    },
     "minecraft:diamond_axe": {
         "slot": "mainhand",
         "attack_damage": 9.0,
@@ -169,6 +205,12 @@
         "sweep_range": 1.0,
         "sweep_damage": 0.5
     },
+    "minecraft:netherite_spear": {
+        "slot": "mainhand",
+        "attack_damage": 1.0,
+        "attack_speed": 1.1,
+        "charge_level": 1.0
+    },
     "minecraft:netherite_axe": {
         "slot": "mainhand",
         "attack_damage": 10.0,
@@ -194,7 +236,7 @@
         "defense": 1.0
     },
     "minecraft:leather_chestplate": {
-        "slot": "chest",
+        "slot": "torso",
         "defense": 3.0
     },
     "minecraft:leather_leggings": {
@@ -211,7 +253,7 @@
         "movement": -0.01
     },
     "minecraft:copper_chestplate": {
-        "slot": "chest",
+        "slot": "torso",
         "defense": 4.0,
         "movement": -0.05
     },
@@ -231,7 +273,7 @@
         "movement": -0.04
     },
     "minecraft:golden_chestplate": {
-        "slot": "chest",
+        "slot": "torso",
         "defense": 5.0,
         "movement": -0.1
     },
@@ -251,7 +293,7 @@
         "movement": -0.01
     },
     "minecraft:chainmail_chestplate": {
-        "slot": "chest",
+        "slot": "torso",
         "defense": 5.0,
         "movement": -0.04
     },
@@ -271,7 +313,7 @@
         "movement": -0.03
     },
     "minecraft:iron_chestplate": {
-        "slot": "chest",
+        "slot": "torso",
         "defense": 6.0,
         "movement": -0.07
     },
@@ -291,7 +333,7 @@
         "movement": -0.02
     },
     "minecraft:diamond_chestplate": {
-        "slot": "chest",
+        "slot": "torso",
         "defense": 8.0,
         "movement": -0.05
     },
@@ -312,7 +354,7 @@
         "knockback_resistance": 0.1
     },
     "minecraft:netherite_chestplate": {
-        "slot": "chest",
+        "slot": "torso",
         "defense": 8.0,
         "movement": -0.06,
         "knockback_resistance": 0.1
