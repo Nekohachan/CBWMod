@@ -7,11 +7,11 @@ add_repositories("groupmountain-repo https://github.com/GroupMountain/xmake-repo
 add_repositories("miracleforest-repo https://github.com/MiracleForest/xmake-repo.git")
 
 
-add_requires("levilamina 1.9.7", {configs = {target_type = "server"}})
+add_requires("levilamina 26.10.9", {configs = {target_type = "server"}})
 add_requires("levibuildscript 0.6.0")
-add_requires("gmlib 1.9.1")
-add_requires("ilistenattentively 0.11.3")
-add_requires("modapi 0.4.0")
+add_requires("gmlib 26.10.0")
+add_requires("ilistenattentively 0.12.0")
+add_requires("modapi 26.10.0")
 
 if not has_config("vs_runtime") then
     set_runtimes("MD")
