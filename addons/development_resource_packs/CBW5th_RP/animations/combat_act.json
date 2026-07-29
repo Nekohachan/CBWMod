@@ -1,0 +1,37 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.cb.player.swap_item": {
+			"loop": true,
+			"bones": {
+				"rightarm": {
+					"position": [ 0, "10.0 * (1.0 - v.player_arm_height) * (v.attack || v.switch)", 0 ]
+				}
+			}
+		},
+		"animation.cb.player.empty_hand": {
+			"loop": true,
+			"bones": {
+				"rightarm": {
+					"position": [ 0, "!v.is_holding_right * 2.0", "!v.is_holding_right * -0.5" ]
+				}
+			}
+		},
+		"animation.player.onAttack": {
+			"animation_length": 1000,
+			"timeline": {"0.0": "v.attack = 1; v.attack_hold = v.is_holding_right;"}
+		},
+		"animation.player.outAttack": {
+			"animation_length": 1000,
+			"timeline": {"0.0": "v.attack = 0;"}
+		},
+		"animation.player.on_dig": {
+			"animation_length": 0.1,
+			"timeline": {"0.0": "v.on_dig = 1;"}
+		},
+		"animation.player.not_dig": {
+			"animation_length": 0.1,
+			"timeline": {"0.0": "v.on_dig = 0;"}
+		}
+	}
+}

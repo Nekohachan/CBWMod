@@ -1,0 +1,10 @@
+{
+    "addonsIdentifier": "CBW5th",
+    "addonsName": "§d方体世界5th附加包",
+    "addonsDescription": "by Nekohachan5073",
+    "addonsVersion": [1, 0, 42],
+    "gameVersion": [1, 26, 20],
+    "serverModuleVersion": "2.6.0",
+    "BPFolderName": "CBW5th_BP",
+    "RPFolderName": "CBW5th_RP"
+}

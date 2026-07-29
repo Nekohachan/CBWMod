@@ -1,0 +1,621 @@
+{
+    "resource_pack_name": "vanilla",
+    "texture_name": "atlas.items",
+    "texture_data": {
+        "acoin": {
+            "textures": "textures/items/cb/acoin"
+        },
+        "complete_ragent": {
+            "textures": "textures/items/cb/complete_ragent"
+        },
+        "empty_reel": {
+            "textures": "textures/items/cb/empty_reel"
+        },
+        "empty_rune": {
+            "textures": "textures/items/cb/empty_rune"
+        },
+        "evolution_reagent": {
+            "textures": "textures/items/cb/evolution_reagent"
+        },
+        "primary_magic_potion": {
+            "textures": "textures/items/cb/primary_magic_potion"
+        },
+        "chainmail_boots": {
+            "textures": "textures/items/mc/chainmail_boots"
+        },
+        "chainmail_chestplate": {
+            "textures": "textures/items/mc/chainmail_chestplate"
+        },
+        "chainmail_helmet": {
+            "textures": "textures/items/mc/chainmail_helmet"
+        },
+        "chainmail_leggings": {
+            "textures": "textures/items/mc/chainmail_leggings"
+        },
+        "copper_axe": {
+            "textures": "textures/items/mc/copper_axe"
+        },
+        "copper_boots": {
+            "textures": "textures/items/mc/copper_boots"
+        },
+        "copper_chestplate": {
+            "textures": "textures/items/mc/copper_chestplate"
+        },
+        "copper_helmet": {
+            "textures": "textures/items/mc/copper_helmet"
+        },
+        "copper_hoe": {
+            "textures": "textures/items/mc/copper_hoe"
+        },
+        "copper_leggings": {
+            "textures": "textures/items/mc/copper_leggings"
+        },
+        "copper_pickaxe": {
+            "textures": "textures/items/mc/copper_pickaxe"
+        },
+        "copper_shovel": {
+            "textures": "textures/items/mc/copper_shovel"
+        },
+        "copper_sword": {
+            "textures": "textures/items/mc/copper_sword"
+        },
+        "diamond_axe": {
+            "textures": "textures/items/mc/diamond_axe"
+        },
+        "diamond_boots": {
+            "textures": "textures/items/mc/diamond_boots"
+        },
+        "diamond_chestplate": {
+            "textures": "textures/items/mc/diamond_chestplate"
+        },
+        "diamond_helmet": {
+            "textures": "textures/items/mc/diamond_helmet"
+        },
+        "diamond_hoe": {
+            "textures": "textures/items/mc/diamond_hoe"
+        },
+        "diamond_leggings": {
+            "textures": "textures/items/mc/diamond_leggings"
+        },
+        "diamond_pickaxe": {
+            "textures": "textures/items/mc/diamond_pickaxe"
+        },
+        "diamond_shovel": {
+            "textures": "textures/items/mc/diamond_shovel"
+        },
+        "diamond_sword": {
+            "textures": "textures/items/mc/diamond_sword"
+        },
+        "golden_axe": {
+            "textures": "textures/items/mc/golden_axe"
+        },
+        "golden_boots": {
+            "textures": "textures/items/mc/golden_boots"
+        },
+        "golden_chestplate": {
+            "textures": "textures/items/mc/golden_chestplate"
+        },
+        "golden_helmet": {
+            "textures": "textures/items/mc/golden_helmet"
+        },
+        "golden_hoe": {
+            "textures": "textures/items/mc/golden_hoe"
+        },
+        "golden_leggings": {
+            "textures": "textures/items/mc/golden_leggings"
+        },
+        "golden_pickaxe": {
+            "textures": "textures/items/mc/golden_pickaxe"
+        },
+        "golden_shovel": {
+            "textures": "textures/items/mc/golden_shovel"
+        },
+        "golden_sword": {
+            "textures": "textures/items/mc/golden_sword"
+        },
+        "iron_axe": {
+            "textures": "textures/items/mc/iron_axe"
+        },
+        "iron_boots": {
+            "textures": "textures/items/mc/iron_boots"
+        },
+        "iron_chestplate": {
+            "textures": "textures/items/mc/iron_chestplate"
+        },
+        "iron_helmet": {
+            "textures": "textures/items/mc/iron_helmet"
+        },
+        "iron_hoe": {
+            "textures": "textures/items/mc/iron_hoe"
+        },
+        "iron_leggings": {
+            "textures": "textures/items/mc/iron_leggings"
+        },
+        "iron_pickaxe": {
+            "textures": "textures/items/mc/iron_pickaxe"
+        },
+        "iron_shovel": {
+            "textures": "textures/items/mc/iron_shovel"
+        },
+        "iron_sword": {
+            "textures": "textures/items/mc/iron_sword"
+        },
+        "leather_boots": {
+            "textures": "textures/items/mc/leather_boots"
+        },
+        "leather_chestplate": {
+            "textures": "textures/items/mc/leather_chestplate"
+        },
+        "leather_helmet": {
+            "textures": "textures/items/mc/leather_helmet"
+        },
+        "leather_leggings": {
+            "textures": "textures/items/mc/leather_leggings"
+        },
+        "mace": {
+            "textures": "textures/items/mc/mace"
+        },
+        "netherite_axe": {
+            "textures": "textures/items/mc/netherite_axe"
+        },
+        "netherite_boots": {
+            "textures": "textures/items/mc/netherite_boots"
+        },
+        "netherite_chestplate": {
+            "textures": "textures/items/mc/netherite_chestplate"
+        },
+        "netherite_helmet": {
+            "textures": "textures/items/mc/netherite_helmet"
+        },
+        "netherite_hoe": {
+            "textures": "textures/items/mc/netherite_hoe"
+        },
+        "netherite_leggings": {
+            "textures": "textures/items/mc/netherite_leggings"
+        },
+        "netherite_pickaxe": {
+            "textures": "textures/items/mc/netherite_pickaxe"
+        },
+        "netherite_shovel": {
+            "textures": "textures/items/mc/netherite_shovel"
+        },
+        "netherite_sword": {
+            "textures": "textures/items/mc/netherite_sword"
+        },
+        "stone_axe": {
+            "textures": "textures/items/mc/stone_axe"
+        },
+        "stone_hoe": {
+            "textures": "textures/items/mc/stone_hoe"
+        },
+        "stone_pickaxe": {
+            "textures": "textures/items/mc/stone_pickaxe"
+        },
+        "stone_shovel": {
+            "textures": "textures/items/mc/stone_shovel"
+        },
+        "stone_sword": {
+            "textures": "textures/items/mc/stone_sword"
+        },
+        "trident": {
+            "textures": "textures/items/mc/trident"
+        },
+        "turtle_helmet": {
+            "textures": "textures/items/mc/turtle_helmet"
+        },
+        "wooden_axe": {
+            "textures": "textures/items/mc/wooden_axe"
+        },
+        "wooden_hoe": {
+            "textures": "textures/items/mc/wooden_hoe"
+        },
+        "wooden_pickaxe": {
+            "textures": "textures/items/mc/wooden_pickaxe"
+        },
+        "wooden_shovel": {
+            "textures": "textures/items/mc/wooden_shovel"
+        },
+        "wooden_sword": {
+            "textures": "textures/items/mc/wooden_sword"
+        },
+        "alexandrite_boots": {
+            "textures": "textures/items/cb/armor/alexandrite_boots"
+        },
+        "alexandrite_chestplate": {
+            "textures": "textures/items/cb/armor/alexandrite_chestplate"
+        },
+        "alexandrite_helmet": {
+            "textures": "textures/items/cb/armor/alexandrite_helmet"
+        },
+        "alexandrite_leggings": {
+            "textures": "textures/items/cb/armor/alexandrite_leggings"
+        },
+        "heavy_diamond_boots": {
+            "textures": "textures/items/cb/armor/heavy_diamond_boots"
+        },
+        "heavy_diamond_chestplate": {
+            "textures": "textures/items/cb/armor/heavy_diamond_chestplate"
+        },
+        "heavy_diamond_helmet": {
+            "textures": "textures/items/cb/armor/heavy_diamond_helmet"
+        },
+        "heavy_diamond_leggings": {
+            "textures": "textures/items/cb/armor/heavy_diamond_leggings"
+        },
+        "lustrous_alloy_boots": {
+            "textures": "textures/items/cb/armor/lustrous_alloy_boots"
+        },
+        "lustrous_alloy_chestplate": {
+            "textures": "textures/items/cb/armor/lustrous_alloy_chestplate"
+        },
+        "lustrous_alloy_helmet": {
+            "textures": "textures/items/cb/armor/lustrous_alloy_helmet"
+        },
+        "lustrous_alloy_leggings": {
+            "textures": "textures/items/cb/armor/lustrous_alloy_leggings"
+        },
+        "pyrite_boots": {
+            "textures": "textures/items/cb/armor/pyrite_boots"
+        },
+        "pyrite_chestplate": {
+            "textures": "textures/items/cb/armor/pyrite_chestplate"
+        },
+        "pyrite_helmet": {
+            "textures": "textures/items/cb/armor/pyrite_helmet"
+        },
+        "pyrite_leggings": {
+            "textures": "textures/items/cb/armor/pyrite_leggings"
+        },
+        "sapphire_boots": {
+            "textures": "textures/items/cb/armor/sapphire_boots"
+        },
+        "sapphire_chestplate": {
+            "textures": "textures/items/cb/armor/sapphire_chestplate"
+        },
+        "sapphire_helmet": {
+            "textures": "textures/items/cb/armor/sapphire_helmet"
+        },
+        "sapphire_leggings": {
+            "textures": "textures/items/cb/armor/sapphire_leggings"
+        },
+        "source_alloy_boots": {
+            "textures": "textures/items/cb/armor/source_alloy_boots"
+        },
+        "source_alloy_chestplate": {
+            "textures": "textures/items/cb/armor/source_alloy_chestplate"
+        },
+        "source_alloy_helmet": {
+            "textures": "textures/items/cb/armor/source_alloy_helmet"
+        },
+        "source_alloy_leggings": {
+            "textures": "textures/items/cb/armor/source_alloy_leggings"
+        },
+        "adamantium_ingot": {
+            "textures": "textures/items/cb/material/adamantium_ingot"
+        },
+        "alchemical_catalyst": {
+            "textures": "textures/items/cb/material/alchemical_catalyst"
+        },
+        "alchemical_dust": {
+            "textures": "textures/items/cb/material/alchemical_dust"
+        },
+        "alexandrite": {
+            "textures": "textures/items/cb/material/alexandrite"
+        },
+        "aluminium_ingot": {
+            "textures": "textures/items/cb/material/aluminium_ingot"
+        },
+        "anti_erosive_drug": {
+            "textures": "textures/items/cb/material/anti_erosive_drug"
+        },
+        "broken_reagent": {
+            "textures": "textures/items/cb/material/broken_reagent"
+        },
+        "bronze_ingot": {
+            "textures": "textures/items/cb/material/bronze_ingot"
+        },
+        "chromium_ingot": {
+            "textures": "textures/items/cb/material/chromium_ingot"
+        },
+        "cobalt_ingot": {
+            "textures": "textures/items/cb/material/cobalt_ingot"
+        },
+        "copper_plate": {
+            "textures": "textures/items/cb/material/copper_plate"
+        },
+        "corroded_powder": {
+            "textures": "textures/items/cb/material/corroded_powder"
+        },
+        "corrupted_crimtane_ingot": {
+            "textures": "textures/items/cb/material/corrupted_crimtane_ingot"
+        },
+        "crimson_diamond": {
+            "textures": "textures/items/cb/material/crimson_diamond"
+        },
+        "crimtane_ingot": {
+            "textures": "textures/items/cb/material/crimtane_ingot"
+        },
+        "deep_eye": {
+            "textures": "textures/items/cb/material/deep_eye"
+        },
+        "gold_plate": {
+            "textures": "textures/items/cb/material/gold_plate"
+        },
+        "heart_of_sound": {
+            "textures": "textures/items/cb/material/heart_of_sound"
+        },
+        "iron_plate": {
+            "textures": "textures/items/cb/material/iron_plate"
+        },
+        "lead_ingot": {
+            "textures": "textures/items/cb/material/lead_ingot"
+        },
+        "lithium_ingot": {
+            "textures": "textures/items/cb/material/lithium_ingot"
+        },
+        "lustrous_alloy_ingot": {
+            "textures": "textures/items/cb/material/lustrous_alloy_ingot"
+        },
+        "magic_liquid": {
+            "textures": "textures/items/cb/material/magic_liquid"
+        },
+        "manganese_ingot": {
+            "textures": "textures/items/cb/material/manganese_ingot"
+        },
+        "medicine_blindness": {
+            "textures": "textures/items/cb/material/medicine_blindness"
+        },
+        "medicine_nausea": {
+            "textures": "textures/items/cb/material/medicine_nausea"
+        },
+        "medicine_poison": {
+            "textures": "textures/items/cb/material/medicine_poison"
+        },
+        "mythril": {
+            "textures": "textures/items/cb/material/mythril"
+        },
+        "nickel_ingot": {
+            "textures": "textures/items/cb/material/nickel_ingot"
+        },
+        "palladium_ingot": {
+            "textures": "textures/items/cb/material/palladium_ingot"
+        },
+        "pig_iron_ingot": {
+            "textures": "textures/items/cb/material/pig_iron_ingot"
+        },
+        "platinum": {
+            "textures": "textures/items/cb/material/platinum"
+        },
+        "platinum_ingot": {
+            "textures": "textures/items/cb/material/platinum_ingot"
+        },
+        "primary_reductant": {
+            "textures": "textures/items/cb/material/primary_reductant"
+        },
+        "pyrite_ingot": {
+            "textures": "textures/items/cb/material/pyrite_ingot"
+        },
+        "raw_chromium": {
+            "textures": "textures/items/cb/material/raw_chromium"
+        },
+        "raw_cobalt": {
+            "textures": "textures/items/cb/material/raw_cobalt"
+        },
+        "raw_lead": {
+            "textures": "textures/items/cb/material/raw_lead"
+        },
+        "raw_lithium": {
+            "textures": "textures/items/cb/material/raw_lithium"
+        },
+        "raw_manganese": {
+            "textures": "textures/items/cb/material/raw_manganese"
+        },
+        "raw_nickel": {
+            "textures": "textures/items/cb/material/raw_nickel"
+        },
+        "raw_platinium": {
+            "textures": "textures/items/cb/material/raw_platinium"
+        },
+        "raw_silver": {
+            "textures": "textures/items/cb/material/raw_silver"
+        },
+        "raw_tin": {
+            "textures": "textures/items/cb/material/raw_tin"
+        },
+        "raw_titanium": {
+            "textures": "textures/items/cb/material/raw_titanium"
+        },
+        "raw_vanadium": {
+            "textures": "textures/items/cb/material/raw_vanadium"
+        },
+        "raw_zinc": {
+            "textures": "textures/items/cb/material/raw_zinc"
+        },
+        "rose_quartz": {
+            "textures": "textures/items/cb/material/rose_quartz"
+        },
+        "ruby": {
+            "textures": "textures/items/cb/material/ruby"
+        },
+        "sapphire": {
+            "textures": "textures/items/cb/material/sapphire"
+        },
+        "silver_ingot": {
+            "textures": "textures/items/cb/material/silver_ingot"
+        },
+        "source_alloy_crystallization": {
+            "textures": "textures/items/cb/material/source_alloy_crystallization"
+        },
+        "source_alloy_ingot": {
+            "textures": "textures/items/cb/material/source_alloy_ingot"
+        },
+        "source_diamond_ingot": {
+            "textures": "textures/items/cb/material/source_diamond_ingot"
+        },
+        "star_soil": {
+            "textures": "textures/items/cb/material/star_soil"
+        },
+        "steel_ingot": {
+            "textures": "textures/items/cb/material/steel_ingot"
+        },
+        "steel_plate": {
+            "textures": "textures/items/cb/material/steel_plate"
+        },
+        "tin_ingot": {
+            "textures": "textures/items/cb/material/tin_ingot"
+        },
+        "titanium_ingot": {
+            "textures": "textures/items/cb/material/titanium_ingot"
+        },
+        "vanadium_ingot": {
+            "textures": "textures/items/cb/material/vanadium_ingot"
+        },
+        "zinc_ingot": {
+            "textures": "textures/items/cb/material/zinc_ingot"
+        },
+        "zircon": {
+            "textures": "textures/items/cb/material/zircon"
+        },
+        "alexandrite_axe": {
+            "textures": "textures/items/cb/tool/alexandrite_axe"
+        },
+        "alexandrite_hoe": {
+            "textures": "textures/items/cb/tool/alexandrite_hoe"
+        },
+        "alexandrite_pickaxe": {
+            "textures": "textures/items/cb/tool/alexandrite_pickaxe"
+        },
+        "alexandrite_shovel": {
+            "textures": "textures/items/cb/tool/alexandrite_shovel"
+        },
+        "alexandrite_sword": {
+            "textures": "textures/items/cb/tool/alexandrite_sword"
+        },
+        "lustrous_alloy_axe": {
+            "textures": "textures/items/cb/tool/lustrous_alloy_axe"
+        },
+        "lustrous_alloy_hoe": {
+            "textures": "textures/items/cb/tool/lustrous_alloy_hoe"
+        },
+        "lustrous_alloy_pickaxe": {
+            "textures": "textures/items/cb/tool/lustrous_alloy_pickaxe"
+        },
+        "lustrous_alloy_shovel": {
+            "textures": "textures/items/cb/tool/lustrous_alloy_shovel"
+        },
+        "lustrous_alloy_sword": {
+            "textures": "textures/items/cb/tool/lustrous_alloy_sword"
+        },
+        "pyrite_axe": {
+            "textures": "textures/items/cb/tool/pyrite_axe"
+        },
+        "pyrite_hoe": {
+            "textures": "textures/items/cb/tool/pyrite_hoe"
+        },
+        "pyrite_pickaxe": {
+            "textures": "textures/items/cb/tool/pyrite_pickaxe"
+        },
+        "pyrite_shovel": {
+            "textures": "textures/items/cb/tool/pyrite_shovel"
+        },
+        "pyrite_sword": {
+            "textures": "textures/items/cb/tool/pyrite_sword"
+        },
+        "anti_personnel_sniper": {
+            "textures": "textures/items/cb/weapon/anti_personnel_sniper"
+        },
+        "arras_army_sword": {
+            "textures": "textures/items/cb/weapon/arras_army_sword"
+        },
+        "black_record_sword": {
+            "textures": "textures/items/cb/weapon/black_record_sword"
+        },
+        "crystal_staff": {
+            "textures": "textures/items/cb/weapon/crystal_staff"
+        },
+        "dark_bone_sword": {
+            "textures": "textures/items/cb/weapon/dark_bone_sword"
+        },
+        "dark_prophet": {
+            "textures": "textures/items/cb/weapon/dark_prophet"
+        },
+        "deep_sword": {
+            "textures": "textures/items/cb/weapon/deep_sword"
+        },
+        "diamond_bearded_axe": {
+            "textures": "textures/items/cb/weapon/diamond_bearded_axe"
+        },
+        "diamond_dagger": {
+            "textures": "textures/items/cb/weapon/diamond_dagger"
+        },
+        "diamond_double_axe": {
+            "textures": "textures/items/cb/weapon/diamond_double_axe"
+        },
+        "diamond_knife": {
+            "textures": "textures/items/cb/weapon/diamond_knife"
+        },
+        "gamblecurse": {
+            "textures": "textures/items/cb/weapon/gamblecurse"
+        },
+        "glare": {
+            "textures": "textures/items/cb/weapon/glare"
+        },
+        "golden_bow_pulling_0": {
+            "textures": "textures/items/cb/weapon/golden_bow_pulling_0"
+        },
+        "golden_bow_pulling_1": {
+            "textures": "textures/items/cb/weapon/golden_bow_pulling_1"
+        },
+        "golden_bow_pulling_2": {
+            "textures": "textures/items/cb/weapon/golden_bow_pulling_2"
+        },
+        "golden_bow_standby": {
+            "textures": "textures/items/cb/weapon/golden_bow_standby"
+        },
+        "iron_hammer": {
+            "textures": "textures/items/cb/weapon/iron_hammer"
+        },
+        "netherite_bearded_axe": {
+            "textures": "textures/items/cb/weapon/netherite_bearded_axe"
+        },
+        "netherite_double_axe": {
+            "textures": "textures/items/cb/weapon/netherite_double_axe"
+        },
+        "netherite_katana": {
+            "textures": "textures/items/cb/weapon/netherite_katana"
+        },
+        "netherite_knife": {
+            "textures": "textures/items/cb/weapon/netherite_knife"
+        },
+        "obsidian_sword": {
+            "textures": "textures/items/cb/weapon/obsidian_sword"
+        },
+        "phagocytosis_sword": {
+            "textures": "textures/items/cb/weapon/phagocytosis_sword"
+        },
+        "primary_staff": {
+            "textures": "textures/items/cb/weapon/primary_staff"
+        },
+        "pyrite_bearded_axe": {
+            "textures": "textures/items/cb/weapon/pyrite_bearded_axe"
+        },
+        "pyrite_double_axe": {
+            "textures": "textures/items/cb/weapon/pyrite_double_axe"
+        },
+        "pyrite_katana": {
+            "textures": "textures/items/cb/weapon/pyrite_katana"
+        },
+        "pyrite_knife": {
+            "textures": "textures/items/cb/weapon/pyrite_knife"
+        },
+        "source_alloy_sword": {
+            "textures": "textures/items/cb/weapon/source_alloy_sword"
+        },
+        "steel_sword": {
+            "textures": "textures/items/cb/weapon/steel_sword"
+        },
+        "very_long_sword": {
+            "textures": "textures/items/cb/weapon/very_long_sword"
+        }
+    }
+}

@@ -1,0 +1,63 @@
+{
+	"format_version": "1.16.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.cb.item_weapon",
+				"texture_width": 16,
+				"texture_height": 16,
+				"visible_bounds_width": 1,
+				"visible_bounds_height": 1,
+				"visible_bounds_offset": [0, 0, 0]
+			},
+			"bones": [
+				{
+					"name": "rightitem",
+					"pivot": [0, 0.2, -6]
+				},
+				{
+					"name": "weapon",
+					"parent": "rightitem",
+					"pivot": [0, 0, 0],
+					"texture_meshes": [
+						{
+							"texture": "default",
+							"position": [0.5, 2.8, 0],
+							"rotation": [0, -135, 90],
+							"local_pivot": [6, 0, 6]
+						}
+					]
+				}
+			]
+		},
+		{
+			"description": {
+				"identifier": "geometry.cb.item_weapon.offhand",
+				"texture_width": 16,
+				"texture_height": 16,
+				"visible_bounds_width": 1,
+				"visible_bounds_height": 1,
+				"visible_bounds_offset": [0, 0, 0]
+			},
+			"bones": [
+				{
+					"name": "leftitem",
+					"pivot": [0, 0.2, -6]
+				},
+				{
+					"name": "weapon",
+					"parent": "leftitem",
+					"pivot": [0, 0, 0],
+					"texture_meshes": [
+						{
+							"texture": "default",
+							"position": [0.5, 2.8, 0],
+							"rotation": [0, -135, 90],
+							"local_pivot": [6, 0, 6]
+						}
+					]
+				}
+			]
+		}
+	]
+}

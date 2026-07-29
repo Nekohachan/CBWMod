@@ -1,0 +1,34 @@
+{
+    "format_version": "1.26.20",
+    "minecraft:block": {
+        "description": {
+            "identifier": "cb:star_stone",
+            "menu_category": {
+                "group": "minecraft:itemGroup.name.ore",
+                "category": "nature"
+            }
+        },
+        "components": {
+            "minecraft:display_name": "tile.cb:star_stone.name",
+            "minecraft:destructible_by_mining": {
+                "seconds_to_destroy": 12
+            },
+            "minecraft:destructible_by_explosion": {
+                "explosion_resistance": 8
+            },
+            "minecraft:geometry": "minecraft:geometry.full_block",
+            "minecraft:material_instances": {
+                "*": {
+                    "texture": "star_stone"
+                }
+            },
+            "minecraft:map_color": "#ffffff",
+            "minecraft:loot": "loot_tables/blocks/empty.json",
+            "minecraft:light_emission": 4,
+            "minecraft:tags": [
+                "minecraft:is_pickaxe_item_destructible",
+                "minecraft:iron_tier_destructible"
+            ]
+        }
+    }
+}

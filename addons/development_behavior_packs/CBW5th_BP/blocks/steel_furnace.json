@@ -1,0 +1,113 @@
+{
+    "format_version": "1.26.20",
+    "minecraft:block": {
+        "description": {
+            "identifier": "cb:steel_furnace",
+            "menu_category": {
+                "group": "cb:itemGroup.table",
+                "category": "items"
+            },
+            "traits": {
+                "minecraft:placement_direction": {
+                    "enabled_states": [
+                        "minecraft:cardinal_direction"
+                    ],
+                    "y_rotation_offset": 180
+                }
+            }
+        },
+        "components": {
+            "minecraft:display_name": "tile.cb:steel_furnace.name",
+            "minecraft:destructible_by_mining": {
+                "seconds_to_destroy": 7.5
+            },
+            "minecraft:destructible_by_explosion": {
+                "explosion_resistance": 6
+            },
+            "minecraft:geometry": "minecraft:geometry.full_block",
+            "minecraft:material_instances": {
+                "north": {
+                    "texture": "steel_furnace_front"
+                },
+                "east": {
+                    "texture": "steel_furnace_otherside"
+                },
+                "south": {
+                    "texture": "steel_furnace_otherside"
+                },
+                "west": {
+                    "texture": "steel_furnace_otherside"
+                },
+                "up": {
+                    "texture": "steel_furnace_otherside"
+                },
+                "down": {
+                    "texture": "steel_furnace_otherside"
+                }
+            },
+            "minecraft:map_color": "#ffffff",
+            "minecraft:loot": "loot_tables/blocks/empty.json",
+            "minecraft:crafting_table": {
+                "table_name": "tile.cb:steel_furnace.name",
+                "crafting_tags": [
+                    "cb:iron_furnace",
+                    "cb:steel_furnace"
+                ]
+            },
+            "minecraft:tags": [
+                "minecraft:is_pickaxe_item_destructible",
+                "minecraft:stone_tier_destructible"
+            ]
+        },
+        "permutations": [
+            {
+                "condition": "q.block_state('minecraft:cardinal_direction') == 'north'",
+                "components": {
+                    "minecraft:transformation": {
+                        "rotation": [
+                            0,
+                            0,
+                            0
+                        ]
+                    }
+                }
+            },
+            {
+                "condition": "q.block_state('minecraft:cardinal_direction') == 'west'",
+                "components": {
+                    "minecraft:transformation": {
+                        "rotation": [
+                            0,
+                            90,
+                            0
+                        ]
+                    }
+                }
+            },
+            {
+                "condition": "q.block_state('minecraft:cardinal_direction') == 'south'",
+                "components": {
+                    "minecraft:transformation": {
+                        "rotation": [
+                            0,
+                            180,
+                            0
+                        ]
+                    }
+                }
+            },
+            {
+                "condition": "q.block_state('minecraft:cardinal_direction') == 'east'",
+                "components": {
+                    "minecraft:transformation": {
+                        "rotation": [
+                            0,
+                            -90,
+                            0
+                        ]
+                    }
+                }
+            }
+        ]
+    }
+}

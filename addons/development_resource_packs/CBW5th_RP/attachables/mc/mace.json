@@ -1,0 +1,28 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:attachable": {
+    "description": {
+      "identifier": "minecraft:mace",
+      "materials": {
+        "default": "entity_alphatest",
+        "enchanted": "entity_alphatest_glint"
+      },
+      "textures": {
+        "default": "textures/models/cb/mace",
+        "enchanted": "textures/misc/enchanted_item_glint"
+      },
+      "geometry": {
+        "default": "geometry.mace"
+      },
+      "animations": {
+        "default": "animation.mace.wield"
+      },
+      "scripts": {
+        "animate": [
+          "default"
+        ]
+      },
+      "render_controllers": [ "controller.render.cb_weapon" ]
+    }
+  }
+}

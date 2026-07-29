@@ -1,0 +1,79 @@
+{
+    "format_version": "1.8.0",
+    "animations": {
+        "animation.cb.item_weapon": {
+			"loop": true,
+			"bones": {
+			  	"rightitem": {
+					"position": [ 
+						"c.is_first_person ? 0.75 : 0.5", 
+						"c.is_first_person ? -0.5 : -1", 
+						"c.is_first_person ? 3.75 : -2" 
+					],
+					"rotation": [ 
+						"c.is_first_person ? 25 : 190.0", 
+						"c.is_first_person ? -118 : 0.0", 
+						"c.is_first_person ? -49.5 : 180.0" 
+					]
+			  	},
+			  	"leftitem": {
+					"position": [
+						"c.is_first_person ? -20.75 : -0.5", 
+						"c.is_first_person ? -0.25 : -1", 
+						"c.is_first_person ? 17 : -2" 
+					],
+					"rotation": [
+						"c.is_first_person ? 109.5 : 190.0", 
+						"c.is_first_person ? -0.5 : 0.0", 
+						"c.is_first_person ? -0.5 : 180.0" 
+					]
+			  	}
+			}
+		},
+		"animation.cb.player.crossbow": {
+			"loop": true,
+			"bones": {
+				"rightarm": {
+					"position": [-12, 0, 0]
+				},
+				"leftarm": {
+					"position": [-6, 0, 0]
+				}
+			}
+		},
+		"animation.cb.player.bow": {
+			"loop": true,
+			"bones": {
+				"rightarm": {
+					"position": [3, -1, 2],
+					"rotation": [5, 0, -4]
+				}
+			}
+		},
+		"animation.cb.player.bow.charge": {
+			"loop": false,
+			"animation_length": 100000,
+			"bones": {
+				"rightitem": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"1.0": ["-5 * v.is_first_person", "5 * v.is_first_person", 0]
+					}
+				}
+			}
+		},
+		"animation.cb.player.bow.use": {
+			"loop": false,
+			"animation_length": 100000,
+			"bones": {
+				"rightarm": {
+					"position": {
+						"0.0": ["-2 * v.is_first_person", "-6 * v.is_first_person", 0],
+						"0.15": ["-2 * v.is_first_person", "2 * v.is_first_person", 0],
+						"100000": ["-2 * v.is_first_person", "2 * v.is_first_person", 0]
+					}
+				}
+			}
+		}
+    }
+}

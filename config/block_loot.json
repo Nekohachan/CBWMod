@@ -1,0 +1,242 @@
+{
+    "cb:limestone": {
+        "need_tool": "pickaxe",
+        "pickaxe_level": 1,
+        "drop_item": "cb:limestone",
+        "drop_count": 1,
+        "can_fortune": false,
+        "can_silk_touch": true
+    },
+    "cb:lithium_ore": {
+        "need_tool": "pickaxe",
+        "pickaxe_level": 2,
+        "drop_item": "cb:raw_lithium",
+        "drop_count": 1,
+        "can_fortune": true,
+        "can_silk_touch": true
+    },
+    "cb:vanadium_ore": {
+        "need_tool": "pickaxe",
+        "pickaxe_level": 2,
+        "drop_item": "cb:raw_vanadium",
+        "drop_count": 1,
+        "can_fortune": true,
+        "can_silk_touch": true
+    },
+    "cb:deepslate_vanadium_ore": {
+        "need_tool": "pickaxe",
+        "pickaxe_level": 2,
+        "drop_item": "cb:raw_vanadium",
+        "drop_count": 1,
+        "can_fortune": true,
+        "can_silk_touch": true
+    },
+    "cb:chromium_ore": {
+        "need_tool": "pickaxe",
+        "pickaxe_level": 7,
+        "drop_item": "cb:raw_chromium",
+        "drop_count": 1,
+        "can_fortune": true,
+        "can_silk_touch": true
+    },
+    "cb:deepslate_chromium_ore": {
+        "need_tool": "pickaxe",
+        "pickaxe_level": 7,
+        "drop_item": "cb:raw_chromium",
+        "drop_count": 1,
+        "can_fortune": true,
+        "can_silk_touch": true
+    },
+    "cb:manganese_ore": {
+        "need_tool": "pickaxe",
+        "pickaxe_level": 4,
+        "drop_item": "cb:raw_manganese",
+        "drop_count": 1,
+        "can_fortune": true,
+        "can_silk_touch": true
+    },
+    "cb:deepslate_manganese_ore": {
+        "need_tool": "pickaxe",
+        "pickaxe_level": 4,
+        "drop_item": "cb:raw_manganese",
+        "drop_count": 1,
+        "can_fortune": true,
+        "can_silk_touch": true
+    },
+    "cb:titanium_ore": {
+        "need_tool": "pickaxe",
+        "pickaxe_level": 4,
+        "drop_item": "cb:raw_titanium",
+        "drop_count": 1,
+        "can_fortune": true,
+        "can_silk_touch": true
+    },
+    "cb:deepslate_titanium_ore": {
+        "need_tool": "pickaxe",
+        "pickaxe_level": 4,
+        "drop_item": "cb:raw_titanium",
+        "drop_count": 1,
+        "can_fortune": true,
+        "can_silk_touch": true
+    },
+    "cb:cobalt_ore": {
+        "need_tool": "pickaxe",
+        "pickaxe_level": 3,
+        "drop_item": "cb:raw_cobalt",
+        "drop_count": 1,
+        "can_fortune": true,
+        "can_silk_touch": true
+    },
+    "cb:deepslate_cobalt_ore": {
+        "need_tool": "pickaxe",
+        "pickaxe_level": 3,
+        "drop_item": "cb:raw_cobalt",
+        "drop_count": 1,
+        "can_fortune": true,
+        "can_silk_touch": true
+    },
+    "cb:nickel_ore": {
+        "need_tool": "pickaxe",
+        "pickaxe_level": 3,
+        "drop_item": "cb:raw_nickel",
+        "drop_count": 1,
+        "can_fortune": true,
+        "can_silk_touch": true
+    },
+    "cb:deepslate_nickel_ore": {
+        "need_tool": "pickaxe",
+        "pickaxe_level": 3,
+        "drop_item": "cb:raw_nickel",
+        "drop_count": 1,
+        "can_fortune": true,
+        "can_silk_touch": true
+    },
+    "cb:zinc_ore": {
+        "need_tool": "pickaxe",
+        "pickaxe_level": 3,
+        "drop_item": "cb:raw_zinc",
+        "drop_count": 1,
+        "can_fortune": true,
+        "can_silk_touch": true
+    },
+    "cb:deepslate_zinc_ore": {
+        "need_tool": "pickaxe",
+        "pickaxe_level": 3,
+        "drop_item": "cb:raw_zinc",
+        "drop_count": 1,
+        "can_fortune": true,
+        "can_silk_touch": true
+    },
+    "cb:zircon_ore": {
+        "need_tool": "pickaxe",
+        "pickaxe_level": 4,
+        "drop_item": "cb:zircon_stone",
+        "drop_count": 1,
+        "can_fortune": true,
+        "can_silk_touch": true
+    },
+    "cb:deepslate_zircon_ore": {
+        "need_tool": "pickaxe",
+        "pickaxe_level": 4,
+        "drop_item": "cb:zircon_stone",
+        "drop_count": 1,
+        "can_fortune": true,
+        "can_silk_touch": true
+    },
+    "cb:silver_ore": {
+        "need_tool": "pickaxe",
+        "pickaxe_level": 3,
+        "drop_item": "cb:raw_silver",
+        "drop_count": 1,
+        "can_fortune": true,
+        "can_silk_touch": true
+    },
+    "cb:deepslate_silver_ore": {
+        "need_tool": "pickaxe",
+        "pickaxe_level": 3,
+        "drop_item": "cb:raw_silver",
+        "drop_count": 1,
+        "can_fortune": true,
+        "can_silk_touch": true
+    },
+    "cb:tin_ore": {
+        "need_tool": "pickaxe",
+        "pickaxe_level": 3,
+        "drop_item": "cb:raw_tin",
+        "drop_count": 1,
+        "can_fortune": true,
+        "can_silk_touch": true
+    },
+    "cb:deepslate_tin_ore": {
+        "need_tool": "pickaxe",
+        "pickaxe_level": 3,
+        "drop_item": "cb:raw_tin",
+        "drop_count": 1,
+        "can_fortune": true,
+        "can_silk_touch": true
+    },
+    "cb:platinum_ore": {
+        "need_tool": "pickaxe",
+        "pickaxe_level": 3,
+        "drop_item": "cb:raw_platinum",
+        "drop_count": 1,
+        "can_fortune": true,
+        "can_silk_touch": true
+    },
+    "cb:deepslate_platinum_ore": {
+        "need_tool": "pickaxe",
+        "pickaxe_level": 3,
+        "drop_item": "cb:raw_platinum",
+        "drop_count": 1,
+        "can_fortune": true,
+        "can_silk_touch": true
+    },
+    "cb:lead_ore": {
+        "need_tool": "pickaxe",
+        "pickaxe_level": 3,
+        "drop_item": "cb:raw_lead",
+        "drop_count": 1,
+        "can_fortune": true,
+        "can_silk_touch": true
+    },
+    "cb:deepslate_lead_ore": {
+        "need_tool": "pickaxe",
+        "pickaxe_level": 3,
+        "drop_item": "cb:raw_lead",
+        "drop_count": 1,
+        "can_fortune": true,
+        "can_silk_touch": true
+    },
+    "cb:star_stone": {
+        "need_tool": "pickaxe",
+        "pickaxe_level": 3,
+        "drop_item": "cb:star_soil",
+        "drop_count": 1,
+        "can_fortune": false,
+        "can_silk_touch": false
+    },
+    "cb:steel_block": {
+        "need_tool": "pickaxe",
+        "pickaxe_level": 2,
+        "drop_item": "cb:steel_block",
+        "drop_count": 1,
+        "can_fortune": false,
+        "can_silk_touch": false
+    },
+    "cb:iron_furnace": {
+        "need_tool": "pickaxe",
+        "pickaxe_level": 2,
+        "drop_item": "cb:iron_furnace",
+        "drop_count": 1,
+        "can_fortune": false,
+        "can_silk_touch": false
+    },
+    "cb:steel_furnace": {
+        "need_tool": "pickaxe",
+        "pickaxe_level": 2,
+        "drop_item": "cb:steel_furnace",
+        "drop_count": 1,
+        "can_fortune": false,
+        "can_silk_touch": false
+    }
+}

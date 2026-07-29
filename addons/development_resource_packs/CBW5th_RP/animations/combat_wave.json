@@ -1,0 +1,83 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.player.wave_weapon": {
+			"anim_time_update": "v.attack_hold!=v.is_holding_right?0.35: q.anim_time + q.delta_time * (1 - q.property('cb:fatigue') * 0.095 + q.property('cb:haste') * 0.15)",
+			"animation_length": 0.35,
+			"timeline": {"0.0": "v.wave_cd = 1;","0.1": "v.wave_cd = 0;"},
+			"bones": {
+				"rightitem": {
+					"rotation": {
+						"0.00": {"post": [0, -15, -25],"lerp_mode": "catmullrom"},
+						"0.08": {"post": [0, -45, -75],"lerp_mode": "catmullrom"},
+						"0.35": {"post": [0, 0, 0],"lerp_mode": "catmullrom"}
+					}
+				},
+				"rightArm": {
+					"position": {
+						"0.00": {"post": [-2.5, 0, 0],"lerp_mode": "catmullrom"},
+						"0.06": {"post": [-10, 0, 0],"lerp_mode": "catmullrom"},
+						"0.35": {"post": [0, 0, 0],"lerp_mode": "catmullrom"}
+					}
+				}
+			}
+		},
+		"animation.player.wave_weapon2": {
+			"anim_time_update": "v.attack_hold!=v.is_holding_right?0.35: q.anim_time + q.delta_time * (1 - q.property('cb:fatigue') * 0.095 + q.property('cb:haste') * 0.15)",
+			"animation_length": 0.35,
+			"bones": {
+				"rightitem": {
+					"rotation": {
+						"0.00": {"post": [10, 0, 0],"lerp_mode": "catmullrom"},
+						"0.16": {"post": [30, 0, 0],"lerp_mode": "catmullrom"},
+						"0.35": {"post": [0, 0, 0],"lerp_mode": "catmullrom"}
+					}
+				},
+				"rightArm": {
+					"position": {
+						"0.00": {"post": [0, 2, 0],"lerp_mode": "catmullrom"},
+						"0.04": {"post": [0, 4, 0],"lerp_mode": "catmullrom"},
+						"0.12": {"post": [0, -2, 0],"lerp_mode": "catmullrom"}, // 2025/11/30
+						// "0.12": {"post": [0, -4, 0],"lerp_mode": "catmullrom"},
+						// "0.12": {"post": [0, -4, 12],"lerp_mode": "catmullrom"}, // 这个12可以让武器向前方移动
+						"0.35": {"post": [0, 0, 0],"lerp_mode": "catmullrom"}
+					}
+				}
+			}
+		},
+		"animation.player.wave_hand": {
+			"anim_time_update": "v.attack_hold!=v.is_holding_right?0.35: q.anim_time + q.delta_time * (1 - q.property('cb:fatigue') * 0.095 + q.property('cb:haste') * 0.15)",
+			"animation_length": 0.35,
+			"timeline": {"0.0": "v.wave_cd = 1;","0.1": "v.wave_cd = 0;"},
+			"bones": {
+				"rightArm": {
+					"rotation": {
+						"0.00": [0, 0, 0],
+						"0.04": {"post": [-45, 0, 30],"lerp_mode": "catmullrom"},
+						"0.35": [0, 0, 0]
+					},
+					"position": {
+						"0.00": [0, 0, 0],
+						"0.04": {"post": [-2.5, 7.5, -2.5],"lerp_mode": "catmullrom"},
+						"0.18": {"post": [-5, -1.5, -2.5],"lerp_mode": "catmullrom"},
+						"0.35": [0, 0, 0]
+					}
+				}
+			}
+		},
+		"animation.player.wave_hand2": {
+			"anim_time_update": "v.attack_hold!=v.is_holding_right?0.35: q.anim_time + q.delta_time * (1 - q.property('cb:fatigue') * 0.095 + q.property('cb:haste') * 0.15)",
+			"animation_length": 0.35,
+			"bones": {
+				"rightArm": {
+					"rotation": {
+						"0.00": [0, 0, 0],
+						"0.04": {"post": [0, 45, 0],"lerp_mode": "catmullrom"},
+						"0.12": {"post": [0, 52.5, 0],"lerp_mode": "catmullrom"},
+						"0.35": [0, 0, 0]
+					}
+				}
+			}
+		}
+	}
+}

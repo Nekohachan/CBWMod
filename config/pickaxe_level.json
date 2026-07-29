@@ -1,0 +1,23 @@
+{
+    "minecraft:wooden_pickaxe": {
+        "level": 1
+    },
+    "minecraft:stone_pickaxe": {
+        "level": 2
+    },
+    "minecraft:copper_pickaxe": {
+        "level": 3
+    },
+    "minecraft:iron_pickaxe": {
+        "level": 3
+    },
+    "minecraft:golden_pickaxe": {
+        "level": 2
+    },
+    "minecraft:diamond_pickaxe": {
+        "level": 4
+    },
+    "minecraft:netherite_pickaxe": {
+        "level": 4
+    }
+}

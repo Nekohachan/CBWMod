@@ -1,0 +1,17 @@
+{
+    "format_version": "1.13.0",
+    "minecraft:ore_feature": {
+        "description": {
+            "identifier": "cb:limestone"
+        },
+        "count": 64,
+        "replace_rules": [
+            {
+                "places_block": "cb:limestone",
+                "may_replace": [
+                    "minecraft:stone"
+                ]
+            }
+        ]
+    }
+}

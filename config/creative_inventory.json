@@ -1,4 +1,221 @@
 {
-    "extra_groups": [],
-    "creative_items": []
+    "extra_groups": [
+        {
+            "name": "itemGroup.name.lightBlock",
+            "icon": "minecraft:light_block_15",
+            "category": "nature"
+        },
+        {
+            "name": "cb:itemGroup.block",
+            "icon": "cb:steel_block",
+            "category": "construction"
+        },
+        {
+            "name": "cb:itemGroup.table",
+            "icon": "cb:iron_furnace",
+            "category": "items"
+        },
+        {
+            "name": "cb:itemGroup.material",
+            "icon": "cb:alchemical_catalyst",
+            "category": "items"
+        }
+    ],
+    "creative_items": [
+        {
+            "type": "minecraft:written_book",
+            "category": "nature",
+            "group": ""
+        },
+        {
+            "type": "minecraft:command_block_minecart",
+            "category": "nature",
+            "group": ""
+        },
+        {
+            "type": "minecraft:board",
+            "category": "nature",
+            "group": ""
+        },
+        {
+            "type": "minecraft:light_block_0",
+            "category": "nature",
+            "group": "itemGroup.name.lightBlock"
+        },
+        {
+            "type": "minecraft:light_block_1",
+            "category": "nature",
+            "group": "itemGroup.name.lightBlock"
+        },
+        {
+            "type": "minecraft:light_block_2",
+            "category": "nature",
+            "group": "itemGroup.name.lightBlock"
+        },
+        {
+            "type": "minecraft:light_block_3",
+            "category": "nature",
+            "group": "itemGroup.name.lightBlock"
+        },
+        {
+            "type": "minecraft:light_block_4",
+            "category": "nature",
+            "group": "itemGroup.name.lightBlock"
+        },
+        {
+            "type": "minecraft:light_block_5",
+            "category": "nature",
+            "group": "itemGroup.name.lightBlock"
+        },
+        {
+            "type": "minecraft:light_block_6",
+            "category": "nature",
+            "group": "itemGroup.name.lightBlock"
+        },
+        {
+            "type": "minecraft:light_block_7",
+            "category": "nature",
+            "group": "itemGroup.name.lightBlock"
+        },
+        {
+            "type": "minecraft:light_block_8",
+            "category": "nature",
+            "group": "itemGroup.name.lightBlock"
+        },
+        {
+            "type": "minecraft:light_block_9",
+            "category": "nature",
+            "group": "itemGroup.name.lightBlock"
+        },
+        {
+            "type": "minecraft:light_block_10",
+            "category": "nature",
+            "group": "itemGroup.name.lightBlock"
+        },
+        {
+            "type": "minecraft:light_block_11",
+            "category": "nature",
+            "group": "itemGroup.name.lightBlock"
+        },
+        {
+            "type": "minecraft:light_block_12",
+            "category": "nature",
+            "group": "itemGroup.name.lightBlock"
+        },
+        {
+            "type": "minecraft:light_block_13",
+            "category": "nature",
+            "group": "itemGroup.name.lightBlock"
+        },
+        {
+            "type": "minecraft:light_block_14",
+            "category": "nature",
+            "group": "itemGroup.name.lightBlock"
+        },
+        {
+            "type": "minecraft:light_block_15",
+            "category": "nature",
+            "group": "itemGroup.name.lightBlock"
+        },
+        {
+            "type": "minecraft:structure_void",
+            "category": "nature",
+            "group": ""
+        },
+        {
+            "type": "minecraft:border_block",
+            "category": "nature",
+            "group": ""
+        },
+        {
+            "type": "minecraft:allow",
+            "category": "nature",
+            "group": ""
+        },
+        {
+            "type": "minecraft:deny",
+            "category": "nature",
+            "group": ""
+        },
+        {
+            "type": "minecraft:barrier",
+            "category": "nature",
+            "group": ""
+        },
+        {
+            "type": "minecraft:structure_block",
+            "category": "nature",
+            "group": ""
+        },
+        {
+            "type": "minecraft:jigsaw",
+            "category": "nature",
+            "group": ""
+        },
+        {
+            "type": "minecraft:command_block",
+            "category": "nature",
+            "group": ""
+        },
+        {
+            "type": "minecraft:chain_command_block",
+            "category": "nature",
+            "group": ""
+        },
+        {
+            "type": "minecraft:repeating_command_block",
+            "category": "nature",
+            "group": ""
+        },
+        {
+            "type": "minecraft:end_gateway",
+            "category": "nature",
+            "group": ""
+        },
+        {
+            "type": "minecraft:camera",
+            "category": "nature",
+            "group": ""
+        },
+        {
+            "type": "minecraft:lit_furnace",
+            "category": "nature",
+            "group": ""
+        },
+        {
+            "type": "minecraft:lit_blast_furnace",
+            "category": "nature",
+            "group": ""
+        },
+        {
+            "type": "minecraft:lit_smoker",
+            "category": "nature",
+            "group": ""
+        },
+        {
+            "type": "minecraft:netherreactor",
+            "category": "nature",
+            "group": ""
+        },
+        {
+            "type": "minecraft:stonecutter",
+            "category": "nature",
+            "group": ""
+        },
+        {
+            "type": "minecraft:glowingobsidian",
+            "category": "nature",
+            "group": ""
+        },
+        {
+            "type": "minecraft:water",
+            "category": "nature",
+            "group": ""
+        },
+        {
+            "type": "minecraft:lava",
+            "category": "nature",
+            "group": ""
+        }
+    ]
 }

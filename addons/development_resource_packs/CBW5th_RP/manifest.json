@@ -1,0 +1,39 @@
+{
+    "format_version": 2,
+    "header": {
+        "name": "§d方体世界5th附加包",
+        "description": "by Nekohachan5073",
+        "uuid": "45999252-d97c-4923-9c2b-18cf29d5d2d6",
+        "version": [
+            1,
+            0,
+            42
+        ],
+        "min_engine_version": [
+            1,
+            26,
+            20
+        ]
+    },
+    "modules": [
+        {
+            "type": "resources",
+            "uuid": "1823463d-43d8-497f-938c-74ee46e385ea",
+            "version": [
+                1,
+                0,
+                42
+            ]
+        }
+    ],
+    "dependencies": [
+        {
+            "uuid": "71b8b647-075b-4ae0-a384-56a55ad94f0a",
+            "version": [
+                1,
+                0,
+                42
+            ]
+        }
+    ]
+}

@@ -1,0 +1,23 @@
+{
+    "format_version": "1.13.0",
+    "minecraft:ore_feature": {
+        "description": {
+            "identifier": "cb:titanium_ore_large"
+        },
+        "count": 8,
+        "replace_rules": [
+            {
+                "places_block": "cb:titanium_ore",
+                "may_replace": [
+                    "minecraft:stone"
+                ]
+            },
+            {
+                "places_block": "cb:deepslate_titanium_ore",
+                "may_replace": [
+                    "minecraft:deepslate"
+                ]
+            }
+        ]
+    }
+}

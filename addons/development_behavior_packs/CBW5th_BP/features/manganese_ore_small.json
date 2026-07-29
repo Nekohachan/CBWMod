@@ -1,0 +1,23 @@
+{
+    "format_version": "1.13.0",
+    "minecraft:ore_feature": {
+        "description": {
+            "identifier": "cb:manganese_ore_small"
+        },
+        "count": 5,
+        "replace_rules": [
+            {
+                "places_block": "cb:manganese_ore",
+                "may_replace": [
+                    "minecraft:stone"
+                ]
+            },
+            {
+                "places_block": "cb:deepslate_manganese_ore",
+                "may_replace": [
+                    "minecraft:deepslate"
+                ]
+            }
+        ]
+    }
+}

@@ -1,0 +1,107 @@
+{
+    "format_version": "1.10.0",
+    "animation_controllers": {
+        "controller.animation.cb.player_on_run": {
+            "initial_state": "default",
+            "states": {
+                "default": {
+                    "on_entry": ["/tag @s[tag=cb.on_run] remove cb.on_run"],
+                    "transitions": [{ "run": "q.is_sprinting" }]
+                },
+                "run": {
+                    "on_entry": ["/tag @s[tag=!cb.on_run] add cb.on_run"],
+                    "transitions": [{ "run2": "!q.is_sprinting" }]
+                },
+                "run2": {
+                    "on_entry": ["/tag @s[tag=!cb.on_run] add cb.on_run"],
+                    "transitions": [
+                        { "run": "q.is_sprinting" },
+                        { "default": "!q.is_sprinting" }
+                    ]
+                }
+            }
+        },
+        "controller.animation.cb.player_on_ground": {
+            "initial_state": "ground",
+            "states": {
+                "ground": {
+                    "on_entry": ["/tag @s[tag=!cb.on_ground] add cb.on_ground"],
+                    "transitions": [{ "duration": "!q.is_on_ground" }]
+                },
+                "duration": {
+                    "on_entry": [
+                        "/tag @s[tag=cb.on_ground] remove cb.on_ground"
+                    ],
+                    "transitions": [{ "ground": "q.is_on_ground" }]
+                }
+            }
+        },
+        "controller.animation.cb.player_on_fall": {
+            "initial_state": "default",
+            "states": {
+                "default": {
+                    "on_entry": [
+                        "/tag @s[tag=cb.on_fall_delay] remove cb.on_fall_delay",
+                        "/tag @s[tag=cb.on_fall] remove cb.on_fall"
+                    ],
+                    "transitions": [
+                        { "fall": "q.vertical_speed < 0 && !q.is_in_water" }
+                    ]
+                },
+                "fall": {
+                    "on_entry": ["/tag @s[tag=!cb.on_fall] add cb.on_fall"],
+                    "animations": ["on_fall.a"],
+                    "transitions": [
+                        { "default": "q.vertical_speed >= 0 || q.is_in_water" }
+                    ]
+                }
+            }
+        },
+        "controller.animation.switch_weapon": {
+            "initial_state": "init",
+            "states": {
+                "init": {
+                    "on_entry": [
+                        "v.right_item = q.get_equipped_item_name('main_hand');"
+                    ],
+                    "transitions": [{ "empty": "(1.0)" }]
+                },
+                "empty": {
+                    "on_entry": [
+                        "v.right_item = q.get_equipped_item_name('main_hand');",
+                        "/function combat/attack_cold"
+                    ],
+                    "transitions": [
+                        {
+                            "switch": "v.is_holding_right && v.right_item != q.get_equipped_item_name('main_hand')"
+                        }
+                    ]
+                },
+                "switch": {
+                    "on_entry": [
+                        "v.right_item = q.get_equipped_item_name('main_hand');",
+                        "/function combat/attack_cold"
+                    ],
+                    "transitions": [
+                        { "empty": "!v.is_holding_right" },
+                        {
+                            "switch2": "v.is_holding_right && v.right_item != q.get_equipped_item_name('main_hand')"
+                        }
+                    ]
+                },
+                "switch2": {
+                    "on_entry": [
+                        "v.right_item = q.get_equipped_item_name('main_hand');",
+                        "/function combat/attack_cold"
+                    ],
+                    "transitions": [
+                        { "empty": "!v.is_holding_right" },
+                        {
+                            "switch": "v.is_holding_right && v.right_item != q.get_equipped_item_name('main_hand')"
+                        }
+                    ]
+                }
+            }
+        }
+    }
+}

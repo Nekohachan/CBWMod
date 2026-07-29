@@ -1,0 +1,190 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.player.lift": {
+			"animation_length": 1000,
+			"timeline": {
+				"0.0": "v.lift = v.lift_pos; v.lift_cd = 1;"
+			}
+		},
+		"animation.player.not_lift": {
+			"animation_length": 0.1,
+			"timeline": {
+				"0.0": "v.lift_pos = 0;"
+			}
+		},
+		"animation.player.lift_cd": {
+			"animation_length": 1,
+			"timeline": {
+				"0.0": "v.lift_cd = 0;"
+			}
+		},
+		"animation.player.lift_hand": {
+			"animation_length": 0.25,
+			"anim_time_update": "q.anim_time + (q.anim_time < 0.10 ? q.delta_time : q.delta_time * 5 / q.property('cb:attack_cold'))",
+			"timeline": {
+				"0.00": "v.lift_pos = -10;",
+				"0.15": "v.lift_pos = -8;",
+				"0.175": "v.lift_pos = -6;",
+				"0.20": "v.lift_pos = -4;",
+				"0.225": "v.lift_pos = -2;",
+				"0.25": "v.lift_pos = 0;"
+			},
+			"bones": {
+				"rightArm": {
+					"position": {
+						"0.00": [0, "v.on_dig ? 0 : v.lift", 0],
+						"0.09": [0, -5, 0],
+						"0.10": {"post": [0, -5, 0], "pre": [0, -5, 0],"lerp_mode": "catmullrom"},
+						"0.25": [0, 0, 0]
+					}
+				}
+			}
+		},
+		"animation.player.lift_weapon": {
+			"animation_length": 1.0,
+			"anim_time_update": "q.anim_time + (q.anim_time < 0.35 ? q.delta_time : q.delta_time / (Math.max(1, q.property('cb:attack_cold') - 7)) * 13)",
+			"timeline": {
+				"0.0": "v.lift_pos = -16.5;",
+				"0.1": "v.lift_pos = -15;",
+				"0.2": "v.lift_pos = -13.5;",
+				"0.3": "v.lift_pos = -12;",
+				"0.4": "v.lift_pos = -10.5;",
+				"0.5": "v.lift_pos = -9;",
+				"0.6": "v.lift_pos = -7.5;",
+				"0.7": "v.lift_pos = -6;",
+				"0.8": "v.lift_pos = -4.5;",
+				"0.9": "v.lift_pos = -3;",
+				"1.0": "v.lift_pos = 0;"
+			},
+			"bones": {
+				"rightArm": {
+					"position": {
+						"0.00": [0, "v.on_dig ? 0 : v.lift", 0],
+						"0.09": [0, -12, 0],
+						"0.10": {"post": [0, -12, 0], "pre": [0, -12, 0],"lerp_mode": "catmullrom"},
+						"0.25": {"post": [0, -15, 0], "pre": [0, -15, 0],"lerp_mode": "catmullrom"},
+						"0.35": {"post": [0, -12, 0], "pre": [0, -12, 0],"lerp_mode": "catmullrom"},
+						"0.60": {"post": [0, -10, 0], "pre": [0, -10, 0],"lerp_mode": "catmullrom"},
+						"1.00": [0, 0, 0]
+					}
+				}
+			}
+		},
+		"animation.player.lift_weapon2": {
+			"animation_length": 1.0,
+			"anim_time_update": "q.anim_time + q.delta_time * 20 / q.property('cb:attack_cold')",
+			"timeline": {
+				"0.0": "v.lift_pos = -16.5;",
+				"0.5": "v.lift_pos = -16.5;",
+				"0.55": "v.lift_pos = -15;",
+				"0.6": "v.lift_pos = -13.5;",
+				"0.65": "v.lift_pos = -12;",
+				"0.7": "v.lift_pos = -10.5;",
+				"0.75": "v.lift_pos = -9;",
+				"0.8": "v.lift_pos = -7.5;",
+				"0.85": "v.lift_pos = -6;",
+				"0.9": "v.lift_pos = -4.5;",
+				"0.95": "v.lift_pos = -3;",
+				"1.0": "v.lift_pos = 0;"
+			},
+			"bones": {
+				"rightArm": {
+					"position": {
+						"0.00": [0, "v.on_dig ? 0 : v.lift", 0],
+						"0.19": [0, -12, 0],
+						"0.20": {"post": [0, -12, 0], "pre": [0, -12, 0],"lerp_mode": "catmullrom"},
+						"0.35": {"post": [0, -15, 0], "pre": [0, -15, 0],"lerp_mode": "catmullrom"},
+						"0.50": {"post": [0, -12, 0], "pre": [0, -12, 0],"lerp_mode": "catmullrom"},
+						"0.65": {"post": [0, -10, 0], "pre": [0, -10, 0],"lerp_mode": "catmullrom"},
+						"1.00": [0, 0, 0]
+					}
+				}
+			}
+		},
+
+
+		"animation.player.switch_hand": {
+			"animation_length": 0.25,
+			"anim_time_update": "v.switch || q.anim_time > 0 ? q.anim_time + q.delta_time * 5 / q.property('cb:attack_cold') : 0",
+			"timeline": {
+				"0.00": "v.lift_pos = -10;",
+				"0.025": "v.lift_pos = -9;",
+				"0.05": "v.lift_pos = -8;",
+				"0.075": "v.lift_pos = -7;",
+				"0.10": "v.lift_pos = -6;",
+				"0.125": "v.lift_pos = -5;",
+				"0.15": "v.lift_pos = -4;",
+				"0.175": "v.lift_pos = -3;",
+				"0.20": "v.lift_pos = -2;",
+				"0.225": "v.lift_pos = -1;",
+				"0.25": "v.lift_pos = 0;"
+			},
+			"bones": {
+				"rightArm": {
+					"position": {
+						"0.00": [0, -6, 0],
+						"0.25": [0, 0, 0]
+					}
+				}
+			}
+		},
+		"animation.player.switch_item": {
+			"animation_length": 1.0,
+			"anim_time_update": "v.switch || q.anim_time > 0 ? q.anim_time + q.delta_time * 20 / q.property('cb:attack_cold') : 0",
+			"timeline": {
+				"0.00": "v.lift_pos = -16;",
+				"0.05": "v.lift_pos = -15.2;",
+				"0.10": "v.lift_pos = -14.4;",
+				"0.15": "v.lift_pos = -13.6;",
+				"0.20": "v.lift_pos = -12.8;",
+				"0.25": "v.lift_pos = -12;",
+				"0.30": "v.lift_pos = -11.2;",
+				"0.35": "v.lift_pos = -10.4;",
+				"0.40": "v.lift_pos = -9.6;",
+				"0.45": "v.lift_pos = -8.8;",
+				"0.50": "v.lift_pos = -8;",
+				"0.55": "v.lift_pos = -7.2;",
+				"0.60": "v.lift_pos = -6.4;",
+				"0.65": "v.lift_pos = -5.6;",
+				"0.70": "v.lift_pos = -4.8;",
+				"0.75": "v.lift_pos = -4;",
+				"0.80": "v.lift_pos = -3.2;",
+				"0.85": "v.lift_pos = -2.4;",
+				"0.90": "v.lift_pos = -1.6;",
+				"0.95": "v.lift_pos = -0.8;",
+				"1.00": "v.lift_pos = 0;"
+			},
+			"bones": {
+				"rightArm": {
+					"position": {
+						"0.0": {"post": [0, -12, 0],"lerp_mode": "catmullrom"},
+						"0.4": {"post": [0, -10, 0],"lerp_mode": "catmullrom"},
+						"1.0": [0, 0, 0]
+					}
+				}
+			}
+		},
+		"animation.player.switch_hold": {
+			"animation_length": 1,
+			"anim_time_update": "Math.min(0.2, q.anim_time + q.delta_time)",
+			"timeline": {
+				"0.0": "v.right_item = q.get_equipped_item_name('main_hand'); v.switch = 0; v.lift_pos = v.is_holding_right ? -16 : -10;",
+				"0.1": "v.switch = 1;"
+			}
+		},
+		"animation.player.switch_cancel": {
+			"animation_length": 0.1,
+			"timeline": {
+				"0.0": "v.right_item = q.get_equipped_item_name('main_hand'); v.switch = 0;"
+			}
+		},
+		"animation.player.hold_item": {
+			"animation_length": 1,
+			"anim_time_update": "Math.min(0.2, q.anim_time + q.delta_time)",
+			"timeline": {
+				"0.0": "v.right_item = q.get_equipped_item_name('main_hand'); v.switch = 0;"
+			}
+		}
+	}
+}

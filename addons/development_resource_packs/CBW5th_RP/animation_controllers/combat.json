@@ -1,0 +1,124 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.player.attack_wave": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"animations": ["outAttack"],
+					"transitions": [
+						{"wave": "v.attack_time && v.attack_time*(1-(q.property('cb:haste')>0?q.property('cb:haste')*0.2:-q.property('cb:fatigue')*0.1)) <= 0.1 && !q.main_hand_item_use_duration > 0"}
+					]
+				},
+				"wave": {
+					"animations": [
+						"onAttack",
+						{"wave_weapon" : "v.attack_hold == 1"},
+						{"wave_weapon2" : "v.attack_hold == 1"},
+						{"wave_hand" : "v.attack_hold == 0"},
+						{"wave_hand2" : "v.attack_hold == 0"}
+					],
+					"transitions": [
+						{"flip": "v.attack_time && v.attack_time*(1-(q.property('cb:haste')>0?q.property('cb:haste')*0.2:-q.property('cb:fatigue')*0.1)) <= 0.1 && !v.wave_cd"},
+						{"default": "q.any_animation_finished || q.main_hand_item_use_duration > 0"}
+					]
+				},
+				"flip": {
+					"animations": [
+						"onAttack",
+						{"wave_weapon" : "v.attack_hold == 1"},
+						{"wave_weapon2" : "v.attack_hold == 1"},
+						{"wave_hand" : "v.attack_hold == 0"},
+						{"wave_hand2" : "v.attack_hold == 0"}
+					],
+					"transitions": [
+						{"wave": "v.attack_time && v.attack_time*(1-(q.property('cb:haste')>0?q.property('cb:haste')*0.2:-q.property('cb:fatigue')*0.1)) <= 0.1 && !v.wave_cd"},
+						{"default": "q.any_animation_finished || q.main_hand_item_use_duration > 0"}
+					]
+				}
+			}
+		},
+		"controller.animation.player.lift_weapon": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"animations": [
+						"hold_item",
+						"not_lift"
+					],
+					"transitions": [
+						{"switch": "v.right_item != q.get_equipped_item_name('main_hand') && !q.property('cb:attack_cold') == 0"},
+						{"lift": "v.attack_time && v.attack_time*(1-(q.property('cb:haste')>0?q.property('cb:haste')*0.2:-q.property('cb:fatigue')*0.1)) <= 0.1 && !q.property('cb:attack_cold') == 0 && !v.on_dig && !v.melee_spear_equipped"}
+					]
+				},
+				"switch": {
+					"animations": [
+						{"switch_hold": "v.switch = (q.any_animation_finished ? 0 : v.switch); return 1.0;"},
+						{"switch_hand" : "!v.is_holding_right"},
+						{"switch_item" : "v.is_holding_right"}
+					],
+					"transitions": [
+						{"switch2": "v.right_item != q.get_equipped_item_name('main_hand')"},
+						{"lift": "v.attack_time && v.attack_time*(1-(q.property('cb:haste')>0?q.property('cb:haste')*0.2:-q.property('cb:fatigue')*0.1)) <= 0.1 && !q.property('cb:attack_cold') == 0 && !v.on_dig && !v.melee_spear_equipped"},
+						{"default": "q.any_animation_finished || q.property('cb:attack_cold') == 0"}
+					]
+				},
+				"switch2": {
+					"animations": [
+						{"switch_hold": "v.switch = (q.any_animation_finished ? 0 : v.switch); return 1.0;"},
+						{"switch_hand" : "!v.is_holding_right"},
+						{"switch_item" : "v.is_holding_right"}
+					],
+					"transitions": [
+						{"switch": "v.right_item != q.get_equipped_item_name('main_hand')"},
+						{"lift": "v.attack_time && v.attack_time*(1-(q.property('cb:haste')>0?q.property('cb:haste')*0.2:-q.property('cb:fatigue')*0.1)) <= 0.1 && !q.property('cb:attack_cold') == 0 && !v.on_dig && !v.melee_spear_equipped"},
+						{"default": "q.any_animation_finished || q.property('cb:attack_cold') == 0"}
+					]
+				},
+				"lift": {
+					"animations": [
+						"hold_item",
+						"on_lift",
+						{"lift_cd": "v.lift_cd && v.attack_time*(1-(q.property('cb:haste')>0?q.property('cb:haste')*0.2:-q.property('cb:fatigue')*0.1)) > 0.1"},
+						{"lift_hand" : "!v.is_holding_right"},
+						{"lift_weapon" : "v.is_holding_right && q.property('cb:attack_cold') > 10"},
+						{"lift_weapon2" : "v.is_holding_right && q.property('cb:attack_cold') <= 10"}
+					],
+					"transitions": [
+						{"switch": "v.right_item != q.get_equipped_item_name('main_hand')"},
+						{"relift": "v.attack_time && v.attack_time*(1-(q.property('cb:haste')>0?q.property('cb:haste')*0.2:-q.property('cb:fatigue')*0.1)) <= 0.1 && !v.lift_cd && !v.on_dig && !v.melee_spear_equipped"},
+						{"default": "q.any_animation_finished || q.property('cb:attack_cold') == 0 || v.on_dig"}
+					]
+				},
+				"relift": {
+					"animations": [
+						"hold_item",
+						"on_lift",
+						{"lift_cd": "v.lift_cd && v.attack_time*(1-(q.property('cb:haste')>0?q.property('cb:haste')*0.2:-q.property('cb:fatigue')*0.1)) > 0.1"},
+						{"lift_hand" : "!v.is_holding_right"},
+						{"lift_weapon" : "v.is_holding_right"}
+					],
+					"transitions": [
+						{"switch": "v.right_item != q.get_equipped_item_name('main_hand')"},
+						{"relift2": "v.attack_time && v.attack_time*(1-(q.property('cb:haste')>0?q.property('cb:haste')*0.2:-q.property('cb:fatigue')*0.1)) <= 0.1 && !v.lift_cd && !v.on_dig && !v.melee_spear_equipped"},
+						{"default": "q.any_animation_finished || q.property('cb:attack_cold') == 0 || v.on_dig"}
+					]
+				},
+				"relift2": {
+					"animations": [
+						"hold_item",
+						"on_lift",
+						{"lift_cd": "v.lift_cd && v.attack_time*(1-(q.property('cb:haste')>0?q.property('cb:haste')*0.2:-q.property('cb:fatigue')*0.1)) > 0.1"},
+						{"lift_hand" : "!v.is_holding_right"},
+						{"lift_weapon" : "v.is_holding_right"}
+					],
+					"transitions": [
+						{"switch": "v.right_item != q.get_equipped_item_name('main_hand')"},
+						{"relift": "v.attack_time && v.attack_time*(1-(q.property('cb:haste')>0?q.property('cb:haste')*0.2:-q.property('cb:fatigue')*0.1)) <= 0.1 && !v.lift_cd && !v.on_dig && !v.melee_spear_equipped"},
+						{"default": "q.any_animation_finished || q.property('cb:attack_cold') == 0 || v.on_dig"}
+					]
+				}
+			}
+		}
+	}
+}

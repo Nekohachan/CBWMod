@@ -1,0 +1,31 @@
+{
+    "format_version": "1.26.20",
+    "minecraft:block": {
+        "description": {
+            "identifier": "cb:limestone",
+            "menu_category": {
+                "category": "construction"
+            }
+        },
+        "components": {
+            "minecraft:display_name": "tile.cb:limestone.name",
+            "minecraft:destructible_by_mining": {
+                "seconds_to_destroy": 3
+            },
+            "minecraft:destructible_by_explosion": {
+                "explosion_resistance": 6
+            },
+            "minecraft:geometry": "minecraft:geometry.full_block",
+            "minecraft:material_instances": {
+                "*": {
+                    "texture": "limestone"
+                }
+            },
+            "minecraft:map_color": "#ffffff",
+            "minecraft:loot": "loot_tables/blocks/empty.json",
+            "minecraft:tags": [
+                "minecraft:is_pickaxe_item_destructible"
+            ]
+        }
+    }
+}

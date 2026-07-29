@@ -1,0 +1,55 @@
+{
+    "format_version": "1.20.81",
+    "sound_definitions": {
+        "player.attack.sweep": {
+            "__use_legacy_max_distance": "true",
+            "category": "player",
+            "max_distance": null,
+            "min_distance": null,
+            "sounds": [
+                { "name": "sounds/attack/sweep", "volume": 1 },
+                { "name": "sounds/attack/sweep2", "volume": 1 },
+                { "name": "sounds/attack/sweep3", "volume": 1 },
+                { "name": "sounds/attack/sweep4", "volume": 1 },
+                { "name": "sounds/attack/sweep5", "volume": 1 },
+                { "name": "sounds/attack/sweep6", "volume": 1 },
+                { "name": "sounds/attack/sweep7", "volume": 1 }
+            ]
+        },
+        "player.attack.strong": {
+            "__use_legacy_max_distance": "true",
+            "category": "player",
+            "max_distance": null,
+            "min_distance": null,
+            "sounds": [
+                { "name": "sounds/attack/strong", "volume": 1 },
+                { "name": "sounds/attack/strong2", "volume": 1 },
+                { "name": "sounds/attack/strong3", "volume": 1 },
+                { "name": "sounds/attack/strong4", "volume": 1 },
+                { "name": "sounds/attack/strong5", "volume": 1 },
+                { "name": "sounds/attack/strong6", "volume": 1 }
+            ]
+        },
+        "player.attack.weak": {
+            "__use_legacy_max_distance": "true",
+            "category": "player",
+            "max_distance": null,
+            "min_distance": null,
+            "sounds": [
+                { "name": "sounds/attack/weak", "volume": 1 },
+                { "name": "sounds/attack/weak2", "volume": 1 },
+                { "name": "sounds/attack/weak3", "volume": 1 },
+                { "name": "sounds/attack/weak4", "volume": 1 }
+            ]
+        },
+        "hit_crit": {
+            "category": "music",
+            "sounds": [
+                {
+                    "name": "sounds/hit_crit",
+                    "stream": true
+                }
+            ]
+        }
+    }
+}

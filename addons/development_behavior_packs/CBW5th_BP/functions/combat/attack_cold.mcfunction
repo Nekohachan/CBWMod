@@ -1,0 +1,1 @@
+tag @s add attack_cold

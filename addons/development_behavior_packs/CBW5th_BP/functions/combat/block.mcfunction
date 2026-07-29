@@ -1,0 +1,1 @@
+execute as @a[scores={cb.Br=1..}] run scoreboard players remove @s cb.Br 1

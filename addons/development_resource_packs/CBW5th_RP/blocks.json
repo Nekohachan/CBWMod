@@ -1,0 +1,107 @@
+{
+    "format_version": [
+        1,
+        0,
+        0
+    ],
+    "frame": {
+        "blockshape": "invisible",
+        "textures": "itemframe_background",
+        "sound": "itemframe"
+    },
+    "glow_frame": {
+        "blockshape": "invisible",
+        "textures": "itemframe_background",
+        "sound": "itemframe"
+    },
+    "cb:limestone": {
+        "sound": "stone"
+    },
+    "cb:lithium_ore": {
+        "sound": "stone"
+    },
+    "cb:vanadium_ore": {
+        "sound": "stone"
+    },
+    "cb:deepslate_vanadium_ore": {
+        "sound": "deepslate"
+    },
+    "cb:chromium_ore": {
+        "sound": "stone"
+    },
+    "cb:deepslate_chromium_ore": {
+        "sound": "deepslate"
+    },
+    "cb:manganese_ore": {
+        "sound": "stone"
+    },
+    "cb:deepslate_manganese_ore": {
+        "sound": "deepslate"
+    },
+    "cb:titanium_ore": {
+        "sound": "stone"
+    },
+    "cb:deepslate_titanium_ore": {
+        "sound": "deepslate"
+    },
+    "cb:cobalt_ore": {
+        "sound": "stone"
+    },
+    "cb:deepslate_cobalt_ore": {
+        "sound": "deepslate"
+    },
+    "cb:nickel_ore": {
+        "sound": "stone"
+    },
+    "cb:deepslate_nickel_ore": {
+        "sound": "deepslate"
+    },
+    "cb:zinc_ore": {
+        "sound": "stone"
+    },
+    "cb:deepslate_zinc_ore": {
+        "sound": "deepslate"
+    },
+    "cb:zircon_ore": {
+        "sound": "stone"
+    },
+    "cb:deepslate_zircon_ore": {
+        "sound": "deepslate"
+    },
+    "cb:silver_ore": {
+        "sound": "stone"
+    },
+    "cb:deepslate_silver_ore": {
+        "sound": "deepslate"
+    },
+    "cb:tin_ore": {
+        "sound": "stone"
+    },
+    "cb:deepslate_tin_ore": {
+        "sound": "deepslate"
+    },
+    "cb:platinum_ore": {
+        "sound": "stone"
+    },
+    "cb:deepslate_platinum_ore": {
+        "sound": "deepslate"
+    },
+    "cb:lead_ore": {
+        "sound": "stone"
+    },
+    "cb:deepslate_lead_ore": {
+        "sound": "deepslate"
+    },
+    "cb:star_stone": {
+        "sound": "amethyst_block"
+    },
+    "cb:steel_block": {
+        "sound": "iron"
+    },
+    "cb:iron_furnace": {
+        "sound": "iron"
+    },
+    "cb:steel_furnace": {
+        "sound": "iron"
+    }
+}

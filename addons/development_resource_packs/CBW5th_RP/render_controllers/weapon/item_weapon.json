@@ -1,0 +1,23 @@
+{
+    "format_version": "1.8.0",
+    "render_controllers": {
+        "controller.render.cb_weapon": {
+            "geometry": "Geometry.default",
+            "textures": ["Texture.default", "texture.enchanted"],
+            "materials": [
+                {
+                    "*": "variable.is_enchanted ? material.enchanted : material.default"
+                }
+            ]
+        },
+        "controller.render.cb_weapon.offhand": {
+            "geometry": "Geometry.offhand",
+            "textures": ["Texture.default", "texture.enchanted"],
+            "materials": [
+                {
+                    "*": "variable.is_enchanted ? material.enchanted : material.default"
+                }
+            ]
+        }
+    }
+}

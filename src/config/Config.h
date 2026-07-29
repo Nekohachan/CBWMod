@@ -1,8 +1,13 @@
 #pragma once
+#include "Entry.h"
+#include <fstream>
+#include <nlohmann/json.hpp>
 #include <optional>
 #include <string>
-#include <unordered_map>
 #include <vector>
+
+
+using json = nlohmann::json;
 
 namespace cb {
 
@@ -103,5 +108,153 @@ struct RepairItemsList {
         "minecraft:turtle_scute",
     };
 };
+
+const json& getBlockLootData();
+const json& getPickaxeLevelData();
+const json& getPlayerAttrData();
+const json& getItemAttrData();
+const json& getEntityLevelData();
+const json& getEntityCritResistanceData();
+const json& getBossBarData();
+const json& getPlayData();
+
+
+template <typename Func>
+inline void modifyPlayerAttrData(Func&& modify) {
+    json data;
+    auto path = cb::Entry::getInstance().getSelf().getDataDir() / "player_attr.json";
+
+    // 读取现有数据
+    std::ifstream in(path);
+    if (in) in >> data;
+    else data = json::object();
+    in.close();
+
+    // 执行修改（传入 lambda）
+    modify(data);
+
+    // 写回文件
+    std::ofstream out(path);
+    if (out) out << data.dump(4);
+}
+
+template <typename Func>
+inline void modifyBossBarData(Func&& modify) {
+    json data;
+    auto path = cb::Entry::getInstance().getSelf().getDataDir() / "bossbar_data.json";
+
+    // 读取现有数据
+    std::ifstream in(path);
+    if (in) in >> data;
+    else data = json::object();
+    in.close();
+
+    // 执行修改（传入 lambda）
+    modify(data);
+
+    // 写回文件
+    std::ofstream out(path);
+    if (out) out << data.dump(4);
+}
+
+template <typename Func>
+inline void modifyPlayData(Func&& modify) {
+    json data;
+    auto path = cb::Entry::getInstance().getSelf().getDataDir() / "play_data.json";
+
+    // 读取现有数据
+    std::ifstream in(path);
+    if (in) in >> data;
+    else data = json::object();
+    in.close();
+
+    // 执行修改（传入 lambda）
+    modify(data);
+
+    // 写回文件
+    std::ofstream out(path);
+    if (out) out << data.dump(4);
+}
+
+// 默认属性表
+inline json defaultAttr = {
+    {"damage_reduction_pct",      1.0 },
+    {"damage_reduction",          0   },
+    {"block",                     0   },
+    {"movement_pct",              1.0 },
+    {"movement",                  0.1 },
+    {"underwater_movement_pct",   1.0 },
+    {"underwater_movement",       0.02},
+    {"lava_movement_pct",         1.0 },
+    {"lava_movement",             0.02},
+    {"max_health_pct",            1.0 },
+    {"max_health",                20  },
+    {"defense_pct",               1   },
+    {"defense",                   0   },
+    {"magic_defense_pct",         1.0 },
+    {"magic_defense",             0   },
+    {"sharp_defense_pct",         1.0 },
+    {"sharp_defense",             0   },
+    {"blunt_defense_pct",         1.0 },
+    {"blunt_defense",             0   },
+    {"structure_defense_pct",     1.0 },
+    {"structure_defense",         0   },
+    {"knockback_resistance",      0   },
+    {"crit_rate",                 0.02},
+    {"cirtical_damage",           0.5 },
+    {"attack_damage",             0   },
+    {"attack_damage_pct",         1.0 },
+    {"falling_additional_damage", 0   },
+    {"attack_speed",              0   },
+    {"attack_speed_pct",          1.0 },
+    {"charge_level",              0   },
+    {"sweep_range",               0   },
+    {"sweep_damage",              0   },
+    {"blunt_level_pct",           1.0 },
+    {"blunt_level",               0   },
+    {"sharp_level_pct",           1.0 },
+    {"sharp_level",               0   },
+    {"structure_level_pct",       1.0 },
+    {"structure_level",           0   },
+    {"level",                     0   },
+    {"crit_resistance",           0   }
+};
+
+inline json defaultBossBarData = {
+    {"version",     1   },
+    {"main_switch", true},
+    {"time",        true},
+    {"play_time",   true},
+    {"ping",        true},
+    {"tps",         true},
+    {"block_value", true}
+};
+
+
+inline json defaultPlayData = {
+    {"last_join",        ""},
+    {"last_left",        ""},
+    {"last_playing",     ""},
+    {"play_time",        0 },
+    {"play_time_tick",   0 },
+    {"play_time_second", 0 }
+};
+
+inline json defaultBlockAttr = {
+    {"vulnerability_level",       0.0},
+    {"vulnerability_level_timer", 0.0},
+    {"block_value",               0.0},
+    {"max_block_value",           0.0},
+    {"TrPrecondition",            0.0},
+    {"block_value_recover_timer", 0.0},
+    {"block_value_overrun_timer", 0.0}
+};
+
+inline json defaultRegenTimer = {
+    {"sneak_regen", 0},
+    {"ride_regen",  0},
+    {"sleep_regen", 0}
+};
+
 
 } // namespace cb

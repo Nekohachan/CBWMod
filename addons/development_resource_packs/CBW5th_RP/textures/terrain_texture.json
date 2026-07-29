@@ -1,0 +1,167 @@
+{
+    "resource_pack_name": "vanilla",
+    "texture_name": "atlas.terrain",
+    "padding": 8,
+    "num_mip_levels": 4,
+    "texture_data": {
+        "limestone": {
+            "textures": "textures/blocks/limestone"
+        },
+        "chromium_ore": {
+            "textures": "textures/blocks/ore/chromium_ore"
+        },
+        "cobalt_ore": {
+            "textures": "textures/blocks/ore/cobalt_ore"
+        },
+        "deepslate_chromium_ore": {
+            "textures": "textures/blocks/ore/deepslate_chromium_ore"
+        },
+        "deepslate_cobalt_ore": {
+            "textures": "textures/blocks/ore/deepslate_cobalt_ore"
+        },
+        "deepslate_lead_ore": {
+            "textures": "textures/blocks/ore/deepslate_lead_ore"
+        },
+        "deepslate_manganese_ore": {
+            "textures": "textures/blocks/ore/deepslate_manganese_ore"
+        },
+        "deepslate_nickel_ore": {
+            "textures": "textures/blocks/ore/deepslate_nickel_ore"
+        },
+        "deepslate_platinum_ore": {
+            "textures": "textures/blocks/ore/deepslate_platinum_ore"
+        },
+        "deepslate_silver_ore": {
+            "textures": "textures/blocks/ore/deepslate_silver_ore"
+        },
+        "deepslate_tin_ore": {
+            "textures": "textures/blocks/ore/deepslate_tin_ore"
+        },
+        "deepslate_titanium_ore": {
+            "textures": "textures/blocks/ore/deepslate_titanium_ore"
+        },
+        "deepslate_tungsten_ore": {
+            "textures": "textures/blocks/ore/deepslate_tungsten_ore"
+        },
+        "deepslate_vanadium_ore": {
+            "textures": "textures/blocks/ore/deepslate_vanadium_ore"
+        },
+        "deepslate_zinc_ore": {
+            "textures": "textures/blocks/ore/deepslate_zinc_ore"
+        },
+        "deepslate_zircon_ore": {
+            "textures": "textures/blocks/ore/deepslate_zircon_ore"
+        },
+        "lead_ore": {
+            "textures": "textures/blocks/ore/lead_ore"
+        },
+        "lithium_ore": {
+            "textures": "textures/blocks/ore/lithium_ore"
+        },
+        "manganese_ore": {
+            "textures": "textures/blocks/ore/manganese_ore"
+        },
+        "nickel_ore": {
+            "textures": "textures/blocks/ore/nickel_ore"
+        },
+        "platinum_ore": {
+            "textures": "textures/blocks/ore/platinum_ore"
+        },
+        "silver_ore": {
+            "textures": "textures/blocks/ore/silver_ore"
+        },
+        "star_stone": {
+            "textures": "textures/blocks/ore/star_stone"
+        },
+        "tin_ore": {
+            "textures": "textures/blocks/ore/tin_ore"
+        },
+        "titanium_ore": {
+            "textures": "textures/blocks/ore/titanium_ore"
+        },
+        "vanadium_ore": {
+            "textures": "textures/blocks/ore/vanadium_ore"
+        },
+        "zinc_ore": {
+            "textures": "textures/blocks/ore/zinc_ore"
+        },
+        "zircon_ore": {
+            "textures": "textures/blocks/ore/zircon_ore"
+        },
+        "steel_block": {
+            "textures": "textures/blocks/ore_block/steel_block"
+        },
+        "raw_platinum_block": {
+            "textures": "textures/blocks/raw_ore_block/raw_platinum_block"
+        },
+        "raw_silver_block": {
+            "textures": "textures/blocks/raw_ore_block/raw_silver_block"
+        },
+        "raw_tungsten_block": {
+            "textures": "textures/blocks/raw_ore_block/raw_tungsten_block"
+        },
+        "forge_table_bottom": {
+            "textures": "textures/blocks/table/forge_table_bottom"
+        },
+        "forge_table_front": {
+            "textures": "textures/blocks/table/forge_table_front"
+        },
+        "forge_table_side": {
+            "textures": "textures/blocks/table/forge_table_side"
+        },
+        "forge_table_top": {
+            "textures": "textures/blocks/table/forge_table_top"
+        },
+        "iron_furnace_front": {
+            "textures": "textures/blocks/table/iron_furnace_front"
+        },
+        "iron_furnace_otherside": {
+            "textures": "textures/blocks/table/iron_furnace_otherside"
+        },
+        "lab_table_bottom": {
+            "textures": "textures/blocks/table/lab_table_bottom"
+        },
+        "lab_table_front": {
+            "textures": "textures/blocks/table/lab_table_front"
+        },
+        "lab_table_side_a": {
+            "textures": "textures/blocks/table/lab_table_side_a"
+        },
+        "lab_table_side_b": {
+            "textures": "textures/blocks/table/lab_table_side_b"
+        },
+        "lab_table_side_c": {
+            "textures": "textures/blocks/table/lab_table_side_c"
+        },
+        "lab_table_top": {
+            "textures": "textures/blocks/table/lab_table_top"
+        },
+        "magic_table_buttom": {
+            "textures": "textures/blocks/table/magic_table_buttom"
+        },
+        "magic_table_front": {
+            "textures": "textures/blocks/table/magic_table_front"
+        },
+        "magic_table_side": {
+            "textures": "textures/blocks/table/magic_table_side"
+        },
+        "magic_table_top": {
+            "textures": "textures/blocks/table/magic_table_top"
+        },
+        "mechanical_table_front": {
+            "textures": "textures/blocks/table/mechanical_table_front"
+        },
+        "mechanical_table_side": {
+            "textures": "textures/blocks/table/mechanical_table_side"
+        },
+        "mechanical_table_top": {
+            "textures": "textures/blocks/table/mechanical_table_top"
+        },
+        "steel_furnace_front": {
+            "textures": "textures/blocks/table/steel_furnace_front"
+        },
+        "steel_furnace_otherside": {
+            "textures": "textures/blocks/table/steel_furnace_otherside"
+        }
+    }
+}

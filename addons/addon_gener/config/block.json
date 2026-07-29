@@ -1,0 +1,1039 @@
+{
+    "format_version": "1.26.20",
+    "blocks": [
+        {
+            // 石灰岩
+            "identifier": "cb:limestone",
+            "menu_category": {
+                "category": "construction"
+            },
+            "explosion_resistance": 6,
+            "hardness": 2,
+            "tags": ["minecraft:is_pickaxe_item_destructible"],
+            "loot": {
+                "need_tool": "pickaxe",
+                "pickaxe_level": 1,
+                "drop_item": "cb:limestone",
+                "drop_count": 1,
+                "can_fortune": false,
+                "can_silk_touch": true
+            },
+            "geometry": "minecraft:geometry.full_block",
+            "material_instances": {
+                "*": {
+                    "texture": "limestone"
+                }
+            },
+            "blocks": {
+                "sound": "stone"
+            }
+        },
+        {
+            // 锂矿石
+            "identifier": "cb:lithium_ore",
+            "menu_category": {
+                "group": "minecraft:itemGroup.name.ore",
+                "category": "nature"
+            },
+            "explosion_resistance": 6,
+            "hardness": 2,
+            "tags": [
+                "minecraft:is_pickaxe_item_destructible",
+                "minecraft:stone_tier_destructible",
+                "cb:lithium_ore"
+            ],
+            "loot": {
+                "need_tool": "pickaxe",
+                "pickaxe_level": 2,
+                "drop_item": "cb:raw_lithium",
+                "drop_count": 1,
+                "can_fortune": true,
+                "can_silk_touch": true
+            },
+            "geometry": "minecraft:geometry.full_block",
+            "material_instances": {
+                "*": {
+                    "texture": "lithium_ore"
+                }
+            },
+            "blocks": {
+                "sound": "stone"
+            }
+        },
+        {
+            // 钒矿石
+            "identifier": "cb:vanadium_ore",
+            "menu_category": {
+                "group": "minecraft:itemGroup.name.ore",
+                "category": "nature"
+            },
+            "explosion_resistance": 6,
+            "hardness": 3,
+            "tags": [
+                "minecraft:is_pickaxe_item_destructible",
+                "minecraft:stone_tier_destructible",
+                "cb:vanadium_ore"
+            ],
+            "loot": {
+                "need_tool": "pickaxe",
+                "pickaxe_level": 2,
+                "drop_item": "cb:raw_vanadium",
+                "drop_count": 1,
+                "can_fortune": true,
+                "can_silk_touch": true
+            },
+            "geometry": "minecraft:geometry.full_block",
+            "material_instances": {
+                "*": {
+                    "texture": "vanadium_ore"
+                }
+            },
+            "blocks": {
+                "sound": "stone"
+            }
+        },
+        {
+            // 深层钒矿石
+            "identifier": "cb:deepslate_vanadium_ore",
+            "menu_category": {
+                "group": "minecraft:itemGroup.name.ore",
+                "category": "nature"
+            },
+            "explosion_resistance": 6,
+            "hardness": 3.5,
+            "tags": [
+                "minecraft:is_pickaxe_item_destructible",
+                "minecraft:stone_tier_destructible",
+                "cb:vanadium_ore"
+            ],
+            "loot": {
+                "need_tool": "pickaxe",
+                "pickaxe_level": 2,
+                "drop_item": "cb:raw_vanadium",
+                "drop_count": 1,
+                "can_fortune": true,
+                "can_silk_touch": true
+            },
+            "geometry": "minecraft:geometry.full_block",
+            "material_instances": {
+                "*": {
+                    "texture": "deepslate_vanadium_ore"
+                }
+            },
+            "blocks": {
+                "sound": "deepslate"
+            }
+        },
+        {
+            // 铬矿石
+            "identifier": "cb:chromium_ore",
+            "menu_category": {
+                "group": "minecraft:itemGroup.name.ore",
+                "category": "nature"
+            },
+            "explosion_resistance": 16,
+            "hardness": 16,
+            "tags": [
+                "minecraft:is_pickaxe_item_destructible",
+                "cb:Level_7_destructible",
+                "cb:chromium_ore"
+            ],
+            "loot": {
+                "need_tool": "pickaxe",
+                "pickaxe_level": 7,
+                "drop_item": "cb:raw_chromium",
+                "drop_count": 1,
+                "can_fortune": true,
+                "can_silk_touch": true
+            },
+            "geometry": "minecraft:geometry.full_block",
+            "material_instances": {
+                "*": {
+                    "texture": "chromium_ore"
+                }
+            },
+            "blocks": {
+                "sound": "stone"
+            }
+        },
+        {
+            // 深层铬矿石
+            "identifier": "cb:deepslate_chromium_ore",
+            "menu_category": {
+                "group": "minecraft:itemGroup.name.ore",
+                "category": "nature"
+            },
+            "explosion_resistance": 16,
+            "hardness": 16,
+            "tags": [
+                "minecraft:is_pickaxe_item_destructible",
+                "cb:Level_7_destructible",
+                "cb:chromium_ore"
+            ],
+            "loot": {
+                "need_tool": "pickaxe",
+                "pickaxe_level": 7,
+                "drop_item": "cb:raw_chromium",
+                "drop_count": 1,
+                "can_fortune": true,
+                "can_silk_touch": true
+            },
+            "geometry": "minecraft:geometry.full_block",
+            "material_instances": {
+                "*": {
+                    "texture": "deepslate_chromium_ore"
+                }
+            },
+            "blocks": {
+                "sound": "deepslate"
+            }
+        },
+        {
+            // 锰矿石
+            "identifier": "cb:manganese_ore",
+            "menu_category": {
+                "group": "minecraft:itemGroup.name.ore",
+                "category": "nature"
+            },
+            "explosion_resistance": 8,
+            "hardness": 3,
+            "tags": [
+                "minecraft:is_pickaxe_item_destructible",
+                "minecraft:diamond_tier_destructible"
+            ],
+            "loot": {
+                "need_tool": "pickaxe",
+                "pickaxe_level": 4,
+                "drop_item": "cb:raw_manganese",
+                "drop_count": 1,
+                "can_fortune": true,
+                "can_silk_touch": true
+            },
+            "geometry": "minecraft:geometry.full_block",
+            "material_instances": {
+                "*": {
+                    "texture": "manganese_ore"
+                }
+            },
+            "blocks": {
+                "sound": "stone"
+            }
+        },
+        {
+            // 深层锰矿石
+            "identifier": "cb:deepslate_manganese_ore",
+            "menu_category": {
+                "group": "minecraft:itemGroup.name.ore",
+                "category": "nature"
+            },
+            "explosion_resistance": 8,
+            "hardness": 4,
+            "tags": [
+                "minecraft:is_pickaxe_item_destructible",
+                "minecraft:diamond_tier_destructible"
+            ],
+            "loot": {
+                "need_tool": "pickaxe",
+                "pickaxe_level": 4,
+                "drop_item": "cb:raw_manganese",
+                "drop_count": 1,
+                "can_fortune": true,
+                "can_silk_touch": true
+            },
+            "geometry": "minecraft:geometry.full_block",
+            "material_instances": {
+                "*": {
+                    "texture": "deepslate_manganese_ore"
+                }
+            },
+            "blocks": {
+                "sound": "deepslate"
+            }
+        },
+        {
+            // 钛矿石
+            "identifier": "cb:titanium_ore",
+            "menu_category": {
+                "group": "minecraft:itemGroup.name.ore",
+                "category": "nature"
+            },
+            "explosion_resistance": 8,
+            "hardness": 6,
+            "tags": [
+                "minecraft:is_pickaxe_item_destructible",
+                "minecraft:diamond_tier_destructible"
+            ],
+            "loot": {
+                "need_tool": "pickaxe",
+                "pickaxe_level": 4,
+                "drop_item": "cb:raw_titanium",
+                "drop_count": 1,
+                "can_fortune": true,
+                "can_silk_touch": true
+            },
+            "geometry": "minecraft:geometry.full_block",
+            "material_instances": {
+                "*": {
+                    "texture": "titanium_ore"
+                }
+            },
+            "blocks": {
+                "sound": "stone"
+            }
+        },
+        {
+            // 深层钛矿石
+            "identifier": "cb:deepslate_titanium_ore",
+            "menu_category": {
+                "group": "minecraft:itemGroup.name.ore",
+                "category": "nature"
+            },
+            "explosion_resistance": 8,
+            "hardness": 6.5,
+            "tags": [
+                "minecraft:is_pickaxe_item_destructible",
+                "minecraft:diamond_tier_destructible"
+            ],
+            "loot": {
+                "need_tool": "pickaxe",
+                "pickaxe_level": 4,
+                "drop_item": "cb:raw_titanium",
+                "drop_count": 1,
+                "can_fortune": true,
+                "can_silk_touch": true
+            },
+            "geometry": "minecraft:geometry.full_block",
+            "material_instances": {
+                "*": {
+                    "texture": "deepslate_titanium_ore"
+                }
+            },
+            "blocks": {
+                "sound": "deepslate"
+            }
+        },
+        {
+            // 钴矿石
+            "identifier": "cb:cobalt_ore",
+            "menu_category": {
+                "group": "minecraft:itemGroup.name.ore",
+                "category": "nature"
+            },
+            "explosion_resistance": 6,
+            "hardness": 3,
+            "tags": [
+                "minecraft:is_pickaxe_item_destructible",
+                "minecraft:iron_tier_destructible"
+            ],
+            "loot": {
+                "need_tool": "pickaxe",
+                "pickaxe_level": 3,
+                "drop_item": "cb:raw_cobalt",
+                "drop_count": 1,
+                "can_fortune": true,
+                "can_silk_touch": true
+            },
+            "geometry": "minecraft:geometry.full_block",
+            "material_instances": {
+                "*": {
+                    "texture": "cobalt_ore"
+                }
+            },
+            "blocks": {
+                "sound": "stone"
+            }
+        },
+        {
+            // 深层钴矿石
+            "identifier": "cb:deepslate_cobalt_ore",
+            "menu_category": {
+                "group": "minecraft:itemGroup.name.ore",
+                "category": "nature"
+            },
+            "explosion_resistance": 6,
+            "hardness": 4.5,
+            "tags": [
+                "minecraft:is_pickaxe_item_destructible",
+                "minecraft:iron_tier_destructible"
+            ],
+            "loot": {
+                "need_tool": "pickaxe",
+                "pickaxe_level": 3,
+                "drop_item": "cb:raw_cobalt",
+                "drop_count": 1,
+                "can_fortune": true,
+                "can_silk_touch": true
+            },
+            "geometry": "minecraft:geometry.full_block",
+            "material_instances": {
+                "*": {
+                    "texture": "deepslate_cobalt_ore"
+                }
+            },
+            "blocks": {
+                "sound": "deepslate"
+            }
+        },
+        {
+            // 镍矿石
+            "identifier": "cb:nickel_ore",
+            "menu_category": {
+                "group": "minecraft:itemGroup.name.ore",
+                "category": "nature"
+            },
+            "explosion_resistance": 6,
+            "hardness": 3,
+            "tags": [
+                "minecraft:is_pickaxe_item_destructible",
+                "minecraft:iron_tier_destructible"
+            ],
+            "loot": {
+                "need_tool": "pickaxe",
+                "pickaxe_level": 3,
+                "drop_item": "cb:raw_nickel",
+                "drop_count": 1,
+                "can_fortune": true,
+                "can_silk_touch": true
+            },
+            "geometry": "minecraft:geometry.full_block",
+            "material_instances": {
+                "*": {
+                    "texture": "nickel_ore"
+                }
+            },
+            "blocks": {
+                "sound": "stone"
+            }
+        },
+        {
+            // 深层镍矿石
+            "identifier": "cb:deepslate_nickel_ore",
+            "menu_category": {
+                "group": "minecraft:itemGroup.name.ore",
+                "category": "nature"
+            },
+            "explosion_resistance": 6,
+            "hardness": 4.5,
+            "tags": [
+                "minecraft:is_pickaxe_item_destructible",
+                "minecraft:iron_tier_destructible"
+            ],
+            "loot": {
+                "need_tool": "pickaxe",
+                "pickaxe_level": 3,
+                "drop_item": "cb:raw_nickel",
+                "drop_count": 1,
+                "can_fortune": true,
+                "can_silk_touch": true
+            },
+            "geometry": "minecraft:geometry.full_block",
+            "material_instances": {
+                "*": {
+                    "texture": "deepslate_nickel_ore"
+                }
+            },
+            "blocks": {
+                "sound": "deepslate"
+            }
+        },
+        {
+            // 锌矿石
+            "identifier": "cb:zinc_ore",
+            "menu_category": {
+                "group": "minecraft:itemGroup.name.ore",
+                "category": "nature"
+            },
+            "explosion_resistance": 6,
+            "hardness": 3,
+            "tags": [
+                "minecraft:is_pickaxe_item_destructible",
+                "minecraft:iron_tier_destructible"
+            ],
+            "loot": {
+                "need_tool": "pickaxe",
+                "pickaxe_level": 3,
+                "drop_item": "cb:raw_zinc",
+                "drop_count": 1,
+                "can_fortune": true,
+                "can_silk_touch": true
+            },
+            "geometry": "minecraft:geometry.full_block",
+            "material_instances": {
+                "*": {
+                    "texture": "zinc_ore"
+                }
+            },
+            "blocks": {
+                "sound": "stone"
+            }
+        },
+        {
+            // 深层锌矿石
+            "identifier": "cb:deepslate_zinc_ore",
+            "menu_category": {
+                "group": "minecraft:itemGroup.name.ore",
+                "category": "nature"
+            },
+            "explosion_resistance": 6,
+            "hardness": 4.5,
+            "tags": [
+                "minecraft:is_pickaxe_item_destructible",
+                "minecraft:iron_tier_destructible"
+            ],
+            "loot": {
+                "need_tool": "pickaxe",
+                "pickaxe_level": 3,
+                "drop_item": "cb:raw_zinc",
+                "drop_count": 1,
+                "can_fortune": true,
+                "can_silk_touch": true
+            },
+            "geometry": "minecraft:geometry.full_block",
+            "material_instances": {
+                "*": {
+                    "texture": "deepslate_zinc_ore"
+                }
+            },
+            "blocks": {
+                "sound": "deepslate"
+            }
+        },
+        {
+            // 锆石矿石
+            "identifier": "cb:zircon_ore",
+            "menu_category": {
+                "group": "minecraft:itemGroup.name.ore",
+                "category": "nature"
+            },
+            "explosion_resistance": 6,
+            "hardness": 3,
+            "tags": [
+                "minecraft:is_pickaxe_item_destructible",
+                "minecraft:diamond_tier_destructible"
+            ],
+            "loot": {
+                "need_tool": "pickaxe",
+                "pickaxe_level": 4,
+                "drop_item": "cb:zircon_stone",
+                "drop_count": 1,
+                "can_fortune": true,
+                "can_silk_touch": true
+            },
+            "geometry": "minecraft:geometry.full_block",
+            "material_instances": {
+                "*": {
+                    "texture": "zircon_ore"
+                }
+            },
+            "blocks": {
+                "sound": "stone"
+            }
+        },
+        {
+            // 深层锆石矿石
+            "identifier": "cb:deepslate_zircon_ore",
+            "menu_category": {
+                "group": "minecraft:itemGroup.name.ore",
+                "category": "nature"
+            },
+            "explosion_resistance": 6,
+            "hardness": 4.5,
+            "tags": [
+                "minecraft:is_pickaxe_item_destructible",
+                "minecraft:diamond_tier_destructible"
+            ],
+            "loot": {
+                "need_tool": "pickaxe",
+                "pickaxe_level": 4,
+                "drop_item": "cb:zircon_stone",
+                "drop_count": 1,
+                "can_fortune": true,
+                "can_silk_touch": true
+            },
+            "geometry": "minecraft:geometry.full_block",
+            "material_instances": {
+                "*": {
+                    "texture": "deepslate_zircon_ore"
+                }
+            },
+            "blocks": {
+                "sound": "deepslate"
+            }
+        },
+        {
+            // 银矿石
+            "identifier": "cb:silver_ore",
+            "menu_category": {
+                "group": "minecraft:itemGroup.name.ore",
+                "category": "nature"
+            },
+            "explosion_resistance": 6,
+            "hardness": 3,
+            "tags": [
+                "minecraft:is_pickaxe_item_destructible",
+                "minecraft:iron_tier_destructible"
+            ],
+            "loot": {
+                "need_tool": "pickaxe",
+                "pickaxe_level": 3,
+                "drop_item": "cb:raw_silver",
+                "drop_count": 1,
+                "can_fortune": true,
+                "can_silk_touch": true
+            },
+            "geometry": "minecraft:geometry.full_block",
+            "material_instances": {
+                "*": {
+                    "texture": "silver_ore"
+                }
+            },
+            "blocks": {
+                "sound": "stone"
+            }
+        },
+        {
+            // 深层银矿石
+            "identifier": "cb:deepslate_silver_ore",
+            "menu_category": {
+                "group": "minecraft:itemGroup.name.ore",
+                "category": "nature"
+            },
+            "explosion_resistance": 6,
+            "hardness": 4.5,
+            "tags": [
+                "minecraft:is_pickaxe_item_destructible",
+                "minecraft:iron_tier_destructible"
+            ],
+            "loot": {
+                "need_tool": "pickaxe",
+                "pickaxe_level": 3,
+                "drop_item": "cb:raw_silver",
+                "drop_count": 1,
+                "can_fortune": true,
+                "can_silk_touch": true
+            },
+            "geometry": "minecraft:geometry.full_block",
+            "material_instances": {
+                "*": {
+                    "texture": "deepslate_silver_ore"
+                }
+            },
+            "blocks": {
+                "sound": "deepslate"
+            }
+        },
+        {
+            // 锡矿石
+            "identifier": "cb:tin_ore",
+            "menu_category": {
+                "group": "minecraft:itemGroup.name.ore",
+                "category": "nature"
+            },
+            "explosion_resistance": 6,
+            "hardness": 3,
+            "tags": [
+                "minecraft:is_pickaxe_item_destructible",
+                "minecraft:iron_tier_destructible"
+            ],
+            "loot": {
+                "need_tool": "pickaxe",
+                "pickaxe_level": 3,
+                "drop_item": "cb:raw_tin",
+                "drop_count": 1,
+                "can_fortune": true,
+                "can_silk_touch": true
+            },
+            "geometry": "minecraft:geometry.full_block",
+            "material_instances": {
+                "*": {
+                    "texture": "tin_ore"
+                }
+            },
+            "blocks": {
+                "sound": "stone"
+            }
+        },
+        {
+            // 深层锡矿石
+            "identifier": "cb:deepslate_tin_ore",
+            "menu_category": {
+                "group": "minecraft:itemGroup.name.ore",
+                "category": "nature"
+            },
+            "explosion_resistance": 6,
+            "hardness": 4.5,
+            "tags": [
+                "minecraft:is_pickaxe_item_destructible",
+                "minecraft:iron_tier_destructible"
+            ],
+            "loot": {
+                "need_tool": "pickaxe",
+                "pickaxe_level": 3,
+                "drop_item": "cb:raw_tin",
+                "drop_count": 1,
+                "can_fortune": true,
+                "can_silk_touch": true
+            },
+            "geometry": "minecraft:geometry.full_block",
+            "material_instances": {
+                "*": {
+                    "texture": "deepslate_tin_ore"
+                }
+            },
+            "blocks": {
+                "sound": "deepslate"
+            }
+        },
+        {
+            // 铂矿石
+            "identifier": "cb:platinum_ore",
+            "menu_category": {
+                "group": "minecraft:itemGroup.name.ore",
+                "category": "nature"
+            },
+            "explosion_resistance": 6,
+            "hardness": 3,
+            "tags": [
+                "minecraft:is_pickaxe_item_destructible",
+                "minecraft:iron_tier_destructible"
+            ],
+            "loot": {
+                "need_tool": "pickaxe",
+                "pickaxe_level": 3,
+                "drop_item": "cb:raw_platinum",
+                "drop_count": 1,
+                "can_fortune": true,
+                "can_silk_touch": true
+            },
+            "geometry": "minecraft:geometry.full_block",
+            "material_instances": {
+                "*": {
+                    "texture": "platinum_ore"
+                }
+            },
+            "blocks": {
+                "sound": "stone"
+            }
+        },
+        {
+            // 深层铂矿石
+            "identifier": "cb:deepslate_platinum_ore",
+            "menu_category": {
+                "group": "minecraft:itemGroup.name.ore",
+                "category": "nature"
+            },
+            "explosion_resistance": 6,
+            "hardness": 4.5,
+            "tags": [
+                "minecraft:is_pickaxe_item_destructible",
+                "minecraft:iron_tier_destructible"
+            ],
+            "loot": {
+                "need_tool": "pickaxe",
+                "pickaxe_level": 3,
+                "drop_item": "cb:raw_platinum",
+                "drop_count": 1,
+                "can_fortune": true,
+                "can_silk_touch": true
+            },
+            "geometry": "minecraft:geometry.full_block",
+            "material_instances": {
+                "*": {
+                    "texture": "deepslate_platinum_ore"
+                }
+            },
+            "blocks": {
+                "sound": "deepslate"
+            }
+        },
+        {
+            // 铅矿石
+            "identifier": "cb:lead_ore",
+            "menu_category": {
+                "group": "minecraft:itemGroup.name.ore",
+                "category": "nature"
+            },
+            "explosion_resistance": 6,
+            "hardness": 3,
+            "tags": [
+                "minecraft:is_pickaxe_item_destructible",
+                "minecraft:iron_tier_destructible"
+            ],
+            "loot": {
+                "need_tool": "pickaxe",
+                "pickaxe_level": 3,
+                "drop_item": "cb:raw_lead",
+                "drop_count": 1,
+                "can_fortune": true,
+                "can_silk_touch": true
+            },
+            "geometry": "minecraft:geometry.full_block",
+            "material_instances": {
+                "*": {
+                    "texture": "lead_ore"
+                }
+            },
+            "blocks": {
+                "sound": "stone"
+            }
+        },
+        {
+            // 深层铅矿石
+            "identifier": "cb:deepslate_lead_ore",
+            "menu_category": {
+                "group": "minecraft:itemGroup.name.ore",
+                "category": "nature"
+            },
+            "explosion_resistance": 6,
+            "hardness": 4.5,
+            "tags": [
+                "minecraft:is_pickaxe_item_destructible",
+                "minecraft:iron_tier_destructible"
+            ],
+            "loot": {
+                "need_tool": "pickaxe",
+                "pickaxe_level": 3,
+                "drop_item": "cb:raw_lead",
+                "drop_count": 1,
+                "can_fortune": true,
+                "can_silk_touch": true
+            },
+            "geometry": "minecraft:geometry.full_block",
+            "material_instances": {
+                "*": {
+                    "texture": "deepslate_lead_ore"
+                }
+            },
+            "blocks": {
+                "sound": "deepslate"
+            }
+        },
+        {
+            // 星石
+            "identifier": "cb:star_stone",
+            "menu_category": {
+                "group": "minecraft:itemGroup.name.ore",
+                "category": "nature"
+            },
+            "explosion_resistance": 8,
+            "hardness": 8,
+            "light_emission": 4,
+            "tags": [
+                "minecraft:is_pickaxe_item_destructible",
+                "minecraft:iron_tier_destructible"
+            ],
+            "loot": {
+                "need_tool": "pickaxe",
+                "pickaxe_level": 3,
+                "drop_item": "cb:star_soil",
+                "drop_count": 1,
+                "can_fortune": false,
+                "can_silk_touch": false
+            },
+            "geometry": "minecraft:geometry.full_block",
+            "material_instances": {
+                "*": {
+                    "texture": "star_stone"
+                }
+            },
+            "blocks": {
+                "sound": "amethyst_block"
+            }
+        },
+        {
+            // 钢块
+            "identifier": "cb:steel_block",
+            "menu_category": {
+                "group": "cb:itemGroup.block",
+                "category": "construction"
+            },
+            "explosion_resistance": 6,
+            "hardness": 5,
+            "tags": [
+                "minecraft:is_pickaxe_item_destructible",
+                "minecraft:stone_tier_destructible"
+            ],
+            "loot": {
+                "need_tool": "pickaxe",
+                "pickaxe_level": 2,
+                "drop_item": "cb:steel_block",
+                "drop_count": 1,
+                "can_fortune": false,
+                "can_silk_touch": false
+            },
+            "geometry": "minecraft:geometry.full_block",
+            "material_instances": {
+                "*": {
+                    "texture": "steel_block"
+                }
+            },
+            "blocks": {
+                "sound": "iron"
+            }
+        },
+        {
+            // 铁炉
+            "identifier": "cb:iron_furnace",
+            "menu_category": {
+                "group": "cb:itemGroup.table",
+                "category": "items"
+            },
+            "explosion_resistance": 6,
+            "hardness": 5,
+            "tags": [
+                "minecraft:is_pickaxe_item_destructible",
+                "minecraft:stone_tier_destructible"
+            ],
+            "loot": {
+                "need_tool": "pickaxe",
+                "pickaxe_level": 2,
+                "drop_item": "cb:iron_furnace",
+                "drop_count": 1,
+                "can_fortune": false,
+                "can_silk_touch": false
+            },
+            "geometry": "minecraft:geometry.full_block",
+            "material_instances": {
+                "north": {
+                    "texture": "iron_furnace_front"
+                },
+                "east": {
+                    "texture": "iron_furnace_otherside"
+                },
+                "south": {
+                    "texture": "iron_furnace_otherside"
+                },
+                "west": {
+                    "texture": "iron_furnace_otherside"
+                },
+                "up": {
+                    "texture": "iron_furnace_otherside"
+                },
+                "down": {
+                    "texture": "iron_furnace_otherside"
+                }
+            },
+            "blocks": {
+                "sound": "iron"
+            },
+            "crafting_table": {
+                "table_name": "tile.cb:iron_furnace.name",
+                "crafting_tags": ["cb:iron_furnace"]
+            },
+            "traits": {
+                "minecraft:placement_direction": {
+                    "enabled_states": ["minecraft:cardinal_direction"],
+                    "y_rotation_offset": 180
+                }
+            },
+            "permutations": [
+                {
+                    "condition": "q.block_state('minecraft:cardinal_direction') == 'north'",
+                    "components": {
+                        "minecraft:transformation": { "rotation": [0, 0, 0] }
+                    }
+                },
+                {
+                    "condition": "q.block_state('minecraft:cardinal_direction') == 'west'",
+                    "components": {
+                        "minecraft:transformation": { "rotation": [0, 90, 0] }
+                    }
+                },
+                {
+                    "condition": "q.block_state('minecraft:cardinal_direction') == 'south'",
+                    "components": {
+                        "minecraft:transformation": { "rotation": [0, 180, 0] }
+                    }
+                },
+                {
+                    "condition": "q.block_state('minecraft:cardinal_direction') == 'east'",
+                    "components": {
+                        "minecraft:transformation": { "rotation": [0, -90, 0] }
+                    }
+                }
+            ]
+        },
+        {
+            // 钢炉
+            "identifier": "cb:steel_furnace",
+            "menu_category": {
+                "group": "cb:itemGroup.table",
+                "category": "items"
+            },
+            "explosion_resistance": 6,
+            "hardness": 5,
+            "tags": [
+                "minecraft:is_pickaxe_item_destructible",
+                "minecraft:stone_tier_destructible"
+            ],
+            "loot": {
+                "need_tool": "pickaxe",
+                "pickaxe_level": 2,
+                "drop_item": "cb:steel_furnace",
+                "drop_count": 1,
+                "can_fortune": false,
+                "can_silk_touch": false
+            },
+            "geometry": "minecraft:geometry.full_block",
+            "material_instances": {
+                "north": {
+                    "texture": "steel_furnace_front"
+                },
+                "east": {
+                    "texture": "steel_furnace_otherside"
+                },
+                "south": {
+                    "texture": "steel_furnace_otherside"
+                },
+                "west": {
+                    "texture": "steel_furnace_otherside"
+                },
+                "up": {
+                    "texture": "steel_furnace_otherside"
+                },
+                "down": {
+                    "texture": "steel_furnace_otherside"
+                }
+            },
+            "blocks": {
+                "sound": "iron"
+            },
+            "crafting_table": {
+                "table_name": "tile.cb:steel_furnace.name",
+                "crafting_tags": ["cb:iron_furnace", "cb:steel_furnace"]
+            },
+            "traits": {
+                "minecraft:placement_direction": {
+                    "enabled_states": ["minecraft:cardinal_direction"],
+                    "y_rotation_offset": 180
+                }
+            },
+            "permutations": [
+                {
+                    "condition": "q.block_state('minecraft:cardinal_direction') == 'north'",
+                    "components": {
+                        "minecraft:transformation": { "rotation": [0, 0, 0] }
+                    }
+                },
+                {
+                    "condition": "q.block_state('minecraft:cardinal_direction') == 'west'",
+                    "components": {
+                        "minecraft:transformation": { "rotation": [0, 90, 0] }
+                    }
+                },
+                {
+                    "condition": "q.block_state('minecraft:cardinal_direction') == 'south'",
+                    "components": {
+                        "minecraft:transformation": { "rotation": [0, 180, 0] }
+                    }
+                },
+                {
+                    "condition": "q.block_state('minecraft:cardinal_direction') == 'east'",
+                    "components": {
+                        "minecraft:transformation": { "rotation": [0, -90, 0] }
+                    }
+                }
+            ]
+        }
+    ]
+}

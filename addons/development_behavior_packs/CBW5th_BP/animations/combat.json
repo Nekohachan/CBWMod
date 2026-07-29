@@ -1,0 +1,25 @@
+{
+    "format_version": "1.8.0",
+    "animations": {
+        "animation.cb.player_on_fall": {
+            "animation_length": 1.0,
+            "loop": false,
+            "timeline": { "0": "/tag @s[tag=!cb.on_fall_delay] add cb.on_fall_delay" }
+        },
+        "animation.cb.player.destoring_block": {
+            "animation_length": 0.15,
+            "loop": true,
+            "anim_time_update": "q.scoreboard('cb.destoring_block') == 1 ? q.anim_time + q.delta_time : 0",
+            "timeline": { "0.1": "/function combat/hit_block_not" }
+        },
+        "animation.attack_test": {
+            "animation_length": 1.0,
+            "loop": true,
+            "anim_time_update": "v.attack_time",
+            "timeline": {
+                "0.01": "/execute unless entity @s[scores={cb.atk_cd=1..}] run function combat/attack_cold",
+                "0.3": "/scoreboard players set @s[scores={cb.destoring_block=2}] ac.destoring_block 1"
+            }
+        }
+    }
+}

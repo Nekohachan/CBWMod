@@ -1,0 +1,28 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.cb.player.bow": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"animations": [
+						{"bow.hold": "v.is_first_person"}
+					],
+					"transitions": [
+						{"use":"q.main_hand_item_use_duration > 0"}
+					]
+				},
+				"use": {
+					"animations": [
+						{"bow.hold":"v.is_first_person"},
+						"bow.use",
+						"bow.charge"
+					],
+					"transitions": [
+						{"default": "!q.main_hand_item_use_duration > 0"}
+					]
+				}
+			}
+		}
+	}
+}

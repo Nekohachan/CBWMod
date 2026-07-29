@@ -1,0 +1,18 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.cb.player.hold_spear": {
+			"initial_state": "a",
+			"states": {
+				"a": {
+					"on_entry": ["/tag @s[tag=cb.hold_spear] remove cb.hold_spear"],
+					"transitions": [{"b": "q.equipped_item_any_tag('slot.weapon.mainhand', 'minecraft:is_spear')"}]
+				},
+				"b": {
+					"on_entry": ["/tag @s[tag=!cb.hold_spear] add cb.hold_spear"],
+					"transitions": [{"a": "!q.equipped_item_any_tag('slot.weapon.mainhand', 'minecraft:is_spear')"}]
+				}
+			}
+		}
+	}
+}

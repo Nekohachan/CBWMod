@@ -1,0 +1,1148 @@
+{
+    "blocks": [
+        {
+            //石灰岩
+            "feature_rule": {
+                "identifier": "cb:limestone",
+                "places_feature": "cb:limestone",
+                "placement_pass": "underground_pass",
+                "biome_filter": ["overworld", "overworld_generation"],
+                "distribution": {
+                    "iterations": 10,
+                    "x": {
+                        "distribution": "uniform",
+                        "extent": [0, 16]
+                    },
+                    "y": {
+                        "distribution": "triangle",
+                        "extent": [-24, 56]
+                    },
+                    "z": {
+                        "distribution": "uniform",
+                        "extent": [0, 16]
+                    }
+                }
+            },
+            "feature": {
+                "ore_feature": {
+                    "identifier": "cb:limestone",
+                    "count": 64,
+                    "replace_rules": [
+                        {
+                            "places_block": "cb:limestone",
+                            "may_replace": ["minecraft:stone"]
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            //锂矿小
+            "feature_rule": {
+                "identifier": "cb:lithium_ore_small",
+                "places_feature": "cb:lithium_ore_small",
+                "placement_pass": "underground_pass",
+                "biome_filter": ["overworld", "overworld_generation"],
+                "distribution": {
+                    "iterations": 20,
+                    "x": {
+                        "distribution": "uniform",
+                        "extent": [0, 16]
+                    },
+                    "y": {
+                        "distribution": "uniform",
+                        "extent": [0, 64]
+                    },
+                    "z": {
+                        "distribution": "uniform",
+                        "extent": [0, 16]
+                    }
+                }
+            },
+            "feature": {
+                "ore_feature": {
+                    "identifier": "cb:lithium_ore_small",
+                    "count": 5,
+                    "replace_rules": [
+                        {
+                            "places_block": "cb:lithium_ore",
+                            "may_replace": ["minecraft:stone"]
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            //锂矿大
+            "feature_rule": {
+                "identifier": "cb:lithium_ore_large",
+                "places_feature": "cb:lithium_ore_large",
+                "placement_pass": "underground_pass",
+                "biome_filter": ["overworld", "overworld_generation"],
+                "distribution": {
+                    "iterations": 70,
+                    "x": {
+                        "distribution": "uniform",
+                        "extent": [0, 16]
+                    },
+                    "y": {
+                        "distribution": "triangle",
+                        "extent": [0, 384]
+                    },
+                    "z": {
+                        "distribution": "uniform",
+                        "extent": [0, 16]
+                    }
+                }
+            },
+            "feature": {
+                "ore_feature": {
+                    "identifier": "cb:lithium_ore_large",
+                    "count": 9,
+                    "replace_rules": [
+                        {
+                            "places_block": "cb:lithium_ore",
+                            "may_replace": ["minecraft:stone"]
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            //钒矿
+            "feature_rule": {
+                "identifier": "cb:vanadium_ore",
+                "places_feature": "cb:vanadium_ore",
+                "placement_pass": "underground_pass",
+                "biome_filter": ["overworld", "overworld_generation"],
+                "distribution": {
+                    "iterations": 90,
+                    "x": {
+                        "distribution": "uniform",
+                        "extent": [0, 16]
+                    },
+                    "y": {
+                        "distribution": "triangle",
+                        "extent": [0, 384]
+                    },
+                    "z": {
+                        "distribution": "uniform",
+                        "extent": [0, 16]
+                    }
+                }
+            },
+            "feature": {
+                "ore_feature": {
+                    "identifier": "cb:vanadium_ore",
+                    "count": 3,
+                    "replace_rules": [
+                        {
+                            "places_block": "cb:lithium_ore",
+                            "may_replace": ["minecraft:stone"]
+                        },
+                        {
+                            "places_block": "cb:deepslate_vanadium_ore",
+                            "may_replace": ["minecraft:deepslate"]
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            //铬矿小
+            "feature_rule": {
+                "identifier": "cb:chromium_ore_small",
+                "places_feature": "cb:chromium_ore_small",
+                "placement_pass": "underground_pass",
+                "biome_filter": ["overworld", "overworld_generation"],
+                "distribution": {
+                    "iterations": 20,
+                    "scatter_chance": {
+                        "numerator": 1,
+                        "denominator": 2
+                    },
+                    "x": {
+                        "distribution": "uniform",
+                        "extent": [0, 16]
+                    },
+                    "y": {
+                        "distribution": "uniform",
+                        "extent": [-19, 96]
+                    },
+                    "z": {
+                        "distribution": "uniform",
+                        "extent": [0, 16]
+                    }
+                }
+            },
+            "feature": {
+                "ore_feature": {
+                    "identifier": "cb:chromium_ore_small",
+                    "count": 2,
+                    "replace_rules": [
+                        {
+                            "places_block": "cb:chromium_ore",
+                            "may_replace": ["minecraft:stone"]
+                        },
+                        {
+                            "places_block": "cb:deepslate_chromium_ore",
+                            "may_replace": ["minecraft:deepslate"]
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            //铬矿大
+            "feature_rule": {
+                "identifier": "cb:chromium_ore_large",
+                "places_feature": "cb:chromium_ore_large",
+                "placement_pass": "underground_pass",
+                "biome_filter": ["overworld", "overworld_generation"],
+                "distribution": {
+                    "iterations": 20,
+                    "scatter_chance": {
+                        "numerator": 1,
+                        "denominator": 3
+                    },
+                    "x": {
+                        "distribution": "uniform",
+                        "extent": [0, 16]
+                    },
+                    "y": {
+                        "distribution": "triangle",
+                        "extent": [-64, 0]
+                    },
+                    "z": {
+                        "distribution": "uniform",
+                        "extent": [0, 16]
+                    }
+                }
+            },
+            "feature": {
+                "ore_feature": {
+                    "identifier": "cb:chromium_ore_large",
+                    "count": 3,
+                    "replace_rules": [
+                        {
+                            "places_block": "cb:chromium_ore",
+                            "may_replace": ["minecraft:stone"]
+                        },
+                        {
+                            "places_block": "cb:deepslate_chromium_ore",
+                            "may_replace": ["minecraft:deepslate"]
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            //锰矿小
+            "feature_rule": {
+                "identifier": "cb:manganese_ore_small",
+                "places_feature": "cb:manganese_ore_small",
+                "placement_pass": "underground_pass",
+                "biome_filter": ["overworld", "overworld_generation"],
+                "distribution": {
+                    "iterations": 90,
+                    "scatter_chance": {
+                        "numerator": 1,
+                        "denominator": 3
+                    },
+                    "x": {
+                        "distribution": "uniform",
+                        "extent": [0, 16]
+                    },
+                    "y": {
+                        "distribution": "triangle",
+                        "extent": [32, 328]
+                    },
+                    "z": {
+                        "distribution": "uniform",
+                        "extent": [0, 16]
+                    }
+                }
+            },
+            "feature": {
+                "ore_feature": {
+                    "identifier": "cb:manganese_ore_small",
+                    "count": 5,
+                    "replace_rules": [
+                        {
+                            "places_block": "cb:manganese_ore",
+                            "may_replace": ["minecraft:stone"]
+                        },
+                        {
+                            "places_block": "cb:deepslate_manganese_ore",
+                            "may_replace": ["minecraft:deepslate"]
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            //锰矿大
+            "feature_rule": {
+                "identifier": "cb:manganese_ore_large",
+                "places_feature": "cb:manganese_ore_large",
+                "placement_pass": "underground_pass",
+                "biome_filter": ["overworld", "overworld_generation"],
+                "distribution": {
+                    "iterations": 20,
+                    "x": {
+                        "distribution": "uniform",
+                        "extent": [0, 16]
+                    },
+                    "y": {
+                        "distribution": "uniform",
+                        "extent": [-64, 64]
+                    },
+                    "z": {
+                        "distribution": "uniform",
+                        "extent": [0, 16]
+                    }
+                }
+            },
+            "feature": {
+                "ore_feature": {
+                    "identifier": "cb:manganese_ore_large",
+                    "count": 7,
+                    "replace_rules": [
+                        {
+                            "places_block": "cb:manganese_ore",
+                            "may_replace": ["minecraft:stone"]
+                        },
+                        {
+                            "places_block": "cb:deepslate_manganese_ore",
+                            "may_replace": ["minecraft:deepslate"]
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            //钛矿小
+            "feature_rule": {
+                "identifier": "cb:titanium_ore_small",
+                "places_feature": "cb:titanium_ore_small",
+                "placement_pass": "underground_pass",
+                "biome_filter": ["overworld", "overworld_generation"],
+                "distribution": {
+                    "iterations": 30,
+                    "scatter_chance": {
+                        "numerator": 1,
+                        "denominator": 2
+                    },
+                    "x": {
+                        "distribution": "uniform",
+                        "extent": [0, 16]
+                    },
+                    "y": {
+                        "distribution": "uniform",
+                        "extent": [128, 319]
+                    },
+                    "z": {
+                        "distribution": "uniform",
+                        "extent": [0, 16]
+                    }
+                }
+            },
+            "feature": {
+                "ore_feature": {
+                    "identifier": "cb:titanium_ore_small",
+                    "count": 7,
+                    "replace_rules": [
+                        {
+                            "places_block": "cb:titanium_ore",
+                            "may_replace": ["minecraft:stone"]
+                        },
+                        {
+                            "places_block": "cb:deepslate_titanium_ore",
+                            "may_replace": ["minecraft:deepslate"]
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            //钛矿大
+            "feature_rule": {
+                "identifier": "cb:titanium_ore_large",
+                "places_feature": "cb:titanium_ore_large",
+                "placement_pass": "underground_pass",
+                "biome_filter": ["overworld", "overworld_generation"],
+                "distribution": {
+                    "iterations": 40,
+                    "x": {
+                        "distribution": "uniform",
+                        "extent": [0, 16]
+                    },
+                    "y": {
+                        "distribution": "triangle",
+                        "extent": [-64, 128]
+                    },
+                    "z": {
+                        "distribution": "uniform",
+                        "extent": [0, 16]
+                    }
+                }
+            },
+            "feature": {
+                "ore_feature": {
+                    "identifier": "cb:titanium_ore_large",
+                    "count": 8,
+                    "replace_rules": [
+                        {
+                            "places_block": "cb:titanium_ore",
+                            "may_replace": ["minecraft:stone"]
+                        },
+                        {
+                            "places_block": "cb:deepslate_titanium_ore",
+                            "may_replace": ["minecraft:deepslate"]
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            //钴矿小
+            "feature_rule": {
+                "identifier": "cb:cobalt_ore_small",
+                "places_feature": "cb:cobalt_ore_small",
+                "placement_pass": "underground_pass",
+                "biome_filter": ["overworld", "overworld_generation"],
+                "distribution": {
+                    "iterations": 20,
+                    "scatter_chance": {
+                        "numerator": 1,
+                        "denominator": 2
+                    },
+                    "x": {
+                        "distribution": "uniform",
+                        "extent": [0, 16]
+                    },
+                    "y": {
+                        "distribution": "uniform",
+                        "extent": [-32, 96]
+                    },
+                    "z": {
+                        "distribution": "uniform",
+                        "extent": [0, 16]
+                    }
+                }
+            },
+            "feature": {
+                "ore_feature": {
+                    "identifier": "cb:cobalt_ore_small",
+                    "count": 6,
+                    "replace_rules": [
+                        {
+                            "places_block": "cb:cobalt_ore",
+                            "may_replace": ["minecraft:stone"]
+                        },
+                        {
+                            "places_block": "cb:deepslate_cobalt_ore",
+                            "may_replace": ["minecraft:deepslate"]
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            //钴矿大
+            "feature_rule": {
+                "identifier": "cb:cobalt_ore_large",
+                "places_feature": "cb:cobalt_ore_large",
+                "placement_pass": "underground_pass",
+                "biome_filter": ["overworld", "overworld_generation"],
+                "distribution": {
+                    "iterations": 100,
+                    "scatter_chance": {
+                        "numerator": 1,
+                        "denominator": 2
+                    },
+                    "x": {
+                        "distribution": "uniform",
+                        "extent": [0, 16]
+                    },
+                    "y": {
+                        "distribution": "triangle",
+                        "extent": [-64, 384]
+                    },
+                    "z": {
+                        "distribution": "uniform",
+                        "extent": [0, 16]
+                    }
+                }
+            },
+            "feature": {
+                "ore_feature": {
+                    "identifier": "cb:cobalt_ore_large",
+                    "count": 8,
+                    "replace_rules": [
+                        {
+                            "places_block": "cb:cobalt_ore",
+                            "may_replace": ["minecraft:stone"]
+                        },
+                        {
+                            "places_block": "cb:deepslate_cobalt_ore",
+                            "may_replace": ["minecraft:deepslate"]
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            //镍矿小
+            "feature_rule": {
+                "identifier": "cb:nickel_ore_small",
+                "places_feature": "cb:nickel_ore_small",
+                "placement_pass": "underground_pass",
+                "biome_filter": ["overworld", "overworld_generation"],
+                "distribution": {
+                    "iterations": 60,
+                    "x": {
+                        "distribution": "uniform",
+                        "extent": [0, 16]
+                    },
+                    "y": {
+                        "distribution": "triangle",
+                        "extent": [64, 128]
+                    },
+                    "z": {
+                        "distribution": "uniform",
+                        "extent": [0, 16]
+                    }
+                }
+            },
+            "feature": {
+                "ore_feature": {
+                    "identifier": "cb:nickel_ore_small",
+                    "count": 6,
+                    "replace_rules": [
+                        {
+                            "places_block": "cb:nickel_ore",
+                            "may_replace": ["minecraft:stone"]
+                        },
+                        {
+                            "places_block": "cb:deepslate_nickel_ore",
+                            "may_replace": ["minecraft:deepslate"]
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            //镍矿大
+            "feature_rule": {
+                "identifier": "cb:nickel_ore_large",
+                "places_feature": "cb:nickel_ore_large",
+                "placement_pass": "underground_pass",
+                "biome_filter": ["overworld", "overworld_generation"],
+                "distribution": {
+                    "iterations": 20,
+                    "x": {
+                        "distribution": "uniform",
+                        "extent": [0, 16]
+                    },
+                    "y": {
+                        "distribution": "uniform",
+                        "extent": [-64, 320]
+                    },
+                    "z": {
+                        "distribution": "uniform",
+                        "extent": [0, 16]
+                    }
+                }
+            },
+            "feature": {
+                "ore_feature": {
+                    "identifier": "cb:nickel_ore_large",
+                    "count": 8,
+                    "replace_rules": [
+                        {
+                            "places_block": "cb:nickel_ore",
+                            "may_replace": ["minecraft:stone"]
+                        },
+                        {
+                            "places_block": "cb:deepslate_nickel_ore",
+                            "may_replace": ["minecraft:deepslate"]
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            //锌矿小
+            "feature_rule": {
+                "identifier": "cb:zinc_ore_small",
+                "places_feature": "cb:zinc_ore_small",
+                "placement_pass": "underground_pass",
+                "biome_filter": ["overworld", "overworld_generation"],
+                "distribution": {
+                    "iterations": 50,
+                    "x": {
+                        "distribution": "uniform",
+                        "extent": [0, 16]
+                    },
+                    "y": {
+                        "distribution": "triangle",
+                        "extent": [-128, 64]
+                    },
+                    "z": {
+                        "distribution": "uniform",
+                        "extent": [0, 16]
+                    }
+                }
+            },
+            "feature": {
+                "ore_feature": {
+                    "identifier": "cb:zinc_ore_small",
+                    "count": 5,
+                    "replace_rules": [
+                        {
+                            "places_block": "cb:zinc_ore",
+                            "may_replace": ["minecraft:stone"]
+                        },
+                        {
+                            "places_block": "cb:deepslate_zinc_ore",
+                            "may_replace": ["minecraft:deepslate"]
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            //锌矿大
+            "feature_rule": {
+                "identifier": "cb:zinc_ore_large",
+                "places_feature": "cb:zinc_ore_large",
+                "placement_pass": "underground_pass",
+                "biome_filter": ["overworld", "overworld_generation"],
+                "distribution": {
+                    "iterations": 20,
+                    "x": {
+                        "distribution": "uniform",
+                        "extent": [0, 16]
+                    },
+                    "y": {
+                        "distribution": "uniform",
+                        "extent": [-64, 48]
+                    },
+                    "z": {
+                        "distribution": "uniform",
+                        "extent": [0, 16]
+                    }
+                }
+            },
+            "feature": {
+                "ore_feature": {
+                    "identifier": "cb:zinc_ore_large",
+                    "count": 6,
+                    "replace_rules": [
+                        {
+                            "places_block": "cb:zinc_ore",
+                            "may_replace": ["minecraft:stone"]
+                        },
+                        {
+                            "places_block": "cb:deepslate_zinc_ore",
+                            "may_replace": ["minecraft:deepslate"]
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            //锌矿额外
+            "feature_rule": {
+                "identifier": "cb:zinc_ore_extra",
+                "places_feature": "cb:zinc_ore_extra",
+                "placement_pass": "underground_pass",
+                "biome_filter": ["mesa", "desert"],
+                "distribution": {
+                    "iterations": 20,
+                    "x": {
+                        "distribution": "uniform",
+                        "extent": [0, 16]
+                    },
+                    "y": {
+                        "distribution": "uniform",
+                        "extent": [-64, 128]
+                    },
+                    "z": {
+                        "distribution": "uniform",
+                        "extent": [0, 16]
+                    }
+                }
+            },
+            "feature": {
+                "ore_feature": {
+                    "identifier": "cb:zinc_ore_extra",
+                    "count": 8,
+                    "replace_rules": [
+                        {
+                            "places_block": "cb:zinc_ore",
+                            "may_replace": ["minecraft:stone"]
+                        },
+                        {
+                            "places_block": "cb:deepslate_zinc_ore",
+                            "may_replace": ["minecraft:deepslate"]
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            //锆石矿
+            "feature_rule": {
+                "identifier": "cb:zircon_ore",
+                "places_feature": "cb:zircon_ore",
+                "placement_pass": "underground_pass",
+                "biome_filter": ["overworld", "overworld_generation"],
+                "distribution": {
+                    "iterations": 20,
+                    "x": {
+                        "distribution": "uniform",
+                        "extent": [0, 16]
+                    },
+                    "y": {
+                        "distribution": "uniform",
+                        "extent": [-64, 32]
+                    },
+                    "z": {
+                        "distribution": "uniform",
+                        "extent": [0, 16]
+                    }
+                }
+            },
+            "feature": {
+                "ore_feature": {
+                    "identifier": "cb:zircon_ore",
+                    "discard_chance_on_air_exposure": 1,
+                    "count": 3,
+                    "replace_rules": [
+                        {
+                            "places_block": "cb:zircon_ore",
+                            "may_replace": ["minecraft:stone"]
+                        },
+                        {
+                            "places_block": "cb:deepslate_zircon_ore",
+                            "may_replace": ["minecraft:deepslate"]
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            //锆石矿额外
+            "feature_rule": {
+                "identifier": "cb:zircon_ore_extra",
+                "places_feature": "cb:zircon_ore_extra",
+                "placement_pass": "underground_pass",
+                "biome_filter": ["savanna"],
+                "distribution": {
+                    "iterations": 60,
+                    "x": {
+                        "distribution": "uniform",
+                        "extent": [0, 16]
+                    },
+                    "y": {
+                        "distribution": "triangle",
+                        "extent": [-64, 96]
+                    },
+                    "z": {
+                        "distribution": "uniform",
+                        "extent": [0, 16]
+                    }
+                }
+            },
+            "feature": {
+                "ore_feature": {
+                    "identifier": "cb:zircon_ore_extra",
+                    "count": 1,
+                    "replace_rules": [
+                        {
+                            "places_block": "cb:zircon_ore",
+                            "may_replace": ["minecraft:stone"]
+                        },
+                        {
+                            "places_block": "cb:deepslate_zircon_ore",
+                            "may_replace": ["minecraft:deepslate"]
+                        }
+                    ]
+                }
+            }
+        },
+
+        {
+            //银矿小
+            "feature_rule": {
+                "identifier": "cb:silver_ore_small",
+                "places_feature": "cb:silver_ore_small",
+                "placement_pass": "underground_pass",
+                "biome_filter": ["overworld", "overworld_generation"],
+                "distribution": {
+                    "iterations": 70,
+                    "x": {
+                        "distribution": "uniform",
+                        "extent": [0, 16]
+                    },
+                    "y": {
+                        "distribution": "triangle",
+                        "extent": [-64, 128]
+                    },
+                    "z": {
+                        "distribution": "uniform",
+                        "extent": [0, 16]
+                    }
+                }
+            },
+            "feature": {
+                "ore_feature": {
+                    "identifier": "cb:silver_ore_small",
+                    "count": 6,
+                    "replace_rules": [
+                        {
+                            "places_block": "cb:silver_ore",
+                            "may_replace": ["minecraft:stone"]
+                        },
+                        {
+                            "places_block": "cb:deepslate_silver_ore",
+                            "may_replace": ["minecraft:deepslate"]
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            //银矿大
+            "feature_rule": {
+                "identifier": "cb:silver_ore_large",
+                "places_feature": "cb:silver_ore_large",
+                "placement_pass": "underground_pass",
+                "biome_filter": ["overworld", "overworld_generation"],
+                "distribution": {
+                    "iterations": 20,
+                    "x": {
+                        "distribution": "uniform",
+                        "extent": [0, 16]
+                    },
+                    "y": {
+                        "distribution": "uniform",
+                        "extent": [-64, 32]
+                    },
+                    "z": {
+                        "distribution": "uniform",
+                        "extent": [0, 16]
+                    }
+                }
+            },
+            "feature": {
+                "ore_feature": {
+                    "identifier": "cb:silver_ore_large",
+                    "count": 8,
+                    "replace_rules": [
+                        {
+                            "places_block": "cb:silver_ore",
+                            "may_replace": ["minecraft:stone"]
+                        },
+                        {
+                            "places_block": "cb:deepslate_silver_ore",
+                            "may_replace": ["minecraft:deepslate"]
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            //锡矿小
+            "feature_rule": {
+                "identifier": "cb:tin_ore_small",
+                "places_feature": "cb:tin_ore_small",
+                "placement_pass": "underground_pass",
+                "biome_filter": ["overworld", "overworld_generation"],
+                "distribution": {
+                    "iterations": 70,
+                    "x": {
+                        "distribution": "uniform",
+                        "extent": [0, 16]
+                    },
+                    "y": {
+                        "distribution": "triangle",
+                        "extent": [64, 384]
+                    },
+                    "z": {
+                        "distribution": "uniform",
+                        "extent": [0, 16]
+                    }
+                }
+            },
+            "feature": {
+                "ore_feature": {
+                    "identifier": "cb:tin_ore_small",
+                    "count": 7,
+                    "replace_rules": [
+                        {
+                            "places_block": "cb:tin_ore",
+                            "may_replace": ["minecraft:stone"]
+                        },
+                        {
+                            "places_block": "cb:deepslate_tin_ore",
+                            "may_replace": ["minecraft:deepslate"]
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            //锡矿大
+            "feature_rule": {
+                "identifier": "cb:tin_ore_large",
+                "places_feature": "cb:tin_ore_large",
+                "placement_pass": "underground_pass",
+                "biome_filter": ["overworld", "overworld_generation"],
+                "distribution": {
+                    "iterations": 50,
+                    "scatter_chance": {
+                        "numerator": 1,
+                        "denominator": 3
+                    },
+                    "x": {
+                        "distribution": "uniform",
+                        "extent": [0, 16]
+                    },
+                    "y": {
+                        "distribution": "triangle",
+                        "extent": [64, 384]
+                    },
+                    "z": {
+                        "distribution": "uniform",
+                        "extent": [0, 16]
+                    }
+                }
+            },
+            "feature": {
+                "ore_feature": {
+                    "identifier": "cb:tin_ore_large",
+                    "count": 8,
+                    "replace_rules": [
+                        {
+                            "places_block": "cb:tin_ore",
+                            "may_replace": ["minecraft:stone"]
+                        },
+                        {
+                            "places_block": "cb:deepslate_tin_ore",
+                            "may_replace": ["minecraft:deepslate"]
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            //铂矿
+            "feature_rule": {
+                "identifier": "cb:platinum_ore",
+                "places_feature": "cb:platinum_ore",
+                "placement_pass": "underground_pass",
+                "biome_filter": ["overworld", "overworld_generation"],
+                "distribution": {
+                    "iterations": 30,
+                    "scatter_chance": {
+                        "numerator": 1,
+                        "denominator": 2
+                    },
+                    "x": {
+                        "distribution": "uniform",
+                        "extent": [0, 16]
+                    },
+                    "y": {
+                        "distribution": "triangle",
+                        "extent": [-64, 64]
+                    },
+                    "z": {
+                        "distribution": "uniform",
+                        "extent": [0, 16]
+                    }
+                }
+            },
+            "feature": {
+                "ore_feature": {
+                    "identifier": "cb:platinum_ore",
+                    "count": 3,
+                    "replace_rules": [
+                        {
+                            "places_block": "cb:platinum_ore",
+                            "may_replace": ["minecraft:stone"]
+                        },
+                        {
+                            "places_block": "cb:deepslate_platinum_ore",
+                            "may_replace": ["minecraft:deepslate"]
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            //铅矿小
+            "feature_rule": {
+                "identifier": "cb:lead_ore_small",
+                "places_feature": "cb:lead_ore_small",
+                "placement_pass": "underground_pass",
+                "biome_filter": ["overworld", "overworld_generation"],
+                "distribution": {
+                    "iterations": 20,
+                    "x": {
+                        "distribution": "uniform",
+                        "extent": [0, 16]
+                    },
+                    "y": {
+                        "distribution": "uniform",
+                        "extent": [-64, 128]
+                    },
+                    "z": {
+                        "distribution": "uniform",
+                        "extent": [0, 16]
+                    }
+                }
+            },
+            "feature": {
+                "ore_feature": {
+                    "identifier": "cb:lead_ore_small",
+                    "count": 6,
+                    "replace_rules": [
+                        {
+                            "places_block": "cb:lead_ore",
+                            "may_replace": ["minecraft:stone"]
+                        },
+                        {
+                            "places_block": "cb:deepslate_lead_ore",
+                            "may_replace": ["minecraft:deepslate"]
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            //铅矿大
+            "feature_rule": {
+                "identifier": "cb:lead_ore_large",
+                "places_feature": "cb:lead_ore_large",
+                "placement_pass": "underground_pass",
+                "biome_filter": ["overworld", "overworld_generation"],
+                "distribution": {
+                    "iterations": 40,
+                    "x": {
+                        "distribution": "uniform",
+                        "extent": [0, 16]
+                    },
+                    "y": {
+                        "distribution": "triangle",
+                        "extent": [64, 384]
+                    },
+                    "z": {
+                        "distribution": "uniform",
+                        "extent": [0, 16]
+                    }
+                }
+            },
+            "feature": {
+                "ore_feature": {
+                    "identifier": "cb:lead_ore_large",
+                    "count": 8,
+                    "replace_rules": [
+                        {
+                            "places_block": "cb:lead_ore",
+                            "may_replace": ["minecraft:stone"]
+                        },
+                        {
+                            "places_block": "cb:deepslate_lead_ore",
+                            "may_replace": ["minecraft:deepslate"]
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            //星石小
+            "feature_rule": {
+                "identifier": "cb:star_stone_small",
+                "places_feature": "cb:star_stone_small",
+                "placement_pass": "underground_pass",
+                "biome_filter": ["overworld", "overworld_generation"],
+                "distribution": {
+                    "iterations": 10,
+                    "x": {
+                        "distribution": "uniform",
+                        "extent": [0, 16]
+                    },
+                    "y": {
+                        "distribution": "uniform",
+                        "extent": [-64, 320]
+                    },
+                    "z": {
+                        "distribution": "uniform",
+                        "extent": [0, 16]
+                    }
+                }
+            },
+            "feature": {
+                "ore_feature": {
+                    "identifier": "cb:star_stone_small",
+                    "discard_chance_on_air_exposure": 1,
+                    "count": 1,
+                    "replace_rules": [
+                        {
+                            "places_block": "cb:star_stone",
+                            "may_replace": ["minecraft:stone"]
+                        },
+                        {
+                            "places_block": "cb:star_stone",
+                            "may_replace": ["minecraft:deepslate"]
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            //星石大
+            "feature_rule": {
+                "identifier": "cb:star_stone_large",
+                "places_feature": "cb:star_stone_large",
+                "placement_pass": "underground_pass",
+                "biome_filter": ["overworld", "overworld_generation"],
+                "distribution": {
+                    "iterations": 10,
+                    "x": {
+                        "distribution": "uniform",
+                        "extent": [0, 16]
+                    },
+                    "y": {
+                        "distribution": "triangle",
+                        "extent": [-192, 384]
+                    },
+                    "z": {
+                        "distribution": "uniform",
+                        "extent": [0, 16]
+                    }
+                }
+            },
+            "feature": {
+                "ore_feature": {
+                    "identifier": "cb:star_stone_large",
+                    "discard_chance_on_air_exposure": 0.8,
+                    "count": 1,
+                    "replace_rules": [
+                        {
+                            "places_block": "cb:star_stone",
+                            "may_replace": ["minecraft:stone"]
+                        },
+                        {
+                            "places_block": "cb:star_stone",
+                            "may_replace": ["minecraft:deepslate"]
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

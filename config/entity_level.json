@@ -1,0 +1,89 @@
+{
+    "minecraft:zombie_nautilus": {
+        "value": 1
+    },
+    "minecraft:nautilus": {
+        "value": 1
+    },
+    "minecraft:parched": {
+        "min": 1,
+        "max": 5
+    },
+    "minecraft:creeper": {
+        "min": 1,
+        "max": 5
+    },
+    "minecraft:silverfish": {
+        "value": 1
+    },
+    "minecraft:skeleton": {
+        "min": 1,
+        "max": 5
+    },
+    "minecraft:stray": {
+        "min": 1,
+        "max": 5
+    },
+    "minecraft:spider": {
+        "value": 1
+    },
+    "minecraft:zombie": {
+        "min": 1,
+        "max": 5
+    },
+    "minecraft:husk": {
+        "min": 1,
+        "max": 5
+    },
+    "minecraft:drowned": {
+        "min": 1,
+        "max": 5
+    },
+    "minecraft:cave_spider": {
+        "value": 1
+    },
+    "minecraft:witch": {
+        "min": 5,
+        "max": 10
+    },
+    "minecraft:guardian": {
+        "min": 5,
+        "max": 10
+    },
+    "minecraft:elder_guardian": {
+        "value": 15
+    },
+    "minecraft:vindicator": {
+        "min": 5,
+        "max": 10
+    },
+    "minecraft:evocation_illager": {
+        "min": 5,
+        "max": 10
+    },
+    "minecraft:pillager": {
+        "min": 5,
+        "max": 10
+    },
+    "minecraft:ravager": {
+        "value": 15
+    },
+    "minecraft:iron_golem": {
+        "value": 1
+    },
+    "minecraft:snow_golem": {
+        "value": 1
+    },
+    "minecraft:bogged": {
+        "min": 1,
+        "max": 5
+    },
+    "minecraft:blaze": {
+        "min": 5,
+        "max": 10
+    },
+    "minecraft:breeze": {
+        "min": 5,
+        "max": 10
+    }
+}
